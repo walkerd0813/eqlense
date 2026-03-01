@@ -1,0 +1,250 @@
+﻿param(
+  [Parameter(Mandatory=$true)][string]$City,
+  [Parameter(Mandatory=$true)][string]$RootUrl,
+  [int]$Top = 15,
+  [int]$TimeoutSec = 20,
+  [int]$MaxFeatures = 25000,
+  [string]$AllowFolderRegex = "",
+  [bool]$Force = $false
+)
+
+$ErrorActionPreference = "Stop"
+
+function Slug([string]$s){
+  $t = ($s.ToLower() -replace "[^a-z0-9]+","_").Trim("_")
+  if([string]::IsNullOrWhiteSpace($t)){ return "city" }
+  return $t
+}
+
+function Get-Json([string]$url){
+  return Invoke-RestMethod $url -TimeoutSec $TimeoutSec
+}
+
+function Safe-JoinServiceUrl([string]$root,[string]$svcName,[string]$svcType){
+  $r = $root.TrimEnd("/")
+  # Avoid /Public/Public duplication
+  if($r.ToLower().EndsWith("/public") -and $svcName.ToLower().StartsWith("public/")){
+    $svcName = $svcName.Substring(7)
+  }
+  return "$r/$svcName/$svcType"
+}
+
+function Score-Layer([string]$name){
+  $n = ("" + $name).ToLower()
+  $cat = "other"; $score = 0
+
+  # negatives (noise)
+  if($n -match "parking meter|street light|hydrant inspection|bench|trash barrel inventory"){ return @{category="noise";score=-100} }
+
+  if($n -match "zoning|zone district|zoning district"){ $cat="zoning_base"; $score=10 }
+  if($n -match "overlay|gcod|40r|smart growth|sgod|inclusionary|aho"){ $cat="zoning_overlay"; $score=[Math]::Max($score,15) }
+  if($n -match "historic|landmark|blc"){ $cat="historic_district"; $score=[Math]::Max($score,12) }
+  if($n -match "fema|flood|sfha|base flood|bfe"){ $cat="flood_fema"; $score=[Math]::Max($score,12) }
+  if($n -match "evacuation"){ $cat="evacuation"; $score=[Math]::Max($score,12) }
+  if($n -match "neighborhood|ward|precinct|district boundary"){ $cat="neighborhoods"; $score=[Math]::Max($score,10) }
+  if($n -match "mbta|subway|rail|train station|bus stop|bus route|transit"){ $cat="transit"; $score=[Math]::Max($score,10) }
+  if($n -match "trash|recycling|collection|pickup|street cleaning|snow emergency"){ $cat="trash_recycling"; $score=[Math]::Max($score,10) }
+  if($n -match "sewer|stormwater|drain|catch basin|manhole|water main|water line|hydrant|pump station"){ $cat="utilities"; $score=[Math]::Max($score,10) }
+  if($n -match "wetland|conservation|open space|park"){ $cat="conservation"; $score=[Math]::Max($score,9) }
+
+  return @{category=$cat;score=$score}
+}
+
+function Get-LayerCount([string]$layerUrl){
+  # ArcGIS REST count
+  $q = $layerUrl.TrimEnd("/") + "/query?where=1%3D1&returnCountOnly=true&f=json"
+  try {
+    $j = Invoke-RestMethod $q -TimeoutSec $TimeoutSec
+    if($null -ne $j.count){ return [int]$j.count }
+  } catch {}
+  return -1
+}
+
+$citySlug = Slug $City
+$baseDir  = ".\publicData\gis\cities\$citySlug"
+$rawDir   = Join-Path $baseDir "raw"
+$repDir   = Join-Path $baseDir "reports"
+New-Item -ItemType Directory -Force -Path $rawDir,$repDir | Out-Null
+
+Write-Host ""
+Write-Host "===================================================="
+Write-Host "ARC GIS AUTO-HARVEST v3: $City"
+Write-Host "root: $RootUrl"
+Write-Host "Top: $Top  TimeoutSec: $TimeoutSec  MaxFeatures: $MaxFeatures  Force: $Force"
+Write-Host "===================================================="
+
+$rootPjson = ($RootUrl.TrimEnd("/") + "?f=pjson")
+$root = Get-Json $rootPjson
+
+$services = @()
+if($root.services){ $services += @($root.services) }
+
+# If folders exist, optionally scan allowed folders
+if($root.folders -and $root.folders.Count -gt 0){
+  $folders = @($root.folders)
+  $pickedFolders = @()
+  if([string]::IsNullOrWhiteSpace($AllowFolderRegex)){
+    # default: pick common GIS folders
+    $AllowFolderRegex = "Planning|Infrastructure|Environment|PublicSafety|Transportation|Utilities|OpenData|DPW|PublicWorks|LandUse"
+  }
+  foreach($f in $folders){
+    if($f -match $AllowFolderRegex){ $pickedFolders += $f }
+  }
+  if($pickedFolders.Count -gt 0){
+    Write-Host ("Folders matched allowlist: " + $pickedFolders.Count)
+    foreach($f in $pickedFolders){
+      $folderUrl = $RootUrl.TrimEnd("/") + "/" + $f + "?f=pjson"
+      try {
+        $fj = Get-Json $folderUrl
+        if($fj.services){ $services += @($fj.services) }
+      } catch {
+        Write-Host "  [warn] folder scan failed: $f"
+      }
+    }
+  }
+}
+
+if(-not $services -or $services.Count -eq 0){
+  throw "No services discovered at root. Root must be an ArcGIS services directory."
+}
+
+# Prefer MapServer services
+$mapSvcs = @()
+foreach($s in $services){
+  if(("" + $s.type) -eq "MapServer"){ $mapSvcs += $s }
+}
+if($mapSvcs.Count -eq 0){ $mapSvcs = $services }
+
+# Score services by name so we don't scan 1000+ services
+function Score-Service([string]$svcName){
+  $n = ("" + $svcName).ToLower()
+  $sc = 0
+  if($n -match "zoning|planning|landuse"){ $sc += 20 }
+  if($n -match "infrastructure|utilities|dpw|storm|sewer|water"){ $sc += 15 }
+  if($n -match "environment|fema|flood|historic"){ $sc += 12 }
+  if($n -match "opendata"){ $sc += 8 }
+  if($n -match "publicsafety|evac"){ $sc += 8 }
+  if($n -match "transport|transit|mbta"){ $sc += 8 }
+  return $sc
+}
+
+$svcRows = @()
+foreach($s in $mapSvcs){
+  $svcRows += [pscustomobject]@{
+    name = $s.name
+    type = $s.type
+    score = (Score-Service $s.name)
+  }
+}
+
+$svcToScan = $svcRows | Sort-Object -Property @{Expression="score";Descending=$true}, @{Expression="name";Descending=$false} | Select-Object -First 12
+Write-Host ("Services to scan: " + $svcToScan.Count)
+
+$cands = New-Object System.Collections.Generic.List[object]
+
+$idx = 0
+foreach($svc in $svcToScan){
+  $idx++
+  $svcUrl = Safe-JoinServiceUrl -root $RootUrl -svcName $svc.name -svcType $svc.type
+  $pjUrl  = $svcUrl + "?f=pjson"
+  Write-Host ("[$idx/$($svcToScan.Count)] svc pjson: " + $svcUrl)
+  try {
+    $spj = Get-Json $pjUrl
+    if($spj.layers){
+      foreach($ly in @($spj.layers)){
+        $lyType = ("" + $ly.type)
+        if($lyType -match "Group"){ continue }
+        $layerName = ("" + $ly.name)
+        $sc = Score-Layer $layerName
+        if($sc.score -lt 1){ continue }
+
+        $cands.Add([pscustomobject]@{
+          category   = $sc.category
+          score      = [int]$sc.score
+          layerId    = [int]$ly.id
+          layerName  = $layerName
+          service    = $svc.name
+          serviceType= $svc.type
+          serviceUrl = $svcUrl
+        })
+      }
+    }
+  } catch {
+    Write-Host "  [warn] service scan failed: $($svc.name)"
+  }
+}
+
+if($cands.Count -eq 0){
+  Write-Host "No candidate layers found (by keyword scoring)."
+  return
+}
+
+$ranked = $cands | Sort-Object -Property @{Expression="score";Descending=$true}, @{Expression="category";Descending=$false}, @{Expression="layerName";Descending=$false}
+$picks = $ranked | Select-Object -First $Top
+
+Write-Host ("Ranked picks: " + $picks.Count)
+
+$dlScript = ".\mls\scripts\gis\arcgisDownloadLayerToGeoJSON_v1.mjs"
+if(!(Test-Path $dlScript)){
+  throw "Missing downloader: $dlScript"
+}
+$fieldScript = ".\mls\scripts\gis\geojsonFieldReport_v1.mjs"
+if(!(Test-Path $fieldScript)){
+  throw "Missing field reporter: $fieldScript"
+}
+
+$manifest = [ordered]@{
+  city       = $City
+  rootUrl    = $RootUrl
+  createdAt  = (Get-Date).ToString("o")
+  picks      = @()
+}
+
+$pi = 0
+foreach($p in $picks){
+  $pi++
+  $lname = ("" + $p.layerName)
+  $slugName = (Slug $lname)
+  $outGeo = Join-Path $rawDir ("{0}__{1}__{2}.geojson" -f $p.category,$slugName,$p.layerId)
+  $outRep = Join-Path $repDir ("{0}__{1}__{2}_fields.json" -f $p.category,$slugName,$p.layerId)
+
+  $layerUrl = ($p.serviceUrl.TrimEnd("/") + "/" + $p.layerId)
+
+  $cnt = Get-LayerCount $layerUrl
+  if($cnt -gt $MaxFeatures){
+    Write-Host ("⏭️  [$pi/$($picks.Count)] skip (count=$cnt > MaxFeatures): $lname")
+    continue
+  }
+
+  if((Test-Path $outGeo) -and (-not $Force)){
+    Write-Host ("⏭️  [$pi/$($picks.Count)] exists: $outGeo")
+  } else {
+    Write-Host ("▶️  [$pi/$($picks.Count)] DL ($cnt feats): $lname")
+    & node $dlScript --layerUrl $layerUrl --out $outGeo --outSR 4326
+  }
+
+  # Field report (best-effort)
+  try {
+    & node $fieldScript --in $outGeo --out $outRep --maxScan 2000 | Out-Null
+  } catch {}
+
+  $manifest.picks += [ordered]@{
+    category  = $p.category
+    score     = $p.score
+    layerId   = $p.layerId
+    layerName = $p.layerName
+    service   = $p.service
+    serviceType = $p.serviceType
+    layerUrl  = $layerUrl
+    out       = $outGeo
+    fields    = $outRep
+    count     = $cnt
+  }
+}
+
+$manPath = Join-Path $baseDir ("manifest_{0}_v1.json" -f $citySlug)
+$manifest | ConvertTo-Json -Depth 20 | Set-Content -Encoding UTF8 $manPath
+Write-Host ""
+Write-Host "✅ Harvest complete: $manPath"
+
+

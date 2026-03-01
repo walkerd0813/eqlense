@@ -1,0 +1,76 @@
+﻿param(
+  [Parameter(Mandatory=$true)][string]$EndpointsJson,
+  [int]$Top = 15,
+  [int]$TimeoutSec = 20,
+  [int]$MaxFeatures = 25000,
+  [switch]$Force
+)
+
+$ErrorActionPreference = "Stop"
+
+if(!(Test-Path $EndpointsJson)){
+  throw "Missing endpoints file: $EndpointsJson"
+}
+
+$eps = Get-Content $EndpointsJson -Raw | ConvertFrom-Json
+if($null -eq $eps){ throw "Could not parse endpoints JSON." }
+
+$runAt = Get-Date
+Write-Host ""
+Write-Host "===================================================="
+Write-Host "BATCH HARVEST v4 START"
+Write-Host "endpoints: $EndpointsJson"
+Write-Host "Top: $Top  TimeoutSec: $TimeoutSec  MaxFeatures: $MaxFeatures  Force: $Force"
+Write-Host "===================================================="
+
+$summary = New-Object System.Collections.Generic.List[object]
+
+$enabled = @($eps | Where-Object { $_.enabled -eq $true -and $_.rootUrl -and $_.rootUrl.Length -gt 5 })
+if($enabled.Count -eq 0){
+  Write-Host "No enabled endpoints with rootUrl found."
+  return
+}
+
+$i=0
+foreach($ep in $enabled){
+  $i++
+  $city = $ep.city
+  $root = $ep.rootUrl
+  $afr  = $ep.allowFolderRegex
+  if($null -eq $afr){ $afr = "" }
+
+  Write-Host ("▶️  [$i/$($enabled.Count)] Harvest $city => $root")
+
+  try {
+    & powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\ArcGIS-HarvestCityAuto_v3.ps1 `
+      -City $city `
+      -RootUrl $root `
+      -Top $Top `
+      -TimeoutSec $TimeoutSec `
+      -MaxFeatures $MaxFeatures `
+      -AllowFolderRegex $afr `
+      -Force:$Force
+
+    $summary.Add([pscustomobject]@{ city=$city; rootUrl=$root; ok=$true })
+  } catch {
+    Write-Host "  [error] $city failed: $($_.Exception.Message)"
+    $summary.Add([pscustomobject]@{ city=$city; rootUrl=$root; ok=$false; error=$_.Exception.Message })
+  }
+}
+
+$out = [ordered]@{
+  createdAt = (Get-Date).ToString("o")
+  endpoints = $EndpointsJson
+  top = $Top
+  timeoutSec = $TimeoutSec
+  maxFeatures = $MaxFeatures
+  results = @($summary)
+}
+
+$ts = Get-Date -Format "yyyyMMdd_HHmmss"
+$outPath = ".\publicData\gis\_batch\boston_metro_batch_v4_$ts.json"
+$out | ConvertTo-Json -Depth 20 | Set-Content -Encoding UTF8 $outPath
+
+Write-Host ""
+Write-Host "✅ BATCH HARVEST v4 DONE"
+Write-Host "summary: $outPath"

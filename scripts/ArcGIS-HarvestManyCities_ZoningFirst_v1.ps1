@@ -1,0 +1,167 @@
+﻿param(
+  [Parameter(Mandatory=$true)][string]$EndpointsJson,
+  [Parameter(Mandatory=$false)][int]$TimeoutSec = 20,
+  [Parameter(Mandatory=$false)][int]$MaxFeatures = 25000,
+  [Parameter(Mandatory=$false)][int]$TopOverlay = 2,
+  [Parameter(Mandatory=$false)][string]$ExcludeCategories = "transit,flood_fema",
+  [Parameter(Mandatory=$false)][switch]$Force,
+  [Parameter(Mandatory=$false)][switch]$SkipIfManifestExists,
+  [Parameter(Mandatory=$false)][switch]$OnlyMissingZoningBase
+)
+
+$ErrorActionPreference = "Stop"
+Set-Location "C:\seller-app\backend"
+
+if(-not (Test-Path $EndpointsJson)){ throw "Missing endpoints file: $EndpointsJson" }
+
+$endpoints = Get-Content $EndpointsJson -Raw | ConvertFrom-Json
+if(-not $endpoints){ throw "EndpointsJson parsed empty: $EndpointsJson" }
+
+$exclude = @()
+if($ExcludeCategories){
+  $exclude = $ExcludeCategories.Split(",") | ForEach-Object { $_.Trim().ToLower() } | Where-Object { $_ }
+}
+
+function Slug([string]$s){
+  if(-not $s){ return "" }
+  $t = ($s.ToLower() -replace "[^a-z0-9]+","_").Trim("_")
+  return $t
+}
+
+$hitsScript = Join-Path $PSScriptRoot "ArcGIS-FindLayerHits_v1.ps1"
+if(-not (Test-Path $hitsScript)){ throw "Missing: $hitsScript" }
+
+New-Item -ItemType Directory -Force -Path ".\publicData\gis\_scans" | Out-Null
+
+foreach($ep in $endpoints){
+  if($null -eq $ep){ continue }
+  $enabled = $false
+  try { $enabled = [bool]$ep.enabled } catch { $enabled = $false }
+  if(-not $enabled){ continue }
+
+  $city = Slug ("" + $ep.city)
+  $rootUrl = "" + $ep.rootUrl
+  if(-not $city -or -not $rootUrl){ continue }
+
+  $cityDir = ".\publicData\gis\cities\$city"
+  $rawDir  = "$cityDir\raw"
+  New-Item -ItemType Directory -Force -Path $rawDir | Out-Null
+
+  $manifest = "$cityDir\manifest_${city}_v1.json"
+  if($SkipIfManifestExists -and (Test-Path $manifest)){
+  $hasBaseHere = @(Get-ChildItem $rawDir -Filter "zoning_base__*.geojson" -ErrorAction SilentlyContinue).Count -gt 0
+  if($hasBaseHere -and (-not $Force)){
+    Write-Host "⏭️  Skip (manifest exists + zoning_base present): $city"
+    continue
+  }
+}
+
+  if($OnlyMissingZoningBase){
+    $hasBase = @(Get-ChildItem $rawDir -Filter "zoning_base__*.geojson" -ErrorAction SilentlyContinue).Count -gt 0
+    if($hasBase -and -not $Force){
+      Write-Host "⏭️  Skip (zoning_base already present): $city"
+      continue
+    }
+  }
+
+  Write-Host "===================================================="
+  Write-Host ("▶️  Harvest (zoning-first): {0} => {1}" -f $city, $rootUrl)
+  Write-Host "===================================================="
+
+  $hitsPath = ".\publicData\gis\_scans\${city}_hits_v1.json"
+  & $hitsScript -City $city -RootUrl $rootUrl -TimeoutSec $TimeoutSec -OutJson $hitsPath | Out-Null
+
+  if(-not (Test-Path $hitsPath)){
+    Write-Host "⚠️  No hits file produced for $city. Skipping."
+    continue
+  }
+
+  $hitsObj = Get-Content $hitsPath -Raw | ConvertFrom-Json
+  $hits = @($hitsObj.hits)
+  if(-not $hits -or $hits.Count -eq 0){
+    Write-Host "⚠️  Zero hits for $city. (Maybe token-gated or no matching services.)"
+    continue
+  }
+
+  # filter excludes
+  $hits = $hits | Where-Object {
+    $c = ("" + $_.category).ToLower()
+    ($exclude -notcontains $c)
+  }
+
+  # pick base zoning + top overlays + assessor + permits (if available)
+  $picks = @()
+
+  $z = $hits | Where-Object { (""+$_.category) -eq "zoning_base" } |
+       Sort-Object -Property @{Expression={ [int]$_.score }; Descending=$true} |
+       Select-Object -First 1
+
+  if(-not $z){
+    # fallback: anything with "zoning" in the layerName
+    $z = $hits | Where-Object { (""+$_.layerName).ToLower() -match "\bzoning\b" } |
+         Sort-Object -Property @{Expression={ [int]$_.score }; Descending=$true} |
+         Select-Object -First 1
+  }
+  if($z){ $picks += $z }
+
+  if($TopOverlay -gt 0){
+    $ov = $hits | Where-Object { (""+$_.category) -eq "zoning_overlay" } |
+          Sort-Object -Property @{Expression={ [int]$_.score }; Descending=$true} |
+          Select-Object -First $TopOverlay
+    if($ov){ $picks += $ov }
+  }
+
+  $ass = $hits | Where-Object { (""+$_.category) -eq "assessor" } |
+         Sort-Object -Property @{Expression={ [int]$_.score }; Descending=$true} |
+         Select-Object -First 1
+  if($ass){ $picks += $ass }
+
+  $perm = $hits | Where-Object { (""+$_.category) -eq "permits" } |
+          Sort-Object -Property @{Expression={ [int]$_.score }; Descending=$true} |
+          Select-Object -First 1
+  if($perm){ $picks += $perm }
+
+  if(-not $picks -or $picks.Count -eq 0){
+    Write-Host "⚠️  No zoning/overlay/assessor/permits picks for $city after filtering."
+    continue
+  }
+
+  # de-dupe by serviceUrl+layerId
+  $seen = @{}
+  $final = @()
+  foreach($p in $picks){
+    $k = (""+$p.serviceUrl) + "::" + ([int]$p.layerId)
+    if(-not $seen.ContainsKey($k)){ $seen[$k]=$true; $final += $p }
+  }
+
+  foreach($p in $final){
+    $cat = ""+$p.category
+    $lname = ""+$p.layerName
+    $lid = [int]$p.layerId
+    $svc = ""+$p.serviceUrl
+    $safe = ($lname.ToLower() -replace "[^a-z0-9]+","_").Trim("_")
+    if($safe.Length -gt 60){ $safe = $safe.Substring(0,60) }
+
+    $outFile = "$rawDir\${cat}__${safe}__${lid}.geojson"
+    if((Test-Path $outFile) -and (-not $Force)){
+      Write-Host "⏭️  exists: $outFile"
+      continue
+    }
+
+    $layerUrl = "$svc/$lid"
+    Write-Host ("▶️  DL: [{0}] {1}  => {2}" -f $cat, $lname, $layerUrl)
+
+    # IMPORTANT: only download. Do NOT run field report here (avoids ENOENT cascades on failures).
+    node .\mls\scripts\gis\arcgisDownloadLayerToGeoJSON_v1.mjs --layerUrl $layerUrl --out $outFile --outSR 4326
+  }
+
+  $m = [pscustomobject]@{
+    city = $city
+    rootUrl = $rootUrl
+    createdAt = (Get-Date).ToString("o")
+    picks = $final
+  }
+  New-Item -ItemType Directory -Force -Path $cityDir | Out-Null
+  [System.IO.File]::WriteAllText($manifest, ($m | ConvertTo-Json -Depth 20), [System.Text.Encoding]::UTF8)
+  Write-Host "✅ Harvest complete: $manifest"
+}
