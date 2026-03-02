@@ -1,0 +1,11 @@
+node_modules
+# Keep environment variables out of version control
+.env
+
+/generated/prisma
+
+# Generated / large data artifacts
+publicData/addresses/
+publicData/registry/**/_work/
+publicData/registry/**/incoming/
+**/*.ndjson
