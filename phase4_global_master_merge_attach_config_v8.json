@@ -1,7 +1,0 @@
-{
-  "properties_in": "C:\\seller-app\\backend\\publicData\\properties\\properties_v46_withBaseZoning__20251220_from_v44__NAMEFIX.ndjson",
-  "city_master_ptr": "C:\\seller-app\\backend\\publicData\\assessors\\_frozen\\CURRENT_CITY_ASSESSOR_MASTER_MERGED.json",
-  "massgis_master_ptr": "C:\\seller-app\\backend\\publicData\\assessors\\massgis_statewide\\CURRENT_MASSGIS_STATEWIDE_ASSESSOR_MASTER.json",
-  "out_dir": "C:\\seller-app\\backend\\publicData\\properties\\_attached\\phase4_assessor_global__coverageboost_v8",
-  "version_tag": "V8"
-}

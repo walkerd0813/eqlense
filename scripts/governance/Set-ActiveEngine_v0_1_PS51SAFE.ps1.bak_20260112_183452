@@ -1,0 +1,34 @@
+﻿param(
+  [Parameter(Mandatory=$true)][string]$Root,
+  [Parameter(Mandatory=$true)][string]$EngineId
+)
+
+Set-StrictMode -Version Latest
+$ErrorActionPreference = "Stop"
+
+$regPath = Join-Path $Root "governance\engine_registry\ENGINE_REGISTRY.json"
+if(!(Test-Path $regPath)){
+  $fallback = Join-Path $Root "ENGINE_REGISTRY.json"
+  if(Test-Path $fallback){
+    $regPath = $fallback
+  } else {
+    throw ("[error] missing ENGINE_REGISTRY.json in both locations: {0} and {1}" -f (Join-Path $Root "governance\engine_registry\ENGINE_REGISTRY.json"), $fallback)
+  }
+}" -f $regPath) }
+
+$raw = Get-Content -Path $regPath -Raw -Encoding UTF8
+$reg = $raw | ConvertFrom-Json
+$found = $false
+foreach($e in $reg.engines){ if($e.engine_id -eq $EngineId){ $found = $true; break } }
+if(-not $found){ throw ("[error] engine_id not found in registry: {0}" -f $EngineId) }
+
+$outDir = Join-Path $Root "governance\engine_registry\CURRENT"
+New-Item -ItemType Directory -Force -Path $outDir | Out-Null
+
+$outPath = Join-Path $outDir "CURRENT_ENGINE.json"
+$payload = [pscustomobject]@{ engine_id = $EngineId; set_at = ([DateTimeOffset]::Now).ToString("o") }
+($payload | ConvertTo-Json -Depth 10) | Set-Content -Path $outPath -Encoding UTF8
+
+Write-Host ("[ok] set CURRENT engine => {0}" -f $EngineId)
+Write-Host ("[ok] wrote {0}" -f $outPath)
+

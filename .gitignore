@@ -1,79 +1,29 @@
-# --------------------
-# OS / Editor
-# --------------------
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
-*.swp
+# Ignore EVERYTHING by default
+*
 
-# --------------------
-# Secrets / env
-# --------------------
-.env
-.env.*
-**/.env
-**/.env.*
-mls/.env.mls
+# Allow git to see these meta files
+!.gitignore
+!README.md
+!LICENSE
 
-# --------------------
-# Node / JS
-# --------------------
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
+# Allow top-level server/app code if you want to keep it
+!server.js
+!package.json
+!package-lock.json
 
-# --------------------
-# Python
-# --------------------
-__pycache__/
-*.pyc
-.venv/
-venv/
+# Allow ingestion scripts (whitelist)
+!scripts/
+!scripts/**
 
-# --------------------
-# Logs / temp / caches
-# --------------------
-logs/
-**/logs/
-_tmp/
-**/_tmp/
-cache/
-**/cache/
+# If you only want registry ingestion and not all scripts, use this instead:
+# !scripts/_registry/
+# !scripts/_registry/**
+# !scripts/registry/
+# !scripts/registry/**
 
-# --------------------
-# Uploads / runtime data (usually not committed)
-# --------------------
-uploads/
-**/uploads/
-
-# --------------------
-# Generated data + pipeline outputs (do not commit)
-# --------------------
-publicData/
-mls/downloads/
-mls/enriched/
-mls/indexes/
-mls/logs/
-mls/manual_inbox/
-comps_geocoded/
-
-# Ignore NDJSON only in data/output areas
-publicData/**/*.ndjson
-mls/**/*.ndjson
-_tmp/**/*.ndjson
-
-# --------------------
-# Archives / packs
-# --------------------
-*.zip
-
-# --------------------
-# Backup files
-# --------------------
-*.bak
-*.bak_*
-*.BAK_*
-*~
+# Allow minimal config you actually need (optional)
+!ENGINE_REGISTRY.json
+!services/
+!services/**
+!utils/
+!utils/**

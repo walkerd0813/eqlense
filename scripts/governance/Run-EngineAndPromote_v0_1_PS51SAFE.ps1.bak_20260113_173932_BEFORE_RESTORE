@@ -1,0 +1,62 @@
+﻿param(
+  [Parameter(Mandatory=$true)][string]$Root,
+  [Parameter(Mandatory=$true)][string]$EngineId,
+  [Parameter(Mandatory=$true)][string]$Cmd,
+  [Parameter(Mandatory=$false)][string[]]$CmdArgs = @(),
+  [Parameter(Mandatory=$false)][string]$CmdArgsLine = "",
+$CmdArgsLine = Quote-ArgsLineForKnownPathFlags $CmdArgsLine
+  [Parameter(Mandatory=$false)][string[]]$PromoteArtifactPaths = @(),
+  [switch]$Provisional
+)
+# --- QUOTE_CMDARGSLINE_FIX ---
+function Quote-ArgsLineForKnownPathFlags([string]$line){
+  if([string]::IsNullOrWhiteSpace($line)){ return $line }
+
+  $pathFlags = @("--infile","--outdir","--spine","--deeds","--audit","--out","--out_all","--out_all_attached","--events","--csv","--pdf")
+  foreach($flag in $pathFlags){
+    # match: --flag <value> where value contains spaces and is not already quoted
+    $re = [regex]::Escape($flag) + '\s+([^"\s][^ ]* [^"]*?)(?=\s+--|\s*$)'
+    $line = [regex]::Replace($line, $re, { param($m) "$flag `"$($m.Groups[1].Value)`"" })
+  }
+  return $line
+}
+# --- END QUOTE_CMDARGSLINE_FIX ---
+Set-StrictMode -Version Latest
+$ErrorActionPreference = "Stop"
+
+if($EngineId -match "<your\.engine\.id>" -or $EngineId -match "some\.engine\.id"){
+  throw "[error] placeholder EngineId detected. Use a real engine id from ENGINE_REGISTRY.json"
+}
+
+Write-Host "[start] Run Engine + Auto-Promote v0_1_0"
+Write-Host ("  engine_id: {0}" -f $EngineId)
+
+$runPath = Join-Path $Root "scripts\governance\Run-Engine_v0_1_PS51SAFE.ps1"
+$promotePath = Join-Path $Root "scripts\governance\Promote-Artifact_v0_1_PS51SAFE.ps1"
+
+if(-not (Test-Path $runPath)){ throw "[error] missing Run-Engine: scripts\governance\Run-Engine_v0_1_PS51SAFE.ps1" }
+if(-not (Test-Path $promotePath)){ throw "[error] missing Promote-Artifact: scripts\governance\Promote-Artifact_v0_1_PS51SAFE.ps1" }
+
+# 1) run governed
+& $runPath -Root $Root -EngineId $EngineId -Cmd $Cmd -CmdArgs $CmdArgs -CmdArgsLine $CmdArgsLine -Provisional:$Provisional
+
+# 2) promote (optional)
+if($PromoteArtifactPaths.Count -gt 0){
+  foreach($ap in $PromoteArtifactPaths){
+    & $promotePath -Root $Root -EngineId $EngineId -ArtifactPath $ap
+  }
+  Write-Host ("[ok] promoted {0} artifact(s)" -f $PromoteArtifactPaths.Count)
+} else {
+  Write-Host "[ok] no promotion requested"
+}
+
+Write-Host "[done] run + promote complete"
+# --- NEW: hydrate gate outcomes after run (self-healing reads this file) ---
+$hydrate = Join-Path $Root "scripts\governance\Hydrate-GateOutcomesFromRunJournal_v0_1.ps1"
+if(Test-Path $hydrate){
+  & powershell -ExecutionPolicy Bypass -File $hydrate -Root $Root | Out-Host
+} else {
+  Write-Host ("[warn] missing hydrator: {0}" -f $hydrate)
+}
+# ---------------------------------------------------------------------------
+

@@ -1,6 +1,0 @@
-{
-    "input":  "C:\\seller-app\\backend\\publicData\\properties\\_attached\\phase4_assessor_global__coverageboost_v8\\properties__with_assessor_global_best__2025-12-27T18-19-49-666Z__V8.ndjson",
-    "outDir":  "publicData\\properties\\_attached\\phase4_assessor_global_best_provenance_taxfy_v6",
-    "auditDir":  "publicData\\_audit\\phase4_assessor",
-    "versionTag":  "V6"
-}

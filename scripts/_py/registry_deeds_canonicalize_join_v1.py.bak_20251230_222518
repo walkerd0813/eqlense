@@ -1,0 +1,339 @@
+﻿import argparse
+import datetime as _dt
+import hashlib
+import json
+import os
+import re
+from collections import Counter, defaultdict
+from pathlib import Path
+
+BOSTON_NEIGHBORHOODS = [
+    # common Boston "town-like" neighborhoods
+    "Jamaica Plain", "Dorchester", "Roxbury", "Roslindale", "Mattapan",
+    "Hyde Park", "West Roxbury", "East Boston", "South Boston",
+    "Brighton", "Allston", "Charlestown", "Fenway", "Back Bay",
+    "South End", "North End", "Beacon Hill", "Mission Hill"
+]
+
+def utc_now_iso():
+    return _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="microseconds").replace("+00:00", "Z")
+
+def safe_json_loads(line: str):
+    try:
+        return json.loads(line)
+    except Exception:
+        return None
+
+def sha256_file(path: str):
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest().upper()
+
+def norm_space(s: str) -> str:
+    s = re.sub(r"\s+", " ", (s or "")).strip()
+    return s
+
+def parse_address_fields(addr: str):
+    """
+    Very lightweight parse:
+      - returns raw, city, state, zip (best-effort)
+    """
+    addr = norm_space(addr)
+    city = state = zipc = None
+
+    # ZIP
+    m = re.search(r"\b(\d{5})(?:-\d{4})?\b", addr)
+    if m:
+        zipc = m.group(1)
+
+    # State (MA / Massachusetts)
+    m = re.search(r"\b(MA|Massachusetts)\b", addr, re.IGNORECASE)
+    if m:
+        state = "MA"
+
+    # City: assume last comma-separated token before state/zip
+    parts = [p.strip() for p in addr.split(",") if p.strip()]
+    if len(parts) >= 2:
+        # try from end backwards
+        for i in range(len(parts)-1, -1, -1):
+            token = parts[i]
+            if re.search(r"\b(MA|Massachusetts)\b", token, re.IGNORECASE):  # skip
+                continue
+            if re.search(r"\b\d{5}\b", token):  # skip zip token
+                continue
+            city = token
+            break
+
+    return {
+        "raw": addr if addr else None,
+        "city": city,
+        "state": state,
+        "zip": zipc
+    }
+
+def boston_neighborhood_override(addr: str, parsed_city: str):
+    """
+    If address text contains a Boston neighborhood AND also contains Boston,
+    set city to neighborhood, and set city_parent='Boston'.
+
+    This is intentionally conservative:
+      - only triggers when BOTH 'Boston' and a neighborhood string exist
+    """
+    if not addr:
+        return parsed_city, None
+
+    addr_l = addr.lower()
+    if "boston" not in addr_l:
+        return parsed_city, None
+
+    for nbhd in BOSTON_NEIGHBORHOODS:
+        if nbhd.lower() in addr_l:
+            return nbhd, "Boston"
+
+    return parsed_city, None
+
+def choose_address(extracted: dict):
+    """
+    Rule (NON-NEGOTIABLE):
+      If any candidate has MARGIN_BONUS -> choose best margin candidate
+      and IGNORE all other address searches/candidates.
+    """
+    cands = extracted.get("address_candidates") or []
+    if not isinstance(cands, list):
+        cands = []
+
+    margin_cands = []
+    for c in cands:
+        hits = c.get("hits") or []
+        hit_cues = [h.get("cue") for h in hits if isinstance(h, dict)]
+        if "MARGIN_BONUS" in hit_cues:
+            margin_cands.append(c)
+
+    if margin_cands:
+        # pick highest score; tie-breaker: strength full > weak
+        def keyfn(c):
+            strength = (c.get("strength") or "").lower()
+            strength_rank = 1 if strength == "full" else 0
+            return (int(c.get("score") or 0), strength_rank)
+        best = sorted(margin_cands, key=keyfn, reverse=True)[0]
+        return best, "LEFT_MARGIN_ROTATED", True
+
+    # fallback: best overall candidate
+    if cands:
+        def keyfn2(c):
+            strength = (c.get("strength") or "").lower()
+            strength_rank = 1 if strength == "full" else 0
+            return (int(c.get("score") or 0), strength_rank)
+        best = sorted(cands, key=keyfn2, reverse=True)[0]
+        return best, "BODY_OR_OTHER", False
+
+    return None, "NONE", False
+
+def compute_confidence(best_cand: dict, source_loc: str):
+    """
+    Canonical confidence separate from raw candidate score:
+      - LEFT_MARGIN_ROTATED = A-grade by default
+      - otherwise B/C based on strength + cues
+    """
+    if not best_cand:
+        return {"grade": "C", "score": 0.0}
+
+    strength = (best_cand.get("strength") or "").lower()
+    hits = best_cand.get("hits") or []
+    hit_cues = [h.get("cue") for h in hits if isinstance(h, dict)]
+
+    if source_loc == "LEFT_MARGIN_ROTATED":
+        if strength == "full":
+            return {"grade": "A", "score": 0.97}
+        return {"grade": "A", "score": 0.90}
+
+    # Non-margin
+    if strength == "full" and ("LOC_CUE" in hit_cues or "LOCALITY_BOSTON" in hit_cues):
+        return {"grade": "B", "score": 0.82}
+    if strength == "full":
+        return {"grade": "B", "score": 0.75}
+    return {"grade": "C", "score": 0.45}
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--inExtracted", required=True, help="NDJSON extracted output (v7 margin extractor)")
+    ap.add_argument("--outCanonical", required=True, help="Canonical NDJSON output path")
+    ap.add_argument("--outAudit", required=True, help="Audit JSON output path")
+    ap.add_argument("--maxRecords", type=int, default=0, help="If >0, stop after N records (test mode)")
+    args = ap.parse_args()
+
+    inp = Path(args.inExtracted)
+    out = Path(args.outCanonical)
+    aud = Path(args.outAudit)
+
+    counts = Counter()
+    source_loc_counts = Counter()
+    conf_grade_counts = Counter()
+    property_type_counts = Counter()
+
+    dup_rel = Counter()
+    dup_sha = Counter()
+
+    out.parent.mkdir(parents=True, exist_ok=True)
+    aud.parent.mkdir(parents=True, exist_ok=True)
+
+    rows_written = 0
+    seen = 0
+
+    with inp.open("r", encoding="utf-8") as f_in, out.open("w", encoding="utf-8") as f_out:
+        for line in f_in:
+            if not line.strip():
+                continue
+
+            obj = safe_json_loads(line)
+            if obj is None:
+                counts["bad_json"] += 1
+                continue
+
+            seen += 1
+            if args.maxRecords and seen > args.maxRecords:
+                break
+
+            src = obj.get("source") or {}
+            ext = obj.get("extracted") or {}
+
+            rel_path = src.get("rel_path") or src.get("relPath") or None
+            sha = (src.get("sha256") or "").upper() or None
+            if rel_path:
+                dup_rel[rel_path] += 1
+            if sha:
+                dup_sha[sha] += 1
+
+            best, source_loc, margin_won = choose_address(ext)
+            source_loc_counts[source_loc] += 1
+
+            # Canonical address decision
+            chosen_addr = None
+            chosen_hits = []
+            chosen_score_raw = None
+            chosen_strength = None
+
+            if best:
+                chosen_addr = best.get("value")
+                chosen_hits = [h.get("cue") for h in (best.get("hits") or []) if isinstance(h, dict)]
+                chosen_score_raw = best.get("score")
+                chosen_strength = best.get("strength")
+
+            # If margin exists, we "ignore body search" by design.
+            # We still keep the full candidates array in output for auditability,
+            # but downstream should trust `property_locator` fields only.
+            conf = compute_confidence(best, source_loc)
+            conf_grade_counts[conf["grade"]] += 1
+
+            # Property type passthrough (from extractor) + count
+            prop_type = ext.get("property_type")
+            if prop_type:
+                property_type_counts[prop_type] += 1
+
+            parsed = parse_address_fields(chosen_addr or "")
+            city = parsed.get("city")
+            city_parent = None
+            city2, parent = boston_neighborhood_override(chosen_addr or "", city)
+            if city2:
+                city = city2
+                city_parent = parent
+
+            canonical = {
+                # 1) Document identity / provenance
+                "doc_type": obj.get("doc_type") or ext.get("instrument_type") or "DEED",
+                "registry_county": obj.get("county") or ext.get("county") or obj.get("registry_county"),
+                "document_type": ext.get("instrument_type") or obj.get("doc_type") or "DEED",
+                "recording_date": ext.get("recorded_date"),
+                "recording_time": ext.get("recorded_time") if isinstance(ext, dict) else None,
+                "book": ext.get("book"),
+                "page": ext.get("page"),
+                "instrument_number": ext.get("instrument_number") if isinstance(ext, dict) else None,
+                "document_number": ext.get("doc_id") or ext.get("document_number"),
+                "page_count": ext.get("page_count") if isinstance(ext, dict) else None,
+
+                "source": {
+                    "file": src.get("file"),
+                    "rel_path": rel_path,
+                    "sha256": sha,
+                    "extract_method": src.get("extract_method"),
+                    "ocr_page_limit": src.get("ocr_page_limit"),
+                    "ocr_dpi": src.get("ocr_dpi"),
+                    "tesseract_config": src.get("tesseract_config"),
+                    "ocr_timeout_sec": src.get("ocr_timeout_sec"),
+                    "margin_text_len": src.get("margin_text_len"),
+                    "body_text_len": src.get("body_text_len"),
+                },
+
+                # 2) Property identification (address spine + evidence)
+                "property_locator": {
+                    "raw_address": chosen_addr,
+                    "normalized_address": ext.get("property_address_norm") if ext.get("property_address_norm") else chosen_addr,
+                    "city": city,
+                    "city_parent": city_parent,
+                    "state": parsed.get("state"),
+                    "zip": parsed.get("zip"),
+                    "address_source_location": source_loc,
+                    "address_confidence_grade": conf["grade"],
+                    "address_confidence_score": conf["score"],
+                    "address_candidate_score_raw": chosen_score_raw,
+                    "address_candidate_strength": chosen_strength,
+                    "address_candidate_hits": chosen_hits,
+                    "margin_won": margin_won,
+                },
+
+                # 3) Transaction semantics (pass-through for now)
+                "consideration_amount": ext.get("consideration"),
+                "grantors": ext.get("grantors") or [],
+                "grantees": ext.get("grantees") or [],
+                "flags": ext.get("flags") or [],
+
+                # Property type
+                "property_type": prop_type,
+
+                # Evidence payload (keep candidates for auditability)
+                "address_candidates": ext.get("address_candidates") or [],
+            }
+
+            f_out.write(json.dumps(canonical, ensure_ascii=False) + "\n")
+            rows_written += 1
+
+            if rows_written % 200 == 0:
+                print(f"[progress] wrote {rows_written} rows (seen {seen})")
+
+    # Audit
+    dup_rel_over1 = {k: v for k, v in dup_rel.items() if v > 1}
+    dup_sha_over1 = {k: v for k, v in dup_sha.items() if v > 1}
+
+    audit = {
+        "created_at": utc_now_iso(),
+        "inExtracted": str(inp),
+        "outCanonical": str(out),
+        "rows_seen": seen,
+        "rows_written": rows_written,
+        "address_source_location_counts": dict(source_loc_counts),
+        "address_confidence_grade_counts": dict(conf_grade_counts),
+        "property_type_counts": dict(property_type_counts),
+        "dup_rel_path_over1_count": len(dup_rel_over1),
+        "dup_sha256_over1_count": len(dup_sha_over1),
+        "sample_dup_rel_path": dict(list(dup_rel_over1.items())[:25]),
+        "sample_dup_sha256": dict(list(dup_sha_over1.items())[:25]),
+    }
+
+    aud.write_text(json.dumps(audit, indent=2), encoding="utf-8")
+
+    print("[done] wrote canonical:", str(out))
+    print("[done] wrote audit:", str(aud))
+    print(json.dumps({
+        "rows_seen": seen,
+        "rows_written": rows_written,
+        "address_source_location_counts": audit["address_source_location_counts"],
+        "address_confidence_grade_counts": audit["address_confidence_grade_counts"],
+        "property_type_counts": audit["property_type_counts"],
+        "dup_rel_path_over1_count": audit["dup_rel_path_over1_count"],
+        "dup_sha256_over1_count": audit["dup_sha256_over1_count"],
+    }, indent=2))
+
+if __name__ == "__main__":
+    main()

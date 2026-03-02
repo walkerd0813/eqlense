@@ -1,0 +1,109 @@
+param(
+  [Parameter(Mandatory=$true)][string]$Root,
+  [Parameter(Mandatory=$false)][string]$EngineId = "",
+  [Parameter(Mandatory=$false)][string]$FromScript = "",
+  [Parameter(Mandatory=$true)][string]$Zip,
+  [Parameter(Mandatory=$true)][string]$AssetBucket,
+  [Parameter(Mandatory=$true)][int]$WindowDays,
+  [switch]$Provisional
+)
+Set-StrictMode -Version Latest
+$ErrorActionPreference = "Stop"
+
+function ReadJson([string]$Path){
+  if(!(Test-Path $Path)){ throw ("[error] missing: {0}" -f $Path) }
+  (Get-Content -Path $Path -Raw -Encoding UTF8) | ConvertFrom-Json
+}
+
+function NormalizePath([string]$p){
+  if([string]::IsNullOrWhiteSpace($p)){ return "" }
+  $x = $p.Trim()
+  if($x.StartsWith(".\")){ $x = $x.Substring(2) }
+  $x = $x.Replace("/","\")
+  return $x
+}
+
+function ResolveEngineIdFromScript([object]$reg, [string]$fromScript){
+  $fs = NormalizePath $fromScript
+  if([string]::IsNullOrWhiteSpace($fs)){ return "" }
+  foreach($e in $reg.engines){
+    if(-not $e.PSObject.Properties.Match("runner").Count){ continue }
+    if($null -ne $e.PSObject.Properties["runner"].Value -and $e.PSObject.Properties["runner"].Value.PSObject.Properties.Match("script_relpath").Count){
+      $sr = NormalizePath ([string]$e.PSObject.Properties["runner"].Value.script_relpath)
+      if(-not [string]::IsNullOrWhiteSpace($sr)){
+        if($fs.EndsWith($sr, [System.StringComparison]::OrdinalIgnoreCase)){ return [string]$e.engine_id }
+      }
+    }
+  }
+  return ""
+}
+
+# Governed paths
+$regPath = Join-Path $Root "governance\engine_registry\ENGINE_REGISTRY.json"
+if(!(Test-Path $regPath)){ throw ("[error] missing governed registry: {0}" -f $regPath) }
+$reg = ReadJson $regPath
+if($null -eq $reg.engines){ throw "[error] registry missing engines[] array" }
+
+$curPath = Join-Path $Root "governance\engine_registry\CURRENT\CURRENT_ENGINE.json"
+
+# Engine selection order:
+# 1) explicit -EngineId
+# 2) -FromScript auto-detect
+# 3) CURRENT_ENGINE.json
+if([string]::IsNullOrWhiteSpace($EngineId) -and -not [string]::IsNullOrWhiteSpace($FromScript)){
+  $EngineId = ResolveEngineIdFromScript -reg $reg -fromScript $FromScript
+  if([string]::IsNullOrWhiteSpace($EngineId)){
+    throw ("[error] could not auto-detect engine from FromScript: {0}" -f $FromScript)
+  }
+}
+if([string]::IsNullOrWhiteSpace($EngineId)){
+  if(!(Test-Path $curPath)){ throw ("[error] missing CURRENT engine pointer: {0} (Set-ActiveEngine first)" -f $curPath) }
+  $cur = ReadJson $curPath
+  $EngineId = [string]$cur.engine_id
+}
+
+# locate engine in registry
+$engine = $null
+foreach($e in $reg.engines){ if([string]$e.engine_id -eq $EngineId){ $engine = $e; break } }
+if($null -eq $engine){ throw ("[error] engine_id not found in registry: {0}" -f $EngineId) }
+if($null -eq $engine.runner){ throw ("[error] engine has no runner contract: {0}" -f $EngineId) }
+
+$cmd = [string]$engine.runner.cmd
+$tmpl = [string]$engine.runner.args_template
+if([string]::IsNullOrWhiteSpace($cmd) -or [string]::IsNullOrWhiteSpace($tmpl)){
+  throw ("[error] invalid runner contract (cmd/args_template missing) for engine: {0}" -f $EngineId)
+}
+
+$argsLine = $tmpl.Replace("{Root}", $Root).Replace("{Zip}", $Zip).Replace("{AssetBucket}", $AssetBucket).Replace("{WindowDays}", [string]$WindowDays)
+
+Write-Host "============================================================"
+Write-Host "[start] Daily Governed Run v0_1"
+Write-Host ("  engine_id: {0}" -f $EngineId)
+Write-Host ("  zip: {0}  assetBucket: {1}  windowDays: {2}" -f $Zip, $AssetBucket, $WindowDays)
+Write-Host "============================================================"
+
+# Start governance session
+$start = Join-Path $Root "scripts\governance\Start-GovernanceSession_v0_1_PS51SAFE.ps1"
+if(!(Test-Path $start)){ throw ("[error] missing: {0}" -f $start) }
+& $start -Root $Root
+
+# Run engine + promote
+$wrap = Join-Path $Root "scripts\governance\Run-EngineAndPromote_v0_1_PS51SAFE.ps1"
+if(!(Test-Path $wrap)){ throw ("[error] missing wrapper: {0}" -f $wrap) }
+
+$promote = @()
+if($engine.runner.PSObject.Properties.Match("promote_targets").Count -and $null -ne $engine.runner.promote_targets){
+  $promote = @($engine.runner.promote_targets)
+}
+
+Write-Host ("[go] wrapper: {0}" -f $wrap)
+Write-Host ("[go] cmd: {0}" -f $cmd)
+Write-Host ("[go] argsLine: {0}" -f $argsLine)
+
+if($Provisional){
+  & $wrap -Root $Root -EngineId $EngineId -Cmd $cmd -CmdArgsLine $argsLine -PromoteArtifactPaths $promote -Provisional
+} else {
+  & $wrap -Root $Root -EngineId $EngineId -Cmd $cmd -CmdArgsLine $argsLine -PromoteArtifactPaths $promote
+}
+
+Write-Host "[done] daily governed run complete"

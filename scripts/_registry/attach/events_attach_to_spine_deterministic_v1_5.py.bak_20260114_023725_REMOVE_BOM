@@ -1,0 +1,580 @@
+﻿#!/usr/bin/env python3
+import argparse, json, os, re, hashlib, time
+from datetime import datetime, timezone
+
+# ============================================================
+# Deterministic-only attachment (Registry events -> Property Spine)
+# v1_5 institutional:
+#  - Canonical suffix normalization (wide coverage)
+#  - Canonical route tokens (RT/RTE -> ROUTE)
+#  - Unit-aware spine index (base_index + unit_index) using SAME canonicalizer
+#  - Fix extract_unit unpacking everywhere (4-tuple)
+#  - Remove dead code in addr_variants
+#  - Safer tail cleanup (MD artifacts, single-letter tails)
+#  - Progress heartbeat while indexing spine (prevents "frozen" feel)
+# Still: NO fuzzy, NO nearest, collisions -> UNKNOWN
+# ============================================================
+
+NUMWORD = {
+  "ONE":"1","TWO":"2","THREE":"3","FOUR":"4","FIVE":"5","SIX":"6","SEVEN":"7","EIGHT":"8","NINE":"9","TEN":"10"
+}
+
+RE_MULTI_RANGE = re.compile(r"^(?P<a>\d+)\s*-\s*(?P<b>\d+)\s*(?P<rest>.+)$")
+RE_LOT  = re.compile(r"\bLOT\b[\s#]*([0-9]+|[A-Z])?\b", re.IGNORECASE)
+
+# Unit extractor (deterministic): capture + remove only one unit fragment
+RE_UNIT_FULL = re.compile(
+    r"\b(?P<des>(UNIT|APT|APARTMENT|#|PH|PENTHOUSE|BSMT|BASEMENT|FL|FLOOR|RM|ROOM|STE|SUITE))\b"
+    r"(?:\s*(?P<val>[A-Z0-9][A-Z0-9\-]*))?\b",
+    re.IGNORECASE
+)
+
+UNIT_DESIGNATOR_NORM = {
+    "APARTMENT": "APT",
+    "#": "UNIT",
+    "PENTHOUSE": "PH",
+    "BASEMENT": "BSMT",
+    "FLOOR": "FL",
+    "ROOM": "RM",
+    "SUITE": "STE",
+}
+
+# Boston neighborhoods that appear in Suffolk "town-ish" columns
+BOSTON_NEIGHBORHOODS = {
+  "DORCHESTER","BRIGHTON","JAMAICA PLAIN","SOUTH BOSTON","EAST BOSTON","CHARLESTOWN",
+  "ROSLINDALE","WEST ROXBURY","HYDE PARK","ROXBURY","ALLSTON","MATTAPAN","CHESTNUT HILL",
+  "SOUTH BOSTON WATERFRONT","DOWNTOWN","NORTH END","BACK BAY","BEACON HILL","FENWAY","MISSION HILL",
+}
+BOSTON_NEIGHBOR_MISSPELL = {
+  "DORCHESTERE":"DORCHESTER",
+  "WESY ROXBURY":"WEST ROXBURY",
+  "WEST ROXBURY Q":"WEST ROXBURY",
+}
+
+# ------------------------------------------------------------
+# Street suffix canonicalization (variants -> CANON)
+# Canon tokens are short, stable, deterministic.
+# ------------------------------------------------------------
+SUFFIX_CANON = {
+  # avenue
+  "AV":"AVE","AVE":"AVE","AVEN":"AVE","AVENU":"AVE","AVENUE":"AVE",
+  # street
+  "ST":"ST","STR":"ST","STRE":"ST","STREET":"ST",
+  # road
+  "RD":"RD","ROAD":"RD",
+  # drive
+  "DR":"DR","DRIV":"DR","DRIVE":"DR",
+  # lane
+  "LN":"LN","LANE":"LN",
+  # court
+  "CT":"CT","CRT":"CT","COURT":"CT",
+  # place
+  "PL":"PL","PLACE":"PL",
+  # terrace
+  "TER":"TER","TERR":"TER","TERRACE":"TER",
+  # boulevard
+  "BLVD":"BLVD","BOULEVARD":"BLVD","BOUL":"BLVD",
+  # parkway
+  "PKWY":"PKWY","PARKWAY":"PKWY","PKY":"PKWY",
+  # circle
+  "CIR":"CIR","CIRCLE":"CIR",
+  # way
+  "WAY":"WAY",
+  # trail
+  "TRL":"TRL","TRAIL":"TRL",
+  # path
+  "PATH":"PATH",
+  # plaza
+  "PLZ":"PLZ","PLAZA":"PLZ",
+  # square
+  "SQ":"SQ","SQR":"SQ","SQUARE":"SQ",
+  # center
+  "CTR":"CTR","CENTER":"CTR","CENTR":"CTR","CENT":"CTR",
+  # highway / freeway / expressway
+  "HWY":"HWY","HIGHWAY":"HWY","HWAY":"HWY","HIWAY":"HWY","HGY":"HWY",
+  "FWY":"FWY","FREEWAY":"FWY",
+  "EXPY":"EXPY","EXPRESSWAY":"EXPY",
+  # bypass / loop / spur / ramp / connector-ish
+  "BYP":"BYP","BYPASS":"BYP",
+  "LOOP":"LOOP",
+  "SPUR":"SPUR",
+  "RAMP":"RAMP",
+  "CONN":"CONN","CONNECTOR":"CONN",
+  # common extras seen in municipal data
+  "ALY":"ALY","ALLEY":"ALY",
+  "XING":"XING","CROSSING":"XING",
+  "EXT":"EXT","EXTENSION":"EXT","EXTN":"EXT",
+  "HL":"HL","HILL":"HL",
+  "HTS":"HTS","HEIGHTS":"HTS",
+  "PT":"PT","POINT":"PT",
+  "VW":"VW","VIEW":"VW",
+  "RUN":"RUN",
+  "RDG":"RDG","RIDGE":"RDG",
+  "PK":"PK","PARK":"PK",
+  "GDN":"GDN","GARDEN":"GDN","GDNS":"GDNS","GARDENS":"GDNS",
+  "EST":"EST","ESTATE":"EST","ESTS":"ESTS","ESTATES":"ESTS",
+}
+
+# directionals canonical
+DIR_CANON = {
+  "NORTH":"N","N":"N","SOUTH":"S","S":"S","EAST":"E","E":"E","WEST":"W","W":"W",
+  "NE":"NE","N.E.":"NE","NORTHEAST":"NE",
+  "NW":"NW","N.W.":"NW","NORTHWEST":"NW",
+  "SE":"SE","S.E.":"SE","SOUTHEAST":"SE",
+  "SW":"SW","S.W.":"SW","SOUTHWEST":"SW",
+}
+
+ROUTE_CANON = {
+  "RT":"ROUTE","RTE":"ROUTE","ROUTE":"ROUTE",
+}
+
+def sha256_text(s: str) -> str:
+    h = hashlib.sha256()
+    h.update((s or "").encode("utf-8", errors="ignore"))
+    return h.hexdigest()
+
+def norm_town(t):
+    if not t:
+        return None
+    s = re.sub(r"\s+"," ", str(t).strip()).upper()
+    s = s.replace(".", " ").strip()
+    s = re.sub(r"\s+"," ", s)
+    return s
+
+def town_canonical_from_event(pr: dict):
+    t_candidates = [pr.get("town_code"), pr.get("town_norm"), pr.get("town_raw")]
+    for t in t_candidates:
+        tn = norm_town(t)
+        if not tn:
+            continue
+        if tn in BOSTON_NEIGHBOR_MISSPELL:
+            tn = BOSTON_NEIGHBOR_MISSPELL[tn]
+        if tn in BOSTON_NEIGHBORHOODS:
+            return "BOSTON"
+        return tn
+
+    pd = norm_town(pr.get("prop_desc_raw"))
+    if pd in BOSTON_NEIGHBOR_MISSPELL:
+        pd = BOSTON_NEIGHBOR_MISSPELL[pd]
+    if pd in BOSTON_NEIGHBORHOODS:
+        return "BOSTON"
+    return None
+
+def norm_addr(a):
+    if a is None:
+        return None
+    if not isinstance(a, str):
+        a = str(a)
+    s = re.sub(r"\s+"," ", a.strip()).upper()
+    s = re.sub(r"\s+Y$", "", s).strip()
+    parts = s.split(" ")
+    if parts and parts[0] in NUMWORD:
+        parts[0] = NUMWORD[parts[0]]
+    return " ".join(parts).strip()
+
+def pick_spine_addr_str(r: dict):
+    candidates = [
+        r.get("address_norm"),
+        r.get("address"),
+        r.get("address_raw"),
+        r.get("address_full"),
+        r.get("site_address"),
+        r.get("full_address"),
+        r.get("address1"),
+    ]
+    for v in candidates:
+        if isinstance(v, str) and v.strip():
+            return v
+    return None
+
+def extract_unit(addr_norm: str):
+    """
+    Returns: (core_addr_norm, unit_des_norm|None, unit_val_norm|None, had_unit_bool)
+    """
+    if not addr_norm:
+        return (addr_norm, None, None, False)
+
+    m = RE_UNIT_FULL.search(addr_norm)
+    if not m:
+        return (addr_norm, None, None, False)
+
+    des = (m.group("des") or "").upper()
+    val = (m.group("val") or "").upper().strip() or None
+    des = UNIT_DESIGNATOR_NORM.get(des, des)
+
+    core = (addr_norm[:m.start()] + " " + addr_norm[m.end():]).strip()
+    core = re.sub(r"\s+", " ", core).strip()
+    return (core, des, val, True)
+
+def unit_key_from(des, val):
+    if not des:
+        return None
+    if val:
+        return f"{des} {val}".strip()
+    return des.strip()
+
+def strip_lot(addr_norm):
+    if not addr_norm:
+        return addr_norm
+    s = re.sub(RE_LOT, "", addr_norm).strip()
+    s = re.sub(r"\s+"," ", s).strip()
+    return s
+
+def mt_mount_variants(core):
+    if not core:
+        return []
+    toks = core.split()
+    out=[]
+    if "MT" in toks:
+        out.append(" ".join(["MOUNT" if t=="MT" else t for t in toks]))
+    if "MOUNT" in toks:
+        out.append(" ".join(["MT" if t=="MOUNT" else t for t in toks]))
+    return dedupe(out)
+
+def st_saint_streetname_variants(core):
+    if not core:
+        return []
+    toks = core.split()
+    if len(toks) < 3:
+        return []
+    if not toks[0].isdigit():
+        return []
+    if toks[1] == "ST":
+        return [" ".join([toks[0], "SAINT"] + toks[2:])]
+    if toks[1] == "SAINT":
+        return [" ".join([toks[0], "ST"] + toks[2:])]
+    return []
+
+def dedupe(lst):
+    seen=set(); out=[]
+    for x in lst:
+        if x and x not in seen:
+            seen.add(x); out.append(x)
+    return out
+
+def cleanup_addr_tail(addr_norm):
+    if not addr_norm:
+        return addr_norm
+    s = re.sub(r"\s+"," ", addr_norm).strip()
+
+    # strip trailing single-letter tokens (e.g., 'Q')
+    s = re.sub(r"\s+[A-Z]$", "", s).strip()
+
+    # strip trailing neighborhood tokens (rare)
+    toks = s.split()
+    if len(toks) >= 2:
+        last2 = " ".join(toks[-2:])
+        if last2 in BOSTON_NEIGHBORHOODS:
+            toks = toks[:-2]
+            s = " ".join(toks).strip()
+    toks = s.split()
+    if len(toks) >= 1 and toks[-1] in BOSTON_NEIGHBORHOODS:
+        s = " ".join(toks[:-1]).strip()
+
+    # strip MD artifacts ONLY if they appear as tail marker
+    # examples observed: "... MD 358135" or "... MD 412885 C PL ..."
+    s = re.sub(r"\s+\bMD\b\s+\d+.*$", "", s).strip()
+
+    s = re.sub(r"\s+"," ", s).strip()
+    return s
+
+def canonicalize_suffix_and_route(core: str):
+    """
+    Deterministic canonicalization:
+      - normalize directionals if present (token-level)
+      - normalize ROUTE tokens in body (RT/RTE -> ROUTE)
+      - normalize suffix token if recognized (variants -> canon)
+    """
+    if not core:
+        return core
+
+    toks = core.split()
+
+    # normalize directionals (all tokens)
+    toks = [DIR_CANON.get(t, t) for t in toks]
+
+    # normalize route tokens in body (all tokens)
+    toks = [ROUTE_CANON.get(t, t) for t in toks]
+
+    # suffix canonicalization: only last token
+    if toks:
+        last = toks[-1]
+        if last in SUFFIX_CANON:
+            toks[-1] = SUFFIX_CANON[last]
+
+    return " ".join(toks).strip()
+
+def expand_range(core):
+    m = RE_MULTI_RANGE.match(core or "")
+    if not m:
+        return []
+    a = int(m.group("a")); b = int(m.group("b"))
+    rest = m.group("rest").strip()
+    lo = min(a,b); hi = max(a,b)
+    span = hi - lo
+    if span <= 10:
+        return [f"{n} {rest}" for n in range(lo, hi+1)]
+    return [f"{lo} {rest}", f"{hi} {rest}"]
+
+def addr_variants(addr_norm):
+    """
+    Deterministic-only variants.
+    Institutional rule: keep the ladder small and meaningful.
+    """
+    out=[]
+    seen=set()
+    def add(v, tag):
+        if not v: return
+        if v in seen: return
+        seen.add(v); out.append((v, tag))
+
+    if not addr_norm:
+        return out
+
+    a0 = cleanup_addr_tail(addr_norm)
+
+    core0, des, val, had_unit = extract_unit(a0)
+    core0 = strip_lot(core0)
+    core0 = canonicalize_suffix_and_route(core0)
+    add(core0, "core_canon")
+
+    for v in expand_range(core0):
+        add(canonicalize_suffix_and_route(v), "range_expand")
+
+    for v in mt_mount_variants(core0):
+        add(canonicalize_suffix_and_route(v), "mt_mount")
+
+    for v in st_saint_streetname_variants(core0):
+        add(canonicalize_suffix_and_route(v), "st_saint")
+
+    # minimal combos
+    for v in mt_mount_variants(core0):
+        for vv in st_saint_streetname_variants(v):
+            add(canonicalize_suffix_and_route(vv), "mt_mount+st_saint")
+
+    return out
+
+def load_spine_pointer(spine_current_json):
+    with open(spine_current_json, "r", encoding="utf-8") as f:
+        raw = f.read().strip()
+
+    if raw.lower().endswith(".ndjson") and os.path.exists(raw.strip().strip('"')):
+        return raw.strip().strip('"')
+
+    try:
+        obj = json.loads(raw)
+    except Exception:
+        raise RuntimeError("Could not parse spine CURRENT pointer JSON and it wasn't a direct .ndjson path.")
+
+    found=[]
+    def walk(x):
+        if isinstance(x, dict):
+            for v in x.values(): walk(v)
+        elif isinstance(x, list):
+            for v in x: walk(v)
+        elif isinstance(x, str):
+            s = x.strip().strip('"')
+            if s.lower().endswith(".ndjson"):
+                found.append(s)
+    walk(obj)
+
+    for p in found:
+        if os.path.exists(p):
+            return p
+
+    raise RuntimeError("Could not resolve spine ndjson path from CURRENT pointer JSON.")
+
+def build_spine_indices(spine_ndjson, towns_set):
+    base_index = {}
+    unit_index = {}
+
+    collisions_base = 0
+    collisions_unit = 0
+    rows_seen = 0
+    rows_indexed = 0
+
+    def put(idx, key, pid):
+        nonlocal collisions_base, collisions_unit
+        if key in idx and idx[key] != pid:
+            idx[key] = "__COLLISION__"
+            if idx is base_index:
+                collisions_base += 1
+            else:
+                collisions_unit += 1
+        else:
+            idx[key] = pid
+
+    t0 = time.time()
+    with open(spine_ndjson, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            rows_seen += 1
+            if rows_seen % 250000 == 0:
+                dt = max(1e-6, time.time() - t0)
+                print(f"[spine_index] seen={rows_seen:,} indexed={rows_indexed:,} base_keys={len(base_index):,} unit_keys={len(unit_index):,} dt_s={dt:.1f}")
+
+            try:
+                r = json.loads(line)
+            except Exception:
+                continue
+
+            town = norm_town(r.get("town_norm") or r.get("town") or r.get("municipality") or r.get("city"))
+            if not town or town not in towns_set:
+                continue
+
+            addr_raw = pick_spine_addr_str(r)
+            if not addr_raw:
+                continue
+
+            addr = norm_addr(addr_raw)
+            pid = r.get("property_id")
+            if not addr or not pid:
+                continue
+
+            rows_indexed += 1
+
+            # use SAME canonicalizer path
+            a0 = cleanup_addr_tail(addr)
+            base_addr, des, val, had_unit = extract_unit(a0)
+            base_addr = strip_lot(base_addr)
+            base_addr = canonicalize_suffix_and_route(base_addr)
+            ukey = unit_key_from(des, val)
+
+            # BASE index
+            for av, _tag in addr_variants(base_addr):
+                key = f"{town}|{av}"
+                put(base_index, key, pid)
+
+            # UNIT index
+            if ukey:
+                for av, _tag in addr_variants(base_addr):
+                    keyu = f"{town}|{av}|{ukey}"
+                    put(unit_index, keyu, pid)
+
+    stats = {
+        "spine_rows_seen": rows_seen,
+        "spine_rows_indexed": rows_indexed,
+        "base_keys": len(base_index),
+        "unit_keys": len(unit_index),
+        "collision_events_base": collisions_base,
+        "collision_events_unit": collisions_unit
+    }
+    return base_index, unit_index, stats
+
+def attach_one(town_norm, addr_norm, base_index, unit_index):
+    if not town_norm or not addr_norm:
+        return ("MISSING_TOWN_OR_ADDRESS", None, None, None)
+
+    a0 = cleanup_addr_tail(addr_norm)
+    base_addr, des, val, had_unit = extract_unit(a0)
+    base_addr = strip_lot(base_addr)
+    base_addr = canonicalize_suffix_and_route(base_addr)
+    ukey = unit_key_from(des, val)
+
+    # 1) unit-first
+    if ukey:
+        for av, tag in addr_variants(base_addr):
+            keyu = f"{town_norm}|{av}|{ukey}"
+            if keyu in unit_index:
+                if unit_index[keyu] == "__COLLISION__":
+                    return ("UNKNOWN", None, "collision_unit", keyu)
+                return ("ATTACHED_A", unit_index[keyu], f"unit|{tag}", keyu)
+
+    # 2) base fallback
+    for av, tag in addr_variants(base_addr):
+        key = f"{town_norm}|{av}"
+        if key in base_index:
+            if base_index[key] == "__COLLISION__":
+                return ("UNKNOWN", None, "collision_base", key)
+            return ("ATTACHED_A", base_index[key], f"base|{tag}", key)
+
+    if ukey:
+        return ("UNKNOWN", None, "no_match_unit_then_base", f"{town_norm}|{base_addr}|{ukey}")
+    return ("UNKNOWN", None, "no_match_base", f"{town_norm}|{base_addr}")
+
+def main():
+    ap=argparse.ArgumentParser()
+    ap.add_argument("--events", required=True)
+    ap.add_argument("--spine", required=True)
+    ap.add_argument("--out", required=True)
+    ap.add_argument("--audit", required=True)
+    ap.add_argument("--engine_id", default="events.registry_attach_to_spine_deterministic_v1_5")
+    ap.add_argument("--county", default="")
+    args=ap.parse_args()
+
+    os.makedirs(os.path.dirname(args.out), exist_ok=True)
+    os.makedirs(os.path.dirname(args.audit), exist_ok=True)
+
+    towns=set()
+    with open(args.events, "r", encoding="utf-8") as f:
+        for line in f:
+            line=line.strip()
+            if not line:
+                continue
+            try:
+                ev=json.loads(line)
+            except Exception:
+                continue
+            pr = ev.get("property_ref") or {}
+            t = town_canonical_from_event(pr)
+            if t:
+                towns.add(t)
+
+    spine_ndjson = load_spine_pointer(args.spine)
+    base_index, unit_index, spine_stats = build_spine_indices(spine_ndjson, towns)
+
+    audit = {
+        "run_id": f"{args.engine_id}|{args.county}|{sha256_text(args.events)[:12]}|{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}",
+        "created_at_utc": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00","Z"),
+        "engine_id": args.engine_id,
+        "county": args.county,
+        "events_in": args.events,
+        "spine_pointer": args.spine,
+        "spine_ndjson": spine_ndjson,
+        "towns_used_count": len(towns),
+        "spine_stats": spine_stats,
+        "events_total": 0,
+        "attach_status_counts": {},
+        "method_counts": {},
+    }
+
+    def bump(d,k,n=1):
+        d[k]=d.get(k,0)+n
+
+    with open(args.events, "r", encoding="utf-8") as fin, open(args.out, "w", encoding="utf-8") as fout:
+        for line in fin:
+            line=line.strip()
+            if not line:
+                continue
+            audit["events_total"] += 1
+            ev=json.loads(line)
+
+            pr = ev.get("property_ref") or {}
+            town_norm = town_canonical_from_event(pr)
+            addr_norm = norm_addr(pr.get("address_norm") or pr.get("address_raw"))
+
+            ev.setdefault("attach", {})
+            st,pid,meth,mkey = attach_one(town_norm, addr_norm, base_index, unit_index)
+
+            ev["attach"]["attach_scope"]="SINGLE"
+            ev["attach"]["attach_status"]=st
+            ev["attach"]["property_id"]=pid
+            ev["attach"]["match_method"]=meth
+            ev["attach"]["match_key"]=mkey
+
+            bump(audit["attach_status_counts"], st)
+            bump(audit["method_counts"], meth or "none")
+
+            fout.write(json.dumps(ev, ensure_ascii=False) + "\n")
+
+    with open(args.audit, "w", encoding="utf-8") as f:
+        json.dump(audit, f, indent=2)
+
+    print(json.dumps(audit["attach_status_counts"], indent=2))
+    print("[done] wrote:", args.out)
+    print("[done] audit:", args.audit)
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,371 @@
+﻿import argparse, json, re, os
+from collections import defaultdict, Counter
+
+VERSION = "v1_29"
+SCOPE = "AXIS2_POSTMATCH_V1_29"
+
+SUF = {
+    "LN":"LN","LANE":"LN","LA":"LN",
+    "RD":"RD","ROAD":"RD",
+    "DR":"DR","DRIVE":"DR",
+    "ST":"ST","STREET":"ST",
+    "AVE":"AVE","AV":"AVE","AVENUE":"AVE",
+    "BLVD":"BLVD","BOULEVARD":"BLVD",
+    "CT":"CT","COURT":"CT",
+    "TERR":"TERR","TER":"TERR","TE":"TERR","TERRACE":"TERR",
+    "CIR":"CIR","CIRCLE":"CIR","CI":"CIR",
+    "PKY":"PKY","PARKWAY":"PKY",
+    "PL":"PL","PLACE":"PL",
+    "WAY":"WAY"
+}
+
+UNIT_RE = re.compile(r"\b(?:UNIT|APT|APARTMENT|STE|SUITE|#)\s*([A-Z0-9\-]+)\b", re.I)
+
+def iter_ndjson(path):
+    with open(path, "r", encoding="utf-8") as f:
+        for line in f:
+            line=line.strip()
+            if not line:
+                continue
+            yield json.loads(line)
+
+def w_ndjson(path, rows_iter):
+    with open(path, "w", encoding="utf-8") as f:
+        for r in rows_iter:
+            f.write(json.dumps(r, ensure_ascii=False) + "\n")
+
+def norm(s):
+    if s is None:
+        return ""
+    s = str(s).upper().strip()
+    s = re.sub(r"\s+", " ", s)
+    return s
+
+def norm_street(raw_street: str):
+    """
+    Normalize street text, apply suffix aliasing ONLY to the last token.
+    Returns (street_norm, alias_applied)
+    """
+    toks = norm(raw_street).split()
+    if not toks:
+        return "", False
+    last = toks[-1]
+    alias = False
+    if last in SUF:
+        new_last = SUF[last]
+        if new_last != last:
+            alias = True
+        toks[-1] = new_last
+    return " ".join(toks), alias
+
+def parse_unit(raw_addr: str):
+    raw = norm(raw_addr)
+    m = UNIT_RE.search(raw)
+    if not m:
+        return None
+    u = m.group(1).strip().upper()
+    return u if u else None
+
+def parse_addr(raw_addr: str):
+    raw = norm(raw_addr)
+    if not raw:
+        return None
+    unit = parse_unit(raw)
+
+    # strip trailing unit tokens for street parsing
+    raw_no_unit = re.sub(r"\b(?:UNIT|APT|APARTMENT|STE|SUITE|#)\b.*$", "", raw, flags=re.I).strip()
+
+    # leading number or range
+    m = re.match(r"^(\d+)(?:\s*-\s*(\d+))?\s+(.*)$", raw_no_unit)
+    if not m:
+        return {"street_no": None, "street_no2": None, "is_range": False, "street_raw": raw_no_unit, "unit": unit}
+    a = int(m.group(1))
+    b = m.group(2)
+    rest = m.group(3).strip()
+    return {
+        "street_no": a,
+        "street_no2": int(b) if b else None,
+        "is_range": b is not None,
+        "street_raw": rest,
+        "unit": unit
+    }
+
+def edit_leq1(a: str, b: str) -> int:
+    """
+    Cheap check for <=1 edit (insert/delete/substitute). Returns 0,1,or 2 (meaning >1).
+    """
+    if a == b:
+        return 0
+    la, lb = len(a), len(b)
+    if abs(la - lb) > 1:
+        return 2
+    i = j = 0
+    diff = 0
+    while i < la and j < lb:
+        if a[i] == b[j]:
+            i += 1
+            j += 1
+        else:
+            diff += 1
+            if diff > 1:
+                return 2
+            if la > lb:
+                i += 1
+            elif lb > la:
+                j += 1
+            else:
+                i += 1
+                j += 1
+    if i < la or j < lb:
+        diff += 1
+    return 1 if diff == 1 else 2
+
+def get_town_addr(evt: dict):
+    pr = evt.get("property_ref") or {}
+    town = norm(evt.get("town") or pr.get("town_raw") or pr.get("town_norm") or "")
+    addr  = norm(evt.get("addr") or pr.get("address_raw") or pr.get("address_norm") or "")
+    return town, addr
+
+def is_unknown_nomatch(evt: dict):
+    att = evt.get("attach")
+    if not isinstance(att, dict):
+        return False
+    return att.get("attach_status") == "UNKNOWN" and att.get("match_method") == "no_match"
+
+def set_attach(evt: dict, *, status: str, method: str, property_id: str | None, why: str | None, match_key: str, meta: dict):
+    # canonical nested attach
+    evt["attach"] = {
+        "attach_scope": "SINGLE",
+        "attach_status": status,
+        "property_id": property_id,
+        "match_method": method,
+        "match_key": match_key,
+        "attachments": [{"property_id": property_id}] if property_id else [],
+        "evidence": meta,
+        "why": why
+    }
+    # mirror to top-level for backwards compatibility
+    evt["attach_scope"] = "SINGLE"
+    evt["attach_status"] = status
+    evt["match_method"] = method
+    evt["property_id"] = property_id
+    evt["why"] = why
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--in", dest="inp", required=True)
+    ap.add_argument("--spine", required=True)
+    ap.add_argument("--out", required=True)
+    ap.add_argument("--audit", required=True)
+    args = ap.parse_args()
+
+    # Build spine indexes:
+    # 1) town|street_no|street_norm -> list[property_id] (for exact + range endpoints)
+    # 2) town -> street_no -> list[(street_norm, property_id, unit_norm)]
+    idx_exact = defaultdict(list)
+    idx_by_no = defaultdict(lambda: defaultdict(list))
+
+    def norm_unit(u):
+        if u is None:
+            return None
+        u = norm(u)
+        u = re.sub(r"^(?:UNIT|APT|APARTMENT|STE|SUITE)\s+", "", u)
+        u = u.replace("#", "").strip()
+        return u if u else None
+
+    spine_rows = 0
+    for r in iter_ndjson(args.spine):
+        spine_rows += 1
+        pid = r.get("property_id")
+        town = norm(r.get("town") or r.get("town_norm") or "")
+        if not pid or not town:
+            continue
+        try:
+            sn = int(r.get("street_no"))
+            if sn <= 0:
+                continue
+        except Exception:
+            continue
+        street = r.get("street_name") or r.get("street") or ""
+        street_norm, _ = norm_street(street)
+        if not street_norm:
+            continue
+        unit_norm = norm_unit(r.get("unit"))
+        key = f"{town}|{sn}|{street_norm}"
+        idx_exact[key].append(pid)
+        idx_by_no[town][sn].append((street_norm, pid, unit_norm))
+
+    ctr = Counter()
+    out_rows = []
+
+    for evt in iter_ndjson(args.inp):
+        ctr["rows_in"] += 1
+
+        # Always ensure conflicts are removed: mirror nested->top-level if needed
+        if isinstance(evt.get("attach"), dict):
+            a = evt["attach"]
+            evt["attach_scope"]  = a.get("attach_scope")
+            evt["attach_status"] = a.get("attach_status")
+            evt["match_method"]  = a.get("match_method")
+            evt["property_id"]   = a.get("property_id")
+            evt["why"]           = a.get("why")
+
+        if not is_unknown_nomatch(evt):
+            out_rows.append(evt)
+            ctr["pass_through"] += 1
+            continue
+
+        town, addr = get_town_addr(evt)
+        match_key = f"{town}|{addr}" if town and addr else None
+
+        pa = parse_addr(addr)
+        if not town or not pa:
+            ctr["skip_missing_parse"] += 1
+            out_rows.append(evt)
+            continue
+
+        sn1 = pa["street_no"]
+        sn2 = pa["street_no2"]
+        street_norm, alias_applied = norm_street(pa["street_raw"])
+        unit = pa["unit"]
+
+        meta_base = {
+            "script": os.path.basename(__file__),
+            "version": VERSION,
+            "scope": SCOPE,
+            "town_source": "property_ref.town_raw (preferred) / fallback",
+            "addr_source": "property_ref.address_raw (preferred) / fallback",
+            "suffix_alias_applied": bool(alias_applied),
+            "unit_from_addr": unit,
+        }
+
+        # --- Range endpoint handling (safe) ---
+        if pa["is_range"] and sn1 and sn2 and street_norm:
+            k1 = f"{town}|{sn1}|{street_norm}"
+            k2 = f"{town}|{sn2}|{street_norm}"
+            p1 = idx_exact.get(k1, [])
+            p2 = idx_exact.get(k2, [])
+            # require each endpoint to resolve uniquely
+            if len(p1) == 1 and len(p2) == 1:
+                if p1[0] == p2[0]:
+                    set_attach(evt,
+                        status="ATTACHED_B",
+                        method="axis2_range_endpoints_same_property_exact",
+                        property_id=p1[0],
+                        why=None,
+                        match_key=match_key or "",
+                        meta={**meta_base, "range": f"{sn1}-{sn2}", "street_norm": street_norm}
+                    )
+                    ctr["attach_range_same_pid"] += 1
+                    out_rows.append(evt)
+                    continue
+                else:
+                    # ambiguous: two different parcels => MULTI signal (still not a single attach)
+                    set_attach(evt,
+                        status="PARTIAL_MULTI",
+                        method="axis2_range_endpoints_split_parcels",
+                        property_id=None,
+                        why="range_endpoints_resolve_to_different_parcels",
+                        match_key=match_key or "",
+                        meta={**meta_base, "range": f"{sn1}-{sn2}", "street_norm": street_norm, "p1": p1[0], "p2": p2[0]}
+                    )
+                    ctr["range_split_multi"] += 1
+                    out_rows.append(evt)
+                    continue
+
+            ctr["range_no_unique_endpoint"] += 1
+            # fall through to fuzzy on sn1 only if you want (we will NOT; too risky)
+            out_rows.append(evt)
+            continue
+
+        # --- Fuzzy unique candidate @ same town + same street_no (<=1 edit) ---
+        if sn1 and street_norm:
+            cands = idx_by_no[town].get(sn1, [])
+            if not cands:
+                ctr["no_spine_candidates_same_no"] += 1
+                out_rows.append(evt)
+                continue
+
+            best = []
+            for (s2, pid, u2) in cands:
+                d = edit_leq1(street_norm, s2)
+                if d <= 1:
+                    best.append((d, s2, pid, u2))
+            best.sort(key=lambda x: (x[0], x[1], x[2]))
+
+            if not best:
+                ctr["spine_has_same_no_but_no_close_street"] += 1
+                out_rows.append(evt)
+                continue
+
+            d0 = best[0][0]
+            top = [x for x in best if x[0] == d0]
+
+            # Require unique by (street_norm candidate + pid) effectively.
+            # If multiple hits, only accept if unit disambiguates uniquely.
+            if len(top) == 1:
+                _, cand_street, pid, cand_unit = top[0]
+                set_attach(evt,
+                    status="ATTACHED_B",
+                    method="axis2_street_no_fuzzy_unique_lev1",
+                    property_id=pid,
+                    why=None,
+                    match_key=match_key or "",
+                    meta={**meta_base, "street_norm": street_norm, "candidate": cand_street, "dist": d0, "unit_event": unit, "unit_spine": cand_unit}
+                )
+                ctr["attach_fuzzy_unique"] += 1
+                out_rows.append(evt)
+                continue
+
+            # unit-based disambiguation (strict)
+            if unit:
+                unit_norm = norm(unit).replace("#", "").strip()
+                filtered = [x for x in top if x[3] and norm(x[3]) == unit_norm]
+                if len(filtered) == 1:
+                    _, cand_street, pid, cand_unit = filtered[0]
+                    set_attach(evt,
+                        status="ATTACHED_B",
+                        method="axis2_street_no_fuzzy_unit_disambiguated",
+                        property_id=pid,
+                        why=None,
+                        match_key=match_key or "",
+                        meta={**meta_base, "street_norm": street_norm, "candidate": cand_street, "dist": d0, "unit_event": unit, "unit_spine": cand_unit}
+                    )
+                    ctr["attach_fuzzy_unit_disambig"] += 1
+                    out_rows.append(evt)
+                    continue
+
+            ctr["fuzzy_ambiguous_multi"] += 1
+            out_rows.append(evt)
+            continue
+
+        # no number
+        if pa["street_no"] is None:
+            ctr["no_num"] += 1
+        else:
+            ctr["skip_unhandled"] += 1
+        out_rows.append(evt)
+
+    w_ndjson(args.out, out_rows)
+
+    audit = {
+        "script": os.path.basename(__file__),
+        "version": VERSION,
+        "scope": SCOPE,
+        "in": args.inp,
+        "spine": args.spine,
+        "out": args.out,
+        "spine_rows_scanned": spine_rows,
+        "counts": dict(ctr),
+    }
+    with open(args.audit, "w", encoding="utf-8") as f:
+        json.dump(audit, f, indent=2)
+
+    print("[done] v1_29 postmatch")
+    for k in sorted(ctr.keys()):
+        print(f"  {k}: {ctr[k]}")
+    print("[ok] OUT  ", args.out)
+    print("[ok] AUDIT", args.audit)
+
+if __name__ == "__main__":
+    main()

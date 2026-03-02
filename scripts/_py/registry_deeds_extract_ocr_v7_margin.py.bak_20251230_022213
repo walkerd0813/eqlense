@@ -1,0 +1,318 @@
+﻿#!/usr/bin/env python3
+"""
+registry_deeds_extract_ocr_v7_margin.py (HOTFIX)
+
+Goal: margin-first address extraction for MA registry deeds.
+
+Key fix: avoid pdf2image + poppler dependency.
+We render pages using PyMuPDF (fitz). If missing, install via:
+  pip install pymupdf pillow pytesseract
+
+Behavior:
+- For each PDF, render first N pages (pageLimit) to image at approximate DPI.
+- Primary region: LEFT MARGIN strip (vertical text). Crop ~15% width, rotate 90Â°, OCR.
+- Secondary region: top body band where "PROPERTY ADDRESS:" often appears.
+- Tertiary: full-page light OCR (optional, low-cost: we only do it if margin+top empty).
+
+Outputs NDJSON with:
+  source: {file, sha256}
+  extracted: {property_address_raw, property_address_norm, address_candidates[], flags[]}
+"""
+
+import argparse, hashlib, json, os, re, sys, time
+from datetime import datetime
+
+try:
+    import fitz  # PyMuPDF
+except Exception as e:
+    print("[fatal] Missing dependency PyMuPDF. Install: pip install pymupdf", file=sys.stderr)
+    raise
+
+from PIL import Image
+import pytesseract
+
+def now_iso():
+    return datetime.utcnow().isoformat(timespec="microseconds") + "Z"
+
+def sha256_file(path, chunk=1024*1024):
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        while True:
+            b = f.read(chunk)
+            if not b:
+                break
+            h.update(b)
+    return h.hexdigest()
+
+def norm_ws(s: str) -> str:
+    return re.sub(r"\s+", " ", s or "").strip()
+
+ADDR_RE = re.compile(
+    r"(?P<num>\d{1,6})\s+(?P<street>[A-Z0-9][A-Z0-9\s\.\-']+?)\s*,?\s+"
+    r"(?P<city>[A-Z][A-Z\s\.\-']+?)\s*,?\s*(?P<state>MA|MASSACHUSETTS)\s+(?P<zip>\d{5})(?:-\d{4})?",
+    re.IGNORECASE
+)
+
+CUE_PATTERNS = [
+    ("PROPERTY_ADDRESS", re.compile(r"\bPROPERTY\s+ADDRESS\b", re.IGNORECASE), 12),
+    ("LAND_AT", re.compile(r"\b(the\s+)?land\s+at\b", re.IGNORECASE), 10),
+    ("SITUATED_AT", re.compile(r"\bsituated\s+at\b", re.IGNORECASE), 8),
+    ("LOCATED_AT", re.compile(r"\blocated\s+at\b", re.IGNORECASE), 8),
+    ("BUILDINGS_THEREON", re.compile(r"\bbuildings\s+thereon\b", re.IGNORECASE), 6),
+    ("VACANT_LAND", re.compile(r"\bvacant\s+land\b", re.IGNORECASE), 6),
+]
+
+def score_block(text: str) -> dict:
+    hits = []
+    score = 0
+    for cue, rx, pts in CUE_PATTERNS:
+        if rx.search(text or ""):
+            hits.append({"cue": cue, "pts": pts})
+            score += pts
+    # Address shape bonus
+    if ADDR_RE.search(text or ""):
+        score += 20
+        hits.append({"cue": "ADDR_PATTERN", "pts": 20})
+    return {"score": score, "hits": hits}
+
+def extract_best_address(text: str):
+    if not text:
+        return None
+    m = ADDR_RE.search(text)
+    if not m:
+        return None
+    num = norm_ws(m.group("num"))
+    street = norm_ws(m.group("street")).upper()
+    city = norm_ws(m.group("city")).upper()
+    state = "MA"
+    zipc = m.group("zip")
+    raw = f"{num} {street}, {city}, {state} {zipc}"
+    normed = raw  # already mostly normalized
+    return raw, normed, city, state, zipc
+
+def render_page(doc, page_index: int, dpi: int) -> Image.Image:
+    page = doc.load_page(page_index)
+    # 72 dpi is default; scale to requested dpi
+    zoom = max(1.0, float(dpi) / 72.0)
+    mat = fitz.Matrix(zoom, zoom)
+    pix = page.get_pixmap(matrix=mat, alpha=False)
+    mode = "RGB"
+    img = Image.frombytes(mode, [pix.width, pix.height], pix.samples)
+    return img
+
+def ocr_image(img: Image.Image, config: str, timeout_sec: int) -> str:
+    # pytesseract has a timeout param in recent versions; fallback to manual if not present
+    try:
+        return pytesseract.image_to_string(img, lang="eng", config=config, timeout=timeout_sec) or ""
+    except TypeError:
+        return pytesseract.image_to_string(img, lang="eng", config=config) or ""
+
+def region_margin(img: Image.Image) -> Image.Image:
+    w, h = img.size
+    left_w = int(w * 0.16)  # 16% strip
+    crop = img.crop((0, 0, left_w, h))
+    # rotate so vertical text becomes horizontal
+    rot = crop.rotate(90, expand=True)
+    return rot
+
+def region_top_band(img: Image.Image) -> Image.Image:
+    w, h = img.size
+    top_h = int(h * 0.28)
+    crop = img.crop((0, 0, w, top_h))
+    return crop
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--rawDir", required=True)
+    ap.add_argument("--manifest", required=True)
+    ap.add_argument("--outExtracted", required=True)
+    ap.add_argument("--outAudit", required=True)
+    ap.add_argument("--pageLimit", type=int, default=2)
+    ap.add_argument("--dpi", type=int, default=300)
+    ap.add_argument("--psm", type=int, default=6)
+    ap.add_argument("--oem", type=int, default=1)
+    ap.add_argument("--ocrTimeoutSec", type=int, default=25)
+    ap.add_argument("--resume", action="store_true")
+    args = ap.parse_args()
+
+    os.makedirs(os.path.dirname(args.outExtracted), exist_ok=True)
+    os.makedirs(os.path.dirname(args.outAudit), exist_ok=True)
+
+    with open(args.manifest, "r", encoding="utf-8-sig") as f:
+        manifest = json.load(f)
+
+# --- manifest schema compatibility ---
+# Supported:
+#   - list: [...]
+#   - dict with one of: pdfs/files/documents/items
+entries = None
+if isinstance(manifest, list):
+    entries = manifest
+elif isinstance(manifest, dict):
+    for k in ("pdfs","files","documents","items"):
+        v = manifest.get(k)
+        if isinstance(v, list):
+            entries = v
+            break
+    # last resort: find the first list-valued field
+    if entries is None:
+        for k,v in manifest.items():
+            if isinstance(v, list):
+                entries = v
+                break
+else:
+    entries = None
+
+if not entries:
+    raise SystemExit("[fatal] manifest contained no PDF entries (schema mismatch).")
+
+manifest_entries = entries
+# --- end compatibility ---
+
+    pdf_items = manifest.get("pdfs") or manifest.get("items") or []
+    # tolerate older manifest shapes: list of strings
+    if pdf_items and isinstance(pdf_items[0], str):
+        pdf_items = [{"file": x} for x in pdf_items]
+
+    # resume support: build set of sha256 already processed
+    done_sha = set()
+    if args.resume and os.path.exists(args.outExtracted):
+        with open(args.outExtracted, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    obj = json.loads(line)
+                    sha = ((obj.get("source") or {}).get("sha256") or "")
+                    if sha:
+                        done_sha.add(str(sha).upper())
+                except Exception:
+                    continue
+
+    config = f'--oem {args.oem} --psm {args.psm}'
+    total = len(pdf_items)
+    seen = 0
+    wrote = 0
+    started = time.time()
+
+    out_mode = "a" if (args.resume and os.path.exists(args.outExtracted)) else "w"
+    with open(args.outExtracted, out_mode, encoding="utf-8") as out:
+        for idx, it in enumerate(pdf_items, start=1):
+            rel = it.get("file") or it.get("path")
+            if not rel:
+                continue
+            pdf_path = rel if os.path.isabs(rel) else os.path.join(args.rawDir, rel)
+            if not os.path.exists(pdf_path):
+                continue
+
+            sha = sha256_file(pdf_path)
+            if args.resume and sha.upper() in done_sha:
+                continue
+
+            seen += 1
+            try:
+                doc = fitz.open(pdf_path)
+            except Exception as e:
+                obj = {"source": {"file": os.path.basename(pdf_path), "sha256": sha},
+                       "extracted": {"property_address_raw": None, "property_address_norm": None,
+                                     "address_candidates": [], "flags": ["OPEN_FAIL"]},
+                       "error": str(e),
+                       "created_at": now_iso()}
+                out.write(json.dumps(obj, ensure_ascii=False) + "\n")
+                wrote += 1
+                continue
+
+            candidates = []
+            best_raw = None
+            best_norm = None
+            best_score = -1
+
+            for p in range(min(args.pageLimit, doc.page_count)):
+                img = render_page(doc, p, args.dpi)
+
+                # 1) LEFT MARGIN
+                mimg = region_margin(img)
+                mtxt = norm_ws(ocr_image(mimg, config=config, timeout_sec=args.ocrTimeoutSec))
+                if mtxt:
+                    s = score_block(mtxt)
+                    cand = {"value": mtxt[:6000], "strength": "strong", "region": "left_margin",
+                            "page": p+1, "score": s["score"], "hits": s["hits"]}
+                    candidates.append(cand)
+                    addr = extract_best_address(mtxt.upper())
+                    if addr and s["score"] > best_score:
+                        best_raw, best_norm, city, state, zipc = addr
+                        best_score = s["score"]
+
+                # 2) TOP BAND
+                timg = region_top_band(img)
+                ttxt = norm_ws(ocr_image(timg, config=config, timeout_sec=args.ocrTimeoutSec))
+                if ttxt:
+                    s = score_block(ttxt)
+                    cand = {"value": ttxt[:6000], "strength": "medium", "region": "top_band",
+                            "page": p+1, "score": s["score"], "hits": s["hits"]}
+                    candidates.append(cand)
+                    addr = extract_best_address(ttxt.upper())
+                    if addr and s["score"] > best_score:
+                        best_raw, best_norm, city, state, zipc = addr
+                        best_score = s["score"]
+
+                # 3) fallback: only if we still have nothing
+                if best_raw is None and p == 0:
+                    ftxt = norm_ws(ocr_image(img, config=config, timeout_sec=args.ocrTimeoutSec))
+                    if ftxt:
+                        s = score_block(ftxt)
+                        cand = {"value": ftxt[:6000], "strength": "weak", "region": "full_page",
+                                "page": p+1, "score": s["score"], "hits": s["hits"]}
+                        candidates.append(cand)
+                        addr = extract_best_address(ftxt.upper())
+                        if addr and s["score"] > best_score:
+                            best_raw, best_norm, city, state, zipc = addr
+                            best_score = s["score"]
+
+            flags = []
+            if best_raw is None:
+                flags.append("NO_PROPERTY_ADDRESS")
+
+            obj = {
+                "source": {"file": os.path.basename(pdf_path), "sha256": sha},
+                "extracted": {
+                    "property_address_raw": best_raw,
+                    "property_address_norm": best_norm,
+                    "address_candidates": candidates[:50],
+                    "flags": flags
+                },
+                "created_at": now_iso()
+            }
+            out.write(json.dumps(obj, ensure_ascii=False) + "\n")
+            wrote += 1
+
+            if idx % 200 == 0:
+                print(f"[progress] {idx}/{total}", flush=True)
+
+            doc.close()
+
+    audit = {
+        "created_at": now_iso(),
+        "pdfs_total": total,
+        "pdfs_seen": seen,
+        "rows_written": wrote,
+        "page_limit": args.pageLimit,
+        "dpi": args.dpi,
+        "psm": args.psm,
+        "oem": args.oem,
+        "ocr_timeout_sec": args.ocrTimeoutSec,
+        "resume": bool(args.resume),
+        "elapsed_sec": round(time.time() - started, 3),
+    }
+    with open(args.outAudit, "w", encoding="utf-8") as f:
+        json.dump(audit, f, ensure_ascii=False, indent=2)
+
+    print("[done] wrote:")
+    print(f"  extracted: {args.outExtracted}")
+    print(f"  audit:     {args.outAudit}")
+
+if __name__ == "__main__":
+    main()
+
+

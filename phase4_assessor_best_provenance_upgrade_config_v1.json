@@ -1,7 +1,0 @@
-{
-  "root": "C:\\seller-app\\backend",
-  "properties_current_ptr": "publicData\\properties\\_attached\\phase4_assessor_global\\CURRENT_PROPERTIES_WITH_ASSESSOR_GLOBAL_BEST.json",
-  "out_dir": "publicData\\properties\\_attached\\phase4_assessor_global_best_provenance",
-  "audit_dir": "publicData\\_audit\\phase4_assessor",
-  "properties_in_ndjson": null
-}

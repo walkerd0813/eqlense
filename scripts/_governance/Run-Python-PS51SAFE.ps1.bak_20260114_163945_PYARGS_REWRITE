@@ -1,0 +1,20 @@
+param(
+  [Parameter(Mandatory=$true)][string]$Py,
+  [Parameter(Mandatory=$true)][string]$ScriptPath,
+  [Parameter(ValueFromRemainingArguments=$true)][string[]]$Args
+)
+
+$ErrorActionPreference = "Stop"
+
+$san = "C:\seller-app\backend\scripts\_governance\sanitize_utf8_bom_v1.py"
+if(!(Test-Path $san)){ throw "missing sanitizer: $san" }
+if(!(Test-Path $ScriptPath)){ throw "missing script: $ScriptPath" }
+
+# 1) sanitize BOM on the script being executed
+& $Py $san --paths $ScriptPath | Out-Host
+
+# 2) hard gate: compile check
+& $Py -c ("import py_compile; py_compile.compile(r'"+$ScriptPath+"', doraise=True); print('OK_PY_COMPILE')") | Out-Host
+
+# 3) execute
+& $Py $ScriptPath @Args

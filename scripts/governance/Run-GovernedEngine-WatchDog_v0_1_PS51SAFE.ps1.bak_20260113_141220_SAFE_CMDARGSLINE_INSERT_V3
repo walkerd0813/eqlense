@@ -1,0 +1,128 @@
+param(
+  [Parameter(Mandatory=$true)][string]$Root,
+  [Parameter(Mandatory=$false)][string]$FromScript = "",
+  [Parameter(Mandatory=$false)][string]$EngineId = "",
+  [Parameter(Mandatory=$false)][string]$Zip = "",
+  [Parameter(Mandatory=$false)][string]$AssetBucket = "",
+  [Parameter(Mandatory=$false)][int]$WindowDays = 30,
+  [switch]$Provisional,
+  [switch]$NoPromote,
+  [switch]$FailOnRegistryWarn
+)
+Set-StrictMode -Version Latest
+$ErrorActionPreference = "Stop"
+
+function HasProp($obj,[string]$name){
+  if($null -eq $obj){ return $false }
+  return ($obj.PSObject.Properties.Match($name).Count -gt 0)
+}
+function NormRel([string]$p){
+  if([string]::IsNullOrWhiteSpace($p)){ return "" }
+  $x = $p.Trim()
+  $x = $x.Replace("/","\")
+  if($x.StartsWith(".\")){ $x = $x.Substring(2) }
+  while($x.StartsWith("\")){ $x = $x.Substring(1) }
+  return $x
+}
+function LoadRegistry([string]$Root){
+  $gov = Join-Path $Root "governance\engine_registry\ENGINE_REGISTRY.json"
+  $rootReg = Join-Path $Root "ENGINE_REGISTRY.json"
+  if(Test-Path $gov){ return [pscustomobject]@{ path=$gov; obj=((Get-Content $gov -Raw -Encoding UTF8) | ConvertFrom-Json) } }
+  if(Test-Path $rootReg){ return [pscustomobject]@{ path=$rootReg; obj=((Get-Content $rootReg -Raw -Encoding UTF8) | ConvertFrom-Json) } }
+  throw ("[error] missing ENGINE_REGISTRY.json (expected {0} or {1})" -f $gov, $rootReg)
+}
+function ResolveEngineByScript($reg,[string]$fromScript){
+  $rel = NormRel $fromScript
+  if([string]::IsNullOrWhiteSpace($rel)){ return $null }
+  foreach($e in $reg.engines){
+    if(-not (HasProp $e "runner")){ continue }
+    $r = $e.runner
+    if(HasProp $r "script_relpath" -and (NormRel $r.script_relpath) -eq $rel){ return $e }
+    if(HasProp $r "script_relpath_aliases"){
+      foreach($a in $r.script_relpath_aliases){ if((NormRel $a) -eq $rel){ return $e } }
+    }
+  }
+  return $null
+}
+function ApplyArgsTemplate([string]$tpl,[string]$Root,[string]$Zip,[string]$AssetBucket,[int]$WindowDays){
+  $x = $tpl
+  $x = $x.Replace("{Root}", $Root)
+  $x = $x.Replace("{Zip}", $Zip)
+  $x = $x.Replace("{AssetBucket}", $AssetBucket)
+  $x = $x.Replace("{WindowDays}", [string]$WindowDays)
+  return $x
+}
+
+$start = Join-Path $Root "scripts\governance\Start-GovernanceSession_v0_1_PS51SAFE.ps1"
+$wrap  = Join-Path $Root "scripts\governance\Run-EngineAndPromote_v0_1_PS51SAFE.ps1"
+$hyd   = Join-Path $Root "scripts\governance\Hydrate-GateOutcomesFromRunJournal_v0_1.ps1"
+$probe = Join-Path $Root "scripts\governance\Probe-RegistryCompleteness_v0_1_PS51SAFE.ps1"
+
+if(!(Test-Path $start)){ throw ("[error] missing: {0}" -f $start) }
+if(!(Test-Path $wrap)){ throw ("[error] missing: {0}" -f $wrap) }
+if(!(Test-Path $hyd)){ throw ("[error] missing: {0}" -f $hyd) }
+if(!(Test-Path $probe)){ throw ("[error] missing: {0}" -f $probe) }
+
+Write-Host "============================================================"
+Write-Host "[start] WatchDog Governed Run v0_1"
+Write-Host ("  root: {0}" -f $Root)
+if(-not [string]::IsNullOrWhiteSpace($FromScript)){ Write-Host ("  fromScript: {0}" -f (NormRel $FromScript)) }
+if(-not [string]::IsNullOrWhiteSpace($EngineId)){ Write-Host ("  engineId: {0}" -f $EngineId) }
+Write-Host ("  zip: {0}  assetBucket: {1}  windowDays: {2}" -f $Zip, $AssetBucket, $WindowDays)
+Write-Host ("  provisional: {0}  noPromote: {1}" -f ([bool]$Provisional), ([bool]$NoPromote))
+Write-Host "============================================================"
+
+# 1) Start governance session (env + run journal)
+& $start -Root $Root
+
+# 2) Registry completeness probe (prevents runner strictmode drift)
+if($FailOnRegistryWarn){ & $probe -Root $Root -FailOnWarn } else { & $probe -Root $Root }
+
+# 3) Resolve engine + runner
+$lr = LoadRegistry $Root
+$reg = $lr.obj
+if(-not (HasProp $reg "engines")){ throw ("[error] registry missing .engines: {0}" -f $lr.path) }
+
+$engine = $null
+if(-not [string]::IsNullOrWhiteSpace($EngineId)){
+  foreach($e in $reg.engines){ if($e.engine_id -eq $EngineId){ $engine = $e; break } }
+} elseif(-not [string]::IsNullOrWhiteSpace($FromScript)){
+  $engine = ResolveEngineByScript $reg $FromScript
+}
+if($null -eq $engine){
+  throw "[error] could not resolve engine. Provide -EngineId or -FromScript that exists in registry runner.script_relpath."
+}
+
+$eid = $engine.engine_id
+if(-not (HasProp $engine "runner")){ throw ("[error] engine missing runner contract: {0}" -f $eid) }
+$r = $engine.runner
+if(-not (HasProp $r "cmd")){ throw ("[error] runner missing cmd: {0}" -f $eid) }
+if(-not (HasProp $r "args_template")){ throw ("[error] runner missing args_template: {0}" -f $eid) }
+
+$cmd = [string]$r.cmd
+$argsLine = ApplyArgsTemplate ([string]$r.args_template) $Root $Zip $AssetBucket $WindowDays
+
+# 4) Promote targets (from registry unless NoPromote)
+$promotes = @()
+if(-not $NoPromote){
+  if(HasProp $r "promote_targets"){
+    foreach($t in $r.promote_targets){ if(-not [string]::IsNullOrWhiteSpace($t)){ $promotes += [string]$t } }
+  }
+}
+
+Write-Host ("[go] engine_id: {0}" -f $eid)
+Write-Host ("[go] cmd: {0}" -f $cmd)
+Write-Host ("[go] argsLine: {0}" -f $argsLine)
+if($promotes.Count -gt 0){ Write-Host ("[go] promote_targets: {0}" -f $promotes.Count) } else { Write-Host "[go] promote_targets: 0" }
+
+# 5) Run engine + promote via wrapper (PS5.1 safe named params)
+$call = @("-Root",$Root,"-EngineId",$eid,"-Cmd",$cmd,"-CmdArgsLine",$argsLine)
+if($Provisional){ $call += "-Provisional" }
+if($promotes.Count -gt 0){ $call += @("-PromoteArtifactPaths") + $promotes }
+
+& $wrap @call
+
+# 6) Hydrate gate outcomes immediately (this is the "auto journal")
+& $hyd -Root $Root
+
+Write-Host "[done] watchdog governed run complete (engine + promote + hydrate)"

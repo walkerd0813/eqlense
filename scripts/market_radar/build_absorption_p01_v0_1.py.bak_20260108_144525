@@ -1,0 +1,204 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Market Radar — Absorption P01 (v0_1)
+
+Input: exploded MLS ZIP rollup NDJSON (one row per zip/bucket/window).
+Expected fields include:
+- outputs of explode_mls_rollup_windows_* scripts:
+  zip, asset_bucket, window_days, as_of
+  inventory.mls_active
+  qa.windows.mls_closed_sales
+
+Output: one row per (zip, asset_bucket, window_days):
+- absorption_rate = closed_sales / active_inventory
+- months_of_inventory = active_inventory / (closed_sales per 30 days)
+
+No advice/prediction; observed window metrics only.
+"""
+
+import argparse
+import datetime
+import json
+import os
+import re
+
+ZIP_RE = re.compile(r"^\d{5}$")
+
+def is_valid_zip(z: str) -> bool:
+    if not z or not isinstance(z, str):
+        return False
+    if z == "00000":
+        return False
+    return bool(ZIP_RE.match(z))
+
+def normalize_bucket(b):
+    if b is None:
+        return None
+    s = str(b).strip()
+    if not s:
+        return None
+    u = s.upper()
+    mapping = {
+        "CONDO": "CONDO",
+        "CONDOS": "CONDO",
+        "CONDOMINIUM": "CONDO",
+        "CONDOMINIUMS": "CONDO",
+        "SF": "SF",
+        "SFR": "SF",
+        "SINGLE": "SF",
+        "SINGLE_FAMILY": "SF",
+        "SINGLE FAMILY": "SF",
+        "MF": "MF",
+        "MULTI": "MF",
+        "MULTI_FAMILY": "MF",
+        "MULTI FAMILY": "MF",
+        "2FAM": "MF",
+        "3FAM": "MF",
+        "4FAM": "MF",
+        "LAND": "LAND",
+        "VACANT": "LAND",
+        "VACANT LAND": "LAND",
+    }
+    return mapping.get(u, u)
+
+def ndjson_iter(path):
+    with open(path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            yield json.loads(line)
+
+def sha256_file(path):
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--infile", required=True)
+    ap.add_argument("--out", required=True)
+    ap.add_argument("--audit", required=True)
+    ap.add_argument("--as_of", default=None, help="override as_of_date YYYY-MM-DD")
+    args = ap.parse_args()
+
+    built_at = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
+
+    rows_in = 0
+    rows_written = 0
+    skipped_bad_zip = 0
+    skipped_bad_bucket = 0
+    skipped_bad_window = 0
+    missing_closed_sales = 0
+    missing_inventory = 0
+    key_dupes_seen = 0
+
+    seen = set()
+
+    os.makedirs(os.path.dirname(args.out), exist_ok=True)
+
+    with open(args.out, "w", encoding="utf-8") as out:
+        for r in ndjson_iter(args.infile):
+            rows_in += 1
+
+            z = r.get("zip") or (r.get("geo") or {}).get("zip")
+            if not is_valid_zip(z):
+                skipped_bad_zip += 1
+                continue
+
+            b = normalize_bucket(r.get("asset_bucket") or r.get("property_type"))
+            if not b:
+                skipped_bad_bucket += 1
+                continue
+
+            w = r.get("window_days")
+            if not isinstance(w, int) or w <= 0:
+                skipped_bad_window += 1
+                continue
+
+            key = (z, b, w)
+            if key in seen:
+                key_dupes_seen += 1
+                continue
+            seen.add(key)
+
+            as_of = args.as_of or r.get("as_of") or datetime.date.today().isoformat()
+
+            inv = (r.get("inventory") or {}).get("mls_active")
+            if inv is None:
+                missing_inventory += 1
+                inv = 0
+            try:
+                inv = int(inv)
+            except Exception:
+                inv = 0
+
+            qa = r.get("qa") or {}
+            win = qa.get("windows") or {}
+            closed = win.get("mls_closed_sales")
+            if closed is None:
+                missing_closed_sales += 1
+                closed = 0
+            try:
+                closed = int(closed)
+            except Exception:
+                closed = 0
+
+            absorption_rate = (closed / inv) if inv > 0 else None
+            sales_per_30 = (closed / float(w)) * 30.0 if w > 0 else 0.0
+            months_of_inventory = (inv / sales_per_30) if sales_per_30 > 0 else None
+
+            doc = {
+                "pillar": "ABSORPTION_P01",
+                "version": "v0_1",
+                "layer": "mls",
+                "as_of_date": as_of,
+                "window_days": w,
+                "zip": z,
+                "asset_bucket": b,
+                "metrics": {
+                    "mls_closed_sales": closed,
+                    "mls_active_inventory": inv,
+                    "absorption_rate": (round(absorption_rate, 6) if absorption_rate is not None else None),
+                    "months_of_inventory": (round(months_of_inventory, 6) if months_of_inventory is not None else None),
+                },
+                "qa": {
+                    "windows_key": qa.get("windows_key"),
+                    "built_at_utc": built_at,
+                }
+            }
+            out.write(json.dumps(doc, ensure_ascii=False) + "\n")
+            rows_written += 1
+
+    audit = {
+        "built_at": built_at,
+        "as_of_date": args.as_of,
+        "inputs": {"infile": args.infile},
+        "mls_scan": {
+            "rows_in": rows_in,
+            "rows_written": rows_written,
+            "skipped_bad_zip": skipped_bad_zip,
+            "skipped_bad_bucket": skipped_bad_bucket,
+            "skipped_bad_window": skipped_bad_window,
+            "missing_closed_sales": missing_closed_sales,
+            "missing_inventory": missing_inventory,
+            "key_dupes_seen": key_dupes_seen,
+        },
+        "output": {
+            "out": args.out,
+            "rows_written": rows_written,
+            "sha256": sha256_file(args.out),
+        },
+    }
+
+    os.makedirs(os.path.dirname(args.audit), exist_ok=True)
+    with open(args.audit, "w", encoding="utf-8") as f:
+        json.dump(audit, f, indent=2)
+
+    print("[done] Absorption P01 complete.")
+    print(json.dumps(audit, indent=2))
+
+if __name__ == "__main__":
+    main()

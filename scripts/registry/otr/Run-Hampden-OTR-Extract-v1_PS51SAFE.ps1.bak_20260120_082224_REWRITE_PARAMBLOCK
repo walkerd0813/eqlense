@@ -1,0 +1,52 @@
+﻿param(
+  [Parameter(Mandatory=$true)# --- FIX_PYTHONPATH_V1 ---
+try {
+  if ($Root) { $env:PYTHONPATH = $Root }
+} catch {}
+# --- /FIX_PYTHONPATH_V1 ---
+][string]$Root,
+  [Parameter(Mandatory=$true)][string]$PdfDir
+)
+
+# --- FIX_PYTHONPATH_V2 ---
+try {
+  if ($Root -and (Test-Path $Root)) {
+    $env:PYTHONPATH = $Root
+    Set-Location $Root
+  }
+} catch {}
+# --- /FIX_PYTHONPATH_V2 ---
+$ErrorActionPreference = "Stop"
+
+Write-Host "[run] input dir: $PdfDir"
+Write-Host "[run] root     : $Root"
+
+if (-not (Test-Path $Root))  { throw "Root not found: $Root" }
+if (-not (Test-Path $PdfDir)) { throw "PdfDir not found: $PdfDir" }
+
+$workDir = Join-Path $Root "publicData\registry\hampden\_work\OTR_EXTRACT_ALLDOCS_v1"
+New-Item -ItemType Directory -Force -Path $workDir | Out-Null
+Write-Host "[run] work dir : $workDir"
+
+# Inventory (optional but kept for governance)
+$ts = Get-Date -Format "yyyyMMdd_HHmmss"
+$inv = Join-Path $workDir ("inventory__hampden_otr__{0}.json" -f $ts)
+$audInv = Join-Path $workDir ("otr_inventory__audit__v1__{0}.json" -f $ts)
+
+python -u (Join-Path $Root "scripts\registry\otr\otr_inventory_hampden_v1.py") `
+  --in_dir $PdfDir --out_inventory $inv --out_audit $audInv
+
+Write-Host "[done] inventory: $inv"
+
+# Extract
+$outEvents = Join-Path $workDir ("events__HAMPDEN__OTR__RAW__{0}.ndjson" -f $ts)
+$quar = Join-Path $workDir ("quarantine__HAMPDEN__OTR__RAW__{0}.ndjson" -f $ts)
+$audExt = Join-Path $workDir ("otr_extract__audit__v1__{0}.json" -f $ts)
+
+python -u (Join-Path $Root "scripts\registry\otr\otr_extract_hampden_v1.py") `
+  --in_dir $PdfDir --out_events $outEvents --out_quarantine $quar --out_audit $audExt
+
+Write-Host "[done] events   : $outEvents"
+Write-Host "[done] quar     : $quar"
+Write-Host "[done] audits   : $audInv ; $audExt"
+

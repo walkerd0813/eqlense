@@ -1,0 +1,24 @@
+param(
+  [string]$Root = "C:\seller-app\backend",
+  [Parameter(Mandatory=$true)][string]$PdfDir,
+  [string]$Workdir = "publicData/registry/hampden/_work/OTR_EXTRACT_ALLDOCS_v1"
+)
+$ErrorActionPreference = "Stop"
+if (-not (Test-Path $Root)) { throw "Root not found: $Root" }
+if (-not (Test-Path $PdfDir)) { throw "PdfDir not found: $PdfDir" }
+
+$runTs = (Get-Date).ToString("yyyyMMdd_HHmmss")
+$absWork = Join-Path $Root $Workdir
+New-Item -ItemType Directory -Force -Path $absWork | Out-Null
+
+$inv = Join-Path $absWork ("inventory__hampden_otr__" + $runTs + ".json")
+$out = Join-Path $absWork ("events__HAMPDEN__OTR__RAW__" + $runTs + ".ndjson")
+$audit = Join-Path $absWork ("otr_extract__audit__v1__" + $runTs + ".json")
+
+Write-Host "[run] inventory -> $inv"
+python -u (Join-Path $Root "scripts\registry\otr\otr_inventory_hampden_v1.py") --pdf_dir $PdfDir --out_inventory $inv --out_audit (Join-Path $absWork ("otr_inventory__audit__v1__" + $runTs + ".json"))
+
+Write-Host "[run] extract -> $out"
+python -u (Join-Path $Root "scripts\registry\otr\otr_extract_hampden_v1.py") --inventory $inv --out $out --out_audit $audit
+
+Write-Host "[done] extracted events: $out" -ForegroundColor Green

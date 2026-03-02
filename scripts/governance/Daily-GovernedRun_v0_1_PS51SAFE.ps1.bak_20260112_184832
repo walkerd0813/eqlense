@@ -1,0 +1,67 @@
+param(
+  [Parameter(Mandatory=$true)][string]$Root,
+  [Parameter(Mandatory=$true)][string]$Zip,
+  [Parameter(Mandatory=$true)][string]$AssetBucket,
+  [Parameter(Mandatory=$true)][int]$WindowDays,
+  [switch]$Provisional
+)
+Set-StrictMode -Version Latest
+$ErrorActionPreference = "Stop"
+
+$curPath = Join-Path $Root "governance\engine_registry\CURRENT\CURRENT_ENGINE.json"
+if(!(Test-Path $curPath)){ throw ("[error] missing CURRENT engine pointer: {0} (Set-ActiveEngine first)" -f $curPath) }
+$cur = (Get-Content $curPath -Raw -Encoding UTF8) | ConvertFrom-Json
+$engineId = $cur.engine_id
+
+$regPath = $cur.registry_path
+if([string]::IsNullOrWhiteSpace($regPath) -or !(Test-Path $regPath)){
+  $regPath = Join-Path $Root "governance\engine_registry\ENGINE_REGISTRY.json"
+  if(!(Test-Path $regPath)){ throw ("[error] missing engine registry: {0}" -f $regPath) }
+}
+$reg = (Get-Content $regPath -Raw -Encoding UTF8) | ConvertFrom-Json
+$found = $null
+foreach($e in $reg.engines){ if($e.engine_id -eq $engineId){ $found = $e; break } }
+if($null -eq $found){ throw ("[error] engine_id not found in registry: {0}" -f $engineId) }
+if($null -eq $found.runner){ throw ("[error] missing runner contract for engine: {0}" -f $engineId) }
+
+$cmd = $found.runner.cmd
+$tmpl = $found.runner.args_template
+$promote = @()
+if($found.runner.promote_targets){ $promote = @($found.runner.promote_targets) }
+
+# Fill template tokens (keep it dumb + deterministic)
+$argsLine = $tmpl
+$argsLine = $argsLine -replace "\{Root\}", [regex]::Escape($Root) -replace "\\\\", "\"
+$argsLine = $argsLine -replace "\{Zip\}", $Zip
+$argsLine = $argsLine -replace "\{AssetBucket\}", $AssetBucket
+$argsLine = $argsLine -replace "\{WindowDays\}", ($WindowDays.ToString())
+
+Write-Host "============================================================"
+Write-Host "[start] Daily Governed Run v0_1"
+Write-Host ("  engine_id: {0}" -f $engineId)
+Write-Host ("  zip: {0}  assetBucket: {1}  windowDays: {2}" -f $Zip, $AssetBucket, $WindowDays)
+Write-Host "============================================================"
+Write-Host ""
+
+$start = Join-Path $Root "scripts\governance\Start-GovernanceSession_v0_1_PS51SAFE.ps1"
+$wrap  = Join-Path $Root "scripts\governance\Run-EngineAndPromote_v0_1_PS51SAFE.ps1"
+if(!(Test-Path $start)){ throw ("[error] missing: {0}" -f $start) }
+if(!(Test-Path $wrap)){ throw ("[error] missing: {0}" -f $wrap) }
+
+& $start -Root $Root | Out-Host
+
+$callArgs = @(
+  "-Root",$Root,
+  "-EngineId",$engineId,
+  "-Cmd",$cmd,
+  "-CmdArgsLine",$argsLine
+)
+if($promote.Count -gt 0){
+  $callArgs += @("-PromoteArtifactPaths",$promote)
+}
+if($Provisional){
+  $callArgs += @("-Provisional")
+}
+
+& $wrap @callArgs | Out-Host
+Write-Host "[done] daily governed run complete"

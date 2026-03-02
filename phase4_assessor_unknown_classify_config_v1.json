@@ -1,6 +1,0 @@
-{
-    "root":  "C:\\seller-app\\backend",
-    "phase4_pointer":  "C:\\seller-app\\backend\\publicData\\properties\\_attached\\phase4_assessor_global_best_provenance_taxfy_v6\\CURRENT_PROPERTIES_WITH_ASSESSOR_BEST_TAXFY_PROVENANCE.json",
-    "out_dir":  "publicData\\properties\\_attached\\phase4_assessor_unknown_classify_v1",
-    "audit_out":  "publicData\\_audit\\phase4_assessor\\phase4_assessor_unknown_classify__AUTO__V1.json"
-}

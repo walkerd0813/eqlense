@@ -1,0 +1,455 @@
+﻿import os, re, json, argparse, datetime
+from typing import Dict, Any, List
+import fitz  # PyMuPDF
+from scripts.registry.otr._doc_type_parser_v1 import parse_doc_type_from_record_line
+
+# ----------------------------
+# Helpers
+# ----------------------------
+
+def nowz():
+    return datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
+
+def norm_ws(s: str) -> str:
+    return re.sub(r"\s+", " ", (s or "").strip())
+
+def safe_upper(s: str) -> str:
+    return (s or "").strip().upper()
+
+def parse_money(s: str):
+    if s is None:
+        return None
+    t = (s or "").strip()
+    if not t:
+        return None
+    t = t.replace(",", "")
+    # allow .00, 0.00, 100, 100.00
+    if not re.match(r"^\d+(\.\d{1,2})?$", t):
+        return None
+    try:
+        return float(t)
+    except:
+        return None
+
+def make_event_id(county: str, instrument_number: str, seq: str, doc_type: str, recorded_date: str, book: str, page: str) -> str:
+    # Deterministic, no hashing.
+    # instrument+seq is the core. book/page/date included to reduce collision risk across weird prints.
+    return f"MA|registry|otr|{county}|INST|{instrument_number}|SEQ|{seq}|DT|{doc_type}|RD|{recorded_date}|BP|{book}-{page}"
+
+KNOWN_DOCTYPES = set([
+    # common words
+    "DEED", "MORTGAGE", "ASSIGNMENT", "RELEASE", "DISCHARGE",
+    # your Hampden codes
+    "FTL", "MTL", "DM", "DIS", "MSDD", "ESMT", "FDD", "LP",
+    # sometimes printed
+    "MORT", "ASGN", "REL", "LIEN", "LIENS"
+])
+
+def find_doctype_token(tokens: List[str]):
+    # returns (doctype, index) or (None, None)
+    for i,t in enumerate(tokens):
+        u = safe_upper(t)
+        if u in KNOWN_DOCTYPES:
+            return u, i
+    # also allow 3-5 letter uppercase codes we haven't listed yet (capture raw)
+    for i,t in enumerate(tokens):
+        if re.match(r"^[A-Z]{2,6}$", t.strip()):
+            return t.strip().upper(), i
+    return None, None
+
+# ----------------------------
+# Template A: "RECORDED LAND BY RECORDING DATE" (your huge PDFs)
+# Anchor example:
+# 12-29-2025 11:09:17a  26168  320  62742
+# then sub lines with "1  1  ...  DEED  1.00"
+# then Town/Addr line
+# then party lines
+# ----------------------------
+
+ANCHOR_RE_A = re.compile(
+    r"^(?P<date>\d{2}-\d{2}-\d{4})\s+(?P<time>\d{1,2}:\d{2}:\d{2}[ap])\s+(?P<book>\d+)\s+(?P<page>\d+)\s+(?P<inst>\d+)\b"
+)
+
+TOWN_ADDR_RE = re.compile(r"Town:\s*(?P<town>.+?)\s+Addr:\s*(?P<addr>.+)$", re.I)
+
+def parse_template_a(lines: List[str], pdf_name: str, page_index: int, county: str):
+    events = []
+
+    current = None  # instrument context
+    current_entry = None  # seq entry under instrument
+    mode = None
+
+    def flush_entry():
+        nonlocal current_entry
+        if not current or not current_entry:
+            current_entry = None
+            return
+        # Build event
+        instrument = current.get("instrument_number_raw")
+        seq = str(current_entry.get("seq") or "1")
+        doc_type = current_entry.get("doc_type_raw") or "UNKNOWN"
+        recorded_date = current.get("recording_date_raw") or ""
+        book = current.get("book") or ""
+        page = current.get("page") or ""
+        eid = make_event_id(county, instrument or "UNKNOWN", seq, doc_type, recorded_date, book, page)
+
+        evt = {
+            "schema": {"name": "equitylens.registry_event", "version": "mim_v1_0"},
+            "event_id": eid,
+            "event_type": doc_type,  # raw for now; normalize later
+            "county": county,
+            "registry_system": "otr_pdf_index",
+            "registry_office": "UNKNOWN",
+            "doc_type_code": doc_type,
+            "doc_type_desc": doc_type,
+            "source": {
+                "pdf": pdf_name,
+                "page": page_index + 1,
+                "extracted_at": nowz()
+            },
+            "recording": {
+                "recorded_at_raw": (current.get("recording_date_raw") or "") + " " + (current.get("recording_time_raw") or ""),
+                "recording_date": current.get("recording_date_raw"),
+                "recording_time": current.get("recording_time_raw"),
+                "book": current.get("book"),
+                "page": current.get("page"),
+                "instrument_number_raw": current.get("instrument_number_raw"),
+                "seq": seq
+            },
+            "property_ref": {
+                "town_raw": current_entry.get("town_raw"),
+                "address_raw": current_entry.get("address_raw"),
+                "unit_raw": current_entry.get("unit_raw"),
+                "state": "MA",
+                "zip_raw": None,
+                "legal_desc_raw": current_entry.get("description_raw")
+            },
+            "consideration": {
+                "raw_text": current_entry.get("consideration_raw"),
+                "amount": current_entry.get("consideration_amount"),
+                "parse_status": "PARSED" if current_entry.get("consideration_amount") is not None else "MISSING",
+                "flags": ["ZERO_OR_NOMINAL"] if (current_entry.get("consideration_amount") in (0.0, 1.0, 100.0)) else [],
+                "source": "INDEX"
+            },
+            "parties": [],
+            "parties_raw": current_entry.get("parties_raw", []),
+            "attach": {"status": "UNKNOWN"}
+        }
+        events.append(evt)
+        current_entry = None
+
+    def flush_instrument():
+        nonlocal current, current_entry, mode
+        flush_entry()
+        current = None
+        current_entry = None
+        mode = None
+
+    for ln in lines:
+        ln = ln.rstrip()
+        if not ln.strip():
+            continue
+
+        m = ANCHOR_RE_A.match(ln.strip())
+        if m:
+            # new instrument anchor -> flush previous instrument
+            flush_instrument()
+            current = {
+                "recording_date_raw": m.group("date"),
+                "recording_time_raw": m.group("time"),
+                "book": m.group("book"),
+                "page": m.group("page"),
+                "instrument_number_raw": m.group("inst")
+            }
+            mode = "EXPECT_SUBENTRY"
+            continue
+
+        if not current:
+            continue
+
+        # end-of-day totals -> flush and reset
+        if "RUN TOTALS" in ln.upper() or ("TOTALS" in ln.upper() and "DOCUMENTS" in ln.upper()):
+            flush_instrument()
+            continue
+
+        # Subentry line: starts with "grp seq ..."
+        # Example: "1   1        UNIT 26B                   DEED                         1.00"
+        if mode in ("EXPECT_SUBENTRY", "IN_ENTRY"):
+            s = norm_ws(ln)
+            toks = s.split(" ")
+            if len(toks) >= 3 and toks[0].isdigit() and toks[1].isdigit():
+                # new seq -> flush previous entry within same instrument
+                flush_entry()
+                grp = toks[0]
+                seq = toks[1]
+
+                doctype, di = find_doctype_token(toks[2:])
+                if doctype:
+                    di = di + 2
+                    desc = " ".join(toks[2:di]).strip() or None
+                    tail = toks[di+1:]
+                else:
+                    # fallback: no doctype found, take last token as maybe amount
+                    doctype = "UNKNOWN"
+                    desc = " ".join(toks[2:]).strip() or None
+                    tail = []
+
+                # consideration usually last numeric token
+                cons_raw = None
+                cons_amt = None
+                if tail:
+                    # find last money-looking token
+                    for tk in reversed(tail):
+                        tk2 = tk.strip().replace(",", "")
+                        if re.match(r"^\d+(\.\d{1,2})?$", tk2):
+                            cons_raw = tk.strip()
+                            cons_amt = parse_money(tk2)
+                            break
+
+                # unit may appear in desc or later addr
+                unit_raw = None
+                if desc:
+                    um = re.search(r"\bUNIT\s+([A-Z0-9\-]+)\b", desc, re.I)
+                    if um:
+                        unit_raw = um.group(1)
+
+                current_entry = {
+                    "grp_raw": grp,
+                    "seq": seq,
+                    "description_raw": desc,
+                    "doc_type_raw": doctype,
+                    "consideration_raw": cons_raw,
+                    "consideration_amount": cons_amt,
+                    "town_raw": None,
+                    "address_raw": None,
+                    "unit_raw": unit_raw,
+                    "parties_raw": []
+                }
+                mode = "IN_ENTRY"
+                continue
+
+        # Town/Addr line
+        tm = TOWN_ADDR_RE.search(ln)
+        if tm and current_entry:
+            town = norm_ws(tm.group("town"))
+            addr = norm_ws(tm.group("addr"))
+            current_entry["town_raw"] = town
+            current_entry["address_raw"] = addr
+            # unit from address
+            um = re.search(r"\bUNIT\s+([A-Z0-9\-]+)\b", addr, re.I)
+            if um:
+                current_entry["unit_raw"] = current_entry.get("unit_raw") or um.group(1)
+            mode = "AFTER_TOWN_ADDR"
+            continue
+
+        # Party-ish lines (we keep raw, normalize later)
+        if current_entry and mode in ("AFTER_TOWN_ADDR", "IN_ENTRY"):
+            s = ln.strip()
+            # common patterns include: "1 P LASTNAME FIRSTNAME" or "1 C COMPANY NAME"
+            pm = re.match(r"^\d+\s+[PC]\s+.+$", s)
+            if pm:
+                current_entry["parties_raw"].append(s)
+                continue
+            # also allow long names printed without P/C sometimes (keep if it looks like a name block)
+            if len(s) > 8 and any(ch.isalpha() for ch in s) and not ANCHOR_RE_A.match(s):
+                # avoid header-ish lines
+                if not ("TOWN:" in s.upper() or "ADDR:" in s.upper() or "REQUESTED BY" in s.upper() or "DOC TYPES" in s.upper()):
+                    current_entry["parties_raw"].append(s)
+
+    flush_instrument()
+    return events
+
+# ----------------------------
+# Template B: Existing LANDCOURT-style extractor (minimal)
+# We keep it, but with instrument grouping + consideration capture.
+# ----------------------------
+
+LANDCOURT_ANCHOR_RE = re.compile(r"^\s*(?P<docnum>[\d,]+)\s+(?P<seq>\d+)\s+(?P<doctype>[A-Z]{2,6})\s+(?P<towncode>[A-Z]{2,3})\s+(?P<time>\d{1,2}:\d{2})\b")
+
+def parse_template_b(lines: List[str], pdf_name: str, page_index: int, county: str):
+    events = []
+    current = None
+
+    def flush():
+        nonlocal current
+        if not current:
+            return
+        docnum = (current.get("instrument_number_raw") or "").replace(",", "").strip() or "UNKNOWN"
+        seq = str(current.get("seq") or "1")
+        doctype = current.get("doc_type_raw") or "UNKNOWN"
+        rec_date = current.get("recording_date_raw") or ""
+        book = current.get("book") or ""
+        page = current.get("page") or ""
+        eid = make_event_id(county, docnum, seq, doctype, rec_date, book, page)
+
+        evt = {
+            "schema": {"name": "equitylens.registry_event", "version": "mim_v1_0"},
+            "event_id": eid,
+            "event_type": doctype,
+            "county": county,
+            "registry_system": "otr_pdf_index",
+            "registry_office": "UNKNOWN",
+            "doc_type_code": doctype,
+            "doc_type_desc": doctype,
+            "source": {"pdf": pdf_name, "page": page_index + 1, "extracted_at": nowz()},
+            "recording": {
+                "recorded_at_raw": current.get("recorded_at_raw"),
+                "recording_date": current.get("recording_date_raw"),
+                "recording_time": current.get("recording_time_raw"),
+                "book": current.get("book"),
+                "page": current.get("page"),
+                "instrument_number_raw": current.get("instrument_number_raw"),
+                "seq": seq
+            },
+            "property_ref": {
+                "town_raw": current.get("town_raw"),
+                "address_raw": current.get("address_raw"),
+                "unit_raw": current.get("unit_raw"),
+                "state": "MA",
+                "zip_raw": None,
+                "legal_desc_raw": current.get("description_raw")
+            },
+            "consideration": {
+                "raw_text": current.get("consideration_raw"),
+                "amount": current.get("consideration_amount"),
+                "parse_status": "PARSED" if current.get("consideration_amount") is not None else "MISSING",
+                "flags": ["ZERO_OR_NOMINAL"] if (current.get("consideration_amount") in (0.0, 1.0, 100.0)) else [],
+                "source": "INDEX"
+            },
+            "parties_raw": current.get("parties_raw", []),
+            "parties": [],
+            "attach": {"status": "UNKNOWN"}
+        }
+        events.append(evt)
+        current = None
+
+    # landcourt pages often include "DOCUMENT NUMBER" header; we take what we can
+    for ln in lines:
+        s = norm_ws(ln)
+        if not s:
+            continue
+        m = LANDCOURT_ANCHOR_RE.match(s)
+        if m:
+            flush()
+            current = {
+                "instrument_number_raw": m.group("docnum").replace(",", "").strip(),
+                "seq": m.group("seq"),
+                "doc_type_raw": m.group("doctype"),
+                "town_raw": None,
+                "address_raw": None,
+                "unit_raw": None,
+                "description_raw": None,
+                "consideration_raw": None,
+                "consideration_amount": None,
+                "parties_raw": []
+            }
+            continue
+        if not current:
+            continue
+
+        # address line sometimes contains street + money + .00
+        # keep raw; better parsing later
+        if current.get("address_raw") is None:
+            # try detect a money at end
+            mm = re.match(r"^(?P<addr>.+?)\s+(?P<amt>\d[\d,]*\.\d{2})$", s)
+            if mm:
+                current["address_raw"] = mm.group("addr").strip()
+                current["consideration_raw"] = mm.group("amt").strip()
+                current["consideration_amount"] = parse_money(mm.group("amt").replace(",", ""))
+                # unit in addr
+                um = re.search(r"\bUNIT\s+([A-Z0-9\-]+)\b", current["address_raw"], re.I)
+                if um:
+                    current["unit_raw"] = um.group(1)
+                continue
+
+        # keep party-ish raw lines
+        if "GRANTORS:" in s.upper() or "GRANTEES:" in s.upper():
+            current["parties_raw"].append(s)
+            continue
+        if re.match(r"^\d+\s+[PC]\s+.+$", s):
+            current["parties_raw"].append(s)
+            continue
+
+    flush()
+    return events
+
+# ----------------------------
+# Main extract per PDF
+# ----------------------------
+
+def extract_pdf(pdf_path: str, county: str, out_events, out_quarantine, counters: Dict[str, int]):
+    pdf_name = os.path.basename(pdf_path)
+    doc = fitz.open(pdf_path)
+    counters["pdfs"] += 1
+    counters["pages_total"] += doc.page_count
+
+    for i in range(doc.page_count):
+        try:
+            text = doc[i].get_text("text") or ""
+        except Exception as e:
+            counters["pages_quarantined"] += 1
+            out_quarantine.write(json.dumps({
+                "pdf": pdf_name, "page": i + 1, "error": str(e)
+            }) + "\n")
+            continue
+
+        if not text.strip():
+            continue
+
+        lines = [ln.rstrip("\n") for ln in text.splitlines() if ln.strip()]
+        one = safe_upper(" ".join(lines))
+
+        page_events = []
+        # detect template A
+        if ("DATE/TIME" in one and "INST" in one and "BOOK-PAGE" in one) or ANCHOR_RE_A.match(norm_ws(lines[0] if lines else "")) or any(ANCHOR_RE_A.match(norm_ws(x)) for x in lines[:30]):
+            page_events = parse_template_a(lines, pdf_name, i, county)
+        # detect landcourt template B
+        elif "DOCUMENT NUMBER" in one or any(LANDCOURT_ANCHOR_RE.match(norm_ws(x)) for x in lines[:30]):
+            page_events = parse_template_b(lines, pdf_name, i, county)
+
+        # write events
+        for ev in page_events:
+            out_events.write(json.dumps(ev, ensure_ascii=False) + "\n")
+            counters["events"] += 1
+
+    doc.close()
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--in_dir", required=True)
+    ap.add_argument("--out_events", required=True)
+    ap.add_argument("--out_quarantine", required=True)
+    ap.add_argument("--audit", required=True)
+    ap.add_argument("--county", default="hampden")
+    ap.add_argument("--glob", default="*.pdf")
+    args = ap.parse_args()
+
+    pdfs = []
+    for root, _, files in os.walk(args.in_dir):
+        for fn in files:
+            if fn.lower().endswith(".pdf"):
+                pdfs.append(os.path.join(root, fn))
+    pdfs.sort()
+
+    counters = {"pdfs": 0, "pages_total": 0, "pages_quarantined": 0, "events": 0}
+
+    with open(args.out_events, "w", encoding="utf-8") as out_events, open(args.out_quarantine, "w", encoding="utf-8") as out_quar:
+        for pdf in pdfs:
+            extract_pdf(pdf, args.county, out_events, out_quar, counters)
+
+    audit = {
+        "ok": True,
+        "in_dir": args.in_dir,
+        "pdfs": counters["pdfs"],
+        "pages_total": counters["pages_total"],
+        "events": counters["events"],
+        "pages_quarantined": counters["pages_quarantined"],
+        "extracted_at": nowz()
+    }
+    with open(args.audit, "w", encoding="utf-8") as f:
+        json.dump(audit, f, indent=2)
+
+    print(json.dumps(audit))
+
+if __name__ == "__main__":
+    main()
