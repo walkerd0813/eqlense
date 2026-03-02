@@ -1,30 +1,35 @@
 # =========================
-# Equity Lens — Hampden scope
+# Equity Lens — Hampden ingestion scope
 # =========================
 
-# Never commit work roots / outputs
+# --- Never commit pipeline runtime/output ---
 publicData/registry/hampden/_work/
-publicData/registry/hampden/incoming/
 publicData/registry/hampden/**/_work/
+publicData/registry/hampden/incoming/
 publicData/registry/hampden/**/incoming/
 
-# Never commit PDFs / big artifacts
+# --- Never commit big artifacts ---
 **/*.pdf
 **/*.zip
 
-# Never commit env/secrets
+# --- Never commit secrets / env ---
 .env
 .env.*
 **/.env
 **/.env.*
 mls/.env.mls
 
-# Standard noise
+# --- Standard noise ---
 node_modules/
 __pycache__/
 *.pyc
 .vscode/
+.idea/
 _tmp/
 **/_tmp/
 logs/
 **/logs/
+cache/
+**/cache/
+Thumbs.db
+.DS_Store
