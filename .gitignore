@@ -1,11 +1,79 @@
-node_modules
-# Keep environment variables out of version control
+# --------------------
+# OS / Editor
+# --------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# --------------------
+# Secrets / env
+# --------------------
 .env
+.env.*
+**/.env
+**/.env.*
+mls/.env.mls
 
-/generated/prisma
+# --------------------
+# Node / JS
+# --------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# Generated / large data artifacts
-publicData/addresses/
-publicData/registry/**/_work/
-publicData/registry/**/incoming/
-**/*.ndjson
+# --------------------
+# Python
+# --------------------
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# --------------------
+# Logs / temp / caches
+# --------------------
+logs/
+**/logs/
+_tmp/
+**/_tmp/
+cache/
+**/cache/
+
+# --------------------
+# Uploads / runtime data (usually not committed)
+# --------------------
+uploads/
+**/uploads/
+
+# --------------------
+# Generated data + pipeline outputs (do not commit)
+# --------------------
+publicData/
+mls/downloads/
+mls/enriched/
+mls/indexes/
+mls/logs/
+mls/manual_inbox/
+comps_geocoded/
+
+# Ignore NDJSON only in data/output areas
+publicData/**/*.ndjson
+mls/**/*.ndjson
+_tmp/**/*.ndjson
+
+# --------------------
+# Archives / packs
+# --------------------
+*.zip
+
+# --------------------
+# Backup files
+# --------------------
+*.bak
+*.bak_*
+*.BAK_*
+*~
