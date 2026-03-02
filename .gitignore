@@ -33,3 +33,32 @@ cache/
 **/cache/
 Thumbs.db
 .DS_Store
+
+# --------------------
+# Focus mode: ignore non-ingestion roots for now
+# (keeps repo quiet while we work on Hampden ingestion)
+# --------------------
+publicData/
+rawData/
+uploads/
+tools/
+valuation/
+zoning/
+prisma/
+schemas/
+routes/
+config/
+analytics/
+cache/
+comps_geocoded/
+mls/downloads/
+mls/enriched/
+mls/indexes/
+mls/logs/
+mls/manual_inbox/
+
+# Ignore local backups + scratch
+*.bak_*
+*.BAK_*
+*.bak
+server.js.bak_*
