@@ -62,3 +62,9 @@ mls/manual_inbox/
 *.BAK_*
 *.bak
 server.js.bak_*
+
+# Ignore root-level phase4 configs during ingestion focus
+phase4_*.json
+testValuation.js
+zoningDebugger.js
+zoningTest.js
