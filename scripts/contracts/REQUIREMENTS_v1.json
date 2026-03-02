@@ -1,0 +1,33 @@
+{
+  "schema": "equity_lens.requirements.v1",
+  "generated_at": "2026-01-11T16:28:20Z",
+  "requirements": [
+    {
+      "req_id": "REQ-OPS-0601",
+      "title": "CURRENT pointers are the only canonical inputs downstream",
+      "status": "LOCKED",
+      "severity": "HARD",
+      "gates": [
+        "RUN_ANY_ENGINE",
+        "PROMOTE_CURRENT_*",
+        "FREEZE_ANY_DATASET"
+      ],
+      "acceptance_tests": [],
+      "proof": [],
+      "notes": "Hard gate = missing CURRENT pointers blocks. Soft gate = missing optional inputs warns."
+    },
+    {
+      "req_id": "REQ-RADAR-0301",
+      "title": "Three Market Radars stay strictly separated (RES_1_4, MF_5_PLUS, LAND)",
+      "status": "LOCKED",
+      "severity": "HARD",
+      "gates": [
+        "RUN_MARKET_RADAR_ALL",
+        "FREEZE_MARKET_RADAR"
+      ],
+      "acceptance_tests": [],
+      "proof": [],
+      "notes": "Policy enforced in gatekeeper: no mixed engine_id / outputs."
+    }
+  ]
+}

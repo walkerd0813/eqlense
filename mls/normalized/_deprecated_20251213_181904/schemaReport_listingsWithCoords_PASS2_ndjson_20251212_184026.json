@@ -1,0 +1,521 @@
+{
+  "input": "C:\\seller-app\\backend\\mls\\normalized\\listingsWithCoords_PASS2.ndjson",
+  "scannedLines": 200000,
+  "parsedRows": 200000,
+  "badJsonLines": 0,
+  "sampleEvery": 1,
+  "topLevelKeys": [
+    "address",
+    "brokerage",
+    "coordSource",
+    "dates",
+    "ingestedAt",
+    "latitude",
+    "listingId",
+    "longitude",
+    "physical",
+    "pricing",
+    "propertyType",
+    "raw",
+    "schemaVersion",
+    "source",
+    "sourceFile",
+    "status",
+    "statusDate"
+  ],
+  "requiredCoverage": [
+    {
+      "key": "listingId",
+      "present": 200000,
+      "pct": 100
+    },
+    {
+      "key": "source",
+      "present": 200000,
+      "pct": 100
+    },
+    {
+      "key": "schemaVersion",
+      "present": 200000,
+      "pct": 100
+    },
+    {
+      "key": "propertyType",
+      "present": 200000,
+      "pct": 100
+    },
+    {
+      "key": "status",
+      "present": 200000,
+      "pct": 100
+    },
+    {
+      "key": "dates.listDate",
+      "present": 200000,
+      "pct": 100
+    },
+    {
+      "key": "address.streetNumber",
+      "present": 200000,
+      "pct": 100
+    },
+    {
+      "key": "address.streetName",
+      "present": 200000,
+      "pct": 100
+    },
+    {
+      "key": "address.city",
+      "present": 200000,
+      "pct": 100
+    },
+    {
+      "key": "address.state",
+      "present": 200000,
+      "pct": 100
+    },
+    {
+      "key": "address.zip",
+      "present": 200000,
+      "pct": 100
+    },
+    {
+      "key": "pricing.listPrice",
+      "present": 200000,
+      "pct": 100
+    },
+    {
+      "key": "physical.sqft",
+      "present": 189799,
+      "pct": 94.9
+    },
+    {
+      "key": "brokerage.listOffice",
+      "present": 200000,
+      "pct": 100
+    },
+    {
+      "key": "brokerage.listAgent",
+      "present": 200000,
+      "pct": 100
+    },
+    {
+      "key": "latitude",
+      "present": 200000,
+      "pct": 100
+    },
+    {
+      "key": "longitude",
+      "present": 200000,
+      "pct": 100
+    }
+  ],
+  "keysByCoverage": [
+    {
+      "key": "listingId",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "string": 200000
+      }
+    },
+    {
+      "key": "source",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "string": 200000
+      }
+    },
+    {
+      "key": "sourceFile",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "null": 200000
+      }
+    },
+    {
+      "key": "ingestedAt",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "string": 200000
+      }
+    },
+    {
+      "key": "schemaVersion",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "string": 200000
+      }
+    },
+    {
+      "key": "propertyType",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "string": 200000
+      }
+    },
+    {
+      "key": "status",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "string": 200000
+      }
+    },
+    {
+      "key": "statusDate",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "string": 200000
+      }
+    },
+    {
+      "key": "address.streetNumber",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "string": 200000
+      }
+    },
+    {
+      "key": "address.streetName",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "string": 200000
+      }
+    },
+    {
+      "key": "address.unit",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "null": 200000
+      }
+    },
+    {
+      "key": "address.city",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "string": 200000
+      }
+    },
+    {
+      "key": "address.state",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "string": 200000
+      }
+    },
+    {
+      "key": "address.zip",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "string": 200000
+      }
+    },
+    {
+      "key": "address.zip4",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "null": 147148,
+        "string": 52852
+      }
+    },
+    {
+      "key": "address.county",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "string": 200000
+      }
+    },
+    {
+      "key": "physical.beds",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "number": 189791,
+        "null": 10209
+      }
+    },
+    {
+      "key": "physical.fullBaths",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "null": 200000
+      }
+    },
+    {
+      "key": "physical.halfBaths",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "number": 189791,
+        "null": 10209
+      }
+    },
+    {
+      "key": "physical.totalBaths",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "number": 189791,
+        "null": 10209
+      }
+    },
+    {
+      "key": "physical.sqft",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "number": 189799,
+        "null": 10201
+      }
+    },
+    {
+      "key": "physical.lotSizeSqft",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "number": 114790,
+        "null": 85210
+      }
+    },
+    {
+      "key": "physical.acres",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "null": 200000
+      }
+    },
+    {
+      "key": "physical.yearBuilt",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "number": 189808,
+        "null": 10192
+      }
+    },
+    {
+      "key": "physical.units",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "null": 200000
+      }
+    },
+    {
+      "key": "physical.parkingSpaces",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "number": 200000
+      }
+    },
+    {
+      "key": "physical.garageSpaces",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "number": 147311,
+        "null": 52689
+      }
+    },
+    {
+      "key": "pricing.listPrice",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "number": 200000
+      }
+    },
+    {
+      "key": "pricing.salePrice",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "null": 85527,
+        "number": 114473
+      }
+    },
+    {
+      "key": "pricing.pricePerSqft",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "number": 189636,
+        "null": 10364
+      }
+    },
+    {
+      "key": "pricing.taxes",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "number": 200000
+      }
+    },
+    {
+      "key": "pricing.taxYear",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "number": 199999,
+        "null": 1
+      }
+    },
+    {
+      "key": "pricing.assessments.land",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "null": 200000
+      }
+    },
+    {
+      "key": "pricing.assessments.building",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "null": 200000
+      }
+    },
+    {
+      "key": "pricing.assessments.total",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "null": 200000
+      }
+    },
+    {
+      "key": "pricing.assessmentsMisc",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "number": 200000
+      }
+    },
+    {
+      "key": "dates.listDate",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "string": 200000
+      }
+    },
+    {
+      "key": "dates.contractDate",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "null": 75133,
+        "string": 124867
+      }
+    },
+    {
+      "key": "dates.saleDate",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "null": 85527,
+        "string": 114473
+      }
+    },
+    {
+      "key": "dates.offMarketDate",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "null": 14200,
+        "string": 185800
+      }
+    },
+    {
+      "key": "dates.daysOnMarket",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "number": 199829,
+        "null": 171
+      }
+    },
+    {
+      "key": "brokerage.listOffice",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "string": 200000
+      }
+    },
+    {
+      "key": "brokerage.listAgent",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "string": 200000
+      }
+    },
+    {
+      "key": "brokerage.saleOffice",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "null": 85524,
+        "string": 114476
+      }
+    },
+    {
+      "key": "brokerage.saleAgent",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "null": 85527,
+        "string": 114473
+      }
+    },
+    {
+      "key": "latitude",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "number": 200000
+      }
+    },
+    {
+      "key": "longitude",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "number": 200000
+      }
+    },
+    {
+      "key": "coordSource",
+      "present": 200000,
+      "pct": 100,
+      "types": {
+        "string": 200000
+      }
+    }
+  ],
+  "notes": {
+    "requiredList": "Edit REQUIRED[] in this script to match your canonical contract for MarketRadar/Competitor/Zoning.",
+    "rawRowIncluded": false,
+    "depthLimit": 4
+  }
+}

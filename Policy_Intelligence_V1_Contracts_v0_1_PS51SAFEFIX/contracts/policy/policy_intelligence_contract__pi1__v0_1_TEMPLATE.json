@@ -1,0 +1,126 @@
+{
+  "schema": "equity_lens.contracts.policy_intelligence.pi1.v0_1",
+  "as_of_date": "2026-01-10",
+  "purpose": "Policy Intelligence as hypothesis generator + validation harness. Policies never directly change Market Radar scores.",
+  "non_negotiables": [
+    "Policy never changes Market Radar scores directly",
+    "Validation defaults to INCONCLUSIVE / DATA_INSUFFICIENT",
+    "Only CONFIRMED policies may surface outward badges (and still no score changes)",
+    "Every policy must define geos + lead/lag + observable signals; otherwise DATA_INSUFFICIENT",
+    "All artifacts are versioned: as_of_date + dataset_version + dataset_hash",
+    "All outputs are track-aware (RES_1_4, MF_5_PLUS, LAND) but may be UNKNOWN if not supported"
+  ],
+  "controlled_vocab": {
+    "policy_type": [
+      "zoning_reform",
+      "tax_credit",
+      "permit_streamline",
+      "density_bonus",
+      "parking_reform",
+      "tenant_law",
+      "infrastructure",
+      "funding_program",
+      "finance_program",
+      "code_change"
+    ],
+    "status": [
+      "proposed",
+      "passed",
+      "signed",
+      "effective",
+      "repealed"
+    ],
+    "target_assets": [
+      "sfh",
+      "condo",
+      "2_4",
+      "5plus",
+      "mixed",
+      "commercial",
+      "land"
+    ],
+    "mechanism_code": [
+      "unit_optionalities_up",
+      "approval_friction_down",
+      "parking_cost_down",
+      "capex_incentive_up",
+      "land_utilization_up",
+      "conversion_optionalities_up",
+      "transit_bonus_up",
+      "financing_access_up"
+    ],
+    "direction": [
+      "up",
+      "down",
+      "flat",
+      "unknown"
+    ],
+    "validation_status": [
+      "confirmed",
+      "inconclusive",
+      "contradicted",
+      "insufficient"
+    ]
+  },
+  "schemas": {
+    "policy_events": {
+      "required": [
+        "policy_id",
+        "state",
+        "level",
+        "jurisdiction_name",
+        "policy_type",
+        "title",
+        "source_url",
+        "source_org",
+        "status",
+        "passed_date",
+        "effective_date",
+        "summary_1liner"
+      ],
+      "optional": [
+        "target_geos",
+        "target_assets",
+        "target_mechanisms",
+        "repealed_date",
+        "notes_internal"
+      ]
+    },
+    "policy_mechanisms": {
+      "required": [
+        "policy_id",
+        "mechanism_code",
+        "mechanism_strength"
+      ],
+      "optional": [
+        "notes_internal"
+      ]
+    },
+    "policy_expectations": {
+      "required": [
+        "policy_id",
+        "expected_signals"
+      ],
+      "expected_signal_required": [
+        "signal_key",
+        "direction",
+        "lead_lag_days",
+        "confidence_goal",
+        "baseline_window_days",
+        "validation_window_days",
+        "geo_granularity"
+      ]
+    },
+    "policy_validation_runs": {
+      "required": [
+        "policy_id",
+        "run_date",
+        "status",
+        "metrics_snapshot"
+      ],
+      "optional": [
+        "notes_internal"
+      ]
+    }
+  }
+}

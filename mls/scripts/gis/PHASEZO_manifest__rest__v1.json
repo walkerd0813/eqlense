@@ -1,0 +1,131 @@
+{
+  "schema_version": "PHASEZO_MANIFEST_V1",
+  "phase": "ZO_MUNICIPAL_OVERLAYS",
+  "notes": "Municipal zoning overlays/subdistricts for additional cities beyond BOS/CAM/SOM/CHE. Non-zoning or env-duplicate layers intentionally excluded.",
+  "cities": [
+    {
+      "city": "brookline",
+      "label": "Brookline",
+      "overlays": [
+        {
+          "layer_key": "brookline_zoning_overlay",
+          "rel_path": "publicData/zoning/brookline/overlays/Zoning_Overlay.geojson",
+          "notes": "municipal zoning overlays (bundle)"
+        }
+      ]
+    },
+    {
+      "city": "newton",
+      "label": "Newton",
+      "overlays": [
+        {
+          "layer_key": "newton_village_center_overlay_districts",
+          "rel_path": "publicData/zoning/newton/overlays/zoning_overlay__zoning_village_center_overlay_districts__23.geojson",
+          "notes": "municipal zoning overlay (village center)"
+        }
+      ]
+    },
+    {
+      "city": "quincy",
+      "label": "Quincy",
+      "overlays": [
+        {
+          "layer_key": "quincy_special_district_quincy_center_historic",
+          "rel_path": "publicData/zoning/quincy/overlays/zoning_overlay__quincy__gdb___misc__quincy__gdb__ExportFeatures_OutFeatures_Special_District_Quincy_Center_Historic_District.geojson",
+          "notes": "special zoning district (historic)"
+        },
+        {
+          "layer_key": "quincy_special_district_centre_st_tod",
+          "rel_path": "publicData/zoning/quincy/overlays/zoning_overlay__quincy__gdb___misc__quincy__gdb__ExportFeatures_OutFeatures_Special_District_Centre_Street_Transit_Oriented_District.geojson",
+          "notes": "special zoning district (TOD)"
+        },
+        {
+          "layer_key": "quincy_special_district_adams_birthplace_historic",
+          "rel_path": "publicData/zoning/quincy/overlays/zoning_overlay__quincy__gdb___misc__quincy__gdb__ExportFeatures_OutFeatures_Special_District_Adams_Birthplace_Historic_District.geojson",
+          "notes": "special zoning district (historic)"
+        },
+        {
+          "layer_key": "quincy_mbta_multifamily_overlay_west_quincy",
+          "rel_path": "publicData/zoning/quincy/overlays/overlays__quincy__gdb__ExportFeatures_OutFeatures_MBTA_Community_Multi_Family_Overlay_District_West_Quincy_Zoning_District.geojson",
+          "notes": "MBTA Communities / multifamily overlay"
+        },
+        {
+          "layer_key": "quincy_floodplain_overlay",
+          "rel_path": "publicData/zoning/quincy/overlays/overlays__quincy__gdb__ExportFeatures_OutFeatures_Special_District_Floodplain_Overlay_District.geojson",
+          "notes": "env-duplicate risk (flood). keep as municipal overlay but do NOT treat as canonical flood hazard."
+        }
+      ]
+    },
+    {
+      "city": "revere",
+      "label": "Revere",
+      "overlays": [
+        {
+          "layer_key": "revere_zoning_overlay_zones",
+          "rel_path": "publicData/zoning/revere/overlays/zoning_overlay__revere_zoning_overlay_zones__29.geojson",
+          "notes": "municipal zoning overlay"
+        }
+      ]
+    },
+    {
+      "city": "springfield",
+      "label": "Springfield",
+      "overlays": [
+        {
+          "layer_key": "springfield_zoning_overlay",
+          "rel_path": "publicData/zoning/springfield/overlays/zoning_overlay__springfield__webgisdynamicmap__30.geojson",
+          "notes": "municipal zoning overlay"
+        }
+      ]
+    },
+    {
+      "city": "waltham",
+      "label": "Waltham",
+      "overlays": [
+        {
+          "layer_key": "waltham_riverfront_overlay",
+          "rel_path": "publicData/zoning/waltham/overlays/zoning_overlay__riverfrontoverlay__14.geojson",
+          "notes": "municipal zoning overlay (riverfront) \u2014 may overlap state riverfront; treat as zoning overlay, not canonical env"
+        }
+      ]
+    },
+    {
+      "city": "wareham",
+      "label": "Wareham",
+      "overlays": [
+        {
+          "layer_key": "wareham_overlay_districts",
+          "rel_path": "publicData/zoning/wareham/overlays/Overlay_Districts.geojson",
+          "notes": "municipal zoning overlays"
+        },
+        {
+          "layer_key": "wareham_gcod_overlay",
+          "rel_path": "publicData/zoning/wareham/overlays/Zoning_Groundwater_Conservation_Overlay_District_(GCOD).geojson",
+          "notes": "municipal zoning overlay (groundwater)"
+        }
+      ]
+    },
+    {
+      "city": "west_springfield",
+      "label": "West Springfield",
+      "overlays": [
+        {
+          "layer_key": "west_springfield_zoning_overlay",
+          "rel_path": "publicData/zoning/west_springfield/overlays/zoning_overlay__west_springfield__msrvcstgeneraluseparcelbasemap__38.geojson",
+          "notes": "municipal zoning overlay"
+        }
+      ]
+    },
+    {
+      "city": "worcester",
+      "label": "Worcester",
+      "overlays": [
+        {
+          "layer_key": "worcester_zoning_overlays",
+          "rel_path": "publicData/zoning/worcester/overlays/Zoning_Overlays.geojson",
+          "notes": "municipal zoning overlays (bundle)"
+        }
+      ]
+    }
+  ]
+}

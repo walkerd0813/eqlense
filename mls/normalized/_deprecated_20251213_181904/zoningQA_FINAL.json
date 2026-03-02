@@ -1,0 +1,3470 @@
+{
+  "generatedAt": "2025-12-13T21:51:58.479Z",
+  "inputs": {
+    "okAbs": "C:\\seller-app\\backend\\mls\\normalized\\listingsWithZoning_FINAL.ndjson",
+    "badAbs": "C:\\seller-app\\backend\\mls\\normalized\\listingsWithZoning_FINAL_unmatched.ndjson",
+    "boundariesAbs": "C:\\seller-app\\backend\\publicData\\zoning\\zoningBoundariesData.geojson"
+  },
+  "totals": {
+    "total": 428739,
+    "matched": 22604,
+    "unmatched": 406135,
+    "badJson": 0,
+    "pctMatched": 5.27
+  },
+  "zoningBoundaries": {
+    "featureCount": 7389,
+    "townCount": 1,
+    "towns": [
+      {
+        "town": "UNKNOWN",
+        "zoningFeatures": 7389,
+        "listingsTotal": 0,
+        "listingsMatched": 0,
+        "pctMatched": 0
+      }
+    ]
+  },
+  "coverageByCity": [
+    {
+      "city": "BOSTON",
+      "total": 39982,
+      "matched": 21258,
+      "unmatched": 18724,
+      "pctMatched": 53.17
+    },
+    {
+      "city": "WAREHAM",
+      "total": 2116,
+      "matched": 919,
+      "unmatched": 1197,
+      "pctMatched": 43.43
+    },
+    {
+      "city": "NASHUA",
+      "total": 172,
+      "matched": 21,
+      "unmatched": 151,
+      "pctMatched": 12.21
+    },
+    {
+      "city": "PROVIDENCE",
+      "total": 111,
+      "matched": 18,
+      "unmatched": 93,
+      "pctMatched": 16.22
+    },
+    {
+      "city": "WORCESTER",
+      "total": 9998,
+      "matched": 16,
+      "unmatched": 9982,
+      "pctMatched": 0.16
+    },
+    {
+      "city": "WALTHAM",
+      "total": 2967,
+      "matched": 14,
+      "unmatched": 2953,
+      "pctMatched": 0.47
+    },
+    {
+      "city": "SPRINGFIELD",
+      "total": 9448,
+      "matched": 13,
+      "unmatched": 9435,
+      "pctMatched": 0.14
+    },
+    {
+      "city": "HUDSON",
+      "total": 1512,
+      "matched": 12,
+      "unmatched": 1500,
+      "pctMatched": 0.79
+    },
+    {
+      "city": "BROOKLINE",
+      "total": 4040,
+      "matched": 11,
+      "unmatched": 4029,
+      "pctMatched": 0.27
+    },
+    {
+      "city": "NEWTON",
+      "total": 6609,
+      "matched": 11,
+      "unmatched": 6598,
+      "pctMatched": 0.17
+    },
+    {
+      "city": "PAWTUCKET",
+      "total": 118,
+      "matched": 11,
+      "unmatched": 107,
+      "pctMatched": 9.32
+    },
+    {
+      "city": "SOMERVILLE",
+      "total": 4758,
+      "matched": 10,
+      "unmatched": 4748,
+      "pctMatched": 0.21
+    },
+    {
+      "city": "STURBRIDGE",
+      "total": 917,
+      "matched": 8,
+      "unmatched": 909,
+      "pctMatched": 0.87
+    },
+    {
+      "city": "TAUNTON",
+      "total": 3915,
+      "matched": 7,
+      "unmatched": 3908,
+      "pctMatched": 0.18
+    },
+    {
+      "city": "CHICOPEE",
+      "total": 2998,
+      "matched": 7,
+      "unmatched": 2991,
+      "pctMatched": 0.23
+    },
+    {
+      "city": "BELCHERTOWN",
+      "total": 1001,
+      "matched": 6,
+      "unmatched": 995,
+      "pctMatched": 0.6
+    },
+    {
+      "city": "FALL RIVER",
+      "total": 4360,
+      "matched": 6,
+      "unmatched": 4354,
+      "pctMatched": 0.14
+    },
+    {
+      "city": "SCITUATE",
+      "total": 1758,
+      "matched": 6,
+      "unmatched": 1752,
+      "pctMatched": 0.34
+    },
+    {
+      "city": "GRANBY",
+      "total": 436,
+      "matched": 6,
+      "unmatched": 430,
+      "pctMatched": 1.38
+    },
+    {
+      "city": "FITCHBURG",
+      "total": 3408,
+      "matched": 5,
+      "unmatched": 3403,
+      "pctMatched": 0.15
+    },
+    {
+      "city": "MEDFORD",
+      "total": 3595,
+      "matched": 5,
+      "unmatched": 3590,
+      "pctMatched": 0.14
+    },
+    {
+      "city": "MANCHESTER",
+      "total": 437,
+      "matched": 5,
+      "unmatched": 432,
+      "pctMatched": 1.14
+    },
+    {
+      "city": "CAMBRIDGE",
+      "total": 5021,
+      "matched": 5,
+      "unmatched": 5016,
+      "pctMatched": 0.1
+    },
+    {
+      "city": "ARLINGTON",
+      "total": 2933,
+      "matched": 5,
+      "unmatched": 2928,
+      "pctMatched": 0.17
+    },
+    {
+      "city": "QUINCY",
+      "total": 5349,
+      "matched": 5,
+      "unmatched": 5344,
+      "pctMatched": 0.09
+    },
+    {
+      "city": "MIDDLEBORO",
+      "total": 1586,
+      "matched": 5,
+      "unmatched": 1581,
+      "pctMatched": 0.32
+    },
+    {
+      "city": "NATICK",
+      "total": 2668,
+      "matched": 4,
+      "unmatched": 2664,
+      "pctMatched": 0.15
+    },
+    {
+      "city": "WINCHENDON",
+      "total": 891,
+      "matched": 4,
+      "unmatched": 887,
+      "pctMatched": 0.45
+    },
+    {
+      "city": "ROCKLAND",
+      "total": 1115,
+      "matched": 4,
+      "unmatched": 1111,
+      "pctMatched": 0.36
+    },
+    {
+      "city": "MENDON",
+      "total": 405,
+      "matched": 4,
+      "unmatched": 401,
+      "pctMatched": 0.99
+    },
+    {
+      "city": "BOURNE",
+      "total": 1547,
+      "matched": 4,
+      "unmatched": 1543,
+      "pctMatched": 0.26
+    },
+    {
+      "city": "LAWRENCE",
+      "total": 1990,
+      "matched": 4,
+      "unmatched": 1986,
+      "pctMatched": 0.2
+    },
+    {
+      "city": "NORTH ATTLEBORO",
+      "total": 1792,
+      "matched": 4,
+      "unmatched": 1788,
+      "pctMatched": 0.22
+    },
+    {
+      "city": "HAVERHILL",
+      "total": 4239,
+      "matched": 4,
+      "unmatched": 4235,
+      "pctMatched": 0.09
+    },
+    {
+      "city": "CONCORD",
+      "total": 1365,
+      "matched": 4,
+      "unmatched": 1361,
+      "pctMatched": 0.29
+    },
+    {
+      "city": "WARREN",
+      "total": 493,
+      "matched": 4,
+      "unmatched": 489,
+      "pctMatched": 0.81
+    },
+    {
+      "city": "WOONSOCKET",
+      "total": 102,
+      "matched": 4,
+      "unmatched": 98,
+      "pctMatched": 3.92
+    },
+    {
+      "city": "LOWELL",
+      "total": 4847,
+      "matched": 4,
+      "unmatched": 4843,
+      "pctMatched": 0.08
+    },
+    {
+      "city": "HANSON",
+      "total": 655,
+      "matched": 4,
+      "unmatched": 651,
+      "pctMatched": 0.61
+    },
+    {
+      "city": "NORTHBRIDGE",
+      "total": 1165,
+      "matched": 3,
+      "unmatched": 1162,
+      "pctMatched": 0.26
+    },
+    {
+      "city": "CARVER",
+      "total": 644,
+      "matched": 3,
+      "unmatched": 641,
+      "pctMatched": 0.47
+    },
+    {
+      "city": "WEST SPRINGFIELD",
+      "total": 1520,
+      "matched": 3,
+      "unmatched": 1517,
+      "pctMatched": 0.2
+    },
+    {
+      "city": "MONSON",
+      "total": 605,
+      "matched": 3,
+      "unmatched": 602,
+      "pctMatched": 0.5
+    },
+    {
+      "city": "NEW BEDFORD",
+      "total": 4605,
+      "matched": 3,
+      "unmatched": 4602,
+      "pctMatched": 0.07
+    },
+    {
+      "city": "WALPOLE",
+      "total": 1711,
+      "matched": 3,
+      "unmatched": 1708,
+      "pctMatched": 0.18
+    },
+    {
+      "city": "STOUGHTON",
+      "total": 1899,
+      "matched": 3,
+      "unmatched": 1896,
+      "pctMatched": 0.16
+    },
+    {
+      "city": "WESTFIELD",
+      "total": 2151,
+      "matched": 3,
+      "unmatched": 2148,
+      "pctMatched": 0.14
+    },
+    {
+      "city": "REVERE",
+      "total": 2548,
+      "matched": 3,
+      "unmatched": 2545,
+      "pctMatched": 0.12
+    },
+    {
+      "city": "EAST PROVIDENCE",
+      "total": 52,
+      "matched": 3,
+      "unmatched": 49,
+      "pctMatched": 5.77
+    },
+    {
+      "city": "FRAMINGHAM",
+      "total": 3826,
+      "matched": 3,
+      "unmatched": 3823,
+      "pctMatched": 0.08
+    },
+    {
+      "city": "ENFIELD",
+      "total": 63,
+      "matched": 3,
+      "unmatched": 60,
+      "pctMatched": 4.76
+    },
+    {
+      "city": "GRAFTON",
+      "total": 1690,
+      "matched": 2,
+      "unmatched": 1688,
+      "pctMatched": 0.12
+    },
+    {
+      "city": "FAIRHAVEN",
+      "total": 1032,
+      "matched": 2,
+      "unmatched": 1030,
+      "pctMatched": 0.19
+    },
+    {
+      "city": "LYNN",
+      "total": 4441,
+      "matched": 2,
+      "unmatched": 4439,
+      "pctMatched": 0.05
+    },
+    {
+      "city": "BARNSTABLE",
+      "total": 3177,
+      "matched": 2,
+      "unmatched": 3175,
+      "pctMatched": 0.06
+    },
+    {
+      "city": "BOXFORD",
+      "total": 612,
+      "matched": 2,
+      "unmatched": 610,
+      "pctMatched": 0.33
+    },
+    {
+      "city": "BROCKTON",
+      "total": 5392,
+      "matched": 2,
+      "unmatched": 5390,
+      "pctMatched": 0.04
+    },
+    {
+      "city": "HOLYOKE",
+      "total": 1826,
+      "matched": 2,
+      "unmatched": 1824,
+      "pctMatched": 0.11
+    },
+    {
+      "city": "WINDHAM",
+      "total": 69,
+      "matched": 2,
+      "unmatched": 67,
+      "pctMatched": 2.9
+    },
+    {
+      "city": "BRAINTREE",
+      "total": 2032,
+      "matched": 2,
+      "unmatched": 2030,
+      "pctMatched": 0.1
+    },
+    {
+      "city": "LAKEVILLE",
+      "total": 1057,
+      "matched": 2,
+      "unmatched": 1055,
+      "pctMatched": 0.19
+    },
+    {
+      "city": "EAST BRIDGEWATER",
+      "total": 829,
+      "matched": 2,
+      "unmatched": 827,
+      "pctMatched": 0.24
+    },
+    {
+      "city": "NORTH ADAMS",
+      "total": 167,
+      "matched": 2,
+      "unmatched": 165,
+      "pctMatched": 1.2
+    },
+    {
+      "city": "CHELSEA",
+      "total": 1405,
+      "matched": 2,
+      "unmatched": 1403,
+      "pctMatched": 0.14
+    },
+    {
+      "city": "PLAINVILLE",
+      "total": 524,
+      "matched": 2,
+      "unmatched": 522,
+      "pctMatched": 0.38
+    },
+    {
+      "city": "CHARLTON",
+      "total": 874,
+      "matched": 2,
+      "unmatched": 872,
+      "pctMatched": 0.23
+    },
+    {
+      "city": "SALEM",
+      "total": 3159,
+      "matched": 2,
+      "unmatched": 3157,
+      "pctMatched": 0.06
+    },
+    {
+      "city": "CENTRAL FALLS",
+      "total": 26,
+      "matched": 2,
+      "unmatched": 24,
+      "pctMatched": 7.69
+    },
+    {
+      "city": "PEMBROKE",
+      "total": 1155,
+      "matched": 2,
+      "unmatched": 1153,
+      "pctMatched": 0.17
+    },
+    {
+      "city": "EVERETT",
+      "total": 1611,
+      "matched": 2,
+      "unmatched": 1609,
+      "pctMatched": 0.12
+    },
+    {
+      "city": "PALMER",
+      "total": 908,
+      "matched": 2,
+      "unmatched": 906,
+      "pctMatched": 0.22
+    },
+    {
+      "city": "HOLDEN",
+      "total": 1411,
+      "matched": 2,
+      "unmatched": 1409,
+      "pctMatched": 0.14
+    },
+    {
+      "city": "WEST WARWICK",
+      "total": 22,
+      "matched": 2,
+      "unmatched": 20,
+      "pctMatched": 9.09
+    },
+    {
+      "city": "WARWICK",
+      "total": 94,
+      "matched": 2,
+      "unmatched": 92,
+      "pctMatched": 2.13
+    },
+    {
+      "city": "BURRILLVILLE",
+      "total": 10,
+      "matched": 2,
+      "unmatched": 8,
+      "pctMatched": 20
+    },
+    {
+      "city": "STOW",
+      "total": 533,
+      "matched": 2,
+      "unmatched": 531,
+      "pctMatched": 0.38
+    },
+    {
+      "city": "GARDNER",
+      "total": 1657,
+      "matched": 2,
+      "unmatched": 1655,
+      "pctMatched": 0.12
+    },
+    {
+      "city": "NEEDHAM",
+      "total": 2026,
+      "matched": 2,
+      "unmatched": 2024,
+      "pctMatched": 0.1
+    },
+    {
+      "city": "LEICESTER",
+      "total": 851,
+      "matched": 2,
+      "unmatched": 849,
+      "pctMatched": 0.24
+    },
+    {
+      "city": "BARRINGTON",
+      "total": 37,
+      "matched": 2,
+      "unmatched": 35,
+      "pctMatched": 5.41
+    },
+    {
+      "city": "HATFIELD",
+      "total": 206,
+      "matched": 2,
+      "unmatched": 204,
+      "pctMatched": 0.97
+    },
+    {
+      "city": "TEMPLETON",
+      "total": 667,
+      "matched": 2,
+      "unmatched": 665,
+      "pctMatched": 0.3
+    },
+    {
+      "city": "TYNGSBOROUGH",
+      "total": 813,
+      "matched": 1,
+      "unmatched": 812,
+      "pctMatched": 0.12
+    },
+    {
+      "city": "DERRY",
+      "total": 70,
+      "matched": 1,
+      "unmatched": 69,
+      "pctMatched": 1.43
+    },
+    {
+      "city": "OTIS",
+      "total": 134,
+      "matched": 1,
+      "unmatched": 133,
+      "pctMatched": 0.75
+    },
+    {
+      "city": "MELROSE",
+      "total": 1731,
+      "matched": 1,
+      "unmatched": 1730,
+      "pctMatched": 0.06
+    },
+    {
+      "city": "LEOMINSTER",
+      "total": 2581,
+      "matched": 1,
+      "unmatched": 2580,
+      "pctMatched": 0.04
+    },
+    {
+      "city": "PORTSMOUTH",
+      "total": 33,
+      "matched": 1,
+      "unmatched": 32,
+      "pctMatched": 3.03
+    },
+    {
+      "city": "MASHPEE",
+      "total": 1965,
+      "matched": 1,
+      "unmatched": 1964,
+      "pctMatched": 0.05
+    },
+    {
+      "city": "HULL",
+      "total": 1169,
+      "matched": 1,
+      "unmatched": 1168,
+      "pctMatched": 0.09
+    },
+    {
+      "city": "ATTLEBORO",
+      "total": 2860,
+      "matched": 1,
+      "unmatched": 2859,
+      "pctMatched": 0.03
+    },
+    {
+      "city": "SOUTH HADLEY",
+      "total": 1166,
+      "matched": 1,
+      "unmatched": 1165,
+      "pctMatched": 0.09
+    },
+    {
+      "city": "ACTON",
+      "total": 1737,
+      "matched": 1,
+      "unmatched": 1736,
+      "pctMatched": 0.06
+    },
+    {
+      "city": "CHELMSFORD",
+      "total": 2308,
+      "matched": 1,
+      "unmatched": 2307,
+      "pctMatched": 0.04
+    },
+    {
+      "city": "HAMPTON",
+      "total": 35,
+      "matched": 1,
+      "unmatched": 34,
+      "pctMatched": 2.86
+    },
+    {
+      "city": "MAYNARD",
+      "total": 807,
+      "matched": 1,
+      "unmatched": 806,
+      "pctMatched": 0.12
+    },
+    {
+      "city": "SAUGUS",
+      "total": 1740,
+      "matched": 1,
+      "unmatched": 1739,
+      "pctMatched": 0.06
+    },
+    {
+      "city": "DRACUT",
+      "total": 2012,
+      "matched": 1,
+      "unmatched": 2011,
+      "pctMatched": 0.05
+    },
+    {
+      "city": "WINTHROP",
+      "total": 1271,
+      "matched": 1,
+      "unmatched": 1270,
+      "pctMatched": 0.08
+    },
+    {
+      "city": "NORTH PROVIDENCE",
+      "total": 32,
+      "matched": 1,
+      "unmatched": 31,
+      "pctMatched": 3.13
+    },
+    {
+      "city": "MARBLEHEAD",
+      "total": 1437,
+      "matched": 1,
+      "unmatched": 1436,
+      "pctMatched": 0.07
+    },
+    {
+      "city": "GOFFSTOWN",
+      "total": 6,
+      "matched": 1,
+      "unmatched": 5,
+      "pctMatched": 16.67
+    },
+    {
+      "city": "RAYNHAM",
+      "total": 874,
+      "matched": 1,
+      "unmatched": 873,
+      "pctMatched": 0.11
+    },
+    {
+      "city": "LINCOLN",
+      "total": 434,
+      "matched": 1,
+      "unmatched": 433,
+      "pctMatched": 0.23
+    },
+    {
+      "city": "NORTH READING",
+      "total": 1363,
+      "matched": 1,
+      "unmatched": 1362,
+      "pctMatched": 0.07
+    },
+    {
+      "city": "EASTHAMPTON",
+      "total": 796,
+      "matched": 1,
+      "unmatched": 795,
+      "pctMatched": 0.13
+    },
+    {
+      "city": "NARRAGANSETT",
+      "total": 4,
+      "matched": 1,
+      "unmatched": 3,
+      "pctMatched": 25
+    },
+    {
+      "city": "NORTHAMPTON",
+      "total": 1752,
+      "matched": 1,
+      "unmatched": 1751,
+      "pctMatched": 0.06
+    },
+    {
+      "city": "MONTAGUE",
+      "total": 426,
+      "matched": 1,
+      "unmatched": 425,
+      "pctMatched": 0.23
+    },
+    {
+      "city": "SPENCER",
+      "total": 967,
+      "matched": 1,
+      "unmatched": 966,
+      "pctMatched": 0.1
+    },
+    {
+      "city": "DOUGLAS",
+      "total": 791,
+      "matched": 1,
+      "unmatched": 790,
+      "pctMatched": 0.13
+    },
+    {
+      "city": "DENNIS",
+      "total": 1596,
+      "matched": 1,
+      "unmatched": 1595,
+      "pctMatched": 0.06
+    },
+    {
+      "city": "MILFORD",
+      "total": 1714,
+      "matched": 1,
+      "unmatched": 1713,
+      "pctMatched": 0.06
+    },
+    {
+      "city": "BRISTOL",
+      "total": 32,
+      "matched": 1,
+      "unmatched": 31,
+      "pctMatched": 3.13
+    },
+    {
+      "city": "ROCHESTER",
+      "total": 419,
+      "matched": 1,
+      "unmatched": 418,
+      "pctMatched": 0.24
+    },
+    {
+      "city": "WOBURN",
+      "total": 2423,
+      "matched": 1,
+      "unmatched": 2422,
+      "pctMatched": 0.04
+    },
+    {
+      "city": "SHREWSBURY",
+      "total": 2489,
+      "matched": 1,
+      "unmatched": 2488,
+      "pctMatched": 0.04
+    },
+    {
+      "city": "GROTON",
+      "total": 801,
+      "matched": 1,
+      "unmatched": 800,
+      "pctMatched": 0.12
+    },
+    {
+      "city": "CHATHAM",
+      "total": 832,
+      "matched": 1,
+      "unmatched": 831,
+      "pctMatched": 0.12
+    },
+    {
+      "city": "MILLBURY",
+      "total": 1007,
+      "matched": 1,
+      "unmatched": 1006,
+      "pctMatched": 0.1
+    },
+    {
+      "city": "TOPSFIELD",
+      "total": 442,
+      "matched": 1,
+      "unmatched": 441,
+      "pctMatched": 0.23
+    },
+    {
+      "city": "RINDGE",
+      "total": 12,
+      "matched": 1,
+      "unmatched": 11,
+      "pctMatched": 8.33
+    },
+    {
+      "city": "METHUEN",
+      "total": 3029,
+      "matched": 1,
+      "unmatched": 3028,
+      "pctMatched": 0.03
+    },
+    {
+      "city": "WATERTOWN",
+      "total": 2096,
+      "matched": 1,
+      "unmatched": 2095,
+      "pctMatched": 0.05
+    },
+    {
+      "city": "NORTON",
+      "total": 1300,
+      "matched": 1,
+      "unmatched": 1299,
+      "pctMatched": 0.08
+    },
+    {
+      "city": "HOOKSETT",
+      "total": 7,
+      "matched": 1,
+      "unmatched": 6,
+      "pctMatched": 14.29
+    },
+    {
+      "city": "MEDWAY",
+      "total": 953,
+      "matched": 1,
+      "unmatched": 952,
+      "pctMatched": 0.1
+    },
+    {
+      "city": "PLAINFIELD",
+      "total": 73,
+      "matched": 1,
+      "unmatched": 72,
+      "pctMatched": 1.37
+    },
+    {
+      "city": "DUNSTABLE",
+      "total": 186,
+      "matched": 1,
+      "unmatched": 185,
+      "pctMatched": 0.54
+    },
+    {
+      "city": "MARLBOROUGH",
+      "total": 2140,
+      "matched": 1,
+      "unmatched": 2139,
+      "pctMatched": 0.05
+    },
+    {
+      "city": "MARSHFIELD",
+      "total": 1611,
+      "matched": 1,
+      "unmatched": 1610,
+      "pctMatched": 0.06
+    },
+    {
+      "city": "BILLERICA",
+      "total": 2184,
+      "matched": 1,
+      "unmatched": 2183,
+      "pctMatched": 0.05
+    },
+    {
+      "city": "CRANSTON",
+      "total": 33,
+      "matched": 1,
+      "unmatched": 32,
+      "pctMatched": 3.03
+    },
+    {
+      "city": "GEORGETOWN",
+      "total": 532,
+      "matched": 1,
+      "unmatched": 531,
+      "pctMatched": 0.19
+    },
+    {
+      "city": "BELMONT",
+      "total": 1519,
+      "matched": 1,
+      "unmatched": 1518,
+      "pctMatched": 0.07
+    },
+    {
+      "city": "GREENVILLE",
+      "total": 8,
+      "matched": 1,
+      "unmatched": 7,
+      "pctMatched": 12.5
+    },
+    {
+      "city": "GREENFIELD",
+      "total": 1027,
+      "matched": 1,
+      "unmatched": 1026,
+      "pctMatched": 0.1
+    },
+    {
+      "city": "SOUTHBRIDGE",
+      "total": 1221,
+      "matched": 1,
+      "unmatched": 1220,
+      "pctMatched": 0.08
+    },
+    {
+      "city": "EAST LONGMEADOW",
+      "total": 1156,
+      "matched": 1,
+      "unmatched": 1155,
+      "pctMatched": 0.09
+    },
+    {
+      "city": "LONGMEADOW",
+      "total": 1168,
+      "matched": 1,
+      "unmatched": 1167,
+      "pctMatched": 0.09
+    },
+    {
+      "city": "WARE",
+      "total": 839,
+      "matched": 1,
+      "unmatched": 838,
+      "pctMatched": 0.12
+    },
+    {
+      "city": "BREWSTER",
+      "total": 874,
+      "matched": 0,
+      "unmatched": 874,
+      "pctMatched": 0
+    },
+    {
+      "city": "FALMOUTH",
+      "total": 2875,
+      "matched": 0,
+      "unmatched": 2875,
+      "pctMatched": 0
+    },
+    {
+      "city": "HARWICH",
+      "total": 1089,
+      "matched": 0,
+      "unmatched": 1089,
+      "pctMatched": 0
+    },
+    {
+      "city": "ORLEANS",
+      "total": 518,
+      "matched": 0,
+      "unmatched": 518,
+      "pctMatched": 0
+    },
+    {
+      "city": "PROVINCETOWN",
+      "total": 606,
+      "matched": 0,
+      "unmatched": 606,
+      "pctMatched": 0
+    },
+    {
+      "city": "SANDWICH",
+      "total": 1762,
+      "matched": 0,
+      "unmatched": 1762,
+      "pctMatched": 0
+    },
+    {
+      "city": "TRURO",
+      "total": 208,
+      "matched": 0,
+      "unmatched": 208,
+      "pctMatched": 0
+    },
+    {
+      "city": "YARMOUTH",
+      "total": 2390,
+      "matched": 0,
+      "unmatched": 2390,
+      "pctMatched": 0
+    },
+    {
+      "city": "WILLIAMSTOWN",
+      "total": 95,
+      "matched": 0,
+      "unmatched": 95,
+      "pctMatched": 0
+    },
+    {
+      "city": "PITTSFIELD",
+      "total": 436,
+      "matched": 0,
+      "unmatched": 436,
+      "pctMatched": 0
+    },
+    {
+      "city": "EASTON",
+      "total": 1794,
+      "matched": 0,
+      "unmatched": 1794,
+      "pctMatched": 0
+    },
+    {
+      "city": "DARTMOUTH",
+      "total": 1641,
+      "matched": 0,
+      "unmatched": 1641,
+      "pctMatched": 0
+    },
+    {
+      "city": "REHOBOTH",
+      "total": 1143,
+      "matched": 0,
+      "unmatched": 1143,
+      "pctMatched": 0
+    },
+    {
+      "city": "MANSFIELD",
+      "total": 1102,
+      "matched": 0,
+      "unmatched": 1102,
+      "pctMatched": 0
+    },
+    {
+      "city": "TISBURY",
+      "total": 100,
+      "matched": 0,
+      "unmatched": 100,
+      "pctMatched": 0
+    },
+    {
+      "city": "GROVELAND",
+      "total": 463,
+      "matched": 0,
+      "unmatched": 463,
+      "pctMatched": 0
+    },
+    {
+      "city": "NORTH ANDOVER",
+      "total": 2092,
+      "matched": 0,
+      "unmatched": 2092,
+      "pctMatched": 0
+    },
+    {
+      "city": "ANDOVER",
+      "total": 2402,
+      "matched": 0,
+      "unmatched": 2402,
+      "pctMatched": 0
+    },
+    {
+      "city": "SWANSEA",
+      "total": 1038,
+      "matched": 0,
+      "unmatched": 1038,
+      "pctMatched": 0
+    },
+    {
+      "city": "LYNNFIELD",
+      "total": 800,
+      "matched": 0,
+      "unmatched": 800,
+      "pctMatched": 0
+    },
+    {
+      "city": "PEABODY",
+      "total": 2297,
+      "matched": 0,
+      "unmatched": 2297,
+      "pctMatched": 0
+    },
+    {
+      "city": "SWAMPSCOTT",
+      "total": 1094,
+      "matched": 0,
+      "unmatched": 1094,
+      "pctMatched": 0
+    },
+    {
+      "city": "BEVERLY",
+      "total": 2141,
+      "matched": 0,
+      "unmatched": 2141,
+      "pctMatched": 0
+    },
+    {
+      "city": "DANVERS",
+      "total": 1545,
+      "matched": 0,
+      "unmatched": 1545,
+      "pctMatched": 0
+    },
+    {
+      "city": "MIDDLETON",
+      "total": 684,
+      "matched": 0,
+      "unmatched": 684,
+      "pctMatched": 0
+    },
+    {
+      "city": "WENHAM",
+      "total": 327,
+      "matched": 0,
+      "unmatched": 327,
+      "pctMatched": 0
+    },
+    {
+      "city": "HAMILTON",
+      "total": 591,
+      "matched": 0,
+      "unmatched": 591,
+      "pctMatched": 0
+    },
+    {
+      "city": "GLOUCESTER",
+      "total": 1663,
+      "matched": 0,
+      "unmatched": 1663,
+      "pctMatched": 0
+    },
+    {
+      "city": "IPSWICH",
+      "total": 1061,
+      "matched": 0,
+      "unmatched": 1061,
+      "pctMatched": 0
+    },
+    {
+      "city": "ROWLEY",
+      "total": 409,
+      "matched": 0,
+      "unmatched": 409,
+      "pctMatched": 0
+    },
+    {
+      "city": "NEWBURY",
+      "total": 578,
+      "matched": 0,
+      "unmatched": 578,
+      "pctMatched": 0
+    },
+    {
+      "city": "NEWBURYPORT",
+      "total": 1890,
+      "matched": 0,
+      "unmatched": 1890,
+      "pctMatched": 0
+    },
+    {
+      "city": "SALISBURY",
+      "total": 906,
+      "matched": 0,
+      "unmatched": 906,
+      "pctMatched": 0
+    },
+    {
+      "city": "ROCKPORT",
+      "total": 605,
+      "matched": 0,
+      "unmatched": 605,
+      "pctMatched": 0
+    },
+    {
+      "city": "AMESBURY",
+      "total": 1483,
+      "matched": 0,
+      "unmatched": 1483,
+      "pctMatched": 0
+    },
+    {
+      "city": "ORANGE",
+      "total": 748,
+      "matched": 0,
+      "unmatched": 748,
+      "pctMatched": 0
+    },
+    {
+      "city": "NORTHFIELD",
+      "total": 171,
+      "matched": 0,
+      "unmatched": 171,
+      "pctMatched": 0
+    },
+    {
+      "city": "AGAWAM",
+      "total": 1689,
+      "matched": 0,
+      "unmatched": 1689,
+      "pctMatched": 0
+    },
+    {
+      "city": "WILBRAHAM",
+      "total": 1349,
+      "matched": 0,
+      "unmatched": 1349,
+      "pctMatched": 0
+    },
+    {
+      "city": "LUDLOW",
+      "total": 1349,
+      "matched": 0,
+      "unmatched": 1349,
+      "pctMatched": 0
+    },
+    {
+      "city": "AMHERST",
+      "total": 1141,
+      "matched": 0,
+      "unmatched": 1141,
+      "pctMatched": 0
+    },
+    {
+      "city": "SOUTHWICK",
+      "total": 633,
+      "matched": 0,
+      "unmatched": 633,
+      "pctMatched": 0
+    },
+    {
+      "city": "MALDEN",
+      "total": 2383,
+      "matched": 0,
+      "unmatched": 2383,
+      "pctMatched": 0
+    },
+    {
+      "city": "TEWKSBURY",
+      "total": 1947,
+      "matched": 0,
+      "unmatched": 1947,
+      "pctMatched": 0
+    },
+    {
+      "city": "CARLISLE",
+      "total": 426,
+      "matched": 0,
+      "unmatched": 426,
+      "pctMatched": 0
+    },
+    {
+      "city": "WILMINGTON",
+      "total": 1323,
+      "matched": 0,
+      "unmatched": 1323,
+      "pctMatched": 0
+    },
+    {
+      "city": "READING",
+      "total": 1800,
+      "matched": 0,
+      "unmatched": 1800,
+      "pctMatched": 0
+    },
+    {
+      "city": "STONEHAM",
+      "total": 1421,
+      "matched": 0,
+      "unmatched": 1421,
+      "pctMatched": 0
+    },
+    {
+      "city": "WESTFORD",
+      "total": 1595,
+      "matched": 0,
+      "unmatched": 1595,
+      "pctMatched": 0
+    },
+    {
+      "city": "LITTLETON",
+      "total": 557,
+      "matched": 0,
+      "unmatched": 557,
+      "pctMatched": 0
+    },
+    {
+      "city": "WAKEFIELD",
+      "total": 1844,
+      "matched": 0,
+      "unmatched": 1844,
+      "pctMatched": 0
+    },
+    {
+      "city": "WINCHESTER",
+      "total": 1810,
+      "matched": 0,
+      "unmatched": 1810,
+      "pctMatched": 0
+    },
+    {
+      "city": "ASHLAND",
+      "total": 1281,
+      "matched": 0,
+      "unmatched": 1281,
+      "pctMatched": 0
+    },
+    {
+      "city": "HOPKINTON",
+      "total": 1546,
+      "matched": 0,
+      "unmatched": 1546,
+      "pctMatched": 0
+    },
+    {
+      "city": "SUDBURY",
+      "total": 1532,
+      "matched": 0,
+      "unmatched": 1532,
+      "pctMatched": 0
+    },
+    {
+      "city": "BEDFORD",
+      "total": 933,
+      "matched": 0,
+      "unmatched": 933,
+      "pctMatched": 0
+    },
+    {
+      "city": "BOXBOROUGH",
+      "total": 494,
+      "matched": 0,
+      "unmatched": 494,
+      "pctMatched": 0
+    },
+    {
+      "city": "LEXINGTON",
+      "total": 2239,
+      "matched": 0,
+      "unmatched": 2239,
+      "pctMatched": 0
+    },
+    {
+      "city": "HOLBROOK",
+      "total": 738,
+      "matched": 0,
+      "unmatched": 738,
+      "pctMatched": 0
+    },
+    {
+      "city": "RANDOLPH",
+      "total": 1683,
+      "matched": 0,
+      "unmatched": 1683,
+      "pctMatched": 0
+    },
+    {
+      "city": "WEYMOUTH",
+      "total": 3651,
+      "matched": 0,
+      "unmatched": 3651,
+      "pctMatched": 0
+    },
+    {
+      "city": "DOVER",
+      "total": 568,
+      "matched": 0,
+      "unmatched": 568,
+      "pctMatched": 0
+    },
+    {
+      "city": "MEDFIELD",
+      "total": 931,
+      "matched": 0,
+      "unmatched": 931,
+      "pctMatched": 0
+    },
+    {
+      "city": "MILTON",
+      "total": 1621,
+      "matched": 0,
+      "unmatched": 1621,
+      "pctMatched": 0
+    },
+    {
+      "city": "NORWOOD",
+      "total": 1532,
+      "matched": 0,
+      "unmatched": 1532,
+      "pctMatched": 0
+    },
+    {
+      "city": "SHARON",
+      "total": 1199,
+      "matched": 0,
+      "unmatched": 1199,
+      "pctMatched": 0
+    },
+    {
+      "city": "WESTWOOD",
+      "total": 1104,
+      "matched": 0,
+      "unmatched": 1104,
+      "pctMatched": 0
+    },
+    {
+      "city": "BELLINGHAM",
+      "total": 1224,
+      "matched": 0,
+      "unmatched": 1224,
+      "pctMatched": 0
+    },
+    {
+      "city": "FRANKLIN",
+      "total": 2033,
+      "matched": 0,
+      "unmatched": 2033,
+      "pctMatched": 0
+    },
+    {
+      "city": "MILLIS",
+      "total": 830,
+      "matched": 0,
+      "unmatched": 830,
+      "pctMatched": 0
+    },
+    {
+      "city": "NORFOLK",
+      "total": 924,
+      "matched": 0,
+      "unmatched": 924,
+      "pctMatched": 0
+    },
+    {
+      "city": "WRENTHAM",
+      "total": 953,
+      "matched": 0,
+      "unmatched": 953,
+      "pctMatched": 0
+    },
+    {
+      "city": "CANTON",
+      "total": 1877,
+      "matched": 0,
+      "unmatched": 1877,
+      "pctMatched": 0
+    },
+    {
+      "city": "FOXBORO",
+      "total": 974,
+      "matched": 0,
+      "unmatched": 974,
+      "pctMatched": 0
+    },
+    {
+      "city": "WELLESLEY",
+      "total": 2230,
+      "matched": 0,
+      "unmatched": 2230,
+      "pctMatched": 0
+    },
+    {
+      "city": "COHASSET",
+      "total": 829,
+      "matched": 0,
+      "unmatched": 829,
+      "pctMatched": 0
+    },
+    {
+      "city": "DEDHAM",
+      "total": 1811,
+      "matched": 0,
+      "unmatched": 1811,
+      "pctMatched": 0
+    },
+    {
+      "city": "HALIFAX",
+      "total": 517,
+      "matched": 0,
+      "unmatched": 517,
+      "pctMatched": 0
+    },
+    {
+      "city": "DUXBURY",
+      "total": 1175,
+      "matched": 0,
+      "unmatched": 1175,
+      "pctMatched": 0
+    },
+    {
+      "city": "PLYMOUTH",
+      "total": 6001,
+      "matched": 0,
+      "unmatched": 6001,
+      "pctMatched": 0
+    },
+    {
+      "city": "WHITMAN",
+      "total": 991,
+      "matched": 0,
+      "unmatched": 991,
+      "pctMatched": 0
+    },
+    {
+      "city": "BRIDGEWATER",
+      "total": 1577,
+      "matched": 0,
+      "unmatched": 1577,
+      "pctMatched": 0
+    },
+    {
+      "city": "WEST BRIDGEWATER",
+      "total": 524,
+      "matched": 0,
+      "unmatched": 524,
+      "pctMatched": 0
+    },
+    {
+      "city": "HINGHAM",
+      "total": 2018,
+      "matched": 0,
+      "unmatched": 2018,
+      "pctMatched": 0
+    },
+    {
+      "city": "ATHOL",
+      "total": 1163,
+      "matched": 0,
+      "unmatched": 1163,
+      "pctMatched": 0
+    },
+    {
+      "city": "NORTHBOROUGH",
+      "total": 1066,
+      "matched": 0,
+      "unmatched": 1066,
+      "pctMatched": 0
+    },
+    {
+      "city": "SOUTHBOROUGH",
+      "total": 801,
+      "matched": 0,
+      "unmatched": 801,
+      "pctMatched": 0
+    },
+    {
+      "city": "WESTBOROUGH",
+      "total": 1597,
+      "matched": 0,
+      "unmatched": 1597,
+      "pctMatched": 0
+    },
+    {
+      "city": "WEST BOYLSTON",
+      "total": 514,
+      "matched": 0,
+      "unmatched": 514,
+      "pctMatched": 0
+    },
+    {
+      "city": "STERLING",
+      "total": 525,
+      "matched": 0,
+      "unmatched": 525,
+      "pctMatched": 0
+    },
+    {
+      "city": "RUTLAND",
+      "total": 790,
+      "matched": 0,
+      "unmatched": 790,
+      "pctMatched": 0
+    },
+    {
+      "city": "UXBRIDGE",
+      "total": 1117,
+      "matched": 0,
+      "unmatched": 1117,
+      "pctMatched": 0
+    },
+    {
+      "city": "UPTON",
+      "total": 704,
+      "matched": 0,
+      "unmatched": 704,
+      "pctMatched": 0
+    },
+    {
+      "city": "DUDLEY",
+      "total": 817,
+      "matched": 0,
+      "unmatched": 817,
+      "pctMatched": 0
+    },
+    {
+      "city": "OXFORD",
+      "total": 1067,
+      "matched": 0,
+      "unmatched": 1067,
+      "pctMatched": 0
+    },
+    {
+      "city": "SUTTON",
+      "total": 766,
+      "matched": 0,
+      "unmatched": 766,
+      "pctMatched": 0
+    },
+    {
+      "city": "AUBURN",
+      "total": 1276,
+      "matched": 0,
+      "unmatched": 1276,
+      "pctMatched": 0
+    },
+    {
+      "city": "BOLTON",
+      "total": 527,
+      "matched": 0,
+      "unmatched": 527,
+      "pctMatched": 0
+    },
+    {
+      "city": "HARVARD",
+      "total": 443,
+      "matched": 0,
+      "unmatched": 443,
+      "pctMatched": 0
+    },
+    {
+      "city": "LUNENBURG",
+      "total": 973,
+      "matched": 0,
+      "unmatched": 973,
+      "pctMatched": 0
+    },
+    {
+      "city": "BOYLSTON",
+      "total": 364,
+      "matched": 0,
+      "unmatched": 364,
+      "pctMatched": 0
+    },
+    {
+      "city": "CLINTON",
+      "total": 1049,
+      "matched": 0,
+      "unmatched": 1049,
+      "pctMatched": 0
+    },
+    {
+      "city": "ESSEX",
+      "total": 196,
+      "matched": 0,
+      "unmatched": 196,
+      "pctMatched": 0
+    },
+    {
+      "city": "SHIRLEY",
+      "total": 467,
+      "matched": 0,
+      "unmatched": 467,
+      "pctMatched": 0
+    },
+    {
+      "city": "WAYLAND",
+      "total": 1040,
+      "matched": 0,
+      "unmatched": 1040,
+      "pctMatched": 0
+    },
+    {
+      "city": "WESTPORT",
+      "total": 1043,
+      "matched": 0,
+      "unmatched": 1043,
+      "pctMatched": 0
+    },
+    {
+      "city": "FREETOWN",
+      "total": 546,
+      "matched": 0,
+      "unmatched": 546,
+      "pctMatched": 0
+    },
+    {
+      "city": "NANTUCKET",
+      "total": 92,
+      "matched": 0,
+      "unmatched": 92,
+      "pctMatched": 0
+    },
+    {
+      "city": "SHELBURNE",
+      "total": 98,
+      "matched": 0,
+      "unmatched": 98,
+      "pctMatched": 0
+    },
+    {
+      "city": "WELLFLEET",
+      "total": 214,
+      "matched": 0,
+      "unmatched": 214,
+      "pctMatched": 0
+    },
+    {
+      "city": "ABINGTON",
+      "total": 1058,
+      "matched": 0,
+      "unmatched": 1058,
+      "pctMatched": 0
+    },
+    {
+      "city": "EASTHAM",
+      "total": 478,
+      "matched": 0,
+      "unmatched": 478,
+      "pctMatched": 0
+    },
+    {
+      "city": "LENOX",
+      "total": 44,
+      "matched": 0,
+      "unmatched": 44,
+      "pctMatched": 0
+    },
+    {
+      "city": "NAHANT",
+      "total": 293,
+      "matched": 0,
+      "unmatched": 293,
+      "pctMatched": 0
+    },
+    {
+      "city": "WALES",
+      "total": 160,
+      "matched": 0,
+      "unmatched": 160,
+      "pctMatched": 0
+    },
+    {
+      "city": "WESTON",
+      "total": 1133,
+      "matched": 0,
+      "unmatched": 1133,
+      "pctMatched": 0
+    },
+    {
+      "city": "BURLINGTON",
+      "total": 1198,
+      "matched": 0,
+      "unmatched": 1198,
+      "pctMatched": 0
+    },
+    {
+      "city": "HANOVER",
+      "total": 902,
+      "matched": 0,
+      "unmatched": 902,
+      "pctMatched": 0
+    },
+    {
+      "city": "KINGSTON",
+      "total": 948,
+      "matched": 0,
+      "unmatched": 948,
+      "pctMatched": 0
+    },
+    {
+      "city": "HUBBARDSTON",
+      "total": 319,
+      "matched": 0,
+      "unmatched": 319,
+      "pctMatched": 0
+    },
+    {
+      "city": "WEBSTER",
+      "total": 1356,
+      "matched": 0,
+      "unmatched": 1356,
+      "pctMatched": 0
+    },
+    {
+      "city": "BLACKSTONE",
+      "total": 624,
+      "matched": 0,
+      "unmatched": 624,
+      "pctMatched": 0
+    },
+    {
+      "city": "BERLIN",
+      "total": 278,
+      "matched": 0,
+      "unmatched": 278,
+      "pctMatched": 0
+    },
+    {
+      "city": "NORWELL",
+      "total": 824,
+      "matched": 0,
+      "unmatched": 824,
+      "pctMatched": 0
+    },
+    {
+      "city": "AYER",
+      "total": 621,
+      "matched": 0,
+      "unmatched": 621,
+      "pctMatched": 0
+    },
+    {
+      "city": "EDGARTOWN",
+      "total": 257,
+      "matched": 0,
+      "unmatched": 257,
+      "pctMatched": 0
+    },
+    {
+      "city": "SHERBORN",
+      "total": 504,
+      "matched": 0,
+      "unmatched": 504,
+      "pctMatched": 0
+    },
+    {
+      "city": "HOLLISTON",
+      "total": 1177,
+      "matched": 0,
+      "unmatched": 1177,
+      "pctMatched": 0
+    },
+    {
+      "city": "OAK BLUFFS",
+      "total": 103,
+      "matched": 0,
+      "unmatched": 103,
+      "pctMatched": 0
+    },
+    {
+      "city": "DALTON",
+      "total": 75,
+      "matched": 0,
+      "unmatched": 75,
+      "pctMatched": 0
+    },
+    {
+      "city": "MERRIMAC",
+      "total": 462,
+      "matched": 0,
+      "unmatched": 462,
+      "pctMatched": 0
+    },
+    {
+      "city": "HOPEDALE",
+      "total": 445,
+      "matched": 0,
+      "unmatched": 445,
+      "pctMatched": 0
+    },
+    {
+      "city": "LANCASTER",
+      "total": 493,
+      "matched": 0,
+      "unmatched": 493,
+      "pctMatched": 0
+    },
+    {
+      "city": "WILLIAMSBURG",
+      "total": 157,
+      "matched": 0,
+      "unmatched": 157,
+      "pctMatched": 0
+    },
+    {
+      "city": "MARION",
+      "total": 496,
+      "matched": 0,
+      "unmatched": 496,
+      "pctMatched": 0
+    },
+    {
+      "city": "MATTAPOISETT",
+      "total": 644,
+      "matched": 0,
+      "unmatched": 644,
+      "pctMatched": 0
+    },
+    {
+      "city": "ATKINSON",
+      "total": 30,
+      "matched": 0,
+      "unmatched": 30,
+      "pctMatched": 0
+    },
+    {
+      "city": "WESTMINSTER",
+      "total": 712,
+      "matched": 0,
+      "unmatched": 712,
+      "pctMatched": 0
+    },
+    {
+      "city": "DEVENS",
+      "total": 47,
+      "matched": 0,
+      "unmatched": 47,
+      "pctMatched": 0
+    },
+    {
+      "city": "STOCKBRIDGE",
+      "total": 28,
+      "matched": 0,
+      "unmatched": 28,
+      "pctMatched": 0
+    },
+    {
+      "city": "WEST NEWBURY",
+      "total": 371,
+      "matched": 0,
+      "unmatched": 371,
+      "pctMatched": 0
+    },
+    {
+      "city": "DEERFIELD",
+      "total": 285,
+      "matched": 0,
+      "unmatched": 285,
+      "pctMatched": 0
+    },
+    {
+      "city": "PEPPERELL",
+      "total": 792,
+      "matched": 0,
+      "unmatched": 792,
+      "pctMatched": 0
+    },
+    {
+      "city": "TOWNSEND",
+      "total": 622,
+      "matched": 0,
+      "unmatched": 622,
+      "pctMatched": 0
+    },
+    {
+      "city": "AVON",
+      "total": 306,
+      "matched": 0,
+      "unmatched": 306,
+      "pctMatched": 0
+    },
+    {
+      "city": "BARRE",
+      "total": 401,
+      "matched": 0,
+      "unmatched": 401,
+      "pctMatched": 0
+    },
+    {
+      "city": "NORTH BROOKFIELD",
+      "total": 388,
+      "matched": 0,
+      "unmatched": 388,
+      "pctMatched": 0
+    },
+    {
+      "city": "GOSHEN",
+      "total": 100,
+      "matched": 0,
+      "unmatched": 100,
+      "pctMatched": 0
+    },
+    {
+      "city": "SANDOWN",
+      "total": 19,
+      "matched": 0,
+      "unmatched": 19,
+      "pctMatched": 0
+    },
+    {
+      "city": "SEABROOK",
+      "total": 23,
+      "matched": 0,
+      "unmatched": 23,
+      "pctMatched": 0
+    },
+    {
+      "city": "BERKLEY",
+      "total": 389,
+      "matched": 0,
+      "unmatched": 389,
+      "pctMatched": 0
+    },
+    {
+      "city": "DIGHTON",
+      "total": 508,
+      "matched": 0,
+      "unmatched": 508,
+      "pctMatched": 0
+    },
+    {
+      "city": "SEEKONK",
+      "total": 944,
+      "matched": 0,
+      "unmatched": 944,
+      "pctMatched": 0
+    },
+    {
+      "city": "SHUTESBURY",
+      "total": 138,
+      "matched": 0,
+      "unmatched": 138,
+      "pctMatched": 0
+    },
+    {
+      "city": "SUNDERLAND",
+      "total": 129,
+      "matched": 0,
+      "unmatched": 129,
+      "pctMatched": 0
+    },
+    {
+      "city": "GREAT BARRINGTON",
+      "total": 17,
+      "matched": 0,
+      "unmatched": 17,
+      "pctMatched": 0
+    },
+    {
+      "city": "PLAISTOW",
+      "total": 37,
+      "matched": 0,
+      "unmatched": 37,
+      "pctMatched": 0
+    },
+    {
+      "city": "EXETER",
+      "total": 18,
+      "matched": 0,
+      "unmatched": 18,
+      "pctMatched": 0
+    },
+    {
+      "city": "HAMPDEN",
+      "total": 360,
+      "matched": 0,
+      "unmatched": 360,
+      "pctMatched": 0
+    },
+    {
+      "city": "MERRIMACK",
+      "total": 31,
+      "matched": 0,
+      "unmatched": 31,
+      "pctMatched": 0
+    },
+    {
+      "city": "EAST BROOKFIELD",
+      "total": 165,
+      "matched": 0,
+      "unmatched": 165,
+      "pctMatched": 0
+    },
+    {
+      "city": "AQUINNAH",
+      "total": 14,
+      "matched": 0,
+      "unmatched": 14,
+      "pctMatched": 0
+    },
+    {
+      "city": "SOUTHAMPTON",
+      "total": 407,
+      "matched": 0,
+      "unmatched": 407,
+      "pctMatched": 0
+    },
+    {
+      "city": "SOMERSET",
+      "total": 1083,
+      "matched": 0,
+      "unmatched": 1083,
+      "pctMatched": 0
+    },
+    {
+      "city": "TIVERTON",
+      "total": 106,
+      "matched": 0,
+      "unmatched": 106,
+      "pctMatched": 0
+    },
+    {
+      "city": "PELHAM",
+      "total": 160,
+      "matched": 0,
+      "unmatched": 160,
+      "pctMatched": 0
+    },
+    {
+      "city": "PRINCETON",
+      "total": 266,
+      "matched": 0,
+      "unmatched": 266,
+      "pctMatched": 0
+    },
+    {
+      "city": "PAXTON",
+      "total": 349,
+      "matched": 0,
+      "unmatched": 349,
+      "pctMatched": 0
+    },
+    {
+      "city": "BROOKFIELD",
+      "total": 257,
+      "matched": 0,
+      "unmatched": 257,
+      "pctMatched": 0
+    },
+    {
+      "city": "ASHBURNHAM",
+      "total": 681,
+      "matched": 0,
+      "unmatched": 681,
+      "pctMatched": 0
+    },
+    {
+      "city": "WOODSTOCK",
+      "total": 8,
+      "matched": 0,
+      "unmatched": 8,
+      "pctMatched": 0
+    },
+    {
+      "city": "LACONIA",
+      "total": 8,
+      "matched": 0,
+      "unmatched": 8,
+      "pctMatched": 0
+    },
+    {
+      "city": "CLARKSBURG",
+      "total": 22,
+      "matched": 0,
+      "unmatched": 22,
+      "pctMatched": 0
+    },
+    {
+      "city": "HINSDALE",
+      "total": 37,
+      "matched": 0,
+      "unmatched": 37,
+      "pctMatched": 0
+    },
+    {
+      "city": "HADLEY",
+      "total": 315,
+      "matched": 0,
+      "unmatched": 315,
+      "pctMatched": 0
+    },
+    {
+      "city": "BUCKLAND",
+      "total": 125,
+      "matched": 0,
+      "unmatched": 125,
+      "pctMatched": 0
+    },
+    {
+      "city": "CHARLEMONT",
+      "total": 86,
+      "matched": 0,
+      "unmatched": 86,
+      "pctMatched": 0
+    },
+    {
+      "city": "SOUTH WINDSOR",
+      "total": 5,
+      "matched": 0,
+      "unmatched": 5,
+      "pctMatched": 0
+    },
+    {
+      "city": "LONDONDERRY",
+      "total": 65,
+      "matched": 0,
+      "unmatched": 65,
+      "pctMatched": 0
+    },
+    {
+      "city": "HANCOCK",
+      "total": 11,
+      "matched": 0,
+      "unmatched": 11,
+      "pctMatched": 0
+    },
+    {
+      "city": "MILLVILLE",
+      "total": 255,
+      "matched": 0,
+      "unmatched": 255,
+      "pctMatched": 0
+    },
+    {
+      "city": "ERVING",
+      "total": 82,
+      "matched": 0,
+      "unmatched": 82,
+      "pctMatched": 0
+    },
+    {
+      "city": "WEST BROOKFIELD",
+      "total": 402,
+      "matched": 0,
+      "unmatched": 402,
+      "pctMatched": 0
+    },
+    {
+      "city": "GILL",
+      "total": 84,
+      "matched": 0,
+      "unmatched": 84,
+      "pctMatched": 0
+    },
+    {
+      "city": "LANESBOROUGH",
+      "total": 55,
+      "matched": 0,
+      "unmatched": 55,
+      "pctMatched": 0
+    },
+    {
+      "city": "ACUSHNET",
+      "total": 526,
+      "matched": 0,
+      "unmatched": 526,
+      "pctMatched": 0
+    },
+    {
+      "city": "PLYMPTON",
+      "total": 183,
+      "matched": 0,
+      "unmatched": 183,
+      "pctMatched": 0
+    },
+    {
+      "city": "NEW BRAINTREE",
+      "total": 65,
+      "matched": 0,
+      "unmatched": 65,
+      "pctMatched": 0
+    },
+    {
+      "city": "ASHBY",
+      "total": 279,
+      "matched": 0,
+      "unmatched": 279,
+      "pctMatched": 0
+    },
+    {
+      "city": "PHILLIPSTON",
+      "total": 207,
+      "matched": 0,
+      "unmatched": 207,
+      "pctMatched": 0
+    },
+    {
+      "city": "LEVERETT",
+      "total": 124,
+      "matched": 0,
+      "unmatched": 124,
+      "pctMatched": 0
+    },
+    {
+      "city": "NEW SALEM",
+      "total": 74,
+      "matched": 0,
+      "unmatched": 74,
+      "pctMatched": 0
+    },
+    {
+      "city": "BERNARDSTON",
+      "total": 140,
+      "matched": 0,
+      "unmatched": 140,
+      "pctMatched": 0
+    },
+    {
+      "city": "COLRAIN",
+      "total": 102,
+      "matched": 0,
+      "unmatched": 102,
+      "pctMatched": 0
+    },
+    {
+      "city": "HEATH",
+      "total": 86,
+      "matched": 0,
+      "unmatched": 86,
+      "pctMatched": 0
+    },
+    {
+      "city": "MONROE",
+      "total": 23,
+      "matched": 0,
+      "unmatched": 23,
+      "pctMatched": 0
+    },
+    {
+      "city": "HAWLEY",
+      "total": 50,
+      "matched": 0,
+      "unmatched": 50,
+      "pctMatched": 0
+    },
+    {
+      "city": "ASHFIELD",
+      "total": 99,
+      "matched": 0,
+      "unmatched": 99,
+      "pctMatched": 0
+    },
+    {
+      "city": "HUNTINGTON",
+      "total": 198,
+      "matched": 0,
+      "unmatched": 198,
+      "pctMatched": 0
+    },
+    {
+      "city": "MIDDLEFIELD",
+      "total": 34,
+      "matched": 0,
+      "unmatched": 34,
+      "pctMatched": 0
+    },
+    {
+      "city": "WESTHAMPTON",
+      "total": 150,
+      "matched": 0,
+      "unmatched": 150,
+      "pctMatched": 0
+    },
+    {
+      "city": "FLORIDA",
+      "total": 24,
+      "matched": 0,
+      "unmatched": 24,
+      "pctMatched": 0
+    },
+    {
+      "city": "CHESHIRE",
+      "total": 37,
+      "matched": 0,
+      "unmatched": 37,
+      "pctMatched": 0
+    },
+    {
+      "city": "PERU",
+      "total": 31,
+      "matched": 0,
+      "unmatched": 31,
+      "pctMatched": 0
+    },
+    {
+      "city": "CHESTERFIELD",
+      "total": 113,
+      "matched": 0,
+      "unmatched": 113,
+      "pctMatched": 0
+    },
+    {
+      "city": "WORTHINGTON",
+      "total": 155,
+      "matched": 0,
+      "unmatched": 155,
+      "pctMatched": 0
+    },
+    {
+      "city": "ROYALSTON",
+      "total": 121,
+      "matched": 0,
+      "unmatched": 121,
+      "pctMatched": 0
+    },
+    {
+      "city": "EGREMONT",
+      "total": 8,
+      "matched": 0,
+      "unmatched": 8,
+      "pctMatched": 0
+    },
+    {
+      "city": "CHESTER",
+      "total": 135,
+      "matched": 0,
+      "unmatched": 135,
+      "pctMatched": 0
+    },
+    {
+      "city": "BRIMFIELD",
+      "total": 361,
+      "matched": 0,
+      "unmatched": 361,
+      "pctMatched": 0
+    },
+    {
+      "city": "BRENTWOOD",
+      "total": 6,
+      "matched": 0,
+      "unmatched": 6,
+      "pctMatched": 0
+    },
+    {
+      "city": "LEE",
+      "total": 35,
+      "matched": 0,
+      "unmatched": 35,
+      "pctMatched": 0
+    },
+    {
+      "city": "HOLLAND",
+      "total": 327,
+      "matched": 0,
+      "unmatched": 327,
+      "pctMatched": 0
+    },
+    {
+      "city": "STAFFORD",
+      "total": 24,
+      "matched": 0,
+      "unmatched": 24,
+      "pctMatched": 0
+    },
+    {
+      "city": "HARDWICK",
+      "total": 255,
+      "matched": 0,
+      "unmatched": 255,
+      "pctMatched": 0
+    },
+    {
+      "city": "OAKHAM",
+      "total": 149,
+      "matched": 0,
+      "unmatched": 149,
+      "pctMatched": 0
+    },
+    {
+      "city": "PETERSHAM",
+      "total": 130,
+      "matched": 0,
+      "unmatched": 130,
+      "pctMatched": 0
+    },
+    {
+      "city": "WENDELL",
+      "total": 48,
+      "matched": 0,
+      "unmatched": 48,
+      "pctMatched": 0
+    },
+    {
+      "city": "LEYDEN",
+      "total": 52,
+      "matched": 0,
+      "unmatched": 52,
+      "pctMatched": 0
+    },
+    {
+      "city": "ROWE",
+      "total": 30,
+      "matched": 0,
+      "unmatched": 30,
+      "pctMatched": 0
+    },
+    {
+      "city": "CONWAY",
+      "total": 99,
+      "matched": 0,
+      "unmatched": 99,
+      "pctMatched": 0
+    },
+    {
+      "city": "CUMMINGTON",
+      "total": 79,
+      "matched": 0,
+      "unmatched": 79,
+      "pctMatched": 0
+    },
+    {
+      "city": "WINDSOR",
+      "total": 30,
+      "matched": 0,
+      "unmatched": 30,
+      "pctMatched": 0
+    },
+    {
+      "city": "BECKET",
+      "total": 135,
+      "matched": 0,
+      "unmatched": 135,
+      "pctMatched": 0
+    },
+    {
+      "city": "MONTEREY",
+      "total": 11,
+      "matched": 0,
+      "unmatched": 11,
+      "pctMatched": 0
+    },
+    {
+      "city": "SHEFFIELD",
+      "total": 14,
+      "matched": 0,
+      "unmatched": 14,
+      "pctMatched": 0
+    },
+    {
+      "city": "BLANDFORD",
+      "total": 116,
+      "matched": 0,
+      "unmatched": 116,
+      "pctMatched": 0
+    },
+    {
+      "city": "GRANVILLE",
+      "total": 116,
+      "matched": 0,
+      "unmatched": 116,
+      "pctMatched": 0
+    },
+    {
+      "city": "RUSSELL",
+      "total": 144,
+      "matched": 0,
+      "unmatched": 144,
+      "pctMatched": 0
+    },
+    {
+      "city": "MEREDITH",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "ADAMS",
+      "total": 71,
+      "matched": 0,
+      "unmatched": 71,
+      "pctMatched": 0
+    },
+    {
+      "city": "SAVOY",
+      "total": 10,
+      "matched": 0,
+      "unmatched": 10,
+      "pctMatched": 0
+    },
+    {
+      "city": "WEST STOCKBRIDGE",
+      "total": 10,
+      "matched": 0,
+      "unmatched": 10,
+      "pctMatched": 0
+    },
+    {
+      "city": "WASHINGTON",
+      "total": 8,
+      "matched": 0,
+      "unmatched": 8,
+      "pctMatched": 0
+    },
+    {
+      "city": "TYRINGHAM",
+      "total": 4,
+      "matched": 0,
+      "unmatched": 4,
+      "pctMatched": 0
+    },
+    {
+      "city": "SANDISFIELD",
+      "total": 28,
+      "matched": 0,
+      "unmatched": 28,
+      "pctMatched": 0
+    },
+    {
+      "city": "CHILMARK",
+      "total": 18,
+      "matched": 0,
+      "unmatched": 18,
+      "pctMatched": 0
+    },
+    {
+      "city": "WEST TISBURY",
+      "total": 52,
+      "matched": 0,
+      "unmatched": 52,
+      "pctMatched": 0
+    },
+    {
+      "city": "WHATELY",
+      "total": 86,
+      "matched": 0,
+      "unmatched": 86,
+      "pctMatched": 0
+    },
+    {
+      "city": "TOLLAND",
+      "total": 91,
+      "matched": 0,
+      "unmatched": 91,
+      "pctMatched": 0
+    },
+    {
+      "city": "MONTGOMERY",
+      "total": 58,
+      "matched": 0,
+      "unmatched": 58,
+      "pctMatched": 0
+    },
+    {
+      "city": "GLOCESTER",
+      "total": 7,
+      "matched": 0,
+      "unmatched": 7,
+      "pctMatched": 0
+    },
+    {
+      "city": "EAST KINGSTON",
+      "total": 6,
+      "matched": 0,
+      "unmatched": 6,
+      "pctMatched": 0
+    },
+    {
+      "city": "GOSNOLD",
+      "total": 8,
+      "matched": 0,
+      "unmatched": 8,
+      "pctMatched": 0
+    },
+    {
+      "city": "NORTH SMITHFIELD",
+      "total": 25,
+      "matched": 0,
+      "unmatched": 25,
+      "pctMatched": 0
+    },
+    {
+      "city": "KILLINGLY",
+      "total": 8,
+      "matched": 0,
+      "unmatched": 8,
+      "pctMatched": 0
+    },
+    {
+      "city": "NEW MARLBORO",
+      "total": 10,
+      "matched": 0,
+      "unmatched": 10,
+      "pctMatched": 0
+    },
+    {
+      "city": "CUMBERLAND",
+      "total": 93,
+      "matched": 0,
+      "unmatched": 93,
+      "pctMatched": 0
+    },
+    {
+      "city": "PUTNAM",
+      "total": 9,
+      "matched": 0,
+      "unmatched": 9,
+      "pctMatched": 0
+    },
+    {
+      "city": "ALFORD",
+      "total": 3,
+      "matched": 0,
+      "unmatched": 3,
+      "pctMatched": 0
+    },
+    {
+      "city": "NEW ASHFORD",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "SOMERS",
+      "total": 23,
+      "matched": 0,
+      "unmatched": 23,
+      "pctMatched": 0
+    },
+    {
+      "city": "RICHMOND",
+      "total": 13,
+      "matched": 0,
+      "unmatched": 13,
+      "pctMatched": 0
+    },
+    {
+      "city": "NORTHWOOD",
+      "total": 3,
+      "matched": 0,
+      "unmatched": 3,
+      "pctMatched": 0
+    },
+    {
+      "city": "THOMPSON",
+      "total": 10,
+      "matched": 0,
+      "unmatched": 10,
+      "pctMatched": 0
+    },
+    {
+      "city": "BROOKLYN",
+      "total": 5,
+      "matched": 0,
+      "unmatched": 5,
+      "pctMatched": 0
+    },
+    {
+      "city": "JOHNSTON",
+      "total": 15,
+      "matched": 0,
+      "unmatched": 15,
+      "pctMatched": 0
+    },
+    {
+      "city": "WESTERLY",
+      "total": 3,
+      "matched": 0,
+      "unmatched": 3,
+      "pctMatched": 0
+    },
+    {
+      "city": "BARNSTEAD",
+      "total": 4,
+      "matched": 0,
+      "unmatched": 4,
+      "pctMatched": 0
+    },
+    {
+      "city": "DANVILLE",
+      "total": 17,
+      "matched": 0,
+      "unmatched": 17,
+      "pctMatched": 0
+    },
+    {
+      "city": "HAMPSTEAD",
+      "total": 24,
+      "matched": 0,
+      "unmatched": 24,
+      "pctMatched": 0
+    },
+    {
+      "city": "HOLLIS",
+      "total": 11,
+      "matched": 0,
+      "unmatched": 11,
+      "pctMatched": 0
+    },
+    {
+      "city": "SUFFIELD",
+      "total": 2,
+      "matched": 0,
+      "unmatched": 2,
+      "pctMatched": 0
+    },
+    {
+      "city": "NOTTINGHAM",
+      "total": 2,
+      "matched": 0,
+      "unmatched": 2,
+      "pctMatched": 0
+    },
+    {
+      "city": "SOMERSWORTH",
+      "total": 7,
+      "matched": 0,
+      "unmatched": 7,
+      "pctMatched": 0
+    },
+    {
+      "city": "LITTLE COMPTON",
+      "total": 10,
+      "matched": 0,
+      "unmatched": 10,
+      "pctMatched": 0
+    },
+    {
+      "city": "NORWICH",
+      "total": 2,
+      "matched": 0,
+      "unmatched": 2,
+      "pctMatched": 0
+    },
+    {
+      "city": "RAYMOND",
+      "total": 11,
+      "matched": 0,
+      "unmatched": 11,
+      "pctMatched": 0
+    },
+    {
+      "city": "FITZWILLIAM",
+      "total": 4,
+      "matched": 0,
+      "unmatched": 4,
+      "pctMatched": 0
+    },
+    {
+      "city": "ASHFORD",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "MONT VERNON",
+      "total": 7,
+      "matched": 0,
+      "unmatched": 7,
+      "pctMatched": 0
+    },
+    {
+      "city": "WILTON",
+      "total": 4,
+      "matched": 0,
+      "unmatched": 4,
+      "pctMatched": 0
+    },
+    {
+      "city": "SMITHFIELD",
+      "total": 16,
+      "matched": 0,
+      "unmatched": 16,
+      "pctMatched": 0
+    },
+    {
+      "city": "NEW IPSWICH",
+      "total": 15,
+      "matched": 0,
+      "unmatched": 15,
+      "pctMatched": 0
+    },
+    {
+      "city": "HEBRON",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "VERNON",
+      "total": 3,
+      "matched": 0,
+      "unmatched": 3,
+      "pctMatched": 0
+    },
+    {
+      "city": "NEWPORT",
+      "total": 12,
+      "matched": 0,
+      "unmatched": 12,
+      "pctMatched": 0
+    },
+    {
+      "city": "THORNTON",
+      "total": 12,
+      "matched": 0,
+      "unmatched": 12,
+      "pctMatched": 0
+    },
+    {
+      "city": "PETERBOROUGH",
+      "total": 10,
+      "matched": 0,
+      "unmatched": 10,
+      "pctMatched": 0
+    },
+    {
+      "city": "NEWMARKET",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "STRATHAM",
+      "total": 6,
+      "matched": 0,
+      "unmatched": 6,
+      "pctMatched": 0
+    },
+    {
+      "city": "COVENTRY",
+      "total": 16,
+      "matched": 0,
+      "unmatched": 16,
+      "pctMatched": 0
+    },
+    {
+      "city": "GILFORD",
+      "total": 3,
+      "matched": 0,
+      "unmatched": 3,
+      "pctMatched": 0
+    },
+    {
+      "city": "TROY",
+      "total": 4,
+      "matched": 0,
+      "unmatched": 4,
+      "pctMatched": 0
+    },
+    {
+      "city": "WINDSOR LOCKS",
+      "total": 3,
+      "matched": 0,
+      "unmatched": 3,
+      "pctMatched": 0
+    },
+    {
+      "city": "TILTON",
+      "total": 3,
+      "matched": 0,
+      "unmatched": 3,
+      "pctMatched": 0
+    },
+    {
+      "city": "CANDIA",
+      "total": 4,
+      "matched": 0,
+      "unmatched": 4,
+      "pctMatched": 0
+    },
+    {
+      "city": "EPPING",
+      "total": 13,
+      "matched": 0,
+      "unmatched": 13,
+      "pctMatched": 0
+    },
+    {
+      "city": "NEW DURHAM",
+      "total": 2,
+      "matched": 0,
+      "unmatched": 2,
+      "pctMatched": 0
+    },
+    {
+      "city": "OSSIPEE",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "WILLINGTON",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "AUGUSTA",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "SANBORNTON",
+      "total": 2,
+      "matched": 0,
+      "unmatched": 2,
+      "pctMatched": 0
+    },
+    {
+      "city": "MIDDLETOWN",
+      "total": 3,
+      "matched": 0,
+      "unmatched": 3,
+      "pctMatched": 0
+    },
+    {
+      "city": "UNION",
+      "total": 2,
+      "matched": 0,
+      "unmatched": 2,
+      "pctMatched": 0
+    },
+    {
+      "city": "NEW BRITAIN",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "STEWARTSTOWN",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "EAST GREENWICH",
+      "total": 5,
+      "matched": 0,
+      "unmatched": 5,
+      "pctMatched": 0
+    },
+    {
+      "city": "WELLS",
+      "total": 7,
+      "matched": 0,
+      "unmatched": 7,
+      "pctMatched": 0
+    },
+    {
+      "city": "LITCHFIELD",
+      "total": 5,
+      "matched": 0,
+      "unmatched": 5,
+      "pctMatched": 0
+    },
+    {
+      "city": "WEST HAVEN",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "DURHAM",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "BRADFORD",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "NORTH HAMPTON",
+      "total": 4,
+      "matched": 0,
+      "unmatched": 4,
+      "pctMatched": 0
+    },
+    {
+      "city": "ANTRIM",
+      "total": 3,
+      "matched": 0,
+      "unmatched": 3,
+      "pctMatched": 0
+    },
+    {
+      "city": "HAMPTON FALLS",
+      "total": 7,
+      "matched": 0,
+      "unmatched": 7,
+      "pctMatched": 0
+    },
+    {
+      "city": "JAFFREY",
+      "total": 7,
+      "matched": 0,
+      "unmatched": 7,
+      "pctMatched": 0
+    },
+    {
+      "city": "KENSINGTON",
+      "total": 2,
+      "matched": 0,
+      "unmatched": 2,
+      "pctMatched": 0
+    },
+    {
+      "city": "FOSTER",
+      "total": 4,
+      "matched": 0,
+      "unmatched": 4,
+      "pctMatched": 0
+    },
+    {
+      "city": "ALLENSTOWN",
+      "total": 2,
+      "matched": 0,
+      "unmatched": 2,
+      "pctMatched": 0
+    },
+    {
+      "city": "KEENE",
+      "total": 3,
+      "matched": 0,
+      "unmatched": 3,
+      "pctMatched": 0
+    },
+    {
+      "city": "WETHERSFIELD",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "YORK",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "SOUTH KINGSTOWN",
+      "total": 3,
+      "matched": 0,
+      "unmatched": 3,
+      "pctMatched": 0
+    },
+    {
+      "city": "SWANZEY",
+      "total": 3,
+      "matched": 0,
+      "unmatched": 3,
+      "pctMatched": 0
+    },
+    {
+      "city": "EAST WINDSOR",
+      "total": 3,
+      "matched": 0,
+      "unmatched": 3,
+      "pctMatched": 0
+    },
+    {
+      "city": "NEW LONDON",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "FREMONT",
+      "total": 5,
+      "matched": 0,
+      "unmatched": 5,
+      "pctMatched": 0
+    },
+    {
+      "city": "ELLINGTON",
+      "total": 4,
+      "matched": 0,
+      "unmatched": 4,
+      "pctMatched": 0
+    },
+    {
+      "city": "HARTLAND",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "POMFRET",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "SEYMOUR",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "SIMSBURY",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "BROWNFIELD",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "WOODBURY",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "SOUTH HAMPTON",
+      "total": 2,
+      "matched": 0,
+      "unmatched": 2,
+      "pctMatched": 0
+    },
+    {
+      "city": "HILLSBOROUGH",
+      "total": 2,
+      "matched": 0,
+      "unmatched": 2,
+      "pctMatched": 0
+    },
+    {
+      "city": "LYNDEBOROUGH",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "MADISON",
+      "total": 3,
+      "matched": 0,
+      "unmatched": 3,
+      "pctMatched": 0
+    },
+    {
+      "city": "WEST GREENWICH",
+      "total": 2,
+      "matched": 0,
+      "unmatched": 2,
+      "pctMatched": 0
+    },
+    {
+      "city": "MOULTONBOROUGH",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "NEWFIELDS",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "WEARE",
+      "total": 2,
+      "matched": 0,
+      "unmatched": 2,
+      "pctMatched": 0
+    },
+    {
+      "city": "WOLFEBORO",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "CHARLESTOWN",
+      "total": 2,
+      "matched": 0,
+      "unmatched": 2,
+      "pctMatched": 0
+    },
+    {
+      "city": "NEW BOSTON",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "SCARBOROUGH",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "SUNAPEE",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "DUBLIN",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "GREENLAND",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "ROLLINSFORD",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "WILMOT",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "EPSOM",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "BOW",
+      "total": 2,
+      "matched": 0,
+      "unmatched": 2,
+      "pctMatched": 0
+    },
+    {
+      "city": "CLAREMONT",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "EAST GRANBY",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "MASON",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "JAMESTOWN",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "CHICHESTER",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    },
+    {
+      "city": "DANBURY",
+      "total": 1,
+      "matched": 0,
+      "unmatched": 1,
+      "pctMatched": 0
+    }
+  ],
+  "flags": {
+    "townsWithZoningButZeroMatches": []
+  }
+}

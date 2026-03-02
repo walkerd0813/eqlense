@@ -1,0 +1,14 @@
+{
+  "created_at": "2025-12-27T04:14:59.469270Z",
+  "id": "phase4_global_master_merge_attach_v4",
+  "properties_in": "publicData\\properties\\properties_v46_withBaseZoning__20251220_from_v44__NAMEFIX.ndjson",
+  "city_master_ptr": "publicData\\assessors\\_frozen\\CURRENT_PHASE4_ASSESSOR_MASTER.json",
+  "massgis_master_ptr": "publicData\\assessors\\massgis_statewide\\CURRENT_MASSGIS_STATEWIDE_ASSESSOR_MASTER.json",
+  "out_dir": "publicData\\properties\\_attached\\phase4_assessor_global",
+  "global_master_out_dir": "publicData\\assessors\\_global_master",
+  "notes": [
+    "v4 hotfix: avoid ENOENT by not reopening the just-written GLOBAL master file; build in-memory index during merge, then attach in same process.",
+    "Precedence: municipal record wins over MassGIS for best fields; both stored in raw-by-source blocks where present.",
+    "Adds best + source_map + fallback_fields as per Bible."
+  ]
+}

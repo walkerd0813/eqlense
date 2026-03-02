@@ -1,0 +1,25 @@
+{
+  "schema": "equity_lens.contracts.zoning_snapshot.zs1.v0_1",
+  "as_of_date": "2026-01-10",
+  "state": "DRAFT",
+  "purpose": "Define required headers for base zoning + overlay snapshot artifacts and how they are versioned.",
+  "required_headers": [
+    "jurisdiction_name",
+    "source_system",
+    "source_url",
+    "source_layer_name",
+    "as_of_date",
+    "dataset_version",
+    "dataset_hash",
+    "crs",
+    "feature_count",
+    "bbox",
+    "geometry_validity_summary"
+  ],
+  "non_negotiables": [
+    "EPSG:4326 only",
+    "Geometry and rules are separate artifacts",
+    "No inference of rules from geometry",
+    "Freeze outputs with SHA256 + MANIFEST.json + CURRENT pointer"
+  ]
+}

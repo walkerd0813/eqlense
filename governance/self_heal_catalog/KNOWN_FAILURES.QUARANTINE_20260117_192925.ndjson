@@ -1,0 +1,30 @@
+{"ts":"2026-01-13T00:06:17.5095437-05:00","class":"PS_STRICTMODE_MISSING_PROPERTY","signature":"PropertyNotFoundStrict.*(gates|runner)","heal_action":"Use PSObject.Properties.Match() checks; skip missing optional blocks."}
+{"ts":"2026-01-13T00:06:17.5178586-05:00","class":"PS_WRITES_UTF8_WITH_BOM","signature":"Unexpected UTF-8 BOM","heal_action":"Write UTF8 no-BOM or scrub BOM post-write for NDJSON/JSON artifacts."}
+{"ts":"2026-01-13T00:06:17.5178586-05:00","class":"ENGINE_REGISTRY_PATH_DRIFT","signature":"missing ENGINE_REGISTRY.json: .*\\\\\\\\ENGINE_REGISTRY.json","heal_action":"Fallback to governance\\\\\\\\engine_registry\\\\\\\\ENGINE_REGISTRY.json; write compat root copy."}
+{"ts":"2026-01-13T00:06:17.5178586-05:00","class":"RUNNER_PARAM_MISMATCH","signature":"PositionalParameterNotFound.*-CmdArgsLine","heal_action":"Invoke wrapper with named params; splat args; avoid positional binding."}
+{"ts":"2026-01-13T00:06:17.5188561-05:00","class":"CROSSLANG_STRING_FORMAT_MISMATCH","signature":"No such file or directory: \u0027%s\u0027","heal_action":"Avoid mixing PS + Python % formatting; pass args as separate tokens or use env var."}
+{"ts":"2026-01-13T00:06:17.5188561-05:00","class":"PATCH_SCRIPT_PARSE_ERROR","signature":"Missing.*terminator|Unexpected token|Missing \\\\)","heal_action":"Auto-restore from latest .bak_*, or reinstall known-good template."}
+{"ts":"2026-01-13T00:06:17.5188561-05:00","class":"PATH_WATCHER_WRONG_DIR","signature":"watch.*Downloads.*empty|manual_inbox is empty","heal_action":"Print resolved path; hardcode correct folder; emit GDE next_action."}
+{"ts":"2026-01-13T00:06:17.5198409-05:00","class":"ESM_CJS_MISMATCH","signature":"require is not defined|Cannot use import statement","heal_action":"Enforce ESM; update package.json type=module; rewrite imports."}
+{"ts":"2026-01-13T00:06:17.5198409-05:00","class":"ARGPARSE_RESERVED","signature":"unrecognized arguments: --in\\\\b","heal_action":"Rename arg to --infile; keep compatibility map."}
+{"ts":"2026-01-13T00:06:17.5198409-05:00","class":"NDJSON_TRAILING_GARBAGE","signature":"JSONDecodeError|Extra data|Expecting value","heal_action":"Trim invalid trailing lines; quarantine bad rows; re-freeze."}
+{"created_at_utc":"2026-01-17T23:23:26.9045985Z","rule_id":"arcgis_transient_retry_backoff_v1","heal_action":{"sleep_max":0.25,"note":"Deterministic only: adjust sleep/backoff; no fuzzy transforms; do not change matching logic.","max_retries":4,"sleep_param_key":"sleep","type":"retry_with_backoff","sleep_multiplier":2},"schema":{"version":"v1","name":"equitylens.self_heal_rule"},"severity":"SOFT","match":{"any_error_substr":["429","Too Many Requests","Read timed out","TimeoutError","Connection reset","RemoteDisconnected","Service Unavailable","502","503","504"]},"engine_id":"events.registry_attach_unknown_via_arcgis_parcel_id_v1_1_cache"}
+{
+    "rule_id":  "script_utf8_bom_autofix_v1",
+    "heal_action":  {
+                        "type":  "rewrite_file_utf8_no_bom",
+                        "note":  "Rewrite the failing script/text file as UTF-8 without BOM; content unchanged."
+                    },
+    "schema":  {
+                   "version":  "v1",
+                   "name":  "equitylens.self_heal_rule"
+               },
+    "match":  {
+                  "any_error_substr":  [
+                                           "invalid non-printable character U+FEFF",
+                                           "Unexpected UTF-8 BOM (decode using utf-8-sig)"
+                                       ]
+              },
+    "severity":  "SOFT",
+    "created_at_utc":  "2026-01-18T00:16:02Z"
+}

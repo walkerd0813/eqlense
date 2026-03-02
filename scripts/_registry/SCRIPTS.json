@@ -1,0 +1,38 @@
+{
+    "updated_at_utc":  "2026-01-10T21:21:50Z",
+    "schema":  "equity_lens.scripts.registry.v0_1",
+    "entries":  [
+                    {
+                        "engine_key":  "GENERIC",
+                        "path":  "C:\\seller-app\\backend\\scripts\\ops_journal\\ProcSafe.ps1",
+                        "version":  "v0_1",
+                        "status":  "DEPRECATED",
+                        "acceptance_profile":  "bootstrap",
+                        "blessed_at_utc":  "2026-01-11T16:11:42Z"
+                    },
+                    {
+                        "engine_key":  "GENERIC",
+                        "path":  "C:\\seller-app\\backend\\scripts\\ops_journal\\Run-OpsJournal-Start_v0_1_PS51SAFE.ps1",
+                        "version":  "v0_1",
+                        "status":  "DEPRECATED",
+                        "acceptance_profile":  "bootstrap",
+                        "blessed_at_utc":  "2026-01-11T16:11:43Z"
+                    },
+                    {
+                        "engine_key":  "GENERIC",
+                        "path":  "C:\\seller-app\\backend\\scripts\\ops_journal\\Run-OpsJournal-End_v0_1_PS51SAFE.ps1",
+                        "version":  "v0_1",
+                        "status":  "DEPRECATED",
+                        "acceptance_profile":  "bootstrap",
+                        "blessed_at_utc":  "2026-01-11T16:11:43Z"
+                    },
+                    {
+                        "engine_key":  "GENERIC",
+                        "path":  "C:\\seller-app\\backend\\scripts\\ops_journal\\Bless-Script_v0_1_PS51SAFE.ps1",
+                        "version":  "v0_1",
+                        "status":  "BLESSED",
+                        "acceptance_profile":  "bootstrap",
+                        "blessed_at_utc":  "2026-01-11T16:11:43Z"
+                    }
+                ]
+}

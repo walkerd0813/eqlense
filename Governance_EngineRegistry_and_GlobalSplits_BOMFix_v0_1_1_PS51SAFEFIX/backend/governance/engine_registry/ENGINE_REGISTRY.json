@@ -1,0 +1,41 @@
+{
+  "schema": "equity_lens.governance.engine_registry.v0_1",
+  "generated_at_utc": "2026-01-11T01:49:43Z",
+  "note": "Central engine registry: inputs (CURRENT pointers), gates, acceptance tests, outputs, promotion policy.",
+  "engines": [
+    {
+      "engine_id": "market_radar.res_1_4_v1",
+      "name": "Market Radar \u2014 Residential (1\u20134)",
+      "status": "active",
+      "owner": "pro",
+      "inputs": {
+        "required_artifacts": [
+          "publicData/marketRadar/CURRENT/CURRENT_MARKET_RADAR_POINTERS_RES_1_4.json"
+        ],
+        "optional_artifacts": []
+      },
+      "gates": {
+        "required": [
+          "gate.contracts.gatekeeper_passed",
+          "gate.global_splits.gs1_present"
+        ]
+      },
+      "outputs": [
+        {
+          "artifact_key": "market_radar_zip_summary_res_1_4",
+          "current_pointer": "publicData/marketRadar/CURRENT/CURRENT_MARKET_RADAR_POINTERS_RES_1_4.json",
+          "requires_manifest": false
+        }
+      ],
+      "acceptance_tests": [
+        "test.market_radar.res_1_4.pointers_json_valid",
+        "test.market_radar.res_1_4.required_pointers_exist"
+      ],
+      "promotion_policy": {
+        "allow_candidate_outputs": true,
+        "promote_only_if_tests_pass": true,
+        "runs_may_warn_but_not_block": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "created_at": "2025-12-27",
+  "notes": [
+    "v2 fix: matched=0 issue by adding GLOBAL parcel_id index across all assessor masters (no city dependency).",
+    "Still preserves deterministic precedence and raw-by-source + best + provenance rules.",
+    "City is now used only as a hint; global map guarantees matches where parcel_id_norm formats align."
+  ],
+  "inputs": {
+    "properties_ndjson": "AUTO_LATEST_IN_publicData/properties",
+    "assessor_master_current_ptr": "publicData/assessors/_frozen/CURRENT_PHASE4_ASSESSOR_MASTER.json"
+  },
+  "outputs": {
+    "out_dir": "publicData/properties/_attached/phase4_assessor_best"
+  },
+  "field_contract": {
+    "provenance_object_fields": [
+      "valuation.assessed_total",
+      "valuation.assessed_land",
+      "valuation.assessed_building",
+      "valuation.assessed_other",
+      "valuation.assessed_exemptions",
+      "valuation.assessed_year",
+      "building.units_est",
+      "building.year_built_est",
+      "txn.last_sale_date",
+      "txn.last_sale_price",
+      "owner.owner_name_1",
+      "owner.owner_name_2",
+      "owner.owner_company",
+      "owner.owner_type_norm",
+      "owner.mailing_address_full",
+      "owner.owner_occupied_flag"
+    ]
+  }
+}

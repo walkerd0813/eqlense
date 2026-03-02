@@ -1,0 +1,10 @@
+{
+  "schema": "equity_lens.contracts.founder_guidance.b1.v0_1",
+  "radar_track": "LAND",
+  "as_of_date": "2026-01-10",
+  "state": "PLACEHOLDER",
+  "reason": "UNSUPPORTED_TRACK_NOT_BUILT_YET",
+  "audience": "internal_founder",
+  "copy_blocks": {},
+  "notes": "Placeholder until LAND radar is built. Must differ from RES language (optionalities/entitlement)."
+}

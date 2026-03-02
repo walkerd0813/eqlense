@@ -1,0 +1,27 @@
+import { generateNeighborhoodAlerts } from "./alertService.js";
+
+/**
+ * Master Alert Engine
+ * -------------------
+ * V1: Runs listing-based alerts.
+ * V2: Will include business, safety, utility, school, events.
+ * 
+ * @param {string[]} zips - List of ZIPs to scan for alerts.
+ */
+export async function runAlertEngine(zips) {
+  for (const zip of zips) {
+    // Listing-based alerts (new listing, pending, sold)
+    await generateNeighborhoodAlerts(zip);
+
+    // -------------------------
+    // V2+: Additional alert types will plug in here:
+    // await generateBusinessAlerts(zip);
+    // await generateSafetyAlerts(zip);
+    // await generateUtilityAlerts(zip);
+    // await generateSchoolAlerts(zip);
+    // await generateEventAlerts(zip);
+    // -------------------------
+  }
+
+  return true;
+}

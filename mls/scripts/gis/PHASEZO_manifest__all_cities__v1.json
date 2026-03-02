@@ -1,0 +1,167 @@
+{
+  "version": "PHASEZO_ALL_V1",
+  "notes": "Municipal zoning overlays/subdistricts (Phase ZO). Non-zoning layers excluded (bathymetry, water bodies, wetlands buffers, easements, urban renewal, etc.).",
+  "cities": [
+    {
+      "city": "boston",
+      "overlays": [
+        {
+          "layer_key": "zo_boston_subdistricts",
+          "rel_path": "publicData/zoning/boston/overlays/Boston_Zoning_Subdistricts.geojson"
+        },
+        {
+          "layer_key": "zo_boston_gcod",
+          "rel_path": "publicData/zoning/boston/overlays/Boston_Zoning_Groundwater_Conservation_Overlay_District_GCOD.geojson"
+        },
+        {
+          "layer_key": "zo_boston_coastal_flood_resilience",
+          "rel_path": "publicData/zoning/boston/overlays/Coastal_Flood_Resilience_Overlay_District.geojson"
+        },
+        {
+          "layer_key": "zo_boston_airport_overlay",
+          "rel_path": "publicData/zoning/boston/overlays/airport_overlay.geojson"
+        }
+      ]
+    },
+    {
+      "city": "brookline",
+      "overlays": [
+        {
+          "layer_key": "zo_brookline_zoning_overlay",
+          "rel_path": "publicData/zoning/brookline/overlays/Zoning_Overlay.geojson"
+        }
+      ]
+    },
+    {
+      "city": "cambridge",
+      "overlays": [
+        {
+          "layer_key": "zo_cambridge_cdd_commercial_districts",
+          "rel_path": "publicData/zoning/cambridge/overlays/CDD_CommercialDistricts.geojson"
+        },
+        {
+          "layer_key": "zo_cambridge_cdd_zoning_overlay_districts",
+          "rel_path": "publicData/zoning/cambridge/overlays/CDD_ZoningOverlayDistricts.geojson"
+        }
+      ]
+    },
+    {
+      "city": "chelsea",
+      "overlays": [
+        {
+          "layer_key": "zo_chelsea_airport_related_overlay",
+          "rel_path": "publicData/zoning/chelsea/overlays/Airport_Related_Overlay_District.geojson"
+        },
+        {
+          "layer_key": "zo_chelsea_mixed_use_overlay",
+          "rel_path": "publicData/zoning/chelsea/overlays/MixedUse_overlaydistrict.geojson"
+        },
+        {
+          "layer_key": "zo_chelsea_gerrish_ave_smart_growth",
+          "rel_path": "publicData/zoning/chelsea/overlays/Gerrish_Ave_Smart_Growth_Overlay_District.geojson"
+        }
+      ]
+    },
+    {
+      "city": "newton",
+      "overlays": [
+        {
+          "layer_key": "zo_newton_village_center_overlay_districts",
+          "rel_path": "publicData/zoning/newton/overlays/zoning_overlay__zoning_village_center_overlay_districts__23.geojson"
+        }
+      ]
+    },
+    {
+      "city": "quincy",
+      "overlays": [
+        {
+          "layer_key": "zo_quincy_center_historic_district",
+          "rel_path": "publicData/zoning/quincy/overlays/zoning_overlay__quincy__gdb___misc__quincy__gdb__ExportFeatures_OutFeatures_Special_District_Quincy_Center_Historic_District.geojson"
+        },
+        {
+          "layer_key": "zo_quincy_centre_st_tod",
+          "rel_path": "publicData/zoning/quincy/overlays/zoning_overlay__quincy__gdb___misc__quincy__gdb__ExportFeatures_OutFeatures_Special_District_Centre_Street_Transit_Oriented_District.geojson"
+        },
+        {
+          "layer_key": "zo_quincy_adams_birthplace_historic_district",
+          "rel_path": "publicData/zoning/quincy/overlays/zoning_overlay__quincy__gdb___misc__quincy__gdb__ExportFeatures_OutFeatures_Special_District_Adams_Birthplace_Historic_District.geojson"
+        },
+        {
+          "layer_key": "zo_quincy_floodplain_overlay",
+          "rel_path": "publicData/zoning/quincy/overlays/overlays__quincy__gdb__ExportFeatures_OutFeatures_Special_District_Floodplain_Overlay_District.geojson"
+        },
+        {
+          "layer_key": "zo_quincy_mbta_multifamily_overlay_west_quincy",
+          "rel_path": "publicData/zoning/quincy/overlays/overlays__quincy__gdb__ExportFeatures_OutFeatures_MBTA_Community_Multi_Family_Overlay_District_West_Quincy_Zoning_District.geojson"
+        }
+      ]
+    },
+    {
+      "city": "revere",
+      "overlays": [
+        {
+          "layer_key": "zo_revere_zoning_overlay_zones",
+          "rel_path": "publicData/zoning/revere/overlays/zoning_overlay__revere_zoning_overlay_zones__29.geojson"
+        }
+      ]
+    },
+    {
+      "city": "somerville",
+      "overlays": [
+        {
+          "layer_key": "zo_somerville_overlay_districts",
+          "rel_path": "publicData/zoning/somerville/overlays/OverlayDistricts.geojson"
+        }
+      ]
+    },
+    {
+      "city": "springfield",
+      "overlays": [
+        {
+          "layer_key": "zo_springfield_zoning_overlay",
+          "rel_path": "publicData/zoning/springfield/overlays/zoning_overlay__springfield__webgisdynamicmap__30.geojson"
+        }
+      ]
+    },
+    {
+      "city": "waltham",
+      "overlays": [
+        {
+          "layer_key": "zo_waltham_riverfront_overlay",
+          "rel_path": "publicData/zoning/waltham/overlays/zoning_overlay__riverfrontoverlay__14.geojson"
+        }
+      ]
+    },
+    {
+      "city": "wareham",
+      "overlays": [
+        {
+          "layer_key": "zo_wareham_overlay_districts",
+          "rel_path": "publicData/zoning/wareham/overlays/Overlay_Districts.geojson"
+        },
+        {
+          "layer_key": "zo_wareham_gcod",
+          "rel_path": "publicData/zoning/wareham/overlays/Zoning_Groundwater_Conservation_Overlay_District_(GCOD).geojson"
+        }
+      ]
+    },
+    {
+      "city": "west_springfield",
+      "overlays": [
+        {
+          "layer_key": "zo_west_springfield_zoning_overlay",
+          "rel_path": "publicData/zoning/west_springfield/overlays/zoning_overlay__west_springfield__msrvcstgeneraluseparcelbasemap__38.geojson"
+        }
+      ]
+    },
+    {
+      "city": "worcester",
+      "overlays": [
+        {
+          "layer_key": "zo_worcester_zoning_overlays",
+          "rel_path": "publicData/zoning/worcester/overlays/Zoning_Overlays.geojson"
+        }
+      ]
+    }
+  ]
+}

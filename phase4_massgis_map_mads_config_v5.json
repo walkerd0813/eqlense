@@ -1,0 +1,20 @@
+{
+  "created_at": "2025-12-27T03:01:12.075365Z",
+  "id": "phase4_massgis_map_mads_v5",
+  "primary_layer_urls": [
+    "https://arcgisserver.digital.mass.gov/arcgisserver/rest/services/AGOL/MassachusettsPropertyTaxParcels/MapServer/0",
+    "https://arcgisserver.digital.mass.gov/arcgisserver/rest/services/AGOL/MassachusettsPropertyTaxParcels/MapServer/4"
+  ],
+  "where": "1=1",
+  "page_size": 2000,
+  "out_fields": "*",
+  "return_geometry": false,
+  "out_dir": "publicData/assessors/massgis_statewide",
+  "audit_dir": "publicData/_audit/phase4_assessor",
+  "output_master_subdir": "_master",
+  "notes": [
+    "v5: if count=0 on MapServer, auto-tries FeatureServer equivalent AND also tries returnIdsOnly probe; supports trying multiple candidate layers (0,4).",
+    "MassGIS statewide layer is fallback assessor dataset; city assessor wins when present.",
+    "Does not fetch geometry."
+  ]
+}

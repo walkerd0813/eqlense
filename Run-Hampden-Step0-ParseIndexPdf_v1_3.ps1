@@ -1,0 +1,92 @@
+param(
+  [string]$BackendRoot = 'C:\seller-app\backend',
+  [string]$DownloadsHamden = "$env:USERPROFILE\Downloads\Hamden",
+  [ValidateSet('deed','discharge','mortgage','assignment','lien','lis_pendens','foreclosure','any')]
+  [string]$Prefer = 'deed',
+  [string]$NameContains = '',
+  [string]$NameRegex = '',
+  [string]$PdfPath = ''
+)
+
+Write-Host '[start] Hampden STEP 0 v1.3 — Parse Index PDF (NO OCR, NO ATTACHING)'
+
+if (!(Test-Path -LiteralPath $BackendRoot)) {
+  Write-Host ('[error] BackendRoot not found: {0}' -f $BackendRoot)
+  exit 1
+}
+if (!(Test-Path -LiteralPath $DownloadsHamden)) {
+  Write-Host ('[error] Hampden downloads folder not found: {0}' -f $DownloadsHamden)
+  exit 1
+}
+
+$Script = Join-Path $PSScriptRoot 'parse_hampden_index_pdf_v1_2.py'
+if (!(Test-Path -LiteralPath $Script)) {
+  Write-Host ('[error] Missing parser: {0}' -f $Script)
+  exit 1
+}
+
+function Pick-Pdf {
+  param([string]$preferKey, [string]$contains, [string]$regex, [string]$explicitPath)
+
+  if ($explicitPath -and (Test-Path -LiteralPath $explicitPath)) {
+    return Get-Item -LiteralPath $explicitPath
+  }
+
+  $all = Get-ChildItem -LiteralPath $DownloadsHamden -Recurse -Filter '*.pdf' | Sort-Object LastWriteTime -Descending
+  if (-not $all) { return $null }
+
+  if ($regex) {
+    try {
+      $hit = $all | Where-Object { $_.Name -match $regex } | Select-Object -First 1
+      if ($hit) { return $hit }
+    } catch {
+      Write-Host ('[warn] invalid -NameRegex: {0}' -f $regex)
+    }
+  }
+
+  if ($contains) {
+    $hit = $all | Where-Object { $_.Name.ToLower().Contains($contains.ToLower()) } | Select-Object -First 1
+    if ($hit) { return $hit }
+  }
+
+  if ($preferKey -ne 'any') {
+    $hit = $all | Where-Object { $_.Name.ToLower().Contains($preferKey) } | Select-Object -First 1
+    if ($hit) { return $hit }
+  }
+
+  return $all | Select-Object -First 1
+}
+
+$pdf = Pick-Pdf -preferKey $Prefer -contains $NameContains -regex $NameRegex -explicitPath $PdfPath
+if (-not $pdf) {
+  Write-Host '[error] No matching PDF found.'
+  Write-Host ('[hint] Folder: {0}' -f $DownloadsHamden)
+  Write-Host ('[hint] Prefer: {0}  NameContains: {1}  NameRegex: {2}  PdfPath: {3}' -f $Prefer, $NameContains, $NameRegex, $PdfPath)
+  exit 1
+}
+
+$OutDir = Join-Path $BackendRoot 'publicData\registry\hampden\_raw_from_index_v1'
+$Audit  = Join-Path $BackendRoot 'publicData\_audit\registry\hampden_index_raw_v1_2_audit.json'
+New-Item -ItemType Directory -Force -Path $OutDir | Out-Null
+New-Item -ItemType Directory -Force -Path (Split-Path $Audit) | Out-Null
+
+Write-Host ('[info] Prefer: {0}' -f $Prefer)
+if ($NameContains) { Write-Host ('[info] NameContains: {0}' -f $NameContains) }
+if ($NameRegex) { Write-Host ('[info] NameRegex: {0}' -f $NameRegex) }
+if ($PdfPath) { Write-Host ('[info] PdfPath: {0}' -f $PdfPath) }
+Write-Host ('[info] PDF: {0}' -f $pdf.FullName)
+Write-Host ('[info] OutDir: {0}' -f $OutDir)
+Write-Host ('[info] Audit: {0}' -f $Audit)
+Write-Host ('[info] Script: {0}' -f $Script)
+
+Push-Location $BackendRoot
+try {
+  python $Script --pdf $pdf.FullName --outDir $OutDir --audit $Audit
+  if ($LASTEXITCODE -ne 0) { throw ('python exited with code {0}' -f $LASTEXITCODE) }
+}
+finally {
+  Pop-Location
+}
+
+Write-Host '[done] Hampden STEP 0 v1.3 complete.'
+Write-Host '[next] Repeat STEP 0 for the other PDFs, then rerun STEP 1 to rebuild _events_v1.'

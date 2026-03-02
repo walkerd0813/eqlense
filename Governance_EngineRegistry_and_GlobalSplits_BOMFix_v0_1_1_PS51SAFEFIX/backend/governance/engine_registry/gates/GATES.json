@@ -1,0 +1,31 @@
+{
+  "schema": "equity_lens.governance.gates.v0_1",
+  "generated_at_utc": "2026-01-11T01:49:43Z",
+  "gates": [
+    {
+      "gate_id": "gate.contracts.gatekeeper_passed",
+      "scope": "global",
+      "type": "policy",
+      "fail_message": "Contracts gatekeeper failed. Run scripts/contracts/Run-ValidateContractsGate_v0_1_PS51SAFE.ps1 and fix before promotion.",
+      "check": {
+        "kind": "script_exitcode",
+        "script_ps1": "scripts/contracts/Run-ValidateContractsGate_v0_1_PS51SAFE.ps1",
+        "args": [
+          "-Root",
+          "{ROOT}"
+        ],
+        "timeout_sec": 90
+      }
+    },
+    {
+      "gate_id": "gate.global_splits.gs1_present",
+      "scope": "global",
+      "type": "qa",
+      "fail_message": "Global Split Contract (gs1) missing/invalid. Run scripts/contracts/Run-ValidateGlobalSplitsContract_v0_1_PS51SAFE.ps1.",
+      "check": {
+        "kind": "file_exists",
+        "path": "publicData/contracts/global/global_split_contract__gs1__v0_1.json"
+      }
+    }
+  ]
+}

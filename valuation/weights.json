@@ -1,0 +1,15 @@
+{
+  "location": 0.22,
+  "condition": 0.18,
+  "style": 0.12,
+  "sqft": 0.18,
+  "bedBath": 0.09,
+  "yearBuilt": 0.05,
+  "lotSize": 0.05,
+  "schoolDistrict": 0.11,
+  "neighborhood": 0.08,
+
+  "version": "1.0.0",
+  "lastUpdated": "2025-01-01",
+  "notes": "Default baseline weights before machine calibration begins."
+}

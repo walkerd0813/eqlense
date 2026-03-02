@@ -1,0 +1,131 @@
+{
+  "ZONING_ENGINE_V1_MIN": {
+    "phase": "Now",
+    "description": "Minimum contract headers needed to treat base zoning as attached + evidence fields exist (null allowed).",
+    "required_headers": [
+      "property_id",
+      "parcel_id_raw",
+      "parcel_id_norm",
+      "source_city",
+      "source_state",
+      "address_city",
+      "address_state",
+      "address_zip",
+      "latitude",
+      "longitude",
+      "parcel_centroid_lat",
+      "parcel_centroid_lon",
+      "crs",
+      "dataset_hash",
+      "as_of_date",
+      "coord_source",
+      "coord_confidence_grade",
+      "base_zoning_status",
+      "base_zoning_code_raw",
+      "base_zoning_code_norm",
+      "zoning_attach_method",
+      "zoning_attach_confidence",
+      "zoning_source_city",
+      "zoning_dataset_hash",
+      "zoning_as_of_date"
+    ]
+  },
+  "PHASE1A_ENV_SUMMARY_V1": {
+    "phase": "Now",
+    "description": "Statewide canonical environmental/legal constraint summary fields (Phase 1A).",
+    "required_headers": [
+      "env_constraints_as_of_date",
+      "env_has_any_constraint",
+      "env_nfhl_attach_count",
+      "env_nfhl_has_flood_hazard",
+      "env_nfhl_zone",
+      "env_wetlands_attach_count",
+      "env_wetlands_on_parcel",
+      "env_wetlands_buffer_attach_count",
+      "env_wetlands_buffer_100ft",
+      "env_pros_attach_count",
+      "env_in_protected_open_space",
+      "env_aquifers_attach_count",
+      "env_has_aquifer",
+      "env_aquifer_class",
+      "env_zoneii_attach_count",
+      "env_has_zoneii_iwpa",
+      "env_swsp_attach_count",
+      "env_has_swsp",
+      "env_swsp_zone_abc"
+    ]
+  },
+  "PHASE1B_LOCAL_LEGAL_SUMMARY_V1": {
+    "phase": "Now",
+    "description": "Local legal patch overlays summary fields (historic/preservation etc.) Phase 1B.",
+    "required_headers": [
+      "phase1b_as_of_date",
+      "phase1b_input_contract_hash",
+      "has_local_legal_constraint",
+      "local_legal_count",
+      "local_legal_keys",
+      "local_legal_severity"
+    ]
+  },
+  "PHASEZO_MUNICIPAL_OVERLAY_SUMMARY_V1": {
+    "phase": "Now",
+    "description": "Municipal zoning overlays/subdistricts summary fields (Phase ZO).",
+    "required_headers": [
+      "has_zo_overlay",
+      "zo_overlay_count",
+      "zo_overlay_codes",
+      "zo_overlay_keys",
+      "zo_overlay_feature_count"
+    ]
+  },
+  "DILL_FINDER_V1": {
+    "phase": "Now",
+    "description": "Deal-finder gating inputs (uses only zoning + constraints + overlay flags).",
+    "required_headers": [
+      "property_id",
+      "parcel_id_raw",
+      "parcel_id_norm",
+      "source_city",
+      "source_state",
+      "base_zoning_status",
+      "base_zoning_code_norm",
+      "env_has_any_constraint",
+      "env_nfhl_has_flood_hazard",
+      "env_wetlands_on_parcel",
+      "env_in_protected_open_space",
+      "has_local_legal_constraint",
+      "local_legal_count",
+      "has_zo_overlay",
+      "zo_overlay_count",
+      "zo_overlay_keys"
+    ]
+  },
+  "DILL_UNDERWRITING_V1_FUTURE": {
+    "phase": "Future",
+    "description": "Full underwriting/Deal Stability scoring needs these extra fields (not expected in contract_view today).",
+    "required_headers": [
+      "property_type",
+      "units",
+      "living_area_sqft",
+      "lot_area_sqft",
+      "year_built",
+      "assessed_land_value",
+      "assessed_building_value",
+      "assessed_total_value",
+      "last_sale_date",
+      "last_sale_price",
+      "mls_event_count",
+      "mls_last_list_date",
+      "mls_last_list_price",
+      "mls_last_sale_date",
+      "mls_last_sale_price",
+      "market_absorption_score",
+      "market_velocity_score",
+      "market_volatility_score",
+      "market_liquidity_score",
+      "deal_stability_score",
+      "overpayment_risk_score",
+      "market_stability_score"
+    ]
+  }
+}

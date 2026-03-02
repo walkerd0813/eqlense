@@ -1,0 +1,60 @@
+﻿{
+  "phase": "phase3_utilities",
+  "version": "v1",
+  "notes": "Utilities & infrastructure layers. Distance-only evidence. No forced connections.",
+  "sources": [
+    { "city": "Boston", "label": "BWSC utilities root", "url": "https://gis3.cdmsmithgis.com/arcgis/rest/services/MASCOGIS/MapServer", "type": "mapserver_root" },
+    { "city": "Boston", "label": "Water Main (ID 19)", "url": "https://gis3.cdmsmithgis.com/arcgis/rest/services/MASCOGIS/MapServer/19", "type": "layer" },
+
+    { "city": "Cambridge", "label": "Services root", "url": "https://gis.cambridgema.gov/arcgis/rest/services", "type": "services_root" },
+    { "city": "Cambridge", "label": "DPW MapServer root", "url": "https://gisserver.cambridgema.gov/arcgis/rest/services/AxisGIS/DPW/MapServer", "type": "mapserver_root" },
+
+    { "city": "Somerville", "label": "Sewer+Storm MapServer root", "url": "https://maps.somervillema.gov/arcgis/rest/services/SewerAndStormWaterSystem/MapServer", "type": "mapserver_root" },
+    { "city": "Somerville", "label": "UtilitiesAndAssets2 MapServer root", "url": "https://maps.somervillema.gov/arcgis/rest/services/UtilitiesAndAssets2/MapServer", "type": "mapserver_root" },
+
+    { "city": "Newton", "label": "UtilityDrainLayers MapServer root", "url": "https://gisweb.newtonma.gov/server/rest/services/UtilityDrainLayers/MapServer", "type": "mapserver_root" },
+
+    { "city": "Brookline", "label": "Services root", "url": "https://gisweb.brooklinema.gov/arcgis/rest/services", "type": "services_root" },
+
+    { "city": "Dedham", "label": "Sewer MapServer root", "url": "https://gis.dedham-ma.gov/arcgis/rest/services/public/Sewer/MapServer", "type": "mapserver_root" },
+    { "city": "Dedham", "label": "Stormwater MapServer root", "url": "https://gis.dedham-ma.gov/arcgis/rest/services/public/Stormwater/MapServer", "type": "mapserver_root" },
+    { "city": "Dedham", "label": "Water_DWWD MapServer root", "url": "https://gis.dedham-ma.gov/arcgis/rest/services/public/Water_DWWD/MapServer", "type": "mapserver_root" },
+
+    { "city": "Revere", "label": "DPW MapServer root", "url": "https://gis.revere.org/arcgis/rest/services/Cartegraph_Basemaps/DPW/MapServer", "type": "mapserver_root" },
+    { "city": "Revere", "label": "All Utilities Basemap root", "url": "https://gis.revere.org/arcgis/rest/services/Cartegraph_Basemaps/All_Utilities_Basemap/MapServer", "type": "mapserver_root" },
+    { "city": "Revere", "label": "Water Basemap root", "url": "https://gis.revere.org/arcgis/rest/services/Cartegraph_Basemaps/Water_Basemap/MapServer", "type": "mapserver_root" },
+    { "city": "Revere", "label": "Sewer Basemap root", "url": "https://gis.revere.org/arcgis/rest/services/Cartegraph_Basemaps/Sewer_Basemap/MapServer", "type": "mapserver_root" },
+
+    { "city": "Springfield", "label": "Stormwater Mains FeatureServer root", "url": "https://services6.arcgis.com/5YJfprDR6T2FT4tY/arcgis/rest/services/Stormwater_Mains/FeatureServer", "type": "featureserver_root" },
+    { "city": "Springfield", "label": "WebGIS folder", "url": "https://maps.springfield-ma.gov/arcgis/rest/services/WebGIS", "type": "services_root" },
+
+    { "city": "Waltham", "label": "AGSUtilitiesWater MapServer root", "url": "https://web-gis.city.waltham.ma.us/arcgis/rest/services/AGSUtilitiesWater/MapServer", "type": "mapserver_root" },
+    { "city": "Waltham", "label": "AGSUtilitiesDrain MapServer root", "url": "https://web-gis.city.waltham.ma.us/arcgis/rest/services/AGSUtilitiesDrain/MapServer", "type": "mapserver_root" },
+    { "city": "Waltham", "label": "gpvPublicWks MapServer root", "url": "https://web-gis.city.waltham.ma.us/arcgis/rest/services/gpvPublicWks/MapServer", "type": "mapserver_root" },
+
+    { "city": "WestSpringfield", "label": "DPW sewer utilities MapServer root", "url": "https://gis.townofwestspringfield.org/arcgis/rest/services/Services/msrvDPWsewerUtilities/MapServer", "type": "mapserver_root" },
+    { "city": "WestSpringfield", "label": "DPW water utilities FeatureServer root", "url": "https://gis.townofwestspringfield.org/arcgis/rest/services/Services/msrvDPWwaterUtilities/FeatureServer", "type": "featureserver_root" },
+
+    { "city": "Braintree", "label": "ArcGIS Online org services root", "url": "https://services9.arcgis.com/wMoJraMZWuVPEmGK/ArcGIS/rest/services", "type": "services_root" },
+    { "city": "Braintree", "label": "Zoning FeatureServer root", "url": "https://services9.arcgis.com/wMoJraMZWuVPEmGK/ArcGIS/rest/services/Zoning/FeatureServer", "type": "featureserver_root" },
+
+    { "city": "Pittsfield", "label": "City services root", "url": "https://gis.pittsfield-ma.gov/arcgis/rest/services", "type": "services_root" },
+
+    { "city": "Malden", "label": "City REST root", "url": "https://maldengis2.cityofmalden.org/arcgis/rest/services/Utilities", "type": "services_root" },
+    { "city": "Malden", "label": "Public Malden FeatureServer", "url": "https://services6.arcgis.com/HvbabY0grzgZwGW1/ArcGIS/rest/services/Malden/FeatureServer", "type": "featureserver_root" }
+  ],
+
+  "layer_pick_rules": {
+    "include_keywords": [
+      "water", "hydrant", "valve", "main", "service", "lateral",
+      "sewer", "storm", "drain", "catchbasin", "inlet", "outfall", "culvert",
+      "gas", "electric", "substation", "regulator",
+      "easement", "encumbrance", "right-of-way", "row",
+      "road", "street", "bridge"
+    ],
+    "exclude_keywords": [
+      "basemap", "labels", "annotation", "tile", "imagery"
+    ]
+  }
+}
+

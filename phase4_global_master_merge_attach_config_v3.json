@@ -1,0 +1,46 @@
+{
+  "created_at": "2025-12-27",
+  "notes": [
+    "v3: Build GLOBAL assessor master by merging MassGIS statewide master with municipal city masters.",
+    "Precedence: city_assessor wins per-field when sane; else statewide_parcels; else null.",
+    "Then attach to Property Spine using global parcel_id_norm index (no city dependency)."
+  ],
+  "inputs": {
+    "properties_ndjson": "AUTO_LATEST_IN_publicData/properties",
+    "city_master_ptr": "publicData/assessors/_frozen/CURRENT_PHASE4_ASSESSOR_MASTER.json",
+    "massgis_master_ptr": "publicData/assessors/massgis_statewide/CURRENT_MASSGIS_STATEWIDE_ASSESSOR_MASTER.json"
+  },
+  "outputs": {
+    "global_master_dir": "publicData/assessors/_global_master",
+    "attached_out_dir": "publicData/properties/_attached/phase4_assessor_best"
+  },
+  "field_contract": {
+    "dotted_fields": [
+      "owner.owner_name_1",
+      "owner.owner_name_2",
+      "owner.owner_company",
+      "owner.owner_type_norm",
+      "owner.mailing_address_full",
+      "owner.mailing_city",
+      "owner.mailing_state",
+      "owner.mailing_zip",
+      "owner.owner_occupied_flag",
+      "valuation.assessed_land",
+      "valuation.assessed_building",
+      "valuation.assessed_other",
+      "valuation.assessed_total",
+      "valuation.assessed_exemptions",
+      "valuation.assessed_year",
+      "txn.last_sale_date",
+      "txn.last_sale_price",
+      "txn.deed_book",
+      "txn.deed_page",
+      "txn.registry_id",
+      "building.year_built_est",
+      "building.units_est",
+      "lot.lot_size_raw",
+      "lot.lot_units_raw",
+      "zoning.zoning_raw"
+    ]
+  }
+}

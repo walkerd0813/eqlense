@@ -1,0 +1,7022 @@
+[
+  {
+    "SHORT": "001",
+    "LONG": "All Other Boston"
+  },
+  {
+    "SHORT": "002",
+    "LONG": "Dorchester"
+  },
+  {
+    "SHORT": "003",
+    "LONG": "Mattapan"
+  },
+  {
+    "SHORT": "004",
+    "LONG": "Roxbury"
+  },
+  {
+    "SHORT": "005",
+    "LONG": "South Boston"
+  },
+  {
+    "SHORT": "006",
+    "LONG": "Hyde Park"
+  },
+  {
+    "SHORT": "007",
+    "LONG": "Jamaica Plain"
+  },
+  {
+    "SHORT": "008",
+    "LONG": "Roslindale"
+  },
+  {
+    "SHORT": "009",
+    "LONG": "West Roxbury"
+  },
+  {
+    "SHORT": "010",
+    "LONG": "Allston"
+  },
+  {
+    "SHORT": "011",
+    "LONG": "Brighton"
+  },
+  {
+    "SHORT": "018",
+    "LONG": "Charlestown"
+  },
+  {
+    "SHORT": "019",
+    "LONG": "East Boston"
+  },
+  {
+    "SHORT": "01A",
+    "LONG": "East Acton"
+  },
+  {
+    "SHORT": "01B",
+    "LONG": "North Acton"
+  },
+  {
+    "SHORT": "01C",
+    "LONG": "South Acton"
+  },
+  {
+    "SHORT": "01D",
+    "LONG": "West Acton"
+  },
+  {
+    "SHORT": "01E",
+    "LONG": "Long Plain"
+  },
+  {
+    "SHORT": "01F",
+    "LONG": "Arnoldsville"
+  },
+  {
+    "SHORT": "01G",
+    "LONG": "Bowen's Corner"
+  },
+  {
+    "SHORT": "01H",
+    "LONG": "Maple Grove"
+  },
+  {
+    "SHORT": "01I",
+    "LONG": "Renfrew"
+  },
+  {
+    "SHORT": "01J",
+    "LONG": "Zylonite"
+  },
+  {
+    "SHORT": "01K",
+    "LONG": "Cheshire Harbor"
+  },
+  {
+    "SHORT": "01L",
+    "LONG": "Cheshire Harbor"
+  },
+  {
+    "SHORT": "01M",
+    "LONG": "Hubbard Corners"
+  },
+  {
+    "SHORT": "01N",
+    "LONG": "Salisbury Point"
+  },
+  {
+    "SHORT": "01O",
+    "LONG": "East Amherst"
+  },
+  {
+    "SHORT": "01P",
+    "LONG": "Factory Hollow"
+  },
+  {
+    "SHORT": "01Q",
+    "LONG": "Mill Valley"
+  },
+  {
+    "SHORT": "01R",
+    "LONG": "North Amherst"
+  },
+  {
+    "SHORT": "01S",
+    "LONG": "South Amherst"
+  },
+  {
+    "SHORT": "01T",
+    "LONG": "Haggatts Station"
+  },
+  {
+    "SHORT": "01U",
+    "LONG": "Shawsheen Heights"
+  },
+  {
+    "SHORT": "01V",
+    "LONG": "Shawsheen Village"
+  },
+  {
+    "SHORT": "01W",
+    "LONG": "Gay Head Neck"
+  },
+  {
+    "SHORT": "01X",
+    "LONG": "Arlington Heights"
+  },
+  {
+    "SHORT": "01Y",
+    "LONG": "Brattle Station"
+  },
+  {
+    "SHORT": "01Z",
+    "LONG": "East Arlington"
+  },
+  {
+    "SHORT": "02A",
+    "LONG": "Blackburn Village"
+  },
+  {
+    "SHORT": "02B",
+    "LONG": "Lane Village"
+  },
+  {
+    "SHORT": "02C",
+    "LONG": "North Ashburnham"
+  },
+  {
+    "SHORT": "02D",
+    "LONG": "South Ashburnham"
+  },
+  {
+    "SHORT": "02E",
+    "LONG": "South Village"
+  },
+  {
+    "SHORT": "02F",
+    "LONG": "Spruce Corner"
+  },
+  {
+    "SHORT": "02G",
+    "LONG": "Watson"
+  },
+  {
+    "SHORT": "02H",
+    "LONG": "Eaglesville"
+  },
+  {
+    "SHORT": "02I",
+    "LONG": "Fryeville"
+  },
+  {
+    "SHORT": "02J",
+    "LONG": "Partridgeville"
+  },
+  {
+    "SHORT": "02K",
+    "LONG": "Pinedale"
+  },
+  {
+    "SHORT": "02L",
+    "LONG": "South Athol"
+  },
+  {
+    "SHORT": "02M",
+    "LONG": "Briggs Corner"
+  },
+  {
+    "SHORT": "02N",
+    "LONG": "Dodgeville"
+  },
+  {
+    "SHORT": "02O",
+    "LONG": "Hebronville"
+  },
+  {
+    "SHORT": "02P",
+    "LONG": "Drury Square"
+  },
+  {
+    "SHORT": "02Q",
+    "LONG": "Oxford Heights"
+  },
+  {
+    "SHORT": "02R",
+    "LONG": "Pakachoag Hill"
+  },
+  {
+    "SHORT": "02S",
+    "LONG": "Pondville"
+  },
+  {
+    "SHORT": "02T",
+    "LONG": "Stoneville"
+  },
+  {
+    "SHORT": "02U",
+    "LONG": "West Auburn"
+  },
+  {
+    "SHORT": "02V",
+    "LONG": "Pingreyville"
+  },
+  {
+    "SHORT": "02W",
+    "LONG": "Shaker Village"
+  },
+  {
+    "SHORT": "02X",
+    "LONG": "Willows"
+  },
+  {
+    "SHORT": "02Y",
+    "LONG": "Oyster Harbors"
+  },
+  {
+    "SHORT": "02Z",
+    "LONG": "Wianno"
+  },
+  {
+    "SHORT": "03A",
+    "LONG": "Barre Falls"
+  },
+  {
+    "SHORT": "03B",
+    "LONG": "Barre Plains"
+  },
+  {
+    "SHORT": "03C",
+    "LONG": "Coldbrook"
+  },
+  {
+    "SHORT": "03D",
+    "LONG": "Heald Village"
+  },
+  {
+    "SHORT": "03E",
+    "LONG": "South Barre"
+  },
+  {
+    "SHORT": "03F",
+    "LONG": "White Valley"
+  },
+  {
+    "SHORT": "03G",
+    "LONG": "Bancroft"
+  },
+  {
+    "SHORT": "03H",
+    "LONG": "Becket Center"
+  },
+  {
+    "SHORT": "03I",
+    "LONG": "Bonny Rigg"
+  },
+  {
+    "SHORT": "03J",
+    "LONG": "West Becket"
+  },
+  {
+    "SHORT": "03K",
+    "LONG": "Bedford Springs"
+  },
+  {
+    "SHORT": "03L",
+    "LONG": "West Bedford"
+  },
+  {
+    "SHORT": "03M",
+    "LONG": "Bardwell"
+  },
+  {
+    "SHORT": "03N",
+    "LONG": "Dwight"
+  },
+  {
+    "SHORT": "03O",
+    "LONG": "Caryville"
+  },
+  {
+    "SHORT": "03P",
+    "LONG": "Crooks Corner"
+  },
+  {
+    "SHORT": "03Q",
+    "LONG": "North Bellingham"
+  },
+  {
+    "SHORT": "03R",
+    "LONG": "Rakeville"
+  },
+  {
+    "SHORT": "03S",
+    "LONG": "Scott Hill"
+  },
+  {
+    "SHORT": "03T",
+    "LONG": "South Bellingham"
+  },
+  {
+    "SHORT": "03U",
+    "LONG": "Payson Park"
+  },
+  {
+    "SHORT": "03V",
+    "LONG": "Waverley"
+  },
+  {
+    "SHORT": "03W",
+    "LONG": "Assonet Neck"
+  },
+  {
+    "SHORT": "03X",
+    "LONG": "Berkley Bridge"
+  },
+  {
+    "SHORT": "03Y",
+    "LONG": "Myricks"
+  },
+  {
+    "SHORT": "03Z",
+    "LONG": "East Berlin"
+  },
+  {
+    "SHORT": "04A",
+    "LONG": "South Berlin"
+  },
+  {
+    "SHORT": "04B",
+    "LONG": "West Berlin"
+  },
+  {
+    "SHORT": "04C",
+    "LONG": "North Bernardston"
+  },
+  {
+    "SHORT": "04D",
+    "LONG": "East Billerica"
+  },
+  {
+    "SHORT": "04E",
+    "LONG": "North Billerica"
+  },
+  {
+    "SHORT": "04F",
+    "LONG": "Nutting Lake"
+  },
+  {
+    "SHORT": "04G",
+    "LONG": "Pattenville"
+  },
+  {
+    "SHORT": "04H",
+    "LONG": "Pinehurst"
+  },
+  {
+    "SHORT": "04I",
+    "LONG": "South Billerica"
+  },
+  {
+    "SHORT": "04J",
+    "LONG": "East Blackstone"
+  },
+  {
+    "SHORT": "04K",
+    "LONG": "Millerville"
+  },
+  {
+    "SHORT": "04L",
+    "LONG": "Millville"
+  },
+  {
+    "SHORT": "04M",
+    "LONG": "North Blandford"
+  },
+  {
+    "SHORT": "04N",
+    "LONG": "Fryeville"
+  },
+  {
+    "SHORT": "04O",
+    "LONG": "South Bolton"
+  },
+  {
+    "SHORT": "04P",
+    "LONG": "Still River"
+  },
+  {
+    "SHORT": "04Q",
+    "LONG": "Aberdeen"
+  },
+  {
+    "SHORT": "04R",
+    "LONG": "Dorchester's Andrew Square"
+  },
+  {
+    "SHORT": "04S",
+    "LONG": "Dorchester's Ashmont"
+  },
+  {
+    "SHORT": "04T",
+    "LONG": "West Roxbury's Bellevue Hill"
+  },
+  {
+    "SHORT": "04U",
+    "LONG": "South Boston's Castle Island"
+  },
+  {
+    "SHORT": "04V",
+    "LONG": "Central Avenue"
+  },
+  {
+    "SHORT": "04W",
+    "LONG": "Brighton's Chestnut Hill"
+  },
+  {
+    "SHORT": "04X",
+    "LONG": "South Boston's City Point"
+  },
+  {
+    "SHORT": "04Y",
+    "LONG": "Clarendon Hills"
+  },
+  {
+    "SHORT": "04Z",
+    "LONG": "Brighton's Cleveland Circle"
+  },
+  {
+    "SHORT": "05A",
+    "LONG": "Dorchester's Codman Square"
+  },
+  {
+    "SHORT": "05B",
+    "LONG": "Commercial Point"
+  },
+  {
+    "SHORT": "05C",
+    "LONG": "Dorchester's Dorchester Center"
+  },
+  {
+    "SHORT": "05D",
+    "LONG": "South Boston's Dorchester Heights"
+  },
+  {
+    "SHORT": "05E",
+    "LONG": "Dorchester's Lower Mills"
+  },
+  {
+    "SHORT": "05F",
+    "LONG": "Hyde Park's Fairmount"
+  },
+  {
+    "SHORT": "05G",
+    "LONG": "Faneuil"
+  },
+  {
+    "SHORT": "05H",
+    "LONG": "Dorchester's Fields Corner"
+  },
+  {
+    "SHORT": "05I",
+    "LONG": "Jamaica Plain's Forest Hills"
+  },
+  {
+    "SHORT": "05J",
+    "LONG": "Roxbury's Franklin Park"
+  },
+  {
+    "SHORT": "05K",
+    "LONG": "Dorchester's Grove Hall"
+  },
+  {
+    "SHORT": "05L",
+    "LONG": "East Boston's Jeffries Point"
+  },
+  {
+    "SHORT": "05M",
+    "LONG": "Kenmore Square"
+  },
+  {
+    "SHORT": "05N",
+    "LONG": "Long Island"
+  },
+  {
+    "SHORT": "05O",
+    "LONG": "Dorchester's Meeting House Hill"
+  },
+  {
+    "SHORT": "05P",
+    "LONG": "Dorchester's Mount Bowdoin"
+  },
+  {
+    "SHORT": "05Q",
+    "LONG": "Dorchester's Neponset"
+  },
+  {
+    "SHORT": "05R",
+    "LONG": "Nonantum Hill"
+  },
+  {
+    "SHORT": "05S",
+    "LONG": "East Boston's Orient Heights"
+  },
+  {
+    "SHORT": "05T",
+    "LONG": "Hyde Park's Readville"
+  },
+  {
+    "SHORT": "05U",
+    "LONG": "Roxbury's Roxbury Crossing"
+  },
+  {
+    "SHORT": "05V",
+    "LONG": "Dorchester's Savin Hill"
+  },
+  {
+    "SHORT": "05W",
+    "LONG": "Spectacle Island"
+  },
+  {
+    "SHORT": "05X",
+    "LONG": "Stony Brook Reservation"
+  },
+  {
+    "SHORT": "05Y",
+    "LONG": "East Boston's Suffolk Downs"
+  },
+  {
+    "SHORT": "05Z",
+    "LONG": "Charlestown's Sullivan Square"
+  },
+  {
+    "SHORT": "06A",
+    "LONG": "Thompsons Island"
+  },
+  {
+    "SHORT": "06B",
+    "LONG": "Dorchester's Uphams Corner"
+  },
+  {
+    "SHORT": "06C",
+    "LONG": "Dorchester's Wellington Hill"
+  },
+  {
+    "SHORT": "06D",
+    "LONG": "Gray Gables"
+  },
+  {
+    "SHORT": "06E",
+    "LONG": "Mashnee Island"
+  },
+  {
+    "SHORT": "06F",
+    "LONG": "North Pocasset"
+  },
+  {
+    "SHORT": "06G",
+    "LONG": "Sagamore Highlands"
+  },
+  {
+    "SHORT": "06H",
+    "LONG": "South Pocasset"
+  },
+  {
+    "SHORT": "06I",
+    "LONG": "Wings Neck"
+  },
+  {
+    "SHORT": "06J",
+    "LONG": "Boylston Center"
+  },
+  {
+    "SHORT": "06K",
+    "LONG": "Morningdale"
+  },
+  {
+    "SHORT": "06L",
+    "LONG": "Five Corners"
+  },
+  {
+    "SHORT": "06M",
+    "LONG": "South Brewster"
+  },
+  {
+    "SHORT": "06N",
+    "LONG": "Paper Mill Village"
+  },
+  {
+    "SHORT": "06O",
+    "LONG": "Scotland"
+  },
+  {
+    "SHORT": "06P",
+    "LONG": "East Brimfield"
+  },
+  {
+    "SHORT": "06Q",
+    "LONG": "Fentonville"
+  },
+  {
+    "SHORT": "06R",
+    "LONG": "Little Rest"
+  },
+  {
+    "SHORT": "06S",
+    "LONG": "West Brimfield"
+  },
+  {
+    "SHORT": "06T",
+    "LONG": "Morses Corner"
+  },
+  {
+    "SHORT": "06U",
+    "LONG": "Beaconsfield"
+  },
+  {
+    "SHORT": "06V",
+    "LONG": "Brookline Hills"
+  },
+  {
+    "SHORT": "06W",
+    "LONG": "Brookline Village"
+  },
+  {
+    "SHORT": "06X",
+    "LONG": "Chestnut Hill"
+  },
+  {
+    "SHORT": "06Y",
+    "LONG": "Coolidge Corner"
+  },
+  {
+    "SHORT": "06Z",
+    "LONG": "Longwood"
+  },
+  {
+    "SHORT": "07A",
+    "LONG": "Reservoir"
+  },
+  {
+    "SHORT": "07B",
+    "LONG": "Buckland Four Corners"
+  },
+  {
+    "SHORT": "07C",
+    "LONG": "Shelburne Falls"
+  },
+  {
+    "SHORT": "07D",
+    "LONG": "Winnmere"
+  },
+  {
+    "SHORT": "07E",
+    "LONG": "Canton Junction"
+  },
+  {
+    "SHORT": "07F",
+    "LONG": "Ponkapoag"
+  },
+  {
+    "SHORT": "07G",
+    "LONG": "Springdale"
+  },
+  {
+    "SHORT": "07H",
+    "LONG": "East Carver"
+  },
+  {
+    "SHORT": "07I",
+    "LONG": "South Carver"
+  },
+  {
+    "SHORT": "07J",
+    "LONG": "Wenham"
+  },
+  {
+    "SHORT": "07K",
+    "LONG": "Charlton City"
+  },
+  {
+    "SHORT": "07L",
+    "LONG": "Charlton Depot"
+  },
+  {
+    "SHORT": "07M",
+    "LONG": "Dodge"
+  },
+  {
+    "SHORT": "07N",
+    "LONG": "Richardsons Corner"
+  },
+  {
+    "SHORT": "07O",
+    "LONG": "North Chelmsford"
+  },
+  {
+    "SHORT": "07P",
+    "LONG": "South Chelmsford"
+  },
+  {
+    "SHORT": "07Q",
+    "LONG": "Westlands"
+  },
+  {
+    "SHORT": "07R",
+    "LONG": "Farnams"
+  },
+  {
+    "SHORT": "07S",
+    "LONG": "Chester Center"
+  },
+  {
+    "SHORT": "07T",
+    "LONG": "Dayville"
+  },
+  {
+    "SHORT": "07U",
+    "LONG": "Bisbee"
+  },
+  {
+    "SHORT": "07V",
+    "LONG": "Aldenville"
+  },
+  {
+    "SHORT": "07W",
+    "LONG": "Chicopee Falls"
+  },
+  {
+    "SHORT": "07X",
+    "LONG": "North Chicopee"
+  },
+  {
+    "SHORT": "07Y",
+    "LONG": "Sandy Hill"
+  },
+  {
+    "SHORT": "07Z",
+    "LONG": "Nashaquitsa"
+  },
+  {
+    "SHORT": "08A",
+    "LONG": "Quansoo"
+  },
+  {
+    "SHORT": "08B",
+    "LONG": "Briggsville"
+  },
+  {
+    "SHORT": "08C",
+    "LONG": "Houghtonville"
+  },
+  {
+    "SHORT": "08D",
+    "LONG": "Beechwood"
+  },
+  {
+    "SHORT": "08E",
+    "LONG": "Black Rock"
+  },
+  {
+    "SHORT": "08F",
+    "LONG": "North Cohasset"
+  },
+  {
+    "SHORT": "08G",
+    "LONG": "Nine Acre Corner"
+  },
+  {
+    "SHORT": "08H",
+    "LONG": "West Concord"
+  },
+  {
+    "SHORT": "08I",
+    "LONG": "Burkville"
+  },
+  {
+    "SHORT": "08J",
+    "LONG": "Shirkshire"
+  },
+  {
+    "SHORT": "08K",
+    "LONG": "Swift River"
+  },
+  {
+    "SHORT": "08L",
+    "LONG": "West Cummington"
+  },
+  {
+    "SHORT": "08M",
+    "LONG": "Ferncroft"
+  },
+  {
+    "SHORT": "08N",
+    "LONG": "Bay View"
+  },
+  {
+    "SHORT": "08O",
+    "LONG": "Bliss Corner"
+  },
+  {
+    "SHORT": "08P",
+    "LONG": "Faunce Corner"
+  },
+  {
+    "SHORT": "08Q",
+    "LONG": "Nonquitt"
+  },
+  {
+    "SHORT": "08R",
+    "LONG": "Russell Mills"
+  },
+  {
+    "SHORT": "08S",
+    "LONG": "Smiths Mills"
+  },
+  {
+    "SHORT": "08T",
+    "LONG": "Summit Grove"
+  },
+  {
+    "SHORT": "08U",
+    "LONG": "Fairbanks Park"
+  },
+  {
+    "SHORT": "08V",
+    "LONG": "Readville Manor"
+  },
+  {
+    "SHORT": "08W",
+    "LONG": "Bardwell"
+  },
+  {
+    "SHORT": "08X",
+    "LONG": "Cheapside"
+  },
+  {
+    "SHORT": "08Y",
+    "LONG": "Mill River"
+  },
+  {
+    "SHORT": "08Z",
+    "LONG": "Wapping"
+  },
+  {
+    "SHORT": "09A",
+    "LONG": "West Deerfield"
+  },
+  {
+    "SHORT": "09B",
+    "LONG": "North Dennis"
+  },
+  {
+    "SHORT": "09C",
+    "LONG": "Segreganset"
+  },
+  {
+    "SHORT": "09D",
+    "LONG": "West Dighton"
+  },
+  {
+    "SHORT": "09E",
+    "LONG": "East Douglas"
+  },
+  {
+    "SHORT": "09F",
+    "LONG": "Tasseltop"
+  },
+  {
+    "SHORT": "09G",
+    "LONG": "Collinsville"
+  },
+  {
+    "SHORT": "09H",
+    "LONG": "Kenwood"
+  },
+  {
+    "SHORT": "09I",
+    "LONG": "Chaseville"
+  },
+  {
+    "SHORT": "09J",
+    "LONG": "Perryville"
+  },
+  {
+    "SHORT": "09K",
+    "LONG": "Quinebaug"
+  },
+  {
+    "SHORT": "09L",
+    "LONG": "Tufts Village"
+  },
+  {
+    "SHORT": "09M",
+    "LONG": "West Dudley"
+  },
+  {
+    "SHORT": "09N",
+    "LONG": "Ashdod"
+  },
+  {
+    "SHORT": "09O",
+    "LONG": "Cedar Crest"
+  },
+  {
+    "SHORT": "09P",
+    "LONG": "Island Creek"
+  },
+  {
+    "SHORT": "09Q",
+    "LONG": "Millbrook"
+  },
+  {
+    "SHORT": "09R",
+    "LONG": "North Duxbury"
+  },
+  {
+    "SHORT": "09S",
+    "LONG": "South Duxbury"
+  },
+  {
+    "SHORT": "09T",
+    "LONG": "Tarkiln"
+  },
+  {
+    "SHORT": "09U",
+    "LONG": "Tinkertown"
+  },
+  {
+    "SHORT": "09V",
+    "LONG": "West Duxbury"
+  },
+  {
+    "SHORT": "09W",
+    "LONG": "Beaver"
+  },
+  {
+    "SHORT": "09X",
+    "LONG": "Curtisville"
+  },
+  {
+    "SHORT": "09Y",
+    "LONG": "Eastville"
+  },
+  {
+    "SHORT": "09Z",
+    "LONG": "Elmwood"
+  },
+  {
+    "SHORT": "101",
+    "LONG": "Back Bay"
+  },
+  {
+    "SHORT": "102",
+    "LONG": "Beacon Hill"
+  },
+  {
+    "SHORT": "103",
+    "LONG": "North End"
+  },
+  {
+    "SHORT": "104",
+    "LONG": "South End"
+  },
+  {
+    "SHORT": "105",
+    "LONG": "The Fenway"
+  },
+  {
+    "SHORT": "106",
+    "LONG": "Waterfront"
+  },
+  {
+    "SHORT": "107",
+    "LONG": "Mission Hill"
+  },
+  {
+    "SHORT": "108",
+    "LONG": "Midtown"
+  },
+  {
+    "SHORT": "109",
+    "LONG": "West End"
+  },
+  {
+    "SHORT": "10A",
+    "LONG": "Northville"
+  },
+  {
+    "SHORT": "10B",
+    "LONG": "Westdale"
+  },
+  {
+    "SHORT": "10C",
+    "LONG": "Nausett"
+  },
+  {
+    "SHORT": "10D",
+    "LONG": "Loudville"
+  },
+  {
+    "SHORT": "10E",
+    "LONG": "Mount Tom"
+  },
+  {
+    "SHORT": "10F",
+    "LONG": "Easton Center"
+  },
+  {
+    "SHORT": "10G",
+    "LONG": "Easton Green"
+  },
+  {
+    "SHORT": "10H",
+    "LONG": "Eastondale"
+  },
+  {
+    "SHORT": "10I",
+    "LONG": "North Easton"
+  },
+  {
+    "SHORT": "10J",
+    "LONG": "South Easton"
+  },
+  {
+    "SHORT": "10K",
+    "LONG": "Cape Poge"
+  },
+  {
+    "SHORT": "10L",
+    "LONG": "Clevelandtown"
+  },
+  {
+    "SHORT": "10M",
+    "LONG": "Felix Neck"
+  },
+  {
+    "SHORT": "10N",
+    "LONG": "Great Plains"
+  },
+  {
+    "SHORT": "10O",
+    "LONG": "Katama"
+  },
+  {
+    "SHORT": "10P",
+    "LONG": "Ocean Heights"
+  },
+  {
+    "SHORT": "10Q",
+    "LONG": "South Beach"
+  },
+  {
+    "SHORT": "10R",
+    "LONG": "Egremont Plain"
+  },
+  {
+    "SHORT": "10S",
+    "LONG": "North Egremont"
+  },
+  {
+    "SHORT": "10T",
+    "LONG": "South Egremont"
+  },
+  {
+    "SHORT": "10U",
+    "LONG": "Farley"
+  },
+  {
+    "SHORT": "10V",
+    "LONG": "Conomo Point"
+  },
+  {
+    "SHORT": "10W",
+    "LONG": "Essex Falls"
+  },
+  {
+    "SHORT": "10X",
+    "LONG": "South Essex"
+  },
+  {
+    "SHORT": "10Y",
+    "LONG": "Glendale"
+  },
+  {
+    "SHORT": "10Z",
+    "LONG": "Washington Park"
+  },
+  {
+    "SHORT": "110",
+    "LONG": "Chinatown"
+  },
+  {
+    "SHORT": "111",
+    "LONG": "Financial District"
+  },
+  {
+    "SHORT": "112",
+    "LONG": "Leather District"
+  },
+  {
+    "SHORT": "113",
+    "LONG": "Seaport District"
+  },
+  {
+    "SHORT": "114",
+    "LONG": "Theatre District"
+  },
+  {
+    "SHORT": "115",
+    "LONG": "Bay Village"
+  },
+  {
+    "SHORT": "11A",
+    "LONG": "West Everett"
+  },
+  {
+    "SHORT": "11B",
+    "LONG": "East Fairhaven"
+  },
+  {
+    "SHORT": "11C",
+    "LONG": "Harbor View"
+  },
+  {
+    "SHORT": "11D",
+    "LONG": "Nasketucket"
+  },
+  {
+    "SHORT": "11E",
+    "LONG": "Sconticut Neck"
+  },
+  {
+    "SHORT": "11F",
+    "LONG": "Wilbur's Point"
+  },
+  {
+    "SHORT": "11G",
+    "LONG": "Bowenville"
+  },
+  {
+    "SHORT": "11H",
+    "LONG": "Globe Village"
+  },
+  {
+    "SHORT": "11I",
+    "LONG": "Oak Grove Village"
+  },
+  {
+    "SHORT": "11J",
+    "LONG": "Steep Brook"
+  },
+  {
+    "SHORT": "11K",
+    "LONG": "Acapesket"
+  },
+  {
+    "SHORT": "11L",
+    "LONG": "Chapaquoit"
+  },
+  {
+    "SHORT": "11M",
+    "LONG": "Davisville"
+  },
+  {
+    "SHORT": "11N",
+    "LONG": "Megansett"
+  },
+  {
+    "SHORT": "11O",
+    "LONG": "Menauhant"
+  },
+  {
+    "SHORT": "11P",
+    "LONG": "Saconnesset"
+  },
+  {
+    "SHORT": "11Q",
+    "LONG": "Silver Beach"
+  },
+  {
+    "SHORT": "11R",
+    "LONG": "Rollstone Hill"
+  },
+  {
+    "SHORT": "11S",
+    "LONG": "South Fitchburg"
+  },
+  {
+    "SHORT": "11T",
+    "LONG": "Drury"
+  },
+  {
+    "SHORT": "11U",
+    "LONG": "Hoosac Tunnel Village"
+  },
+  {
+    "SHORT": "11V",
+    "LONG": "East Foxboro"
+  },
+  {
+    "SHORT": "11W",
+    "LONG": "Foxvale"
+  },
+  {
+    "SHORT": "11X",
+    "LONG": "North Foxborough"
+  },
+  {
+    "SHORT": "11Y",
+    "LONG": "South Foxborough"
+  },
+  {
+    "SHORT": "11Z",
+    "LONG": "West Foxborough"
+  },
+  {
+    "SHORT": "12A",
+    "LONG": "Coburnville"
+  },
+  {
+    "SHORT": "12B",
+    "LONG": "Framingham Center"
+  },
+  {
+    "SHORT": "12C",
+    "LONG": "Lokerville"
+  },
+  {
+    "SHORT": "12D",
+    "LONG": "Nobscot"
+  },
+  {
+    "SHORT": "12E",
+    "LONG": "Saxonville"
+  },
+  {
+    "SHORT": "12F",
+    "LONG": "Unionville"
+  },
+  {
+    "SHORT": "12G",
+    "LONG": "Wadsworth"
+  },
+  {
+    "SHORT": "12H",
+    "LONG": "Clifford"
+  },
+  {
+    "SHORT": "12I",
+    "LONG": "East Gardner"
+  },
+  {
+    "SHORT": "12J",
+    "LONG": "South Gardner"
+  },
+  {
+    "SHORT": "12L",
+    "LONG": "Marlborough"
+  },
+  {
+    "SHORT": "12M",
+    "LONG": "South Georgetown"
+  },
+  {
+    "SHORT": "12N",
+    "LONG": "Mount Hermon"
+  },
+  {
+    "SHORT": "12O",
+    "LONG": "Bass Rocks"
+  },
+  {
+    "SHORT": "12P",
+    "LONG": "Dogtown Commons"
+  },
+  {
+    "SHORT": "12Q",
+    "LONG": "Freshwater Cove Village"
+  },
+  {
+    "SHORT": "12R",
+    "LONG": "Hodgkins Cove"
+  },
+  {
+    "SHORT": "12S",
+    "LONG": "Lobster Cove"
+  },
+  {
+    "SHORT": "12T",
+    "LONG": "Long Beach"
+  },
+  {
+    "SHORT": "12U",
+    "LONG": "Niles Pond"
+  },
+  {
+    "SHORT": "12V",
+    "LONG": "Rocky Neck"
+  },
+  {
+    "SHORT": "12W",
+    "LONG": "Rust Island"
+  },
+  {
+    "SHORT": "12X",
+    "LONG": "Stage Fort Park"
+  },
+  {
+    "SHORT": "12Y",
+    "LONG": "Twopenny Loaf"
+  },
+  {
+    "SHORT": "12Z",
+    "LONG": "Wingaersheek"
+  },
+  {
+    "SHORT": "13A",
+    "LONG": "Lithia"
+  },
+  {
+    "SHORT": "13B",
+    "LONG": "Bull Island"
+  },
+  {
+    "SHORT": "13C",
+    "LONG": "Cuttyhunk Island"
+  },
+  {
+    "SHORT": "13D",
+    "LONG": "Monohansett Island"
+  },
+  {
+    "SHORT": "13E",
+    "LONG": "Nashawena Island"
+  },
+  {
+    "SHORT": "13F",
+    "LONG": "Naushon Island"
+  },
+  {
+    "SHORT": "13G",
+    "LONG": "Noamesset Island"
+  },
+  {
+    "SHORT": "13H",
+    "LONG": "Pasque Island"
+  },
+  {
+    "SHORT": "13I",
+    "LONG": "Penikese Island"
+  },
+  {
+    "SHORT": "13J",
+    "LONG": "Uncatena Island"
+  },
+  {
+    "SHORT": "13K",
+    "LONG": "Vekatimest Island"
+  },
+  {
+    "SHORT": "13L",
+    "LONG": "Weepecket Island"
+  },
+  {
+    "SHORT": "13M",
+    "LONG": "Farnumsville"
+  },
+  {
+    "SHORT": "13N",
+    "LONG": "Fisherville"
+  },
+  {
+    "SHORT": "13O",
+    "LONG": "North Grafton"
+  },
+  {
+    "SHORT": "13P",
+    "LONG": "Saundersville"
+  },
+  {
+    "SHORT": "13Q",
+    "LONG": "South Grafton"
+  },
+  {
+    "SHORT": "13R",
+    "LONG": "Aldrich Lake"
+  },
+  {
+    "SHORT": "13S",
+    "LONG": "Ludlow City"
+  },
+  {
+    "SHORT": "13T",
+    "LONG": "Moody Corner"
+  },
+  {
+    "SHORT": "13U",
+    "LONG": "Rock Rimmon"
+  },
+  {
+    "SHORT": "13V",
+    "LONG": "Granville Center"
+  },
+  {
+    "SHORT": "13W",
+    "LONG": "North Lane"
+  },
+  {
+    "SHORT": "13X",
+    "LONG": "South Lane"
+  },
+  {
+    "SHORT": "13Y",
+    "LONG": "West Granville"
+  },
+  {
+    "SHORT": "13Z",
+    "LONG": "Berkshire Heights"
+  },
+  {
+    "SHORT": "14A",
+    "LONG": "Egremont Plain"
+  },
+  {
+    "SHORT": "14B",
+    "LONG": "Housatonic"
+  },
+  {
+    "SHORT": "14C",
+    "LONG": "Lake Buel"
+  },
+  {
+    "SHORT": "14D",
+    "LONG": "Risingdale"
+  },
+  {
+    "SHORT": "14E",
+    "LONG": "Van Deusenville"
+  },
+  {
+    "SHORT": "14F",
+    "LONG": "Cheapside"
+  },
+  {
+    "SHORT": "14G",
+    "LONG": "Factory Village"
+  },
+  {
+    "SHORT": "14H",
+    "LONG": "East Groton"
+  },
+  {
+    "SHORT": "14I",
+    "LONG": "Paper Mill Village"
+  },
+  {
+    "SHORT": "14J",
+    "LONG": "East Hadley"
+  },
+  {
+    "SHORT": "14K",
+    "LONG": "Fort River"
+  },
+  {
+    "SHORT": "14L",
+    "LONG": "Hockanum"
+  },
+  {
+    "SHORT": "14M",
+    "LONG": "North Hadley"
+  },
+  {
+    "SHORT": "14N",
+    "LONG": "Russellville"
+  },
+  {
+    "SHORT": "14O",
+    "LONG": "Monponsett"
+  },
+  {
+    "SHORT": "14P",
+    "LONG": "South Halifax"
+  },
+  {
+    "SHORT": "14Q",
+    "LONG": "Asbury Grove"
+  },
+  {
+    "SHORT": "14R",
+    "LONG": "Miles River"
+  },
+  {
+    "SHORT": "14S",
+    "LONG": "Goodrich Hollow"
+  },
+  {
+    "SHORT": "14T",
+    "LONG": "Lebanon Springs"
+  },
+  {
+    "SHORT": "14U",
+    "LONG": "North Hancock"
+  },
+  {
+    "SHORT": "14V",
+    "LONG": "Shaker Village"
+  },
+  {
+    "SHORT": "14W",
+    "LONG": "Assinippi"
+  },
+  {
+    "SHORT": "14X",
+    "LONG": "Curtis Crossing"
+  },
+  {
+    "SHORT": "14Y",
+    "LONG": "Hanover Center"
+  },
+  {
+    "SHORT": "14Z",
+    "LONG": "North Hanover"
+  },
+  {
+    "SHORT": "15A",
+    "LONG": "South Hanover"
+  },
+  {
+    "SHORT": "15B",
+    "LONG": "West Hanover"
+  },
+  {
+    "SHORT": "15C",
+    "LONG": "Winslow's Crossing"
+  },
+  {
+    "SHORT": "15D",
+    "LONG": "Bryantville"
+  },
+  {
+    "SHORT": "15E",
+    "LONG": "Burrage"
+  },
+  {
+    "SHORT": "15F",
+    "LONG": "Gurneys Corners"
+  },
+  {
+    "SHORT": "15G",
+    "LONG": "Indian Head Pond"
+  },
+  {
+    "SHORT": "15H",
+    "LONG": "North Hanson"
+  },
+  {
+    "SHORT": "15I",
+    "LONG": "South Hanson"
+  },
+  {
+    "SHORT": "15J",
+    "LONG": "Furnace"
+  },
+  {
+    "SHORT": "15K",
+    "LONG": "Wheelwright"
+  },
+  {
+    "SHORT": "15L",
+    "LONG": "Shaker Village"
+  },
+  {
+    "SHORT": "15M",
+    "LONG": "Still River"
+  },
+  {
+    "SHORT": "15N",
+    "LONG": "Pleasant Lake"
+  },
+  {
+    "SHORT": "15O",
+    "LONG": "Bradstreet"
+  },
+  {
+    "SHORT": "15P",
+    "LONG": "Westbrook"
+  },
+  {
+    "SHORT": "15Q",
+    "LONG": "Ayers Village"
+  },
+  {
+    "SHORT": "15R",
+    "LONG": "Riverside"
+  },
+  {
+    "SHORT": "15S",
+    "LONG": "Rosemont"
+  },
+  {
+    "SHORT": "15T",
+    "LONG": "Ward Hill"
+  },
+  {
+    "SHORT": "15U",
+    "LONG": "Winnekenni Park"
+  },
+  {
+    "SHORT": "15V",
+    "LONG": "Dodge Corner"
+  },
+  {
+    "SHORT": "15W",
+    "LONG": "Hallockville"
+  },
+  {
+    "SHORT": "15X",
+    "LONG": "King Corner"
+  },
+  {
+    "SHORT": "15Y",
+    "LONG": "South Hawley"
+  },
+  {
+    "SHORT": "15Z",
+    "LONG": "Dell"
+  },
+  {
+    "SHORT": "16A",
+    "LONG": "North Heath"
+  },
+  {
+    "SHORT": "16B",
+    "LONG": "Fort Hill"
+  },
+  {
+    "SHORT": "16C",
+    "LONG": "Mount Blue"
+  },
+  {
+    "SHORT": "16D",
+    "LONG": "Weir River"
+  },
+  {
+    "SHORT": "16E",
+    "LONG": "World's End"
+  },
+  {
+    "SHORT": "16F",
+    "LONG": "Brookville"
+  },
+  {
+    "SHORT": "16G",
+    "LONG": "Chaffinville"
+  },
+  {
+    "SHORT": "16H",
+    "LONG": "Holden Center"
+  },
+  {
+    "SHORT": "16I",
+    "LONG": "Jefferson"
+  },
+  {
+    "SHORT": "16J",
+    "LONG": "Lovellville"
+  },
+  {
+    "SHORT": "16K",
+    "LONG": "Quinapoxet"
+  },
+  {
+    "SHORT": "16L",
+    "LONG": "Ruralville"
+  },
+  {
+    "SHORT": "16M",
+    "LONG": "Unionville"
+  },
+  {
+    "SHORT": "16N",
+    "LONG": "Braggville"
+  },
+  {
+    "SHORT": "16O",
+    "LONG": "East Holliston"
+  },
+  {
+    "SHORT": "16P",
+    "LONG": "Metcalf"
+  },
+  {
+    "SHORT": "16Q",
+    "LONG": "Brightside"
+  },
+  {
+    "SHORT": "16R",
+    "LONG": "Elmwood"
+  },
+  {
+    "SHORT": "16S",
+    "LONG": "Highlands"
+  },
+  {
+    "SHORT": "16T",
+    "LONG": "Ingleside"
+  },
+  {
+    "SHORT": "16U",
+    "LONG": "Oakdale"
+  },
+  {
+    "SHORT": "16V",
+    "LONG": "Rock Valley"
+  },
+  {
+    "SHORT": "16W",
+    "LONG": "Smiths Ferry"
+  },
+  {
+    "SHORT": "16X",
+    "LONG": "Springdale"
+  },
+  {
+    "SHORT": "16Y",
+    "LONG": "Spindleville"
+  },
+  {
+    "SHORT": "16Z",
+    "LONG": "Hayden Row"
+  },
+  {
+    "SHORT": "17A",
+    "LONG": "Woodville"
+  },
+  {
+    "SHORT": "17B",
+    "LONG": "Williamsville"
+  },
+  {
+    "SHORT": "17C",
+    "LONG": "Gospel Hill"
+  },
+  {
+    "SHORT": "17D",
+    "LONG": "Allerton"
+  },
+  {
+    "SHORT": "17E",
+    "LONG": "Atlantic Hill"
+  },
+  {
+    "SHORT": "17K",
+    "LONG": "Gun Rock"
+  },
+  {
+    "SHORT": "17L",
+    "LONG": "Hampton Hill"
+  },
+  {
+    "SHORT": "17M",
+    "LONG": "Kenberma"
+  },
+  {
+    "SHORT": "17P",
+    "LONG": "Nantasket Beach"
+  },
+  {
+    "SHORT": "17S",
+    "LONG": "Pemberton"
+  },
+  {
+    "SHORT": "17T",
+    "LONG": "Stoney Beach"
+  },
+  {
+    "SHORT": "17U",
+    "LONG": "Sunset Point"
+  },
+  {
+    "SHORT": "17W",
+    "LONG": "Waveland"
+  },
+  {
+    "SHORT": "17X",
+    "LONG": "Whitehead"
+  },
+  {
+    "SHORT": "17Y",
+    "LONG": "Windemere"
+  },
+  {
+    "SHORT": "17Z",
+    "LONG": "Goss Hill"
+  },
+  {
+    "SHORT": "18A",
+    "LONG": "Indian Hollow"
+  },
+  {
+    "SHORT": "18B",
+    "LONG": "Knightville"
+  },
+  {
+    "SHORT": "18C",
+    "LONG": "Norwich Bridge"
+  },
+  {
+    "SHORT": "18D",
+    "LONG": "Norwich Hill"
+  },
+  {
+    "SHORT": "18E",
+    "LONG": "Plum Island"
+  },
+  {
+    "SHORT": "18F",
+    "LONG": "Blackwater"
+  },
+  {
+    "SHORT": "18G",
+    "LONG": "Crossman Pond"
+  },
+  {
+    "SHORT": "18H",
+    "LONG": "Indian Pond"
+  },
+  {
+    "SHORT": "18I",
+    "LONG": "Rocky Nook"
+  },
+  {
+    "SHORT": "18J",
+    "LONG": "Silver Lake"
+  },
+  {
+    "SHORT": "18K",
+    "LONG": "Howlands"
+  },
+  {
+    "SHORT": "18L",
+    "LONG": "North Lakeville"
+  },
+  {
+    "SHORT": "18M",
+    "LONG": "Precinct"
+  },
+  {
+    "SHORT": "18N",
+    "LONG": "Upper Four Corners"
+  },
+  {
+    "SHORT": "18O",
+    "LONG": "Five Corners"
+  },
+  {
+    "SHORT": "18P",
+    "LONG": "Four Ponds"
+  },
+  {
+    "SHORT": "18Q",
+    "LONG": "South Lancaster"
+  },
+  {
+    "SHORT": "18R",
+    "LONG": "Balance Rock"
+  },
+  {
+    "SHORT": "18S",
+    "LONG": "Berkshire Village"
+  },
+  {
+    "SHORT": "18T",
+    "LONG": "Constitution Hill"
+  },
+  {
+    "SHORT": "18U",
+    "LONG": "Pontoosuc Lake"
+  },
+  {
+    "SHORT": "18V",
+    "LONG": "East Lee"
+  },
+  {
+    "SHORT": "18W",
+    "LONG": "South Lee"
+  },
+  {
+    "SHORT": "18X",
+    "LONG": "Cherry Valley"
+  },
+  {
+    "SHORT": "18Y",
+    "LONG": "Greenville"
+  },
+  {
+    "SHORT": "18Z",
+    "LONG": "Rochdale"
+  },
+  {
+    "SHORT": "19A",
+    "LONG": "Lenox Dale"
+  },
+  {
+    "SHORT": "19B",
+    "LONG": "New Lenox"
+  },
+  {
+    "SHORT": "19C",
+    "LONG": "North Leominster"
+  },
+  {
+    "SHORT": "19D",
+    "LONG": "West Leominster"
+  },
+  {
+    "SHORT": "19E",
+    "LONG": "Whalom"
+  },
+  {
+    "SHORT": "19F",
+    "LONG": "Dudleyville"
+  },
+  {
+    "SHORT": "19G",
+    "LONG": "East Leverett"
+  },
+  {
+    "SHORT": "19H",
+    "LONG": "Moores Corner"
+  },
+  {
+    "SHORT": "19I",
+    "LONG": "North Leverett"
+  },
+  {
+    "SHORT": "19J",
+    "LONG": "North Lexington"
+  },
+  {
+    "SHORT": "19K",
+    "LONG": "Pierces Bridge"
+  },
+  {
+    "SHORT": "19L",
+    "LONG": "West Leyden"
+  },
+  {
+    "SHORT": "19M",
+    "LONG": "South Lincoln"
+  },
+  {
+    "SHORT": "19N",
+    "LONG": "East Littleton"
+  },
+  {
+    "SHORT": "19O",
+    "LONG": "Littleton Common"
+  },
+  {
+    "SHORT": "19P",
+    "LONG": "New Town"
+  },
+  {
+    "SHORT": "19Q",
+    "LONG": "Pingreyville"
+  },
+  {
+    "SHORT": "19R",
+    "LONG": "Bleachery"
+  },
+  {
+    "SHORT": "19S",
+    "LONG": "Ludlow Center"
+  },
+  {
+    "SHORT": "19T",
+    "LONG": "Ludlow City"
+  },
+  {
+    "SHORT": "19U",
+    "LONG": "Goodrichville"
+  },
+  {
+    "SHORT": "19V",
+    "LONG": "Lunenburg Station"
+  },
+  {
+    "SHORT": "19W",
+    "LONG": "Whalom"
+  },
+  {
+    "SHORT": "19X",
+    "LONG": "Lynn Common"
+  },
+  {
+    "SHORT": "19Y",
+    "LONG": "Lynn Woods"
+  },
+  {
+    "SHORT": "19Z",
+    "LONG": "Lynnhurst"
+  },
+  {
+    "SHORT": "20A",
+    "LONG": "South Lynnfield"
+  },
+  {
+    "SHORT": "20B",
+    "LONG": "Belmont Hill"
+  },
+  {
+    "SHORT": "20C",
+    "LONG": "Fells"
+  },
+  {
+    "SHORT": "20D",
+    "LONG": "Middlesex Fells"
+  },
+  {
+    "SHORT": "20E",
+    "LONG": "Kettle Cove Village"
+  },
+  {
+    "SHORT": "20F",
+    "LONG": "West Manchester"
+  },
+  {
+    "SHORT": "20G",
+    "LONG": "East Mansfield"
+  },
+  {
+    "SHORT": "20H",
+    "LONG": "Robinsonville"
+  },
+  {
+    "SHORT": "20I",
+    "LONG": "West Mansfield"
+  },
+  {
+    "SHORT": "20J",
+    "LONG": "Whiteville"
+  },
+  {
+    "SHORT": "20K",
+    "LONG": "Clifton"
+  },
+  {
+    "SHORT": "20L",
+    "LONG": "Devereaux"
+  },
+  {
+    "SHORT": "20M",
+    "LONG": "Peaches Point"
+  },
+  {
+    "SHORT": "20N",
+    "LONG": "Bird Island"
+  },
+  {
+    "SHORT": "20O",
+    "LONG": "East Marion"
+  },
+  {
+    "SHORT": "20P",
+    "LONG": "Spragues Cove"
+  },
+  {
+    "SHORT": "20Q",
+    "LONG": "Duxbury Beach"
+  },
+  {
+    "SHORT": "20R",
+    "LONG": "South Mashpee"
+  },
+  {
+    "SHORT": "20S",
+    "LONG": "Wakeby"
+  },
+  {
+    "SHORT": "20T",
+    "LONG": "Antassawamock"
+  },
+  {
+    "SHORT": "20U",
+    "LONG": "Aucoot Cove"
+  },
+  {
+    "SHORT": "20V",
+    "LONG": "Brandt Island"
+  },
+  {
+    "SHORT": "20W",
+    "LONG": "Cannonville"
+  },
+  {
+    "SHORT": "20X",
+    "LONG": "Crescent Beach"
+  },
+  {
+    "SHORT": "20Y",
+    "LONG": "Mattapoisett Neck"
+  },
+  {
+    "SHORT": "20Z",
+    "LONG": "Neds Point"
+  },
+  {
+    "SHORT": "21A",
+    "LONG": "Pico Beach"
+  },
+  {
+    "SHORT": "21B",
+    "LONG": "Harding"
+  },
+  {
+    "SHORT": "21C",
+    "LONG": "Medfield Junction"
+  },
+  {
+    "SHORT": "21D",
+    "LONG": "College Hill"
+  },
+  {
+    "SHORT": "21E",
+    "LONG": "Medford Hillside"
+  },
+  {
+    "SHORT": "21F",
+    "LONG": "Tufts University"
+  },
+  {
+    "SHORT": "21G",
+    "LONG": "Wellington"
+  },
+  {
+    "SHORT": "21H",
+    "LONG": "West Medford"
+  },
+  {
+    "SHORT": "21I",
+    "LONG": "Braggville"
+  },
+  {
+    "SHORT": "21J",
+    "LONG": "Rockville"
+  },
+  {
+    "SHORT": "21K",
+    "LONG": "West Medway"
+  },
+  {
+    "SHORT": "21L",
+    "LONG": "Fells"
+  },
+  {
+    "SHORT": "21M",
+    "LONG": "Melrose Highlands"
+  },
+  {
+    "SHORT": "21N",
+    "LONG": "Mount Hood"
+  },
+  {
+    "SHORT": "21O",
+    "LONG": "Wyoming"
+  },
+  {
+    "SHORT": "21P",
+    "LONG": "Lake Attitash"
+  },
+  {
+    "SHORT": "21Q",
+    "LONG": "Barden Hills"
+  },
+  {
+    "SHORT": "21R",
+    "LONG": "Eddyville"
+  },
+  {
+    "SHORT": "21S",
+    "LONG": "Mount Carmel"
+  },
+  {
+    "SHORT": "21T",
+    "LONG": "North Middleborough"
+  },
+  {
+    "SHORT": "21U",
+    "LONG": "South Middleborough"
+  },
+  {
+    "SHORT": "21V",
+    "LONG": "The Green"
+  },
+  {
+    "SHORT": "21W",
+    "LONG": "Thomastown"
+  },
+  {
+    "SHORT": "21X",
+    "LONG": "Bancroft"
+  },
+  {
+    "SHORT": "21Y",
+    "LONG": "South Middleton"
+  },
+  {
+    "SHORT": "21Z",
+    "LONG": "Braggville"
+  },
+  {
+    "SHORT": "22A",
+    "LONG": "North Milford"
+  },
+  {
+    "SHORT": "22B",
+    "LONG": "Rocky Hill"
+  },
+  {
+    "SHORT": "22C",
+    "LONG": "South Milford"
+  },
+  {
+    "SHORT": "22D",
+    "LONG": "Millbury Junction"
+  },
+  {
+    "SHORT": "22E",
+    "LONG": "Old Common"
+  },
+  {
+    "SHORT": "22F",
+    "LONG": "Park Hill"
+  },
+  {
+    "SHORT": "22G",
+    "LONG": "West Millbury"
+  },
+  {
+    "SHORT": "22H",
+    "LONG": "Clicquot"
+  },
+  {
+    "SHORT": "22I",
+    "LONG": "Rockville"
+  },
+  {
+    "SHORT": "22J",
+    "LONG": "Blue Hills"
+  },
+  {
+    "SHORT": "22K",
+    "LONG": "East Milton"
+  },
+  {
+    "SHORT": "22M",
+    "LONG": "Milton Center"
+  },
+  {
+    "SHORT": "22N",
+    "LONG": "Milton Hill"
+  },
+  {
+    "SHORT": "22O",
+    "LONG": "North Monson"
+  },
+  {
+    "SHORT": "22P",
+    "LONG": "South Monson"
+  },
+  {
+    "SHORT": "22Q",
+    "LONG": "State Line"
+  },
+  {
+    "SHORT": "22R",
+    "LONG": "Millers Falls"
+  },
+  {
+    "SHORT": "22S",
+    "LONG": "Bass Point"
+  },
+  {
+    "SHORT": "22T",
+    "LONG": "Little Nahant"
+  },
+  {
+    "SHORT": "22U",
+    "LONG": "Felchville"
+  },
+  {
+    "SHORT": "22V",
+    "LONG": "Morseville"
+  },
+  {
+    "SHORT": "22W",
+    "LONG": "Birds Hill"
+  },
+  {
+    "SHORT": "22X",
+    "LONG": "Charles River Village"
+  },
+  {
+    "SHORT": "22Y",
+    "LONG": "Needham Heights"
+  },
+  {
+    "SHORT": "22Z",
+    "LONG": "Needham Junction"
+  },
+  {
+    "SHORT": "23A",
+    "LONG": "Clark's Point"
+  },
+  {
+    "SHORT": "23B",
+    "LONG": "Clifford"
+  },
+  {
+    "SHORT": "23C",
+    "LONG": "Rockdale"
+  },
+  {
+    "SHORT": "23D",
+    "LONG": "South End"
+  },
+  {
+    "SHORT": "23E",
+    "LONG": "Clayton"
+  },
+  {
+    "SHORT": "23F",
+    "LONG": "Hartsville"
+  },
+  {
+    "SHORT": "23G",
+    "LONG": "Mill River"
+  },
+  {
+    "SHORT": "23H",
+    "LONG": "Southfield"
+  },
+  {
+    "SHORT": "23I",
+    "LONG": "Cooleyville"
+  },
+  {
+    "SHORT": "23J",
+    "LONG": "Morse Village"
+  },
+  {
+    "SHORT": "23K",
+    "LONG": "North New Salem"
+  },
+  {
+    "SHORT": "23L",
+    "LONG": "Knights Crossing"
+  },
+  {
+    "SHORT": "23M",
+    "LONG": "Upper Green"
+  },
+  {
+    "SHORT": "23N",
+    "LONG": "Old Town"
+  },
+  {
+    "SHORT": "23O",
+    "LONG": "South Byfield"
+  },
+  {
+    "SHORT": "23P",
+    "LONG": "Artichoke"
+  },
+  {
+    "SHORT": "23Q",
+    "LONG": "Curzon Mill"
+  },
+  {
+    "SHORT": "23R",
+    "LONG": "Joppa"
+  },
+  {
+    "SHORT": "23S",
+    "LONG": "Eliot"
+  },
+  {
+    "SHORT": "23T",
+    "LONG": "Newton Corner"
+  },
+  {
+    "SHORT": "23U",
+    "LONG": "Thompsonville"
+  },
+  {
+    "SHORT": "23V",
+    "LONG": "Woodland Station"
+  },
+  {
+    "SHORT": "23W",
+    "LONG": "City Mills"
+  },
+  {
+    "SHORT": "23X",
+    "LONG": "Highland Lake"
+  },
+  {
+    "SHORT": "23Y",
+    "LONG": "Pondville"
+  },
+  {
+    "SHORT": "23Z",
+    "LONG": "Blackinton"
+  },
+  {
+    "SHORT": "24A",
+    "LONG": "Braytonville"
+  },
+  {
+    "SHORT": "24B",
+    "LONG": "Greylock"
+  },
+  {
+    "SHORT": "24C",
+    "LONG": "Houghtonville"
+  },
+  {
+    "SHORT": "24D",
+    "LONG": "Marble Ridge Station"
+  },
+  {
+    "SHORT": "24E",
+    "LONG": "Adamsdale"
+  },
+  {
+    "SHORT": "24F",
+    "LONG": "Attleboro Falls"
+  },
+  {
+    "SHORT": "24G",
+    "LONG": "Robinsonville"
+  },
+  {
+    "SHORT": "24H",
+    "LONG": "Martins Pond"
+  },
+  {
+    "SHORT": "24I",
+    "LONG": "West Village"
+  },
+  {
+    "SHORT": "24J",
+    "LONG": "Laurel Park"
+  },
+  {
+    "SHORT": "24K",
+    "LONG": "Loudville"
+  },
+  {
+    "SHORT": "24L",
+    "LONG": "Mount Tom"
+  },
+  {
+    "SHORT": "24M",
+    "LONG": "North Farms"
+  },
+  {
+    "SHORT": "24N",
+    "LONG": "Pine Grove"
+  },
+  {
+    "SHORT": "24O",
+    "LONG": "West Farms"
+  },
+  {
+    "SHORT": "24P",
+    "LONG": "Chapinville"
+  },
+  {
+    "SHORT": "24Q",
+    "LONG": "Woodside"
+  },
+  {
+    "SHORT": "24R",
+    "LONG": "Linwood"
+  },
+  {
+    "SHORT": "24S",
+    "LONG": "Northbridge Center"
+  },
+  {
+    "SHORT": "24T",
+    "LONG": "Plummers"
+  },
+  {
+    "SHORT": "24U",
+    "LONG": "Prentice Corner"
+  },
+  {
+    "SHORT": "24V",
+    "LONG": "Riverdale"
+  },
+  {
+    "SHORT": "24W",
+    "LONG": "East Northfield"
+  },
+  {
+    "SHORT": "24X",
+    "LONG": "Gill Station"
+  },
+  {
+    "SHORT": "24Y",
+    "LONG": "Mount Hermon"
+  },
+  {
+    "SHORT": "24Z",
+    "LONG": "Northfield Farms"
+  },
+  {
+    "SHORT": "25A",
+    "LONG": "Northfield Mountain"
+  },
+  {
+    "SHORT": "25B",
+    "LONG": "West Northfield"
+  },
+  {
+    "SHORT": "25C",
+    "LONG": "Barrowsville"
+  },
+  {
+    "SHORT": "25D",
+    "LONG": "Chartley"
+  },
+  {
+    "SHORT": "25E",
+    "LONG": "Copper Works"
+  },
+  {
+    "SHORT": "25F",
+    "LONG": "East Norton"
+  },
+  {
+    "SHORT": "25G",
+    "LONG": "Winnecunnet"
+  },
+  {
+    "SHORT": "25H",
+    "LONG": "Assinippi"
+  },
+  {
+    "SHORT": "25I",
+    "LONG": "Mount Blue"
+  },
+  {
+    "SHORT": "25J",
+    "LONG": "Eastville"
+  },
+  {
+    "SHORT": "25K",
+    "LONG": "Harthaven"
+  },
+  {
+    "SHORT": "25L",
+    "LONG": "Lagoon Heights"
+  },
+  {
+    "SHORT": "25M",
+    "LONG": "Majors Cove"
+  },
+  {
+    "SHORT": "25N",
+    "LONG": "Vineyard Highlands"
+  },
+  {
+    "SHORT": "25O",
+    "LONG": "Wesleyan Grove"
+  },
+  {
+    "SHORT": "25P",
+    "LONG": "Coldbrook Springs"
+  },
+  {
+    "SHORT": "25Q",
+    "LONG": "Blissville"
+  },
+  {
+    "SHORT": "25R",
+    "LONG": "Eaglesville"
+  },
+  {
+    "SHORT": "25S",
+    "LONG": "Lake Mattawa"
+  },
+  {
+    "SHORT": "25T",
+    "LONG": "North Orange"
+  },
+  {
+    "SHORT": "25U",
+    "LONG": "West Orange"
+  },
+  {
+    "SHORT": "25V",
+    "LONG": "Barley Neck"
+  },
+  {
+    "SHORT": "25W",
+    "LONG": "Namskaket"
+  },
+  {
+    "SHORT": "25X",
+    "LONG": "Nauset Beach"
+  },
+  {
+    "SHORT": "25Y",
+    "LONG": "Rock Harbor"
+  },
+  {
+    "SHORT": "25Z",
+    "LONG": "Algerie"
+  },
+  {
+    "SHORT": "26A",
+    "LONG": "Cold Spring"
+  },
+  {
+    "SHORT": "26B",
+    "LONG": "East Otis"
+  },
+  {
+    "SHORT": "26C",
+    "LONG": "North Otis"
+  },
+  {
+    "SHORT": "26D",
+    "LONG": "West Otis"
+  },
+  {
+    "SHORT": "26E",
+    "LONG": "Buffumville"
+  },
+  {
+    "SHORT": "26F",
+    "LONG": "Cominsville"
+  },
+  {
+    "SHORT": "26G",
+    "LONG": "Hodges Village"
+  },
+  {
+    "SHORT": "26H",
+    "LONG": "North Oxford"
+  },
+  {
+    "SHORT": "26I",
+    "LONG": "Oxford Heights"
+  },
+  {
+    "SHORT": "26J",
+    "LONG": "Texas"
+  },
+  {
+    "SHORT": "26K",
+    "LONG": "Mount Dumplin"
+  },
+  {
+    "SHORT": "26L",
+    "LONG": "Needham Corner"
+  },
+  {
+    "SHORT": "26M",
+    "LONG": "Packardville"
+  },
+  {
+    "SHORT": "26N",
+    "LONG": "West Pelham"
+  },
+  {
+    "SHORT": "26O",
+    "LONG": "East Pembroke"
+  },
+  {
+    "SHORT": "26P",
+    "LONG": "Schooset"
+  },
+  {
+    "SHORT": "26Q",
+    "LONG": "Babbatasset"
+  },
+  {
+    "SHORT": "26R",
+    "LONG": "Burkinshaw"
+  },
+  {
+    "SHORT": "26S",
+    "LONG": "East Pepperell"
+  },
+  {
+    "SHORT": "26T",
+    "LONG": "Hovey Corner"
+  },
+  {
+    "SHORT": "26U",
+    "LONG": "North Pepperell"
+  },
+  {
+    "SHORT": "26V",
+    "LONG": "Nichewaug"
+  },
+  {
+    "SHORT": "26W",
+    "LONG": "Goulding Village"
+  },
+  {
+    "SHORT": "26X",
+    "LONG": "Phillipston Corner"
+  },
+  {
+    "SHORT": "26Y",
+    "LONG": "Arrowhead"
+  },
+  {
+    "SHORT": "26Z",
+    "LONG": "Balance Rock"
+  },
+  {
+    "SHORT": "27A",
+    "LONG": "Barkerville"
+  },
+  {
+    "SHORT": "27B",
+    "LONG": "Coltsville"
+  },
+  {
+    "SHORT": "27C",
+    "LONG": "Stearnsville"
+  },
+  {
+    "SHORT": "27D",
+    "LONG": "West Pittsfield"
+  },
+  {
+    "SHORT": "27E",
+    "LONG": "Hallockville"
+  },
+  {
+    "SHORT": "27F",
+    "LONG": "Billington Sea"
+  },
+  {
+    "SHORT": "27G",
+    "LONG": "The Gurnet"
+  },
+  {
+    "SHORT": "27H",
+    "LONG": "Jabez Corner"
+  },
+  {
+    "SHORT": "27I",
+    "LONG": "Little Long Pond"
+  },
+  {
+    "SHORT": "27J",
+    "LONG": "Manters Point"
+  },
+  {
+    "SHORT": "27K",
+    "LONG": "Priscilla Beach"
+  },
+  {
+    "SHORT": "27L",
+    "LONG": "White Horse Beach"
+  },
+  {
+    "SHORT": "27M",
+    "LONG": "North Plympton"
+  },
+  {
+    "SHORT": "27N",
+    "LONG": "Silver Lake"
+  },
+  {
+    "SHORT": "27O",
+    "LONG": "East Princeton"
+  },
+  {
+    "SHORT": "27P",
+    "LONG": "Mount Wachusett"
+  },
+  {
+    "SHORT": "27Q",
+    "LONG": "West Sterling"
+  },
+  {
+    "SHORT": "27R",
+    "LONG": "Long Point"
+  },
+  {
+    "SHORT": "27S",
+    "LONG": "Mayflower Heights"
+  },
+  {
+    "SHORT": "27T",
+    "LONG": "Wood End"
+  },
+  {
+    "SHORT": "27U",
+    "LONG": "Atlantic"
+  },
+  {
+    "SHORT": "27V",
+    "LONG": "Quincy Neck"
+  },
+  {
+    "SHORT": "27W",
+    "LONG": "Rock Island"
+  },
+  {
+    "SHORT": "27X",
+    "LONG": "Wollaston Heights"
+  },
+  {
+    "SHORT": "27Y",
+    "LONG": "Judson"
+  },
+  {
+    "SHORT": "27Z",
+    "LONG": "Prattville"
+  },
+  {
+    "SHORT": "28A",
+    "LONG": "Raynham Center"
+  },
+  {
+    "SHORT": "28B",
+    "LONG": "Harris"
+  },
+  {
+    "SHORT": "28C",
+    "LONG": "Long Hill"
+  },
+  {
+    "SHORT": "28D",
+    "LONG": "Oak Swamp"
+  },
+  {
+    "SHORT": "28E",
+    "LONG": "North Rehoboth"
+  },
+  {
+    "SHORT": "28F",
+    "LONG": "Perryville"
+  },
+  {
+    "SHORT": "28G",
+    "LONG": "South Rehoboth"
+  },
+  {
+    "SHORT": "28H",
+    "LONG": "Crescent Beach"
+  },
+  {
+    "SHORT": "28I",
+    "LONG": "Franklin Park"
+  },
+  {
+    "SHORT": "28J",
+    "LONG": "Oak Island"
+  },
+  {
+    "SHORT": "28K",
+    "LONG": "Richmond Furnace"
+  },
+  {
+    "SHORT": "28L",
+    "LONG": "Stevens Corner"
+  },
+  {
+    "SHORT": "28M",
+    "LONG": "Bisbee Corner"
+  },
+  {
+    "SHORT": "28N",
+    "LONG": "Cowen Corner"
+  },
+  {
+    "SHORT": "28O",
+    "LONG": "East Rochester"
+  },
+  {
+    "SHORT": "28P",
+    "LONG": "North Rochester"
+  },
+  {
+    "SHORT": "28Q",
+    "LONG": "Hatherly"
+  },
+  {
+    "SHORT": "28R",
+    "LONG": "Bearskin Neck"
+  },
+  {
+    "SHORT": "28S",
+    "LONG": "Folly Cove"
+  },
+  {
+    "SHORT": "28T",
+    "LONG": "Lands End"
+  },
+  {
+    "SHORT": "28U",
+    "LONG": "Long Beach"
+  },
+  {
+    "SHORT": "28V",
+    "LONG": "Ocean View"
+  },
+  {
+    "SHORT": "28W",
+    "LONG": "Thatcher's Island"
+  },
+  {
+    "SHORT": "28X",
+    "LONG": "Hoosac Tunnel"
+  },
+  {
+    "SHORT": "28Y",
+    "LONG": "Monroe Bridge"
+  },
+  {
+    "SHORT": "28Z",
+    "LONG": "Doles Corner"
+  },
+  {
+    "SHORT": "29A",
+    "LONG": "Glen Mills"
+  },
+  {
+    "SHORT": "29B",
+    "LONG": "Leightons Corner"
+  },
+  {
+    "SHORT": "29C",
+    "LONG": "Rooty Plain"
+  },
+  {
+    "SHORT": "29D",
+    "LONG": "South Royalston"
+  },
+  {
+    "SHORT": "29E",
+    "LONG": "West Royalston"
+  },
+  {
+    "SHORT": "29F",
+    "LONG": "Crescent Mills"
+  },
+  {
+    "SHORT": "29G",
+    "LONG": "Woronoco"
+  },
+  {
+    "SHORT": "29H",
+    "LONG": "Barrack Hill"
+  },
+  {
+    "SHORT": "29I",
+    "LONG": "Muschopauge"
+  },
+  {
+    "SHORT": "29J",
+    "LONG": "New Boston"
+  },
+  {
+    "SHORT": "29K",
+    "LONG": "North Rutland"
+  },
+  {
+    "SHORT": "29L",
+    "LONG": "Pound Hill"
+  },
+  {
+    "SHORT": "29M",
+    "LONG": "West Rutland"
+  },
+  {
+    "SHORT": "29N",
+    "LONG": "White Hall"
+  },
+  {
+    "SHORT": "29O",
+    "LONG": "Bakers Island"
+  },
+  {
+    "SHORT": "29P",
+    "LONG": "Forest River"
+  },
+  {
+    "SHORT": "29Q",
+    "LONG": "Gallows Hill"
+  },
+  {
+    "SHORT": "29R",
+    "LONG": "Salem Neck"
+  },
+  {
+    "SHORT": "29S",
+    "LONG": "Salem Willows"
+  },
+  {
+    "SHORT": "29T",
+    "LONG": "South Salem"
+  },
+  {
+    "SHORT": "29U",
+    "LONG": "Winter Island"
+  },
+  {
+    "SHORT": "29V",
+    "LONG": "Cushing"
+  },
+  {
+    "SHORT": "29W",
+    "LONG": "Montville"
+  },
+  {
+    "SHORT": "29X",
+    "LONG": "New Boston"
+  },
+  {
+    "SHORT": "29Y",
+    "LONG": "South Sandisfield"
+  },
+  {
+    "SHORT": "29Z",
+    "LONG": "West New Boston"
+  },
+  {
+    "SHORT": "2AS",
+    "LONG": "Ashaway"
+  },
+  {
+    "SHORT": "2BR",
+    "LONG": "Bradford"
+  },
+  {
+    "SHORT": "2ES",
+    "LONG": "East Side"
+  },
+  {
+    "SHORT": "2HA",
+    "LONG": "Harrisville"
+  },
+  {
+    "SHORT": "2HV",
+    "LONG": "Hope Valley"
+  },
+  {
+    "SHORT": "2KI",
+    "LONG": "Kingston"
+  },
+  {
+    "SHORT": "2ME",
+    "LONG": "Melville"
+  },
+  {
+    "SHORT": "2NP",
+    "LONG": "Narragansett Pier"
+  },
+  {
+    "SHORT": "2PA",
+    "LONG": "Pascoag"
+  },
+  {
+    "SHORT": "30A",
+    "LONG": "Farmersville"
+  },
+  {
+    "SHORT": "30B",
+    "LONG": "Plowed Neck"
+  },
+  {
+    "SHORT": "30C",
+    "LONG": "Sagamore Hill"
+  },
+  {
+    "SHORT": "30D",
+    "LONG": "Spectacle Pond"
+  },
+  {
+    "SHORT": "30E",
+    "LONG": "Wakeby"
+  },
+  {
+    "SHORT": "30F",
+    "LONG": "Cliftondale"
+  },
+  {
+    "SHORT": "30G",
+    "LONG": "East Saugus"
+  },
+  {
+    "SHORT": "30H",
+    "LONG": "Lynnhurst"
+  },
+  {
+    "SHORT": "30I",
+    "LONG": "North Saugus"
+  },
+  {
+    "SHORT": "30J",
+    "LONG": "Vinegar Hill"
+  },
+  {
+    "SHORT": "30K",
+    "LONG": "Brier"
+  },
+  {
+    "SHORT": "30L",
+    "LONG": "Savoy Center"
+  },
+  {
+    "SHORT": "30M",
+    "LONG": "Beechwood"
+  },
+  {
+    "SHORT": "30N",
+    "LONG": "Clapps Corner"
+  },
+  {
+    "SHORT": "30O",
+    "LONG": "First Cliff"
+  },
+  {
+    "SHORT": "30P",
+    "LONG": "Fourth Cliff"
+  },
+  {
+    "SHORT": "30Q",
+    "LONG": "Gannett Corner"
+  },
+  {
+    "SHORT": "30R",
+    "LONG": "Mungo Corner"
+  },
+  {
+    "SHORT": "30S",
+    "LONG": "Pincin Hill"
+  },
+  {
+    "SHORT": "30T",
+    "LONG": "Scituate Center"
+  },
+  {
+    "SHORT": "30U",
+    "LONG": "Scituate Harbor"
+  },
+  {
+    "SHORT": "30V",
+    "LONG": "Scituate Neck"
+  },
+  {
+    "SHORT": "30W",
+    "LONG": "Scituate Station"
+  },
+  {
+    "SHORT": "30X",
+    "LONG": "Second Cliff"
+  },
+  {
+    "SHORT": "30Y",
+    "LONG": "Sherman Corner"
+  },
+  {
+    "SHORT": "30Z",
+    "LONG": "The Glades"
+  },
+  {
+    "SHORT": "31A",
+    "LONG": "Third Cliff"
+  },
+  {
+    "SHORT": "31B",
+    "LONG": "Walnut Tree Hill"
+  },
+  {
+    "SHORT": "31C",
+    "LONG": "Luthers Corner"
+  },
+  {
+    "SHORT": "31D",
+    "LONG": "North Seekonk"
+  },
+  {
+    "SHORT": "31E",
+    "LONG": "Perrins Crossing"
+  },
+  {
+    "SHORT": "31F",
+    "LONG": "South Seekonk"
+  },
+  {
+    "SHORT": "31G",
+    "LONG": "East Sharon"
+  },
+  {
+    "SHORT": "31H",
+    "LONG": "Massapoag Lake"
+  },
+  {
+    "SHORT": "31I",
+    "LONG": "Sharon Heights"
+  },
+  {
+    "SHORT": "31J",
+    "LONG": "Ashley Falls"
+  },
+  {
+    "SHORT": "31K",
+    "LONG": "Bardwell"
+  },
+  {
+    "SHORT": "31L",
+    "LONG": "East Shelburne"
+  },
+  {
+    "SHORT": "31M",
+    "LONG": "The Patten"
+  },
+  {
+    "SHORT": "31N",
+    "LONG": "South Sherborn"
+  },
+  {
+    "SHORT": "31O",
+    "LONG": "Whitneys"
+  },
+  {
+    "SHORT": "31P",
+    "LONG": "North Shirley"
+  },
+  {
+    "SHORT": "31Q",
+    "LONG": "Shaker Village"
+  },
+  {
+    "SHORT": "31R",
+    "LONG": "Shirley Center"
+  },
+  {
+    "SHORT": "31S",
+    "LONG": "Woodsville"
+  },
+  {
+    "SHORT": "31T",
+    "LONG": "Edgemere"
+  },
+  {
+    "SHORT": "31U",
+    "LONG": "Baconville"
+  },
+  {
+    "SHORT": "31V",
+    "LONG": "Cooleyville"
+  },
+  {
+    "SHORT": "31W",
+    "LONG": "Locks Village"
+  },
+  {
+    "SHORT": "31X",
+    "LONG": "Brayton Point"
+  },
+  {
+    "SHORT": "31Y",
+    "LONG": "Pottersville"
+  },
+  {
+    "SHORT": "31Z",
+    "LONG": "South Somerset"
+  },
+  {
+    "SHORT": "32A",
+    "LONG": "Tufts University"
+  },
+  {
+    "SHORT": "32B",
+    "LONG": "Moody Corner"
+  },
+  {
+    "SHORT": "32C",
+    "LONG": "South Hadley Falls"
+  },
+  {
+    "SHORT": "32D",
+    "LONG": "Thermopylae"
+  },
+  {
+    "SHORT": "32E",
+    "LONG": "Russellville"
+  },
+  {
+    "SHORT": "32F",
+    "LONG": "Cordaville"
+  },
+  {
+    "SHORT": "32G",
+    "LONG": "Fayville"
+  },
+  {
+    "SHORT": "32H",
+    "LONG": "Southville"
+  },
+  {
+    "SHORT": "32I",
+    "LONG": "Dresser Hill"
+  },
+  {
+    "SHORT": "32J",
+    "LONG": "Globe Village"
+  },
+  {
+    "SHORT": "32K",
+    "LONG": "Westville"
+  },
+  {
+    "SHORT": "32L",
+    "LONG": "Congamond"
+  },
+  {
+    "SHORT": "32M",
+    "LONG": "Gillett Corner"
+  },
+  {
+    "SHORT": "32N",
+    "LONG": "Rising Corner"
+  },
+  {
+    "SHORT": "32O",
+    "LONG": "Hillsville"
+  },
+  {
+    "SHORT": "32P",
+    "LONG": "North Spencer"
+  },
+  {
+    "SHORT": "32Q",
+    "LONG": "South Spencer"
+  },
+  {
+    "SHORT": "32U",
+    "LONG": "Justice Hill"
+  },
+  {
+    "SHORT": "32V",
+    "LONG": "Pratt Junction"
+  },
+  {
+    "SHORT": "32W",
+    "LONG": "Redstone Hill"
+  },
+  {
+    "SHORT": "32X",
+    "LONG": "Rowley Hill"
+  },
+  {
+    "SHORT": "32Y",
+    "LONG": "The Quag"
+  },
+  {
+    "SHORT": "32Z",
+    "LONG": "West Sterling"
+  },
+  {
+    "SHORT": "33A",
+    "LONG": "Glendale"
+  },
+  {
+    "SHORT": "33B",
+    "LONG": "Interlaken"
+  },
+  {
+    "SHORT": "33C",
+    "LONG": "Larrywaug"
+  },
+  {
+    "SHORT": "33D",
+    "LONG": "Stockbridge Bowl"
+  },
+  {
+    "SHORT": "33E",
+    "LONG": "Haywardville"
+  },
+  {
+    "SHORT": "33F",
+    "LONG": "Lindenwood"
+  },
+  {
+    "SHORT": "33G",
+    "LONG": "Cobb's Tavern"
+  },
+  {
+    "SHORT": "33H",
+    "LONG": "Dry Pond"
+  },
+  {
+    "SHORT": "33I",
+    "LONG": "North Stoughton"
+  },
+  {
+    "SHORT": "33J",
+    "LONG": "South Stoughton"
+  },
+  {
+    "SHORT": "33K",
+    "LONG": "West Stoughton"
+  },
+  {
+    "SHORT": "33L",
+    "LONG": "Gleasondale"
+  },
+  {
+    "SHORT": "33M",
+    "LONG": "Lake Boon"
+  },
+  {
+    "SHORT": "33N",
+    "LONG": "Lower Village"
+  },
+  {
+    "SHORT": "33O",
+    "LONG": "North Sudbury"
+  },
+  {
+    "SHORT": "33P",
+    "LONG": "South Sudbury"
+  },
+  {
+    "SHORT": "33Q",
+    "LONG": "North Sunderland"
+  },
+  {
+    "SHORT": "33R",
+    "LONG": "East Sutton"
+  },
+  {
+    "SHORT": "33S",
+    "LONG": "Manchaug"
+  },
+  {
+    "SHORT": "33T",
+    "LONG": "Potter Hill"
+  },
+  {
+    "SHORT": "33U",
+    "LONG": "South Sutton"
+  },
+  {
+    "SHORT": "33V",
+    "LONG": "West Sutton"
+  },
+  {
+    "SHORT": "33W",
+    "LONG": "Wilkinsonville"
+  },
+  {
+    "SHORT": "33X",
+    "LONG": "Beach Bluff"
+  },
+  {
+    "SHORT": "33Y",
+    "LONG": "Phillips Beach"
+  },
+  {
+    "SHORT": "33Z",
+    "LONG": "Barneyville"
+  },
+  {
+    "SHORT": "34A",
+    "LONG": "Gardners Neck"
+  },
+  {
+    "SHORT": "34B",
+    "LONG": "Hortonville"
+  },
+  {
+    "SHORT": "34C",
+    "LONG": "North Swansea"
+  },
+  {
+    "SHORT": "34D",
+    "LONG": "Ocean Grove"
+  },
+  {
+    "SHORT": "34E",
+    "LONG": "South Swansea"
+  },
+  {
+    "SHORT": "34F",
+    "LONG": "Swansea Center"
+  },
+  {
+    "SHORT": "34G",
+    "LONG": "Touisset"
+  },
+  {
+    "SHORT": "34H",
+    "LONG": "Britanniaville"
+  },
+  {
+    "SHORT": "34I",
+    "LONG": "East Taunton"
+  },
+  {
+    "SHORT": "34J",
+    "LONG": "North Dighton"
+  },
+  {
+    "SHORT": "34K",
+    "LONG": "Lake Sabbatia"
+  },
+  {
+    "SHORT": "34L",
+    "LONG": "Wades Corner"
+  },
+  {
+    "SHORT": "34M",
+    "LONG": "Weir Village"
+  },
+  {
+    "SHORT": "34N",
+    "LONG": "Westville"
+  },
+  {
+    "SHORT": "34O",
+    "LONG": "Whittenton"
+  },
+  {
+    "SHORT": "34P",
+    "LONG": "Whittenton Junction"
+  },
+  {
+    "SHORT": "34Q",
+    "LONG": "Baldwinville"
+  },
+  {
+    "SHORT": "34R",
+    "LONG": "East Templeton"
+  },
+  {
+    "SHORT": "34S",
+    "LONG": "Otter River"
+  },
+  {
+    "SHORT": "34T",
+    "LONG": "North Tewksbury"
+  },
+  {
+    "SHORT": "34U",
+    "LONG": "Pattenville"
+  },
+  {
+    "SHORT": "34V",
+    "LONG": "South Lowell"
+  },
+  {
+    "SHORT": "34W",
+    "LONG": "Tewksbury Junction"
+  },
+  {
+    "SHORT": "34X",
+    "LONG": "Wamesit"
+  },
+  {
+    "SHORT": "34Y",
+    "LONG": "Makonikey"
+  },
+  {
+    "SHORT": "34Z",
+    "LONG": "Town Hill"
+  },
+  {
+    "SHORT": "35A",
+    "LONG": "Barker Hill"
+  },
+  {
+    "SHORT": "35B",
+    "LONG": "Bayberry Hill"
+  },
+  {
+    "SHORT": "35C",
+    "LONG": "Old City"
+  },
+  {
+    "SHORT": "35D",
+    "LONG": "South Row"
+  },
+  {
+    "SHORT": "35E",
+    "LONG": "Townsend Harbor"
+  },
+  {
+    "SHORT": "35F",
+    "LONG": "West Townsend"
+  },
+  {
+    "SHORT": "35G",
+    "LONG": "Beach Point"
+  },
+  {
+    "SHORT": "35H",
+    "LONG": "Corn Hill"
+  },
+  {
+    "SHORT": "35I",
+    "LONG": "Higgins Hollow"
+  },
+  {
+    "SHORT": "35J",
+    "LONG": "Pond Village"
+  },
+  {
+    "SHORT": "35K",
+    "LONG": "South Truro"
+  },
+  {
+    "SHORT": "35L",
+    "LONG": "Goose Pond"
+  },
+  {
+    "SHORT": "35M",
+    "LONG": "West Upton"
+  },
+  {
+    "SHORT": "35N",
+    "LONG": "Ironstone"
+  },
+  {
+    "SHORT": "35O",
+    "LONG": "Linwood"
+  },
+  {
+    "SHORT": "35P",
+    "LONG": "North Uxbridge"
+  },
+  {
+    "SHORT": "35Q",
+    "LONG": "Wheelockville"
+  },
+  {
+    "SHORT": "35R",
+    "LONG": "Greenwood"
+  },
+  {
+    "SHORT": "35S",
+    "LONG": "Montrose"
+  },
+  {
+    "SHORT": "35T",
+    "LONG": "Wakefield Junction"
+  },
+  {
+    "SHORT": "35U",
+    "LONG": "Wakefield Park"
+  },
+  {
+    "SHORT": "35V",
+    "LONG": "East Walpole"
+  },
+  {
+    "SHORT": "35W",
+    "LONG": "South Walpole"
+  },
+  {
+    "SHORT": "35X",
+    "LONG": "Walpole Heights"
+  },
+  {
+    "SHORT": "35Y",
+    "LONG": "West Walpole"
+  },
+  {
+    "SHORT": "35Z",
+    "LONG": "Cedarwood"
+  },
+  {
+    "SHORT": "36A",
+    "LONG": "Clematis Brook"
+  },
+  {
+    "SHORT": "36B",
+    "LONG": "Lakeview"
+  },
+  {
+    "SHORT": "36C",
+    "LONG": "Piety Corner"
+  },
+  {
+    "SHORT": "36D",
+    "LONG": "Pigeon Hill"
+  },
+  {
+    "SHORT": "36E",
+    "LONG": "Prospectville"
+  },
+  {
+    "SHORT": "36F",
+    "LONG": "South Waltham"
+  },
+  {
+    "SHORT": "36G",
+    "LONG": "Gibbs Crossing"
+  },
+  {
+    "SHORT": "36H",
+    "LONG": "Ware Center"
+  },
+  {
+    "SHORT": "36I",
+    "LONG": "West Ware"
+  },
+  {
+    "SHORT": "36J",
+    "LONG": "Barneys Point"
+  },
+  {
+    "SHORT": "36K",
+    "LONG": "Cohasset Narrows"
+  },
+  {
+    "SHORT": "36L",
+    "LONG": "Fearing Hill"
+  },
+  {
+    "SHORT": "36M",
+    "LONG": "Hamilton Beach"
+  },
+  {
+    "SHORT": "36N",
+    "LONG": "Locke Bogs"
+  },
+  {
+    "SHORT": "36O",
+    "LONG": "Long Neck"
+  },
+  {
+    "SHORT": "36P",
+    "LONG": "Oakdale"
+  },
+  {
+    "SHORT": "36Q",
+    "LONG": "Onset Bay"
+  },
+  {
+    "SHORT": "36R",
+    "LONG": "Parkwood Beach"
+  },
+  {
+    "SHORT": "36S",
+    "LONG": "Pinehurst Beach"
+  },
+  {
+    "SHORT": "36T",
+    "LONG": "Point Independence"
+  },
+  {
+    "SHORT": "36U",
+    "LONG": "South Wareham"
+  },
+  {
+    "SHORT": "36V",
+    "LONG": "Swifts Beach"
+  },
+  {
+    "SHORT": "36W",
+    "LONG": "Tihonet"
+  },
+  {
+    "SHORT": "36X",
+    "LONG": "Tremont"
+  },
+  {
+    "SHORT": "36Y",
+    "LONG": "Wareham Center"
+  },
+  {
+    "SHORT": "36Z",
+    "LONG": "West Warren"
+  },
+  {
+    "SHORT": "37A",
+    "LONG": "Flower Hill"
+  },
+  {
+    "SHORT": "37B",
+    "LONG": "Bemis"
+  },
+  {
+    "SHORT": "37C",
+    "LONG": "East Watertown"
+  },
+  {
+    "SHORT": "37D",
+    "LONG": "Mount Auburn"
+  },
+  {
+    "SHORT": "37E",
+    "LONG": "Waverly"
+  },
+  {
+    "SHORT": "37F",
+    "LONG": "Cochituate"
+  },
+  {
+    "SHORT": "37G",
+    "LONG": "Tower Hill"
+  },
+  {
+    "SHORT": "37H",
+    "LONG": "Beacon Park"
+  },
+  {
+    "SHORT": "37I",
+    "LONG": "East Village"
+  },
+  {
+    "SHORT": "37J",
+    "LONG": "Merino Village"
+  },
+  {
+    "SHORT": "37K",
+    "LONG": "North Village"
+  },
+  {
+    "SHORT": "37L",
+    "LONG": "Babson Park"
+  },
+  {
+    "SHORT": "37M",
+    "LONG": "Newton Lower Falls"
+  },
+  {
+    "SHORT": "37N",
+    "LONG": "Overbrook"
+  },
+  {
+    "SHORT": "37O",
+    "LONG": "Wellesley Farms"
+  },
+  {
+    "SHORT": "37P",
+    "LONG": "Wellesley Fells"
+  },
+  {
+    "SHORT": "37Q",
+    "LONG": "Wellesley Hills"
+  },
+  {
+    "SHORT": "37R",
+    "LONG": "Fresh Brook"
+  },
+  {
+    "SHORT": "37S",
+    "LONG": "Great Beach Hill"
+  },
+  {
+    "SHORT": "37T",
+    "LONG": "Griffin Island"
+  },
+  {
+    "SHORT": "37U",
+    "LONG": "Lieutenant Island"
+  },
+  {
+    "SHORT": "37V",
+    "LONG": "Pleasant Point"
+  },
+  {
+    "SHORT": "37W",
+    "LONG": "Farley"
+  },
+  {
+    "SHORT": "37X",
+    "LONG": "Locks Village"
+  },
+  {
+    "SHORT": "37Y",
+    "LONG": "Stoneville"
+  },
+  {
+    "SHORT": "37Z",
+    "LONG": "Wendell Depot"
+  },
+  {
+    "SHORT": "38A",
+    "LONG": "Wenham Neck"
+  },
+  {
+    "SHORT": "38B",
+    "LONG": "Malden Hill"
+  },
+  {
+    "SHORT": "38C",
+    "LONG": "Oakdale"
+  },
+  {
+    "SHORT": "38D",
+    "LONG": "Cochesett"
+  },
+  {
+    "SHORT": "38E",
+    "LONG": "Eastondale"
+  },
+  {
+    "SHORT": "38F",
+    "LONG": "Matfield"
+  },
+  {
+    "SHORT": "38G",
+    "LONG": "Westdale"
+  },
+  {
+    "SHORT": "38H",
+    "LONG": "Amostown"
+  },
+  {
+    "SHORT": "38I",
+    "LONG": "Ashleyville"
+  },
+  {
+    "SHORT": "38J",
+    "LONG": "Cayenne"
+  },
+  {
+    "SHORT": "38K",
+    "LONG": "Riverdale"
+  },
+  {
+    "SHORT": "38L",
+    "LONG": "Tatham"
+  },
+  {
+    "SHORT": "38M",
+    "LONG": "Leet Ore Bed"
+  },
+  {
+    "SHORT": "38N",
+    "LONG": "Maple Hill"
+  },
+  {
+    "SHORT": "38O",
+    "LONG": "West Stockbridge Center"
+  },
+  {
+    "SHORT": "38P",
+    "LONG": "Williamsville"
+  },
+  {
+    "SHORT": "38Q",
+    "LONG": "Lamberts Cove"
+  },
+  {
+    "SHORT": "38R",
+    "LONG": "Makonikey"
+  },
+  {
+    "SHORT": "38S",
+    "LONG": "Wessonville"
+  },
+  {
+    "SHORT": "38T",
+    "LONG": "East Farms"
+  },
+  {
+    "SHORT": "38U",
+    "LONG": "Little River"
+  },
+  {
+    "SHORT": "38V",
+    "LONG": "Mundale"
+  },
+  {
+    "SHORT": "38W",
+    "LONG": "West Farms"
+  },
+  {
+    "SHORT": "38X",
+    "LONG": "Wyben"
+  },
+  {
+    "SHORT": "38Y",
+    "LONG": "Brookside"
+  },
+  {
+    "SHORT": "38Z",
+    "LONG": "Carlisle Station"
+  },
+  {
+    "SHORT": "39A",
+    "LONG": "Forge Village"
+  },
+  {
+    "SHORT": "39B",
+    "LONG": "Francis Hill"
+  },
+  {
+    "SHORT": "39C",
+    "LONG": "Graniteville"
+  },
+  {
+    "SHORT": "39D",
+    "LONG": "Nabnasset"
+  },
+  {
+    "SHORT": "39E",
+    "LONG": "Parkerville"
+  },
+  {
+    "SHORT": "39F",
+    "LONG": "Snake Meadow Hill"
+  },
+  {
+    "SHORT": "39G",
+    "LONG": "Whidden Corner"
+  },
+  {
+    "SHORT": "39H",
+    "LONG": "Loudville"
+  },
+  {
+    "SHORT": "39I",
+    "LONG": "Bakers Grove"
+  },
+  {
+    "SHORT": "39J",
+    "LONG": "Bean Porridge Hill"
+  },
+  {
+    "SHORT": "39K",
+    "LONG": "Greenwood Pond"
+  },
+  {
+    "SHORT": "39L",
+    "LONG": "Lakewood Park"
+  },
+  {
+    "SHORT": "39M",
+    "LONG": "Leino Park"
+  },
+  {
+    "SHORT": "39N",
+    "LONG": "Mantyranta"
+  },
+  {
+    "SHORT": "39O",
+    "LONG": "Meeting House Pond"
+  },
+  {
+    "SHORT": "39P",
+    "LONG": "Prospect Hill"
+  },
+  {
+    "SHORT": "39Q",
+    "LONG": "Wachusett Lake"
+  },
+  {
+    "SHORT": "39R",
+    "LONG": "Whitmanville"
+  },
+  {
+    "SHORT": "39S",
+    "LONG": "Hastings"
+  },
+  {
+    "SHORT": "39T",
+    "LONG": "Silver Hill"
+  },
+  {
+    "SHORT": "39U",
+    "LONG": "Acoaxet"
+  },
+  {
+    "SHORT": "39V",
+    "LONG": "Berryman Corner"
+  },
+  {
+    "SHORT": "39W",
+    "LONG": "Brownell Corner"
+  },
+  {
+    "SHORT": "39X",
+    "LONG": "Central Village"
+  },
+  {
+    "SHORT": "39Y",
+    "LONG": "Head of Westport"
+  },
+  {
+    "SHORT": "39Z",
+    "LONG": "Horseneck Beach"
+  },
+  {
+    "SHORT": "40A",
+    "LONG": "Kirby Corner"
+  },
+  {
+    "SHORT": "40B",
+    "LONG": "North Westport"
+  },
+  {
+    "SHORT": "40C",
+    "LONG": "Westport Harbor"
+  },
+  {
+    "SHORT": "40D",
+    "LONG": "Islington"
+  },
+  {
+    "SHORT": "40E",
+    "LONG": "Fort Hill"
+  },
+  {
+    "SHORT": "40F",
+    "LONG": "Great Hill"
+  },
+  {
+    "SHORT": "40G",
+    "LONG": "Lovell Corners"
+  },
+  {
+    "SHORT": "40H",
+    "LONG": "Old Spain"
+  },
+  {
+    "SHORT": "40I",
+    "LONG": "Rose Cliff"
+  },
+  {
+    "SHORT": "40J",
+    "LONG": "East Whately"
+  },
+  {
+    "SHORT": "40K",
+    "LONG": "West Whately"
+  },
+  {
+    "SHORT": "40L",
+    "LONG": "Auburnville"
+  },
+  {
+    "SHORT": "40M",
+    "LONG": "Northville"
+  },
+  {
+    "SHORT": "40N",
+    "LONG": "Butlerville"
+  },
+  {
+    "SHORT": "40O",
+    "LONG": "East Wilbraham"
+  },
+  {
+    "SHORT": "40P",
+    "LONG": "North Wilbraham"
+  },
+  {
+    "SHORT": "40Q",
+    "LONG": "Searsville"
+  },
+  {
+    "SHORT": "40R",
+    "LONG": "Goodell Hollow"
+  },
+  {
+    "SHORT": "40S",
+    "LONG": "Hemlock Brook"
+  },
+  {
+    "SHORT": "40T",
+    "LONG": "Northwest Hill"
+  },
+  {
+    "SHORT": "40U",
+    "LONG": "Sand Spring"
+  },
+  {
+    "SHORT": "40V",
+    "LONG": "South Williamstown"
+  },
+  {
+    "SHORT": "40W",
+    "LONG": "Sweets Corner"
+  },
+  {
+    "SHORT": "40X",
+    "LONG": "The Hopper"
+  },
+  {
+    "SHORT": "40Y",
+    "LONG": "White Oaks"
+  },
+  {
+    "SHORT": "40Z",
+    "LONG": "North Wilmington"
+  },
+  {
+    "SHORT": "41A",
+    "LONG": "Silver Lake"
+  },
+  {
+    "SHORT": "41B",
+    "LONG": "Wilmington Junction"
+  },
+  {
+    "SHORT": "41C",
+    "LONG": "Bullardville"
+  },
+  {
+    "SHORT": "41D",
+    "LONG": "Glenallan"
+  },
+  {
+    "SHORT": "41E",
+    "LONG": "Harrisville"
+  },
+  {
+    "SHORT": "41F",
+    "LONG": "Hydeville"
+  },
+  {
+    "SHORT": "41G",
+    "LONG": "New Boston"
+  },
+  {
+    "SHORT": "41H",
+    "LONG": "Waterville"
+  },
+  {
+    "SHORT": "41I",
+    "LONG": "Winchendon Center"
+  },
+  {
+    "SHORT": "41J",
+    "LONG": "Winchendon Springs"
+  },
+  {
+    "SHORT": "41K",
+    "LONG": "Symmes Corner"
+  },
+  {
+    "SHORT": "41L",
+    "LONG": "Wedgemere"
+  },
+  {
+    "SHORT": "41M",
+    "LONG": "Winchester Highlands"
+  },
+  {
+    "SHORT": "41N",
+    "LONG": "East Windsor"
+  },
+  {
+    "SHORT": "41O",
+    "LONG": "Windsor Hill"
+  },
+  {
+    "SHORT": "41P",
+    "LONG": "Belle Isle"
+  },
+  {
+    "SHORT": "41Q",
+    "LONG": "Cottage Hill"
+  },
+  {
+    "SHORT": "41R",
+    "LONG": "Cottage Park"
+  },
+  {
+    "SHORT": "41S",
+    "LONG": "Point Shirley"
+  },
+  {
+    "SHORT": "41T",
+    "LONG": "Winthrop Beach"
+  },
+  {
+    "SHORT": "41U",
+    "LONG": "Winthrop Highlands"
+  },
+  {
+    "SHORT": "41V",
+    "LONG": "Central Square"
+  },
+  {
+    "SHORT": "41W",
+    "LONG": "Cummingsville"
+  },
+  {
+    "SHORT": "41X",
+    "LONG": "North Woburn"
+  },
+  {
+    "SHORT": "41Y",
+    "LONG": "Shaker Glen"
+  },
+  {
+    "SHORT": "41Z",
+    "LONG": "Walnut Hill"
+  },
+  {
+    "SHORT": "42A",
+    "LONG": "Woburn Highlands"
+  },
+  {
+    "SHORT": "42B",
+    "LONG": "Bloomingdale"
+  },
+  {
+    "SHORT": "42C",
+    "LONG": "Green Hill"
+  },
+  {
+    "SHORT": "42D",
+    "LONG": "Jamesville"
+  },
+  {
+    "SHORT": "42E",
+    "LONG": "Lakeview"
+  },
+  {
+    "SHORT": "42F",
+    "LONG": "New Worcester"
+  },
+  {
+    "SHORT": "42G",
+    "LONG": "Clark Hill"
+  },
+  {
+    "SHORT": "42H",
+    "LONG": "Ringville"
+  },
+  {
+    "SHORT": "42I",
+    "LONG": "South Worthington"
+  },
+  {
+    "SHORT": "42J",
+    "LONG": "West Worthington"
+  },
+  {
+    "SHORT": "42K",
+    "LONG": "Worthington Center"
+  },
+  {
+    "SHORT": "42L",
+    "LONG": "Worthington Corners"
+  },
+  {
+    "SHORT": "42M",
+    "LONG": "Sheldonville"
+  },
+  {
+    "SHORT": "42N",
+    "LONG": "West Wrentham"
+  },
+  {
+    "SHORT": "42O",
+    "LONG": "Wampum"
+  },
+  {
+    "SHORT": "42P",
+    "LONG": "Point Gammon"
+  },
+  {
+    "SHORT": "42Q",
+    "LONG": "Coolidge Hill"
+  },
+  {
+    "SHORT": "42R",
+    "LONG": "Strawberry Hill"
+  },
+  {
+    "SHORT": "42S",
+    "LONG": "Avon Hill"
+  },
+  {
+    "SHORT": "42T",
+    "LONG": "Downtown"
+  },
+  {
+    "SHORT": "42U",
+    "LONG": "Bay View"
+  },
+  {
+    "SHORT": "42V",
+    "LONG": "Medway Village"
+  },
+  {
+    "SHORT": "42W",
+    "LONG": "Atwater Park"
+  },
+  {
+    "SHORT": "42X",
+    "LONG": "Turkey Hill"
+  },
+  {
+    "SHORT": "42Y",
+    "LONG": "Larchwood"
+  },
+  {
+    "SHORT": "42Z",
+    "LONG": "Lechmere Point"
+  },
+  {
+    "SHORT": "43A",
+    "LONG": "Lechmere Square"
+  },
+  {
+    "SHORT": "43B",
+    "LONG": "Brickbottom-Inner Belt"
+  },
+  {
+    "SHORT": "43C",
+    "LONG": "Area 4-The Port"
+  },
+  {
+    "SHORT": "43D",
+    "LONG": "Neighborhood 9"
+  },
+  {
+    "SHORT": "43E",
+    "LONG": "Central Hill"
+  },
+  {
+    "SHORT": "43F",
+    "LONG": "Magoun Square"
+  },
+  {
+    "SHORT": "43G",
+    "LONG": "Ten Hills"
+  },
+  {
+    "SHORT": "43H",
+    "LONG": "Assembly Square"
+  },
+  {
+    "SHORT": "43J",
+    "LONG": "The Alphabets"
+  },
+  {
+    "SHORT": "43K",
+    "LONG": "Green Hill"
+  },
+  {
+    "SHORT": "43L",
+    "LONG": "Rockaway"
+  },
+  {
+    "SHORT": "43M",
+    "LONG": "Rockaway Annex"
+  },
+  {
+    "SHORT": "43N",
+    "LONG": "Sagamore Hill"
+  },
+  {
+    "SHORT": "43O",
+    "LONG": "Spinnaker Island"
+  },
+  {
+    "SHORT": "43P",
+    "LONG": "Strawberry Hill"
+  },
+  {
+    "SHORT": "43Q",
+    "LONG": "The Village"
+  },
+  {
+    "SHORT": "43R",
+    "LONG": "Telegraph Hill"
+  },
+  {
+    "SHORT": "43S",
+    "LONG": "Wellington-Harrington"
+  },
+  {
+    "SHORT": "43T",
+    "LONG": "Precinct One/Upper Dedham"
+  },
+  {
+    "SHORT": "43U",
+    "LONG": "Prattville"
+  },
+  {
+    "SHORT": "43V",
+    "LONG": "Bellingham Square"
+  },
+  {
+    "SHORT": "43W",
+    "LONG": "South Boston's Andrew Square"
+  },
+  {
+    "SHORT": "43X",
+    "LONG": "Olmsted Historic District"
+  },
+  {
+    "SHORT": "43Y",
+    "LONG": "Green Island"
+  },
+  {
+    "SHORT": "43Z",
+    "LONG": "Deer Island"
+  },
+  {
+    "SHORT": "44A",
+    "LONG": "Fort Point"
+  },
+  {
+    "SHORT": "44B",
+    "LONG": "Downtown"
+  },
+  {
+    "SHORT": "44C",
+    "LONG": "Finger Lakes"
+  },
+  {
+    "SHORT": "44D",
+    "LONG": "Capital District"
+  },
+  {
+    "SHORT": "44E",
+    "LONG": "Finger Lakes"
+  },
+  {
+    "SHORT": "44F",
+    "LONG": "Capital District"
+  },
+  {
+    "SHORT": "44G",
+    "LONG": "North Country"
+  },
+  {
+    "SHORT": "44H",
+    "LONG": "North Country"
+  },
+  {
+    "SHORT": "44I",
+    "LONG": "Southern Tier"
+  },
+  {
+    "SHORT": "44J",
+    "LONG": "Hudson Valley"
+  },
+  {
+    "SHORT": "44K",
+    "LONG": "Central New York"
+  },
+  {
+    "SHORT": "44L",
+    "LONG": "Hudson Valley"
+  },
+  {
+    "SHORT": "44M",
+    "LONG": "Capital District"
+  },
+  {
+    "SHORT": "44N",
+    "LONG": "North Country"
+  },
+  {
+    "SHORT": "44O",
+    "LONG": "Southern Tier"
+  },
+  {
+    "SHORT": "44P",
+    "LONG": "Hudson Valley"
+  },
+  {
+    "SHORT": "44Q",
+    "LONG": "Hudson Valley"
+  },
+  {
+    "SHORT": "44R",
+    "LONG": "Capital District"
+  },
+  {
+    "SHORT": "44S",
+    "LONG": "Central New York"
+  },
+  {
+    "SHORT": "44T",
+    "LONG": "Mohawk Valley"
+  },
+  {
+    "SHORT": "44U",
+    "LONG": "Bronx"
+  },
+  {
+    "SHORT": "44V",
+    "LONG": "Bronx's East Bronx"
+  },
+  {
+    "SHORT": "44W",
+    "LONG": "Bronx's West Bronx"
+  },
+  {
+    "SHORT": "44X",
+    "LONG": "Brooklyn"
+  },
+  {
+    "SHORT": "44Y",
+    "LONG": "Brooklyn's Bath Beach"
+  },
+  {
+    "SHORT": "44Z",
+    "LONG": "Brooklyn's Bay Ridge"
+  },
+  {
+    "SHORT": "45A",
+    "LONG": "Brooklyn's Bensonhurst"
+  },
+  {
+    "SHORT": "45B",
+    "LONG": "Brooklyn's Borough Park"
+  },
+  {
+    "SHORT": "45C",
+    "LONG": "Brooklyn's Brighton Beach"
+  },
+  {
+    "SHORT": "45D",
+    "LONG": "Brooklyn's Brownsville"
+  },
+  {
+    "SHORT": "45E",
+    "LONG": "Brooklyn's Bushwick"
+  },
+  {
+    "SHORT": "45F",
+    "LONG": "Brooklyn's Canarsie"
+  },
+  {
+    "SHORT": "45G",
+    "LONG": "Brooklyn's Carroll Gardens"
+  },
+  {
+    "SHORT": "45H",
+    "LONG": "Brooklyn's Cobble Hill"
+  },
+  {
+    "SHORT": "45I",
+    "LONG": "Brooklyn's Crown Heights"
+  },
+  {
+    "SHORT": "45J",
+    "LONG": "Brooklyn's Ditmas Park"
+  },
+  {
+    "SHORT": "45K",
+    "LONG": "Brooklyn's DUMBO"
+  },
+  {
+    "SHORT": "45L",
+    "LONG": "Brooklyn's Dyker Heights"
+  },
+  {
+    "SHORT": "45M",
+    "LONG": "Brooklyn's East Flatbush"
+  },
+  {
+    "SHORT": "45N",
+    "LONG": "Brooklyn's Flatbush"
+  },
+  {
+    "SHORT": "45O",
+    "LONG": "Brooklyn's Gerritsen Beach"
+  },
+  {
+    "SHORT": "45P",
+    "LONG": "Brooklyn's Gravesend"
+  },
+  {
+    "SHORT": "45Q",
+    "LONG": "Brooklyn's Greenpoint"
+  },
+  {
+    "SHORT": "45R",
+    "LONG": "Brooklyn's Homecrest"
+  },
+  {
+    "SHORT": "45S",
+    "LONG": "Brooklyn's Kensington"
+  },
+  {
+    "SHORT": "45T",
+    "LONG": "Brooklyn's Marine Park"
+  },
+  {
+    "SHORT": "45U",
+    "LONG": "Brooklyn's Midwood"
+  },
+  {
+    "SHORT": "45V",
+    "LONG": "Brooklyn's Park Slope"
+  },
+  {
+    "SHORT": "45W",
+    "LONG": "Brooklyn's Red Hook"
+  },
+  {
+    "SHORT": "45X",
+    "LONG": "Brooklyn's Sea Gate"
+  },
+  {
+    "SHORT": "45Y",
+    "LONG": "Brooklyn's Sheepshead Bay"
+  },
+  {
+    "SHORT": "45Z",
+    "LONG": "Brooklyn's Sunset Park"
+  },
+  {
+    "SHORT": "46A",
+    "LONG": "Brooklyn's Vinegar Hill"
+  },
+  {
+    "SHORT": "46B",
+    "LONG": "Brooklyn's Williamsburg"
+  },
+  {
+    "SHORT": "46C",
+    "LONG": "Brooklyn's Windsor Terrace"
+  },
+  {
+    "SHORT": "46D",
+    "LONG": "Manhattan"
+  },
+  {
+    "SHORT": "46E",
+    "LONG": "Manhattan's Downtown"
+  },
+  {
+    "SHORT": "46F",
+    "LONG": "Manhattan's Midtown"
+  },
+  {
+    "SHORT": "46G",
+    "LONG": "Manhattan's Uptown"
+  },
+  {
+    "SHORT": "46H",
+    "LONG": "Manhattan's Between Midtown and Downtown"
+  },
+  {
+    "SHORT": "46I",
+    "LONG": "Queens"
+  },
+  {
+    "SHORT": "46J",
+    "LONG": "Queens Astoria"
+  },
+  {
+    "SHORT": "46K",
+    "LONG": "Queens Bellerose"
+  },
+  {
+    "SHORT": "46L",
+    "LONG": "Queens Briarwood"
+  },
+  {
+    "SHORT": "46M",
+    "LONG": "Queens Cambria Heights"
+  },
+  {
+    "SHORT": "46N",
+    "LONG": "Queens Corona"
+  },
+  {
+    "SHORT": "46O",
+    "LONG": "Queens Corona Heights"
+  },
+  {
+    "SHORT": "46P",
+    "LONG": "Queens Douglaston"
+  },
+  {
+    "SHORT": "46Q",
+    "LONG": "Queens East Elmhurst"
+  },
+  {
+    "SHORT": "46R",
+    "LONG": "Queens Elmhurst"
+  },
+  {
+    "SHORT": "46S",
+    "LONG": "Queens Floral Park"
+  },
+  {
+    "SHORT": "46T",
+    "LONG": "Queens Flushing"
+  },
+  {
+    "SHORT": "46U",
+    "LONG": "Queens Forest Hills"
+  },
+  {
+    "SHORT": "46V",
+    "LONG": "Queens Fresh Meadows"
+  },
+  {
+    "SHORT": "46W",
+    "LONG": "Queens Hollis Hills"
+  },
+  {
+    "SHORT": "46X",
+    "LONG": "Queens Howard Beach"
+  },
+  {
+    "SHORT": "46Y",
+    "LONG": "Queens Jackson Heights"
+  },
+  {
+    "SHORT": "46Z",
+    "LONG": "Queens Jamaica"
+  },
+  {
+    "SHORT": "47A",
+    "LONG": "Queens Jamaica Estates"
+  },
+  {
+    "SHORT": "47B",
+    "LONG": "Queens Jamaica Hills Hillcrest"
+  },
+  {
+    "SHORT": "47C",
+    "LONG": "Queens Kew Gardens"
+  },
+  {
+    "SHORT": "47D",
+    "LONG": "Queens Kew Gardens Hills"
+  },
+  {
+    "SHORT": "47E",
+    "LONG": "Queens Laurelton"
+  },
+  {
+    "SHORT": "47F",
+    "LONG": "Queens Little Neck"
+  },
+  {
+    "SHORT": "47G",
+    "LONG": "Queens Maspeth"
+  },
+  {
+    "SHORT": "47H",
+    "LONG": "Queens Middle Village"
+  },
+  {
+    "SHORT": "47I",
+    "LONG": "Queens Murray Hill"
+  },
+  {
+    "SHORT": "47J",
+    "LONG": "Queens Ozone Park"
+  },
+  {
+    "SHORT": "47K",
+    "LONG": "Queens Queens Village"
+  },
+  {
+    "SHORT": "47L",
+    "LONG": "Queens Queensbridge"
+  },
+  {
+    "SHORT": "47M",
+    "LONG": "Queens Rego Park"
+  },
+  {
+    "SHORT": "47N",
+    "LONG": "Queens Richmond Hill"
+  },
+  {
+    "SHORT": "47O",
+    "LONG": "Queens Ridgewood"
+  },
+  {
+    "SHORT": "47P",
+    "LONG": "Queens Rockaway Beach"
+  },
+  {
+    "SHORT": "47Q",
+    "LONG": "Queens Rosedale"
+  },
+  {
+    "SHORT": "47R",
+    "LONG": "Queens Saint Albans"
+  },
+  {
+    "SHORT": "47S",
+    "LONG": "Queens South Ozone Park"
+  },
+  {
+    "SHORT": "47T",
+    "LONG": "Queens Springfield Gardens"
+  },
+  {
+    "SHORT": "47U",
+    "LONG": "Queens Whitestone"
+  },
+  {
+    "SHORT": "47V",
+    "LONG": "Queens Woodside"
+  },
+  {
+    "SHORT": "47W",
+    "LONG": "Staten Island"
+  },
+  {
+    "SHORT": "47X",
+    "LONG": "Staten Island's Annadale"
+  },
+  {
+    "SHORT": "47Y",
+    "LONG": "Staten Island's Arden Heights"
+  },
+  {
+    "SHORT": "47Z",
+    "LONG": "Staten Island's Arlington"
+  },
+  {
+    "SHORT": "48A",
+    "LONG": "Staten Island's Arrochar"
+  },
+  {
+    "SHORT": "48B",
+    "LONG": "Staten Island's Bay Terrace"
+  },
+  {
+    "SHORT": "48C",
+    "LONG": "Staten Island's Bloomfield"
+  },
+  {
+    "SHORT": "48D",
+    "LONG": "Staten Island's Brighton Heights"
+  },
+  {
+    "SHORT": "48E",
+    "LONG": "Staten Island's Bulls Head"
+  },
+  {
+    "SHORT": "48F",
+    "LONG": "Staten Island's Castleton"
+  },
+  {
+    "SHORT": "48G",
+    "LONG": "Staten Island's Castleton Corners"
+  },
+  {
+    "SHORT": "48H",
+    "LONG": "Staten Island's Charleston"
+  },
+  {
+    "SHORT": "48I",
+    "LONG": "Staten Island's Chelsea"
+  },
+  {
+    "SHORT": "48J",
+    "LONG": "Staten Island's Clifton"
+  },
+  {
+    "SHORT": "48K",
+    "LONG": "Staten Island's Concord"
+  },
+  {
+    "SHORT": "48L",
+    "LONG": "Staten Island's Dongan Hills"
+  },
+  {
+    "SHORT": "48M",
+    "LONG": "Staten Island's Egbertville"
+  },
+  {
+    "SHORT": "48N",
+    "LONG": "Staten Island's Elm Park"
+  },
+  {
+    "SHORT": "48O",
+    "LONG": "Staten Island's Eltingville"
+  },
+  {
+    "SHORT": "48P",
+    "LONG": "Staten Island's Emerson Hill"
+  },
+  {
+    "SHORT": "48Q",
+    "LONG": "Staten Island's Fort Wadsworth"
+  },
+  {
+    "SHORT": "48R",
+    "LONG": "Staten Island's Graniteville"
+  },
+  {
+    "SHORT": "48S",
+    "LONG": "Staten Island's Grant City"
+  },
+  {
+    "SHORT": "48T",
+    "LONG": "Staten Island's Grasmere"
+  },
+  {
+    "SHORT": "48U",
+    "LONG": "Staten Island's Great Kills"
+  },
+  {
+    "SHORT": "48V",
+    "LONG": "Staten Island's Greenridge"
+  },
+  {
+    "SHORT": "48W",
+    "LONG": "Staten Island's Grymes Hill"
+  },
+  {
+    "SHORT": "48X",
+    "LONG": "Staten Island's Hamilton Park"
+  },
+  {
+    "SHORT": "48Y",
+    "LONG": "Staten Island's Heartland Village"
+  },
+  {
+    "SHORT": "48Z",
+    "LONG": "Staten Island's Huguenot"
+  },
+  {
+    "SHORT": "49A",
+    "LONG": "Staten Island's Lighthouse Hill"
+  },
+  {
+    "SHORT": "49B",
+    "LONG": "Staten Island's Livingston"
+  },
+  {
+    "SHORT": "49C",
+    "LONG": "Staten Island's Manor Heights"
+  },
+  {
+    "SHORT": "49D",
+    "LONG": "Staten Island's Mariners Harbor"
+  },
+  {
+    "SHORT": "49E",
+    "LONG": "Staten Island's Meiers Corners"
+  },
+  {
+    "SHORT": "49F",
+    "LONG": "Staten Island's Midland Beach"
+  },
+  {
+    "SHORT": "49G",
+    "LONG": "Staten Island's New Brighton"
+  },
+  {
+    "SHORT": "49H",
+    "LONG": "Staten Island's New Dorp"
+  },
+  {
+    "SHORT": "49I",
+    "LONG": "Staten Island's New Springville"
+  },
+  {
+    "SHORT": "49J",
+    "LONG": "Staten Island's Oakwood"
+  },
+  {
+    "SHORT": "49K",
+    "LONG": "Staten Island's Ocean Breeze"
+  },
+  {
+    "SHORT": "49L",
+    "LONG": "Staten Island's Old Place"
+  },
+  {
+    "SHORT": "49M",
+    "LONG": "Staten Island's Old Town"
+  },
+  {
+    "SHORT": "49N",
+    "LONG": "Staten Island's Pleasant Plains"
+  },
+  {
+    "SHORT": "49O",
+    "LONG": "Staten Island's Port Richmond"
+  },
+  {
+    "SHORT": "49P",
+    "LONG": "Staten Island's Prince's Bay"
+  },
+  {
+    "SHORT": "49Q",
+    "LONG": "Staten Island's Randall Manor"
+  },
+  {
+    "SHORT": "49R",
+    "LONG": "Staten Island's Richmond Valley"
+  },
+  {
+    "SHORT": "49S",
+    "LONG": "Staten Island's Richmondtown"
+  },
+  {
+    "SHORT": "49T",
+    "LONG": "Staten Island's Rosebank"
+  },
+  {
+    "SHORT": "49U",
+    "LONG": "Staten Island's Rossville"
+  },
+  {
+    "SHORT": "49V",
+    "LONG": "Staten Island's Sandy Ground"
+  },
+  {
+    "SHORT": "49W",
+    "LONG": "Staten Island's Shore Acres"
+  },
+  {
+    "SHORT": "49X",
+    "LONG": "Staten Island's Silver Lake"
+  },
+  {
+    "SHORT": "49Y",
+    "LONG": "Staten Island's South Beach"
+  },
+  {
+    "SHORT": "49Z",
+    "LONG": "Staten Island's St. George"
+  },
+  {
+    "SHORT": "50A",
+    "LONG": "Staten Island's Stapleton"
+  },
+  {
+    "SHORT": "50B",
+    "LONG": "Staten Island's Stapleton Heights"
+  },
+  {
+    "SHORT": "50C",
+    "LONG": "Staten Island's Sunnyside"
+  },
+  {
+    "SHORT": "50D",
+    "LONG": "Staten Island's Todt Hill"
+  },
+  {
+    "SHORT": "50E",
+    "LONG": "Staten Island's Tompkinsville"
+  },
+  {
+    "SHORT": "50F",
+    "LONG": "Staten Island's Tottenville"
+  },
+  {
+    "SHORT": "50G",
+    "LONG": "Staten Island's Tottenville Beach"
+  },
+  {
+    "SHORT": "50H",
+    "LONG": "Staten Island's Travis"
+  },
+  {
+    "SHORT": "50I",
+    "LONG": "Staten Island's Ward Hill"
+  },
+  {
+    "SHORT": "50J",
+    "LONG": "Staten Island's West New Brighton"
+  },
+  {
+    "SHORT": "50K",
+    "LONG": "Staten Island's Westerleigh"
+  },
+  {
+    "SHORT": "50L",
+    "LONG": "Staten Island's Willowbrook"
+  },
+  {
+    "SHORT": "50M",
+    "LONG": "Staten Island's Woodrow"
+  },
+  {
+    "SHORT": "56K",
+    "LONG": "Chestnut Hill"
+  },
+  {
+    "SHORT": "56L",
+    "LONG": "East Boston's Eagle Hill"
+  },
+  {
+    "SHORT": "56M",
+    "LONG": "Bulfinch Crossing"
+  },
+  {
+    "SHORT": "56N",
+    "LONG": "Touisset"
+  },
+  {
+    "SHORT": "56O",
+    "LONG": "Court Park"
+  },
+  {
+    "SHORT": "56P",
+    "LONG": "Winthrop Center"
+  },
+  {
+    "SHORT": "56Q",
+    "LONG": "Corey Hill"
+  },
+  {
+    "SHORT": "56R",
+    "LONG": "Ferryway"
+  },
+  {
+    "SHORT": "56S",
+    "LONG": "South Station"
+  },
+  {
+    "SHORT": "56T",
+    "LONG": "Downtown"
+  },
+  {
+    "SHORT": "56U",
+    "LONG": "McIntire Historic District"
+  },
+  {
+    "SHORT": "56V",
+    "LONG": "Admirals Hill"
+  },
+  {
+    "SHORT": "602",
+    "LONG": "Zip 01602"
+  },
+  {
+    "SHORT": "603",
+    "LONG": "Zip 01603"
+  },
+  {
+    "SHORT": "604",
+    "LONG": "Zip 01604"
+  },
+  {
+    "SHORT": "605",
+    "LONG": "Zip 01605"
+  },
+  {
+    "SHORT": "606",
+    "LONG": "Zip 01606"
+  },
+  {
+    "SHORT": "607",
+    "LONG": "Zip 01607"
+  },
+  {
+    "SHORT": "608",
+    "LONG": "Zip 01608"
+  },
+  {
+    "SHORT": "609",
+    "LONG": "Zip 01609"
+  },
+  {
+    "SHORT": "610",
+    "LONG": "Zip 01610"
+  },
+  {
+    "SHORT": "611",
+    "LONG": "Zip 01611"
+  },
+  {
+    "SHORT": "830",
+    "LONG": "Zip 01830"
+  },
+  {
+    "SHORT": "832",
+    "LONG": "Zip 01832"
+  },
+  {
+    "SHORT": "840",
+    "LONG": "Forest Park"
+  },
+  {
+    "SHORT": "841",
+    "LONG": "East Forest Park"
+  },
+  {
+    "SHORT": "842",
+    "LONG": "Sixteen Acres"
+  },
+  {
+    "SHORT": "843",
+    "LONG": "Hill McKnight"
+  },
+  {
+    "SHORT": "844",
+    "LONG": "Pine Pt Bstn Rd"
+  },
+  {
+    "SHORT": "845",
+    "LONG": "Liberty Heights"
+  },
+  {
+    "SHORT": "846",
+    "LONG": "East Springfield"
+  },
+  {
+    "SHORT": "847",
+    "LONG": "N End Brightwood"
+  },
+  {
+    "SHORT": "848",
+    "LONG": "So End Central"
+  },
+  {
+    "SHORT": "849",
+    "LONG": "Indian Orchard"
+  },
+  {
+    "SHORT": "872",
+    "LONG": "Bondsville"
+  },
+  {
+    "SHORT": "873",
+    "LONG": "Thorndike"
+  },
+  {
+    "SHORT": "874",
+    "LONG": "Three Rivers"
+  },
+  {
+    "SHORT": "ACC",
+    "LONG": "Accord"
+  },
+  {
+    "SHORT": "ADM",
+    "LONG": "Adamsville"
+  },
+  {
+    "SHORT": "ADS",
+    "LONG": "Adams Shore"
+  },
+  {
+    "SHORT": "AGA",
+    "LONG": "Agassiz"
+  },
+  {
+    "SHORT": "AIR",
+    "LONG": "Airport Hill"
+  },
+  {
+    "SHORT": "ANN",
+    "LONG": "Annisquam"
+  },
+  {
+    "SHORT": "ANY",
+    "LONG": "Other Areas"
+  },
+  {
+    "SHORT": "ASC",
+    "LONG": "Ashcroft"
+  },
+  {
+    "SHORT": "ASH",
+    "LONG": "Ashburnham"
+  },
+  {
+    "SHORT": "ASO",
+    "LONG": "Assonet"
+  },
+  {
+    "SHORT": "ASS",
+    "LONG": "Assumption College"
+  },
+  {
+    "SHORT": "AUB",
+    "LONG": "Auburndale"
+  },
+  {
+    "SHORT": "AYR",
+    "LONG": "Ayer"
+  },
+  {
+    "SHORT": "BAK",
+    "LONG": "Barker"
+  },
+  {
+    "SHORT": "BAL",
+    "LONG": "Ballardvale"
+  },
+  {
+    "SHORT": "BAR",
+    "LONG": "Barnstable (village)"
+  },
+  {
+    "SHORT": "BAS",
+    "LONG": "Bass River"
+  },
+  {
+    "SHORT": "BBY",
+    "LONG": "Buzzards Bay"
+  },
+  {
+    "SHORT": "BCE",
+    "LONG": "Centerville (Bvly)"
+  },
+  {
+    "SHORT": "BCO",
+    "LONG": "Burleys Corner"
+  },
+  {
+    "SHORT": "BCR",
+    "LONG": "Buckland Center"
+  },
+  {
+    "SHORT": "BCV",
+    "LONG": "Beverly Cove"
+  },
+  {
+    "SHORT": "BEA",
+    "LONG": "Beachmont"
+  },
+  {
+    "SHORT": "BEF",
+    "LONG": "Beverly Farms"
+  },
+  {
+    "SHORT": "BEL",
+    "LONG": "Bell Rock"
+  },
+  {
+    "SHORT": "BHL",
+    "LONG": "Beech Hill"
+  },
+  {
+    "SHORT": "BHT",
+    "LONG": "Brockton Heights"
+  },
+  {
+    "SHORT": "BLV",
+    "LONG": "Belvidere"
+  },
+  {
+    "SHORT": "BMH",
+    "LONG": "Belmont Hill"
+  },
+  {
+    "SHORT": "BNK",
+    "LONG": "Brier Neck"
+  },
+  {
+    "SHORT": "BOD",
+    "LONG": "Bournedale"
+  },
+  {
+    "SHORT": "BOU",
+    "LONG": "Bourne (village)"
+  },
+  {
+    "SHORT": "BRD",
+    "LONG": "Bradford"
+  },
+  {
+    "SHORT": "BRE",
+    "LONG": "Brewster (village)"
+  },
+  {
+    "SHORT": "BRI",
+    "LONG": "Briscoe"
+  },
+  {
+    "SHORT": "BRP",
+    "LONG": "Brant Point"
+  },
+  {
+    "SHORT": "BRQ",
+    "LONG": "Bicknell Square"
+  },
+  {
+    "SHORT": "BRY",
+    "LONG": "Bryantville"
+  },
+  {
+    "SHORT": "BSQ",
+    "LONG": "Ball Square"
+  },
+  {
+    "SHORT": "BTH",
+    "LONG": "Braintree Highlands"
+  },
+  {
+    "SHORT": "BTR",
+    "LONG": "Brant Rock"
+  },
+  {
+    "SHORT": "BUR",
+    "LONG": "Burncoat"
+  },
+  {
+    "SHORT": "BVB",
+    "LONG": "Beaver Brook"
+  },
+  {
+    "SHORT": "BYF",
+    "LONG": "Byfield"
+  },
+  {
+    "SHORT": "CAM",
+    "LONG": "Campello"
+  },
+  {
+    "SHORT": "CAT",
+    "LONG": "Cataumet"
+  },
+  {
+    "SHORT": "CCE",
+    "LONG": "Colrain Center"
+  },
+  {
+    "SHORT": "CCR",
+    "LONG": "Cedar Crest"
+  },
+  {
+    "SHORT": "CDB",
+    "LONG": "Cedar Bushes"
+  },
+  {
+    "SHORT": "CDV",
+    "LONG": "Cedarville"
+  },
+  {
+    "SHORT": "CEN",
+    "LONG": "Centerville"
+  },
+  {
+    "SHORT": "CET",
+    "LONG": "Central"
+  },
+  {
+    "SHORT": "CHA",
+    "LONG": "Chatham (village)"
+  },
+  {
+    "SHORT": "CHH",
+    "LONG": "Chandler Hill"
+  },
+  {
+    "SHORT": "CHI",
+    "LONG": "Chilmark"
+  },
+  {
+    "SHORT": "CHL",
+    "LONG": "Cambridge Highlands"
+  },
+  {
+    "SHORT": "CHP",
+    "LONG": "Chappaquiddick"
+  },
+  {
+    "SHORT": "CHV",
+    "LONG": "Chiltonville"
+  },
+  {
+    "SHORT": "CIS",
+    "LONG": "Cisco"
+  },
+  {
+    "SHORT": "CLF",
+    "LONG": "Clifton Heights"
+  },
+  {
+    "SHORT": "CLH",
+    "LONG": "College Hill"
+  },
+  {
+    "SHORT": "CLP",
+    "LONG": "Columbus Park"
+  },
+  {
+    "SHORT": "CMP",
+    "LONG": "Cambridgeport"
+  },
+  {
+    "SHORT": "CNH",
+    "LONG": "Chestnut Hill"
+  },
+  {
+    "SHORT": "CNS",
+    "LONG": "Central Square"
+  },
+  {
+    "SHORT": "CNV",
+    "LONG": "Centralville"
+  },
+  {
+    "SHORT": "COA",
+    "LONG": "Coatue"
+  },
+  {
+    "SHORT": "COL",
+    "LONG": "College"
+  },
+  {
+    "SHORT": "COR",
+    "LONG": "Cordage"
+  },
+  {
+    "SHORT": "COT",
+    "LONG": "Cotuit"
+  },
+  {
+    "SHORT": "COV",
+    "LONG": "Cove"
+  },
+  {
+    "SHORT": "CPT",
+    "LONG": "Chathamport"
+  },
+  {
+    "SHORT": "CRG",
+    "LONG": "Craigville"
+  },
+  {
+    "SHORT": "CRP",
+    "LONG": "Crow Point"
+  },
+  {
+    "SHORT": "CSQ",
+    "LONG": "Columbian Square"
+  },
+  {
+    "SHORT": "CUM",
+    "LONG": "Cummaquid"
+  },
+  {
+    "SHORT": "CYV",
+    "LONG": "Cherry Valley"
+  },
+  {
+    "SHORT": "DAN",
+    "LONG": "Danielson"
+  },
+  {
+    "SHORT": "DCE",
+    "LONG": "Danvers Center"
+  },
+  {
+    "SHORT": "DEN",
+    "LONG": "Dennis (village)"
+  },
+  {
+    "SHORT": "DID",
+    "LONG": "Diamond District"
+  },
+  {
+    "SHORT": "DNP",
+    "LONG": "Danversport"
+  },
+  {
+    "SHORT": "DNW",
+    "LONG": "Downtown"
+  },
+  {
+    "SHORT": "DPT",
+    "LONG": "Dennis Port"
+  },
+  {
+    "SHORT": "DSQ",
+    "LONG": "Davis Square"
+  },
+  {
+    "SHORT": "DTW",
+    "LONG": "Downtown"
+  },
+  {
+    "SHORT": "EAS",
+    "LONG": "Eastham (village)"
+  },
+  {
+    "SHORT": "EBR",
+    "LONG": "East Brewster"
+  },
+  {
+    "SHORT": "EBT",
+    "LONG": "East Braintree"
+  },
+  {
+    "SHORT": "EBX",
+    "LONG": "East Boxford"
+  },
+  {
+    "SHORT": "ECH",
+    "LONG": "East Charlemont"
+  },
+  {
+    "SHORT": "ECM",
+    "LONG": "East Cambridge"
+  },
+  {
+    "SHORT": "ECP",
+    "LONG": "East Chop"
+  },
+  {
+    "SHORT": "EDE",
+    "LONG": "East Dennis"
+  },
+  {
+    "SHORT": "EDF",
+    "LONG": "East Deerfield"
+  },
+  {
+    "SHORT": "EDG",
+    "LONG": "Edgeworth"
+  },
+  {
+    "SHORT": "EDH",
+    "LONG": "East Dedham"
+  },
+  {
+    "SHORT": "EDO",
+    "LONG": "Edgartown"
+  },
+  {
+    "SHORT": "EDV",
+    "LONG": "East Danvers"
+  },
+  {
+    "SHORT": "EEL",
+    "LONG": "Eel Point"
+  },
+  {
+    "SHORT": "EFA",
+    "LONG": "East Falmouth"
+  },
+  {
+    "SHORT": "EFT",
+    "LONG": "East Freetown"
+  },
+  {
+    "SHORT": "EGL",
+    "LONG": "East Gloucester"
+  },
+  {
+    "SHORT": "EGY",
+    "LONG": "Egypt"
+  },
+  {
+    "SHORT": "EHA",
+    "LONG": "East Harwich"
+  },
+  {
+    "SHORT": "EHL",
+    "LONG": "East Hawley"
+  },
+  {
+    "SHORT": "ELL",
+    "LONG": "Ellisville"
+  },
+  {
+    "SHORT": "ELY",
+    "LONG": "East Lynn"
+  },
+  {
+    "SHORT": "EMB",
+    "LONG": "East Marlborough"
+  },
+  {
+    "SHORT": "EMT",
+    "LONG": "East Methuen"
+  },
+  {
+    "SHORT": "ENA",
+    "LONG": "East Natick"
+  },
+  {
+    "SHORT": "END",
+    "LONG": "Endicott"
+  },
+  {
+    "SHORT": "EOR",
+    "LONG": "East Orleans"
+  },
+  {
+    "SHORT": "ESA",
+    "LONG": "East Sandwich"
+  },
+  {
+    "SHORT": "ESV",
+    "LONG": "East Somerville"
+  },
+  {
+    "SHORT": "EWA",
+    "LONG": "East Wareham"
+  },
+  {
+    "SHORT": "EWR",
+    "LONG": "East Worcester"
+  },
+  {
+    "SHORT": "EWY",
+    "LONG": "East Weymouth"
+  },
+  {
+    "SHORT": "FAH",
+    "LONG": "Falmouth Heights"
+  },
+  {
+    "SHORT": "FAL",
+    "LONG": "Falmouth (village)"
+  },
+  {
+    "SHORT": "FAU",
+    "LONG": "Faulkner"
+  },
+  {
+    "SHORT": "FCH",
+    "LONG": "Fitchburg"
+  },
+  {
+    "SHORT": "FDH",
+    "LONG": "Feeding Hills"
+  },
+  {
+    "SHORT": "FDL",
+    "LONG": "Forestdale"
+  },
+  {
+    "SHORT": "FHL",
+    "LONG": "Roxbury's Fort Hill"
+  },
+  {
+    "SHORT": "FIS",
+    "LONG": "Fiskdale"
+  },
+  {
+    "SHORT": "FLO",
+    "LONG": "Florence"
+  },
+  {
+    "SHORT": "FOR",
+    "LONG": "Forestdale"
+  },
+  {
+    "SHORT": "FST",
+    "LONG": "Fieldston"
+  },
+  {
+    "SHORT": "FVI",
+    "LONG": "Foundry Village"
+  },
+  {
+    "SHORT": "GAY",
+    "LONG": "Aquinnah"
+  },
+  {
+    "SHORT": "GBV",
+    "LONG": "Great Brook Valley"
+  },
+  {
+    "SHORT": "GIL",
+    "LONG": "Gilbertville"
+  },
+  {
+    "SHORT": "GNK",
+    "LONG": "Great Neck"
+  },
+  {
+    "SHORT": "GRD",
+    "LONG": "Greendale"
+  },
+  {
+    "SHORT": "GRH",
+    "LONG": "Green Harbor"
+  },
+  {
+    "SHORT": "GRL",
+    "LONG": "Greenlodge"
+  },
+  {
+    "SHORT": "GRM",
+    "LONG": "Germantown"
+  },
+  {
+    "SHORT": "GRN",
+    "LONG": "Greenbush"
+  },
+  {
+    "SHORT": "GRP",
+    "LONG": "Great Point"
+  },
+  {
+    "SHORT": "GRT",
+    "LONG": "Groton"
+  },
+  {
+    "SHORT": "GRV",
+    "LONG": "Groveland (village)"
+  },
+  {
+    "SHORT": "GVL",
+    "LONG": "Griswoldville"
+  },
+  {
+    "SHORT": "HAM",
+    "LONG": "Hammondsport"
+  },
+  {
+    "SHORT": "HAR",
+    "LONG": "Harwich (village)"
+  },
+  {
+    "SHORT": "HAT",
+    "LONG": "Hatchville"
+  },
+  {
+    "SHORT": "HGC",
+    "LONG": "Hingham Center"
+  },
+  {
+    "SHORT": "HIG",
+    "LONG": "Highlands"
+  },
+  {
+    "SHORT": "HOU",
+    "LONG": "Houghs Neck"
+  },
+  {
+    "SHORT": "HPT",
+    "LONG": "Harwichport"
+  },
+  {
+    "SHORT": "HSO",
+    "LONG": "South Hamilton"
+  },
+  {
+    "SHORT": "HTH",
+    "LONG": "Hathorne"
+  },
+  {
+    "SHORT": "HUM",
+    "LONG": "Humarock"
+  },
+  {
+    "SHORT": "HVD",
+    "LONG": "Harvard"
+  },
+  {
+    "SHORT": "HVL",
+    "LONG": "Haydenville"
+  },
+  {
+    "SHORT": "HVS",
+    "LONG": "Harvard Square"
+  },
+  {
+    "SHORT": "HYA",
+    "LONG": "Hyannis"
+  },
+  {
+    "SHORT": "HYP",
+    "LONG": "Hyannisport"
+  },
+  {
+    "SHORT": "INL",
+    "LONG": "Indian Lake"
+  },
+  {
+    "SHORT": "INM",
+    "LONG": "Inman Square"
+  },
+  {
+    "SHORT": "INT",
+    "LONG": "In Town"
+  },
+  {
+    "SHORT": "ISQ",
+    "LONG": "Inman Square"
+  },
+  {
+    "SHORT": "JSQ",
+    "LONG": "Jackson Square"
+  },
+  {
+    "SHORT": "KEN",
+    "LONG": "Kendall Square"
+  },
+  {
+    "SHORT": "LAN",
+    "LONG": "Lanesville"
+  },
+  {
+    "SHORT": "LBK",
+    "LONG": "Linebrook"
+  },
+  {
+    "SHORT": "LCT",
+    "LONG": "Lancaster"
+  },
+  {
+    "SHORT": "LDS",
+    "LONG": "Leeds"
+  },
+  {
+    "SHORT": "LGP",
+    "LONG": "Long Pond"
+  },
+  {
+    "SHORT": "LHS",
+    "LONG": "Lincoln Heights"
+  },
+  {
+    "SHORT": "LIB",
+    "LONG": "Liberty Plains"
+  },
+  {
+    "SHORT": "LIN",
+    "LONG": "Linden"
+  },
+  {
+    "SHORT": "LNK",
+    "LONG": "Little Neck"
+  },
+  {
+    "SHORT": "LOK",
+    "LONG": "Lokerville"
+  },
+  {
+    "SHORT": "LPL",
+    "LONG": "Lake Pleasant"
+  },
+  {
+    "SHORT": "LSQ",
+    "LONG": "Lincoln Square"
+  },
+  {
+    "SHORT": "LWB",
+    "LONG": "Low Beach"
+  },
+  {
+    "SHORT": "LWE",
+    "LONG": "West Lynn"
+  },
+  {
+    "SHORT": "MAD",
+    "LONG": "Madaket"
+  },
+  {
+    "SHORT": "MAG",
+    "LONG": "Magnolia"
+  },
+  {
+    "SHORT": "MAM",
+    "LONG": "Marstons Mills"
+  },
+  {
+    "SHORT": "MAN",
+    "LONG": "Manomet"
+  },
+  {
+    "SHORT": "MAP",
+    "LONG": "Maplewood"
+  },
+  {
+    "SHORT": "MAS",
+    "LONG": "Mashpee (village)"
+  },
+  {
+    "SHORT": "MAV",
+    "LONG": "Maravista"
+  },
+  {
+    "SHORT": "MBE",
+    "LONG": "Monument Beach"
+  },
+  {
+    "SHORT": "MBG",
+    "LONG": "Monroe Bridge"
+  },
+  {
+    "SHORT": "MBY",
+    "LONG": "Marina Bay"
+  },
+  {
+    "SHORT": "MCB",
+    "LONG": "Mid Cambridge"
+  },
+  {
+    "SHORT": "MCN",
+    "LONG": "Marshall Corner"
+  },
+  {
+    "SHORT": "MCR",
+    "LONG": "Montague Center"
+  },
+  {
+    "SHORT": "MCY",
+    "LONG": "Montague City"
+  },
+  {
+    "SHORT": "MEN",
+    "LONG": "Menemsha"
+  },
+  {
+    "SHORT": "MFC",
+    "LONG": "Marshfield Center"
+  },
+  {
+    "SHORT": "MFH",
+    "LONG": "Marshfield Hills"
+  },
+  {
+    "SHORT": "MFL",
+    "LONG": "Millers Falls"
+  },
+  {
+    "SHORT": "MIN",
+    "LONG": "Minot"
+  },
+  {
+    "SHORT": "MMP",
+    "LONG": "Merrimacport"
+  },
+  {
+    "SHORT": "MMY",
+    "LONG": "Monomoy"
+  },
+  {
+    "SHORT": "MNC",
+    "LONG": "Montclair"
+  },
+  {
+    "SHORT": "MNK",
+    "LONG": "Marblehead Neck"
+  },
+  {
+    "SHORT": "MNS",
+    "LONG": "Montserrat"
+  },
+  {
+    "SHORT": "MNT",
+    "LONG": "Montello"
+  },
+  {
+    "SHORT": "MOL",
+    "LONG": "Old Town"
+  },
+  {
+    "SHORT": "MON",
+    "LONG": "Monponsett"
+  },
+  {
+    "SHORT": "MUS",
+    "LONG": "Muskeget Island"
+  },
+  {
+    "SHORT": "MYM",
+    "LONG": "Merrymount"
+  },
+  {
+    "SHORT": "NAN",
+    "LONG": "Nantucket (vil)"
+  },
+  {
+    "SHORT": "NAT",
+    "LONG": "North Abington"
+  },
+  {
+    "SHORT": "NBV",
+    "LONG": "North Beverly"
+  },
+  {
+    "SHORT": "NCA",
+    "LONG": "North Carver"
+  },
+  {
+    "SHORT": "NCE",
+    "LONG": "Center"
+  },
+  {
+    "SHORT": "NCH",
+    "LONG": "North Chatham"
+  },
+  {
+    "SHORT": "NCM",
+    "LONG": "North Cambridge"
+  },
+  {
+    "SHORT": "NCN",
+    "LONG": "North Conway"
+  },
+  {
+    "SHORT": "NCR",
+    "LONG": "Newton Center"
+  },
+  {
+    "SHORT": "NDA",
+    "LONG": "North Dartmouth"
+  },
+  {
+    "SHORT": "NDI",
+    "LONG": "North Dighton"
+  },
+  {
+    "SHORT": "NEA",
+    "LONG": "North Eastham"
+  },
+  {
+    "SHORT": "NEW",
+    "LONG": "New Seabury"
+  },
+  {
+    "SHORT": "NFA",
+    "LONG": "North Falmouth"
+  },
+  {
+    "SHORT": "NFD",
+    "LONG": "Norfolk Downs"
+  },
+  {
+    "SHORT": "NFN",
+    "LONG": "Far North"
+  },
+  {
+    "SHORT": "NHA",
+    "LONG": "North Harwich"
+  },
+  {
+    "SHORT": "NHF",
+    "LONG": "North Hatfield"
+  },
+  {
+    "SHORT": "NHL",
+    "LONG": "Newton Highlands"
+  },
+  {
+    "SHORT": "NLF",
+    "LONG": "Newton Lower Falls"
+  },
+  {
+    "SHORT": "NLH",
+    "LONG": "Nameloc Heights"
+  },
+  {
+    "SHORT": "NLW",
+    "LONG": "North Lawrence"
+  },
+  {
+    "SHORT": "NMD",
+    "LONG": "North Medford"
+  },
+  {
+    "SHORT": "NMF",
+    "LONG": "North Marshfield"
+  },
+  {
+    "SHORT": "NNA",
+    "LONG": "North Natick"
+  },
+  {
+    "SHORT": "NNO",
+    "LONG": "North"
+  },
+  {
+    "SHORT": "NNW",
+    "LONG": "Northwest"
+  },
+  {
+    "SHORT": "NON",
+    "LONG": "Nonantum"
+  },
+  {
+    "SHORT": "NPE",
+    "LONG": "North Pembroke"
+  },
+  {
+    "SHORT": "NPL",
+    "LONG": "North Plymouth"
+  },
+  {
+    "SHORT": "NQU",
+    "LONG": "North Quincy"
+  },
+  {
+    "SHORT": "NRH",
+    "LONG": "North Randolph"
+  },
+  {
+    "SHORT": "NSC",
+    "LONG": "North Scituate"
+  },
+  {
+    "SHORT": "NSO",
+    "LONG": "South"
+  },
+  {
+    "SHORT": "NTI",
+    "LONG": "North Tisbury"
+  },
+  {
+    "SHORT": "NTR",
+    "LONG": "North Truro"
+  },
+  {
+    "SHORT": "NUF",
+    "LONG": "Newton Upper Falls"
+  },
+  {
+    "SHORT": "NVL",
+    "LONG": "Newtonville"
+  },
+  {
+    "SHORT": "NVY",
+    "LONG": "Charlestown's Navy Yard"
+  },
+  {
+    "SHORT": "NWE",
+    "LONG": "West"
+  },
+  {
+    "SHORT": "NWR",
+    "LONG": "North Worcester"
+  },
+  {
+    "SHORT": "NWY",
+    "LONG": "North Weymouth"
+  },
+  {
+    "SHORT": "OAK",
+    "LONG": "Oak Bluffs"
+  },
+  {
+    "SHORT": "OCB",
+    "LONG": "Ocean Bluff"
+  },
+  {
+    "SHORT": "OCE",
+    "LONG": "Old Center"
+  },
+  {
+    "SHORT": "ODF",
+    "LONG": "Old Deerfield"
+  },
+  {
+    "SHORT": "OKD",
+    "LONG": "Oakdale"
+  },
+  {
+    "SHORT": "OKG",
+    "LONG": "Oak Grove"
+  },
+  {
+    "SHORT": "ONS",
+    "LONG": "Onset"
+  },
+  {
+    "SHORT": "ORL",
+    "LONG": "Orleans (village)"
+  },
+  {
+    "SHORT": "OST",
+    "LONG": "Osterville"
+  },
+  {
+    "SHORT": "PAW",
+    "LONG": "Pawtucketville"
+  },
+  {
+    "SHORT": "PCM",
+    "LONG": "Pocomo"
+  },
+  {
+    "SHORT": "PDV",
+    "LONG": "Pondville"
+  },
+  {
+    "SHORT": "PFD",
+    "LONG": "Pinefield"
+  },
+  {
+    "SHORT": "PGL",
+    "LONG": "Eastern Point"
+  },
+  {
+    "SHORT": "PHS",
+    "LONG": "Powderhouse"
+  },
+  {
+    "SHORT": "PIN",
+    "LONG": "Pinehills"
+  },
+  {
+    "SHORT": "PL2",
+    "LONG": "Plum Island"
+  },
+  {
+    "SHORT": "PLU",
+    "LONG": "Plum Island"
+  },
+  {
+    "SHORT": "POC",
+    "LONG": "Pocasset"
+  },
+  {
+    "SHORT": "POI",
+    "LONG": "Point of Pines"
+  },
+  {
+    "SHORT": "POL",
+    "LONG": "Polpis"
+  },
+  {
+    "SHORT": "POP",
+    "LONG": "Popponesset"
+  },
+  {
+    "SHORT": "POV",
+    "LONG": "Poverty Point"
+  },
+  {
+    "SHORT": "PPH",
+    "LONG": "Prospect Hill"
+  },
+  {
+    "SHORT": "PRI",
+    "LONG": "Prides Crossing"
+  },
+  {
+    "SHORT": "PSO",
+    "LONG": "South Peabody"
+  },
+  {
+    "SHORT": "PSQ",
+    "LONG": "Porter Square"
+  },
+  {
+    "SHORT": "PTN",
+    "LONG": "Provincetown"
+  },
+  {
+    "SHORT": "PUT",
+    "LONG": "Putnamville"
+  },
+  {
+    "SHORT": "PWE",
+    "LONG": "West Peabody"
+  },
+  {
+    "SHORT": "QUA",
+    "LONG": "Quaise"
+  },
+  {
+    "SHORT": "QUC",
+    "LONG": "Quincy Center"
+  },
+  {
+    "SHORT": "QUD",
+    "LONG": "Quidnet"
+  },
+  {
+    "SHORT": "QUI",
+    "LONG": "Quisset"
+  },
+  {
+    "SHORT": "QUP",
+    "LONG": "Quincy Point"
+  },
+  {
+    "SHORT": "QUV",
+    "LONG": "Quinsigamond Valley"
+  },
+  {
+    "SHORT": "REV",
+    "LONG": "Revere Beach"
+  },
+  {
+    "SHORT": "REX",
+    "LONG": "Rexhame"
+  },
+  {
+    "SHORT": "RIS",
+    "LONG": "Rings Island"
+  },
+  {
+    "SHORT": "RLS",
+    "LONG": "Ryal Side"
+  },
+  {
+    "SHORT": "RMR",
+    "LONG": "Rivermoor"
+  },
+  {
+    "SHORT": "RSD",
+    "LONG": "Riverside"
+  },
+  {
+    "SHORT": "RSQ",
+    "LONG": "Rice Square"
+  },
+  {
+    "SHORT": "RVD",
+    "LONG": "Riverdale"
+  },
+  {
+    "SHORT": "RVG",
+    "LONG": "Riverdale"
+  },
+  {
+    "SHORT": "RVM",
+    "LONG": "The Manor"
+  },
+  {
+    "SHORT": "RVS",
+    "LONG": "Riverside"
+  },
+  {
+    "SHORT": "SAB",
+    "LONG": "Sagamore Beach"
+  },
+  {
+    "SHORT": "SAD",
+    "LONG": "South Andover"
+  },
+  {
+    "SHORT": "SAG",
+    "LONG": "Sagamore"
+  },
+  {
+    "SHORT": "SAN",
+    "LONG": "Santuit"
+  },
+  {
+    "SHORT": "SAQ",
+    "LONG": "Saquish"
+  },
+  {
+    "SHORT": "SAS",
+    "LONG": "South Ashfield"
+  },
+  {
+    "SHORT": "SAT",
+    "LONG": "South Attleboro"
+  },
+  {
+    "SHORT": "SAW",
+    "LONG": "Sandwich (village)"
+  },
+  {
+    "SHORT": "SBE",
+    "LONG": "Salisbury Beach"
+  },
+  {
+    "SHORT": "SBT",
+    "LONG": "South Braintree"
+  },
+  {
+    "SHORT": "SCE",
+    "LONG": "Salisbury Center"
+  },
+  {
+    "SHORT": "SCH",
+    "LONG": "South Chatham"
+  },
+  {
+    "SHORT": "SCR",
+    "LONG": "Shelburne Center"
+  },
+  {
+    "SHORT": "SDA",
+    "LONG": "South Dartmouth"
+  },
+  {
+    "SHORT": "SDE",
+    "LONG": "South Dennis"
+  },
+  {
+    "SHORT": "SDF",
+    "LONG": "South Deerfield"
+  },
+  {
+    "SHORT": "SEA",
+    "LONG": "South Eastham"
+  },
+  {
+    "SHORT": "SFL",
+    "LONG": "Shelburne Falls"
+  },
+  {
+    "SHORT": "SGR",
+    "LONG": "South Groveland"
+  },
+  {
+    "SHORT": "SHA",
+    "LONG": "South Harwich"
+  },
+  {
+    "SHORT": "SHG",
+    "LONG": "South Hingham"
+  },
+  {
+    "SHORT": "SHL",
+    "LONG": "Sand Hills"
+  },
+  {
+    "SHORT": "SHM",
+    "LONG": "Shimmo"
+  },
+  {
+    "SHORT": "SHV",
+    "LONG": "Shattuckville"
+  },
+  {
+    "SHORT": "SHW",
+    "LONG": "Shawsheen"
+  },
+  {
+    "SHORT": "SIA",
+    "LONG": "Siasconset"
+  },
+  {
+    "SHORT": "SIP",
+    "LONG": "Sippewissett"
+  },
+  {
+    "SHORT": "SKT",
+    "LONG": "Sankaty Head"
+  },
+  {
+    "SHORT": "SLO",
+    "LONG": "South Lowell"
+  },
+  {
+    "SHORT": "SLW",
+    "LONG": "South Lawrence"
+  },
+  {
+    "SHORT": "SNA",
+    "LONG": "South Natick"
+  },
+  {
+    "SHORT": "SOR",
+    "LONG": "South Orleans"
+  },
+  {
+    "SHORT": "SPD",
+    "LONG": "South Pond"
+  },
+  {
+    "SHORT": "SPH",
+    "LONG": "Spring Hill"
+  },
+  {
+    "SHORT": "SPL",
+    "LONG": "Salisbury Plains"
+  },
+  {
+    "SHORT": "SPY",
+    "LONG": "South Plymouth"
+  },
+  {
+    "SHORT": "SQM",
+    "LONG": "Squantum"
+  },
+  {
+    "SHORT": "SQN",
+    "LONG": "South Quincy"
+  },
+  {
+    "SHORT": "SQU",
+    "LONG": "Squibnocket"
+  },
+  {
+    "SHORT": "SRH",
+    "LONG": "South Randolph"
+  },
+  {
+    "SHORT": "SSA",
+    "LONG": "South Sandwich"
+  },
+  {
+    "SHORT": "SUM",
+    "LONG": "Summit"
+  },
+  {
+    "SHORT": "SUN",
+    "LONG": "Sunderland"
+  },
+  {
+    "SHORT": "SUR",
+    "LONG": "Surfside"
+  },
+  {
+    "SHORT": "SVW",
+    "LONG": "Seaview"
+  },
+  {
+    "SHORT": "SWE",
+    "LONG": "South Wellfleet"
+  },
+  {
+    "SHORT": "SWK",
+    "LONG": "Shawkemo"
+  },
+  {
+    "SHORT": "SWP",
+    "LONG": "South Westport"
+  },
+  {
+    "SHORT": "SWR",
+    "LONG": "South Worcester"
+  },
+  {
+    "SHORT": "SWY",
+    "LONG": "South Weymouth"
+  },
+  {
+    "SHORT": "SYA",
+    "LONG": "South Yarmouth"
+  },
+  {
+    "SHORT": "TAP",
+    "LONG": "Tapleyville"
+  },
+  {
+    "SHORT": "TAT",
+    "LONG": "Tatnuck"
+  },
+  {
+    "SHORT": "TEA",
+    "LONG": "Teaticket"
+  },
+  {
+    "SHORT": "TEM",
+    "LONG": "Templeton"
+  },
+  {
+    "SHORT": "TFL",
+    "LONG": "Turners Falls"
+  },
+  {
+    "SHORT": "TIS",
+    "LONG": "Tisbury"
+  },
+  {
+    "SHORT": "TRU",
+    "LONG": "Truro (village)"
+  },
+  {
+    "SHORT": "TSQ",
+    "LONG": "Teele Square"
+  },
+  {
+    "SHORT": "TUC",
+    "LONG": "Tuckernuck Island"
+  },
+  {
+    "SHORT": "UHL",
+    "LONG": "Union Hill"
+  },
+  {
+    "SHORT": "USQ",
+    "LONG": "Union Square"
+  },
+  {
+    "SHORT": "VAL",
+    "LONG": "Vallersville"
+  },
+  {
+    "SHORT": "VIN",
+    "LONG": "Vineyard Haven"
+  },
+  {
+    "SHORT": "WAB",
+    "LONG": "Waban"
+  },
+  {
+    "SHORT": "WAN",
+    "LONG": "West Andover"
+  },
+  {
+    "SHORT": "WAQ",
+    "LONG": "Waquoit"
+  },
+  {
+    "SHORT": "WAR",
+    "LONG": "Wareham (village)"
+  },
+  {
+    "SHORT": "WAT",
+    "LONG": "West Abington"
+  },
+  {
+    "SHORT": "WAU",
+    "LONG": "Wauwinet"
+  },
+  {
+    "SHORT": "WBA",
+    "LONG": "West Barnstable"
+  },
+  {
+    "SHORT": "WBR",
+    "LONG": "West Brewster"
+  },
+  {
+    "SHORT": "WBX",
+    "LONG": "West Boxford"
+  },
+  {
+    "SHORT": "WCF",
+    "LONG": "West Chesterfield"
+  },
+  {
+    "SHORT": "WCH",
+    "LONG": "West Chatham"
+  },
+  {
+    "SHORT": "WCM",
+    "LONG": "West Cambridge"
+  },
+  {
+    "SHORT": "WCP",
+    "LONG": "West Chop"
+  },
+  {
+    "SHORT": "WDE",
+    "LONG": "West Dennis"
+  },
+  {
+    "SHORT": "WEL",
+    "LONG": "Wellfleet (village)"
+  },
+  {
+    "SHORT": "WFA",
+    "LONG": "West Falmouth"
+  },
+  {
+    "SHORT": "WGL",
+    "LONG": "West Gloucester"
+  },
+  {
+    "SHORT": "WGR",
+    "LONG": "West Groton"
+  },
+  {
+    "SHORT": "WHA",
+    "LONG": "West Harwich"
+  },
+  {
+    "SHORT": "WHF",
+    "LONG": "West Hatfield"
+  },
+  {
+    "SHORT": "WHG",
+    "LONG": "West Hingham"
+  },
+  {
+    "SHORT": "WHL",
+    "LONG": "West Hawley"
+  },
+  {
+    "SHORT": "WHY",
+    "LONG": "West Hyannisport"
+  },
+  {
+    "SHORT": "WIL",
+    "LONG": "West Island"
+  },
+  {
+    "SHORT": "WMT",
+    "LONG": "West Methuen"
+  },
+  {
+    "SHORT": "WNA",
+    "LONG": "West Natick"
+  },
+  {
+    "SHORT": "WNT",
+    "LONG": "West Newton"
+  },
+  {
+    "SHORT": "WOH",
+    "LONG": "Woods Hole"
+  },
+  {
+    "SHORT": "WOL",
+    "LONG": "Wollaston"
+  },
+  {
+    "SHORT": "WPI",
+    "LONG": "WPI"
+  },
+  {
+    "SHORT": "WPL",
+    "LONG": "West Plymouth"
+  },
+  {
+    "SHORT": "WPT",
+    "LONG": "Westport Point"
+  },
+  {
+    "SHORT": "WQU",
+    "LONG": "West Quincy"
+  },
+  {
+    "SHORT": "WRC",
+    "LONG": "West Roxbury's Chestnut Hill"
+  },
+  {
+    "SHORT": "WSD",
+    "LONG": "West Side"
+  },
+  {
+    "SHORT": "WSQ",
+    "LONG": "Webster Square"
+  },
+  {
+    "SHORT": "WSV",
+    "LONG": "West Somerville"
+  },
+  {
+    "SHORT": "WTE",
+    "LONG": "West End"
+  },
+  {
+    "SHORT": "WTH",
+    "LONG": "Winter Hill"
+  },
+  {
+    "SHORT": "WTI",
+    "LONG": "West Tisbury"
+  },
+  {
+    "SHORT": "WTN",
+    "LONG": "Winters Corner"
+  },
+  {
+    "SHORT": "WTV",
+    "LONG": "Whitinsville"
+  },
+  {
+    "SHORT": "WWA",
+    "LONG": "West Wareham"
+  },
+  {
+    "SHORT": "WWH",
+    "LONG": "Westwood Hills"
+  },
+  {
+    "SHORT": "WYA",
+    "LONG": "West Yarmouth"
+  },
+  {
+    "SHORT": "WYH",
+    "LONG": "Weymouth Heights"
+  },
+  {
+    "SHORT": "WYL",
+    "LONG": "Weymouth Landing"
+  },
+  {
+    "SHORT": "WYO",
+    "LONG": "Wyoma"
+  },
+  {
+    "SHORT": "YAR",
+    "LONG": "Yarmouth (village)"
+  },
+  {
+    "SHORT": "YPT",
+    "LONG": "Yarmouth Port"
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "schema": "equity_lens.contracts.founder_guidance.b1.v0_1",
+  "radar_track": "RES_1_4",
+  "as_of_date": "2026-01-10",
+  "state": "DRAFT",
+  "audience": "internal_founder",
+  "rules": {
+    "allowed_claims": [
+      "Interpretation of signals as hypotheses, not guarantees",
+      "Action suggestions framed as optional, non-advice"
+    ],
+    "disallowed_claims": [
+      "Legal advice",
+      "Financial advice",
+      "Guaranteed outcomes"
+    ]
+  },
+  "copy_blocks": {
+    "zip_overview_guidance": [],
+    "pillars": {
+      "absorption": [],
+      "liquidity": [],
+      "velocity": [],
+      "price_discovery": [],
+      "regime": []
+    }
+  },
+  "notes": "Template. Populate copy_blocks with track-appropriate language. Keep homeowner-safe language out of this contract."
+}

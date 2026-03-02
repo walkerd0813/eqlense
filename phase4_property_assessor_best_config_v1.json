@@ -1,0 +1,36 @@
+{
+  "created_at": "2025-12-27",
+  "notes": [
+    "Attach assessor onto the Property Spine using raw-by-source + best_current_attributes with per-field provenance.",
+    "Deterministic precedence: city_assessor > statewide_parcels(MassGIS) > null. FALLBACK_USED flagged when winner != city_assessor.",
+    "Reads assessor masters from CURRENT_PHASE4_ASSESSOR_MASTER.json (created by Phase4 Assessor Attach Pack).",
+    "Outputs updated properties ndjson plus audit + CURRENT pointer."
+  ],
+  "inputs": {
+    "properties_ndjson": "AUTO_LATEST_IN_publicData/properties",
+    "assessor_master_current_ptr": "publicData/assessors/_frozen/CURRENT_PHASE4_ASSESSOR_MASTER.json"
+  },
+  "outputs": {
+    "out_dir": "publicData/properties/_attached/phase4_assessor_best"
+  },
+  "field_contract": {
+    "provenance_object_fields": [
+      "valuation.assessed_total",
+      "valuation.assessed_land",
+      "valuation.assessed_building",
+      "valuation.assessed_other",
+      "valuation.assessed_exemptions",
+      "valuation.assessed_year",
+      "building.units_est",
+      "building.year_built_est",
+      "txn.last_sale_date",
+      "txn.last_sale_price",
+      "owner.owner_name_1",
+      "owner.owner_name_2",
+      "owner.owner_company",
+      "owner.owner_type_norm",
+      "owner.mailing_address_full",
+      "owner.owner_occupied_flag"
+    ]
+  }
+}

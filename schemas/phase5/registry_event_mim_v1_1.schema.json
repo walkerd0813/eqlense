@@ -1,0 +1,1277 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "equitylens://schemas/phase5/registry_event_mim_v1_1",
+  "title": "EquityLens Registry Event Schema (MIM) v1.1 - Evidence-first + Multi-Property + Parties Layers",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "event_id",
+    "event_type",
+    "county",
+    "registry_system",
+    "registry_office",
+    "doc_type_code",
+    "doc_type_desc",
+    "source",
+    "recording",
+    "consideration",
+    "document"
+  ],
+  "properties": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "version"
+      ],
+      "properties": {
+        "name": {
+          "const": "equitylens.registry_event"
+        },
+        "version": {
+          "const": "mim_v1_1",
+          "default": "mim_v1_1"
+        }
+      }
+    },
+    "event_id": {
+      "type": "string",
+      "minLength": 12
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "DEED",
+        "FORECLOSURE_DEED",
+        "MORTGAGE",
+        "ASSIGNMENT",
+        "RELEASE",
+        "DISCHARGE",
+        "LIEN_FED",
+        "LIEN_STATE",
+        "LIEN_MUNI",
+        "LIEN_OTHER",
+        "LIS_PENDENS"
+      ]
+    },
+    "county": {
+      "type": "string",
+      "minLength": 2
+    },
+    "registry_system": {
+      "type": "string",
+      "minLength": 2
+    },
+    "registry_office": {
+      "type": "string",
+      "enum": [
+        "RECORDED_LAND",
+        "LAND_COURT",
+        "REGISTERED_LAND",
+        "UNKNOWN"
+      ]
+    },
+    "doc_type_code": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "doc_type_desc": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "run_id",
+        "dataset_hash",
+        "as_of_date"
+      ],
+      "properties": {
+        "run_id": {
+          "type": "string",
+          "minLength": 4
+        },
+        "dataset_hash": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "as_of_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "uri": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "recording": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recorded_at_raw",
+        "recording_date",
+        "book",
+        "page",
+        "instrument_number_raw"
+      ],
+      "properties": {
+        "recorded_at_raw": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "recording_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "recording_time": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "book": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "page": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "instrument_number_raw": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "seq": {
+          "type": [
+            "integer",
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "parties": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "role",
+          "name_raw",
+          "name_norm",
+          "entity_type"
+        ],
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "GRANTOR",
+              "GRANTEE",
+              "LENDER",
+              "BORROWER",
+              "ASSIGNOR",
+              "ASSIGNEE",
+              "RELEASEOR",
+              "RELEASEE",
+              "DEBTOR",
+              "SECURED_PARTY",
+              "PLAINTIFF",
+              "DEFENDANT",
+              "TRUSTEE",
+              "BENEFICIARY",
+              "UNKNOWN"
+            ]
+          },
+          "name_raw": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "name_norm": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "entity_type": {
+            "type": "string",
+            "enum": [
+              "PERSON",
+              "ORG",
+              "LLC",
+              "TRUST",
+              "GOV",
+              "BANK",
+              "UNKNOWN"
+            ]
+          },
+          "mailing_address_raw": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "default": [],
+      "deprecated": true
+    },
+    "property_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "address_raw",
+        "town_raw"
+      ],
+      "properties": {
+        "address_raw": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "town_raw": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "unit_raw": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": "MA"
+        },
+        "zip_raw": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "legal_desc_raw": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "deprecated": true
+    },
+    "consideration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw_text",
+        "amount",
+        "parse_status",
+        "flags",
+        "source"
+      ],
+      "properties": {
+        "raw_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "amount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "currency": {
+          "type": "string",
+          "default": "USD",
+          "minLength": 3,
+          "maxLength": 3
+        },
+        "parse_status": {
+          "type": "string",
+          "enum": [
+            "PARSED",
+            "MISSING",
+            "AMBIGUOUS",
+            "NON_NUMERIC"
+          ],
+          "default": "MISSING"
+        },
+        "flags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "ZERO_OR_NOMINAL",
+              "EXEMPT_STAMP_OR_TAX_EXEMPT",
+              "LOVE_AND_AFFECTION",
+              "GIFT",
+              "FAMILY_TRANSFER",
+              "CONSIDERATION_NOT_STATED",
+              "MULTI_PARCEL"
+            ]
+          },
+          "default": []
+        },
+        "source": {
+          "type": "string",
+          "enum": [
+            "INDEX",
+            "DOC_TEXT",
+            "OCR",
+            "OTHER",
+            "UNKNOWN"
+          ],
+          "default": "UNKNOWN"
+        }
+      }
+    },
+    "attach": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "property_id",
+        "method",
+        "confidence",
+        "evidence",
+        "flags"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ATTACHED_A",
+            "ATTACHED_B",
+            "PARTIAL_MULTI",
+            "UNKNOWN",
+            "NO_MATCH"
+          ]
+        },
+        "property_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "method": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "confidence": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "match_keys_used"
+          ],
+          "properties": {
+            "matched_address_norm": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "matched_town_norm": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "match_keys_used": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": []
+            },
+            "distance_m": {
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          }
+        },
+        "flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        }
+      },
+      "deprecated": true
+    },
+    "deed": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "mortgage": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "assignment": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "satisfaction": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "lien": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "lis_pendens": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "foreclosure": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "arms_length": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "document": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "packet_type",
+        "doc_type_short",
+        "doc_type_norm",
+        "doc_type_confidence"
+      ],
+      "properties": {
+        "packet_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Ingest packet format (e.g., RECORDED_LAND index-style PDF)."
+        },
+        "registry_track": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            null,
+            "RECORDED_LAND",
+            "REGISTERED_LAND",
+            "LAND_COURT",
+            "UNKNOWN"
+          ],
+          "default": "UNKNOWN"
+        },
+        "doc_type_short": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Short printed type from PDF (e.g., FDD)."
+        },
+        "doc_type_norm": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Normalized doc type for safe interpretation (e.g., FORECLOSURE_DEED)."
+        },
+        "doc_type_confidence": {
+          "type": "string",
+          "enum": [
+            "A",
+            "B",
+            "C"
+          ],
+          "default": "C"
+        },
+        "doc_type_evidence": {
+          "type": "object",
+          "default": {},
+          "description": "Evidence used to determine doc_type_short/norm (page, words, bbox, raw snippets)."
+        }
+      }
+    },
+    "property_refs": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "address_raw",
+          "town_raw"
+        ],
+        "properties": {
+          "address_raw": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "town_raw": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "unit_raw": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "state": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": "MA"
+          },
+          "zip_raw": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "legal_desc_raw": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "address_raw_from_pdf": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "address_raw_clean": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "addr_evidence": {
+            "type": "object",
+            "default": {}
+          },
+          "attach": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Per-property attachment result (property_id, status, evidence).",
+            "default": {}
+          }
+        }
+      },
+      "default": []
+    },
+    "parties_raw": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "side_index_raw",
+          "role_code_raw",
+          "name_raw"
+        ],
+        "properties": {
+          "seq": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "side_index_raw": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "enum": [
+              null,
+              1,
+              2
+            ]
+          },
+          "role_code_raw": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "name_raw": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "C"
+            ],
+            "default": "C"
+          },
+          "evidence": {
+            "type": "object",
+            "default": {}
+          }
+        }
+      }
+    },
+    "parties_raw_hash": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "parties_raw_meta": {
+      "type": "object",
+      "default": {}
+    },
+    "parties_norm": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "side_index_raw",
+          "role_code_raw",
+          "name_raw",
+          "name_norm"
+        ],
+        "properties": {
+          "side_index_raw": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "enum": [
+              null,
+              1,
+              2
+            ]
+          },
+          "role_code_raw": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "name_raw": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "name_norm": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "entity_type_guess": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              null,
+              "PERSON",
+              "ORG",
+              "UNKNOWN"
+            ],
+            "default": "UNKNOWN"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "C"
+            ],
+            "default": "C"
+          },
+          "evidence_ref": {
+            "type": "object",
+            "default": {}
+          }
+        }
+      }
+    },
+    "party_roles_interpreted": {
+      "type": "object",
+      "default": {}
+    }
+  },
+  "allOf": [
+    {
+      "oneOf": [
+        {
+          "title": "DEED",
+          "properties": {
+            "event_type": {
+              "const": "DEED"
+            },
+            "deed": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "deed_type",
+                "transfer_tax_stamps"
+              ],
+              "properties": {
+                "deed_type": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "transfer_tax_stamps": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "raw_text",
+                    "amount"
+                  ],
+                  "properties": {
+                    "raw_text": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "amount": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "minimum": 0
+                    }
+                  }
+                },
+                "related_instrument_ref": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "occupancy_indicator_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            },
+            "arms_length": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "class",
+                "confidence",
+                "reasons",
+                "thresholds_used",
+                "inputs_summary"
+              ],
+              "properties": {
+                "class": {
+                  "type": "string",
+                  "enum": [
+                    "ARMS_LENGTH",
+                    "NON_ARMS_LENGTH",
+                    "UNKNOWN"
+                  ],
+                  "default": "UNKNOWN"
+                },
+                "confidence": {
+                  "type": "string",
+                  "enum": [
+                    "HIGH",
+                    "MED",
+                    "LOW"
+                  ],
+                  "default": "LOW"
+                },
+                "reasons": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "default": []
+                },
+                "thresholds_used": {
+                  "type": "object",
+                  "default": {}
+                },
+                "inputs_summary": {
+                  "type": "object",
+                  "default": {}
+                }
+              }
+            }
+          },
+          "required": [
+            "deed",
+            "arms_length"
+          ]
+        },
+        {
+          "title": "FORECLOSURE_DEED",
+          "properties": {
+            "event_type": {
+              "const": "FORECLOSURE_DEED"
+            },
+            "foreclosure": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "sale_type_raw"
+              ],
+              "properties": {
+                "foreclosing_party_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "auction_date_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "sale_type_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "related_mortgage_ref": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "foreclosure"
+          ]
+        },
+        {
+          "title": "MORTGAGE",
+          "properties": {
+            "event_type": {
+              "const": "MORTGAGE"
+            },
+            "mortgage": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "principal_amount",
+                "mortgage_ref"
+              ],
+              "properties": {
+                "principal_amount": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "raw_text",
+                    "amount"
+                  ],
+                  "properties": {
+                    "raw_text": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "amount": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "minimum": 0
+                    }
+                  }
+                },
+                "loan_type_hint": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "maturity_date_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "rate_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "recorded_against_desc_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "mortgage_ref": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Join key: original book/page/instrument when present."
+                }
+              }
+            }
+          },
+          "required": [
+            "mortgage"
+          ]
+        },
+        {
+          "title": "ASSIGNMENT",
+          "properties": {
+            "event_type": {
+              "const": "ASSIGNMENT"
+            },
+            "assignment": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "mortgage_ref"
+              ],
+              "properties": {
+                "assigned_interest": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "mortgage_ref": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "assignment_date_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "note_transfer_indicator": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "assignment"
+          ]
+        },
+        {
+          "title": "RELEASE_OR_DISCHARGE",
+          "properties": {
+            "event_type": {
+              "enum": [
+                "RELEASE",
+                "DISCHARGE"
+              ]
+            },
+            "satisfaction": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "related_mortgage_ref",
+                "satisfaction_type"
+              ],
+              "properties": {
+                "related_mortgage_ref": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "satisfaction_type": {
+                  "type": "string",
+                  "enum": [
+                    "FULL",
+                    "PARTIAL",
+                    "UNKNOWN"
+                  ],
+                  "default": "UNKNOWN"
+                },
+                "satisfaction_date_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "notes_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "satisfaction"
+          ]
+        },
+        {
+          "title": "LIEN",
+          "properties": {
+            "event_type": {
+              "enum": [
+                "LIEN_FED",
+                "LIEN_STATE",
+                "LIEN_MUNI",
+                "LIEN_OTHER"
+              ]
+            },
+            "lien": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "lien_class",
+                "amount",
+                "status"
+              ],
+              "properties": {
+                "lien_class": {
+                  "type": "string",
+                  "enum": [
+                    "FED_TAX",
+                    "STATE_TAX",
+                    "MUNICIPAL_TAX",
+                    "MECHANICS",
+                    "JUDGMENT",
+                    "OTHER"
+                  ]
+                },
+                "amount": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "raw_text",
+                    "amount"
+                  ],
+                  "properties": {
+                    "raw_text": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "amount": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "minimum": 0
+                    }
+                  }
+                },
+                "lien_date_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "case_or_ref_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "FILED",
+                    "RELEASED",
+                    "UNKNOWN"
+                  ],
+                  "default": "UNKNOWN"
+                },
+                "related_release_ref": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "lien"
+          ]
+        },
+        {
+          "title": "LIS_PENDENS",
+          "properties": {
+            "event_type": {
+              "const": "LIS_PENDENS"
+            },
+            "lis_pendens": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "action_type_raw"
+              ],
+              "properties": {
+                "case_number_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "court_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "filing_date_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "action_type_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "related_instrument_ref": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "lis_pendens"
+          ]
+        }
+      ]
+    },
+    {
+      "anyOf": [
+        {
+          "required": [
+            "property_refs"
+          ]
+        },
+        {
+          "required": [
+            "property_ref"
+          ]
+        }
+      ]
+    },
+    {
+      "anyOf": [
+        {
+          "required": [
+            "parties_raw"
+          ]
+        },
+        {
+          "required": [
+            "parties_norm"
+          ]
+        },
+        {
+          "required": [
+            "parties"
+          ]
+        }
+      ]
+    }
+  ]
+}

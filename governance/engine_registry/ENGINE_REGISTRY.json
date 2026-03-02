@@ -1,0 +1,1536 @@
+{
+    "schema":  "equity_lens.engine_registry.v0_1",
+    "generated_at":  "2026-01-12T00:00:00Z",
+    "engines":  [
+                    {
+                        "engine_id":  "market_radar.res_1_4_v1",
+                        "name":  "Market Radar — Residential (1–4)",
+                        "status":  "active",
+                        "owner":  "pro",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/marketRadar/CURRENT/CURRENT_MARKET_RADAR_POINTERS_RES_1_4.json"
+                                                              ],
+                                       "optional_artifacts":  [
+
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+                                                       "gate.core.current_pointer_required",
+                                                       "gate.policy.radar_tracks_separate"
+                                                   ],
+                                      "optional":  [
+                                                       "gate.qa.asof_date_present"
+                                                   ]
+                                  },
+                        "outputs":  [
+                                        {
+                                            "artifact_key":  "market_radar_res_1_4_pointers",
+                                            "current_pointer":  "publicData/marketRadar/CURRENT/CURRENT_MARKET_RADAR_POINTERS_RES_1_4.json",
+                                            "requires_manifest":  false
+                                        }
+                                    ],
+                        "acceptance_tests":  [
+                                                 "test.registry.pointer_json_valid"
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null,
+                                       "cmd":  "python",
+                                       "args_template":  ".\\scripts\\market_radar\\res_1_4_v1.py --root {Root} --zip {Zip} --windowDays {WindowDays}",
+                                       "script_relpath":  "scripts\\market_radar\\res_1_4_v1.py"
+                                   }
+                    },
+                    {
+                        "engine_id":  "market_radar.runbook_probes_v0_1",
+                        "name":  "Market Radar Runbook Probes (v0_1)",
+                        "status":  "active",
+                        "owner":  "founder",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/marketRadar/indicators/CURRENT/CURRENT_MARKET_RADAR_INDICATORS_P01_MASS.ndjson",
+                                                                  "publicData/marketRadar/CURRENT/CURRENT_MARKET_RADAR_EXPLAINABILITY_ZIP.ndjson"
+                                                              ],
+                                       "optional_artifacts":  [
+
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+
+                                                   ],
+                                      "optional":  [
+
+                                                   ]
+                                  },
+                        "outputs":  [
+
+                                    ],
+                        "acceptance_tests":  [
+                                                 "test.market_radar.runbook.bucket_presence",
+                                                 "test.market_radar.runbook.mf5_safe_unknown",
+                                                 "test.market_radar.runbook.explainability_row_exists"
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "meta":  {
+                                     "installed_at":  "2026-01-11T13:32:10"
+                                 },
+                        "runner":  {
+                                       "cmd":  "python",
+                                       "args_template":  ".\\scripts\\market_radar\\qa\\runbook_probes_v0_1.py --root {Root} --zip {Zip} --assetBucket {AssetBucket} --windowDays {WindowDays}",
+                                       "promote_targets":  [
+                                                               "publicData\\marketRadar\\indicators\\CURRENT\\CURRENT_MARKET_RADAR_INDICATORS_P01_MASS.ndjson"
+                                                           ],
+                                       "script_relpath":  "scripts\\market_radar\\qa\\runbook_probes_v0_1.py",
+                                       "script_relpath_aliases":  [
+                                                                      ".\\scripts\\market_radar\\qa\\runbook_probes_v0_1.py"
+                                                                  ],
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "property_spine.statewide_parcels_v1",
+                        "name":  "Property Spine — Statewide Parcels (anchor)",
+                        "status":  "active",
+                        "owner":  "founder",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/properties/_attached/CURRENT/CURRENT_PROPERTIES_PHASE4_ASSESSOR_CANONICAL_V2.json"
+                                                              ],
+                                       "optional_artifacts":  [
+
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+                                                       "gate.core.current_pointer_required",
+                                                       "gate.core.dataset_hash_required"
+                                                   ],
+                                      "optional":  [
+
+                                                   ]
+                                  },
+                        "outputs":  [
+                                        {
+                                            "artifact_key":  "properties_spine_current_pointer",
+                                            "current_pointer":  "publicData/properties/_attached/CURRENT/CURRENT_PROPERTIES_PHASE4_ASSESSOR_CANONICAL_V2.json",
+                                            "requires_manifest":  true
+                                        }
+                                    ],
+                        "acceptance_tests":  [
+                                                 "test.properties.current_pointer_resolves",
+                                                 "test.properties.ndjson_parseable"
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "property_spine.assessor_attach_v1",
+                        "name":  "Property Spine — Assessor Attachment",
+                        "status":  "active",
+                        "owner":  "founder",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/properties/_attached/CURRENT/CURRENT_PROPERTIES_PHASE4_ASSESSOR_CANONICAL_V2.json"
+                                                              ],
+                                       "optional_artifacts":  [
+
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+                                                       "gate.core.current_pointer_required"
+                                                   ],
+                                      "optional":  [
+                                                       "gate.qa.coverage_target_warn_only"
+                                                   ]
+                                  },
+                        "outputs":  [
+
+                                    ],
+                        "acceptance_tests":  [
+
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "property_spine.zoning_attach_base_v1",
+                        "name":  "Property Spine — Zoning Attach (Base Geometry Only)",
+                        "status":  "planned",
+                        "owner":  "founder",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/properties/_attached/CURRENT/CURRENT_PROPERTIES_PHASE4_ASSESSOR_CANONICAL_V2.json"
+                                                              ],
+                                       "optional_artifacts":  [
+                                                                  "publicData/zoning/CURRENT/CURRENT_ZONING_DISTRICTS_GEO.json",
+                                                                  "publicData/zoning/CURRENT/CURRENT_ZONING_ATTACH_BASE.ndjson"
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+                                                       "gate.zoning.geometry_rules_separated",
+                                                       "gate.zoning.pip_only_no_buffering",
+                                                       "gate.core.crs_epsg4326_required"
+                                                   ],
+                                      "optional":  [
+                                                       "gate.qa.coverage_target_warn_only"
+                                                   ]
+                                  },
+                        "outputs":  [
+
+                                    ],
+                        "acceptance_tests":  [
+
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "property_spine.overlays_attach_phase2_v1",
+                        "name":  "Property Spine — Civic/Legal Overlays Attach (Phase 2)",
+                        "status":  "planned",
+                        "owner":  "founder",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/properties/_attached/CURRENT/CURRENT_PROPERTIES_PHASE4_ASSESSOR_CANONICAL_V2.json"
+                                                              ],
+                                       "optional_artifacts":  [
+                                                                  "publicData/overlays/CURRENT/CURRENT_OVERLAYS_GEO.json",
+                                                                  "publicData/overlays/CURRENT/CURRENT_OVERLAY_ATTACH.ndjson"
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+                                                       "gate.core.current_pointer_required",
+                                                       "gate.overlays.geometry_rules_signals_separated"
+                                                   ],
+                                      "optional":  [
+
+                                                   ]
+                                  },
+                        "outputs":  [
+
+                                    ],
+                        "acceptance_tests":  [
+
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "events.deeds_ingest_normalize_v1",
+                        "name":  "Events — Deeds (Recorded Land + Land Court) Ingest/Normalize",
+                        "status":  "active",
+                        "owner":  "founder",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/registry/hampden/CURRENT/CURRENT_HAMPDEN_DEEDS_UNIVERSE.ndjson"
+                                                              ],
+                                       "optional_artifacts":  [
+
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+                                                       "gate.events.schema_valid",
+                                                       "gate.events.event_id_deterministic"
+                                                   ],
+                                      "optional":  [
+
+                                                   ]
+                                  },
+                        "outputs":  [
+
+                                    ],
+                        "acceptance_tests":  [
+
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "events.deeds_attach_to_spine_v1",
+                        "name":  "Events — Deeds Attach to Property Spine (deterministic)",
+                        "status":  "active",
+                        "owner":  "founder",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/registry/hampden/CURRENT/CURRENT_HAMPDEN_DEEDS_UNIVERSE.ndjson",
+                                                                  "publicData/properties/_attached/CURRENT/CURRENT_PROPERTIES_PHASE4_ASSESSOR_CANONICAL_V2.json"
+                                                              ],
+                                       "optional_artifacts":  [
+
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+                                                       "gate.attach.deterministic_only",
+                                                       "gate.attach.no_nearest_no_fuzzy"
+                                                   ],
+                                      "optional":  [
+                                                       "gate.qa.attach_rate_warn_only"
+                                                   ]
+                                  },
+                        "outputs":  [
+                                        {
+                                            "artifact_key":  "deeds_attached_current",
+                                            "current_pointer":  "publicData/registry/hampden/CURRENT/CURRENT_HAMPDEN_DEEDS_UNIVERSE.ndjson",
+                                            "requires_manifest":  true
+                                        }
+                                    ],
+                        "acceptance_tests":  [
+
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "events.mortgage_ingest_normalize_v1",
+                        "name":  "Events — Mortgages Ingest/Normalize",
+                        "status":  "planned",
+                        "owner":  "founder",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/registry/mortgages/CURRENT/CURRENT_MORTGAGES_UNIVERSE.ndjson"
+                                                              ],
+                                       "optional_artifacts":  [
+
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+                                                       "gate.events.schema_valid",
+                                                       "gate.events.event_id_deterministic"
+                                                   ],
+                                      "optional":  [
+
+                                                   ]
+                                  },
+                        "outputs":  [
+
+                                    ],
+                        "acceptance_tests":  [
+
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "events.assignment_ingest_normalize_v1",
+                        "name":  "Events — Assignments Ingest/Normalize",
+                        "status":  "planned",
+                        "owner":  "founder",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/registry/assignments/CURRENT/CURRENT_ASSIGNMENTS_UNIVERSE.ndjson"
+                                                              ],
+                                       "optional_artifacts":  [
+
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+                                                       "gate.events.schema_valid",
+                                                       "gate.events.event_id_deterministic"
+                                                   ],
+                                      "optional":  [
+
+                                                   ]
+                                  },
+                        "outputs":  [
+
+                                    ],
+                        "acceptance_tests":  [
+
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "events.discharge_release_ingest_normalize_v1",
+                        "name":  "Events — Discharges/Releases Ingest/Normalize",
+                        "status":  "planned",
+                        "owner":  "founder",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/registry/releases/CURRENT/CURRENT_RELEASES_UNIVERSE.ndjson"
+                                                              ],
+                                       "optional_artifacts":  [
+
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+                                                       "gate.events.schema_valid",
+                                                       "gate.events.event_id_deterministic"
+                                                   ],
+                                      "optional":  [
+
+                                                   ]
+                                  },
+                        "outputs":  [
+
+                                    ],
+                        "acceptance_tests":  [
+
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "events.foreclosure_deeds_ingest_normalize_v1",
+                        "name":  "Events — Foreclosure Deeds Ingest/Normalize",
+                        "status":  "planned",
+                        "owner":  "founder",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/registry/foreclosures/CURRENT/CURRENT_FORECLOSURE_DEEDS_UNIVERSE.ndjson"
+                                                              ],
+                                       "optional_artifacts":  [
+
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+                                                       "gate.events.schema_valid",
+                                                       "gate.events.event_id_deterministic"
+                                                   ],
+                                      "optional":  [
+
+                                                   ]
+                                  },
+                        "outputs":  [
+
+                                    ],
+                        "acceptance_tests":  [
+
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "events.liens_ingest_normalize_v1",
+                        "name":  "Events — Liens (Municipal/Federal/State/Judgment) Ingest/Normalize",
+                        "status":  "planned",
+                        "owner":  "founder",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/registry/liens/CURRENT/CURRENT_LIENS_UNIVERSE.ndjson"
+                                                              ],
+                                       "optional_artifacts":  [
+
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+                                                       "gate.events.schema_valid",
+                                                       "gate.events.event_id_deterministic"
+                                                   ],
+                                      "optional":  [
+
+                                                   ]
+                                  },
+                        "outputs":  [
+
+                                    ],
+                        "acceptance_tests":  [
+
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "events.lis_pendens_ingest_normalize_v1",
+                        "name":  "Events — Lis Pendens Ingest/Normalize",
+                        "status":  "planned",
+                        "owner":  "founder",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/registry/lis_pendens/CURRENT/CURRENT_LIS_PENDENS_UNIVERSE.ndjson"
+                                                              ],
+                                       "optional_artifacts":  [
+
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+                                                       "gate.events.schema_valid",
+                                                       "gate.events.event_id_deterministic"
+                                                   ],
+                                      "optional":  [
+
+                                                   ]
+                                  },
+                        "outputs":  [
+
+                                    ],
+                        "acceptance_tests":  [
+
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "entity_resolution.parties_v1",
+                        "name":  "Entity Resolution — Parties (people/LLC/banks/trusts) v1",
+                        "status":  "planned",
+                        "owner":  "founder",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/registry/hampden/CURRENT/CURRENT_HAMPDEN_DEEDS_UNIVERSE.ndjson",
+                                                                  "publicData/properties/_attached/CURRENT/CURRENT_PROPERTIES_PHASE4_ASSESSOR_CANONICAL_V2.json"
+                                                              ],
+                                       "optional_artifacts":  [
+                                                                  "publicData/registry/mortgages/CURRENT/CURRENT_MORTGAGES_UNIVERSE.ndjson",
+                                                                  "publicData/registry/assignments/CURRENT/CURRENT_ASSIGNMENTS_UNIVERSE.ndjson",
+                                                                  "publicData/registry/releases/CURRENT/CURRENT_RELEASES_UNIVERSE.ndjson",
+                                                                  "publicData/registry/liens/CURRENT/CURRENT_LIENS_UNIVERSE.ndjson",
+                                                                  "publicData/registry/lis_pendens/CURRENT/CURRENT_LIS_PENDENS_UNIVERSE.ndjson"
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+                                                       "gate.entity.no_identity_advice",
+                                                       "gate.attach.deterministic_only"
+                                                   ],
+                                      "optional":  [
+                                                       "gate.qa.coverage_target_warn_only"
+                                                   ]
+                                  },
+                        "outputs":  [
+                                        {
+                                            "artifact_key":  "entity_resolution_parties_current",
+                                            "current_pointer":  "publicData/entityResolution/CURRENT/CURRENT_PARTIES.ndjson",
+                                            "requires_manifest":  true
+                                        }
+                                    ],
+                        "acceptance_tests":  [
+
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "market_radar.mf_5_plus_v1",
+                        "name":  "Market Radar — Multifamily / Commercial-Residential (5+)",
+                        "status":  "planned",
+                        "owner":  "pro",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/marketRadar/CURRENT/CURRENT_MARKET_RADAR_POINTERS_MF_5_PLUS.json"
+                                                              ],
+                                       "optional_artifacts":  [
+
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+                                                       "gate.core.current_pointer_required",
+                                                       "gate.policy.radar_tracks_separate"
+                                                   ],
+                                      "optional":  [
+                                                       "gate.qa.asof_date_present"
+                                                   ]
+                                  },
+                        "outputs":  [
+                                        {
+                                            "artifact_key":  "market_radar_mf_5_plus_pointers",
+                                            "current_pointer":  "publicData/marketRadar/CURRENT/CURRENT_MARKET_RADAR_POINTERS_MF_5_PLUS.json",
+                                            "requires_manifest":  false
+                                        }
+                                    ],
+                        "acceptance_tests":  [
+                                                 "test.registry.pointer_json_valid"
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "market_radar.land_lots_v1",
+                        "name":  "Market Radar — Land \u0026 Lots",
+                        "status":  "planned",
+                        "owner":  "pro",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/marketRadar/CURRENT/CURRENT_MARKET_RADAR_POINTERS_LAND_LOTS.json"
+                                                              ],
+                                       "optional_artifacts":  [
+
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+                                                       "gate.core.current_pointer_required",
+                                                       "gate.policy.radar_tracks_separate"
+                                                   ],
+                                      "optional":  [
+                                                       "gate.qa.asof_date_present"
+                                                   ]
+                                  },
+                        "outputs":  [
+                                        {
+                                            "artifact_key":  "market_radar_land_lots_pointers",
+                                            "current_pointer":  "publicData/marketRadar/CURRENT/CURRENT_MARKET_RADAR_POINTERS_LAND_LOTS.json",
+                                            "requires_manifest":  false
+                                        }
+                                    ],
+                        "acceptance_tests":  [
+                                                 "test.registry.pointer_json_valid"
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "deal.off_market_v1",
+                        "name":  "Deal Engine — Off-Market Property Engine v1",
+                        "status":  "planned",
+                        "owner":  "pro",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/properties/_attached/CURRENT/CURRENT_PROPERTIES_PHASE4_ASSESSOR_CANONICAL_V2.json",
+                                                                  "publicData/registry/hampden/CURRENT/CURRENT_HAMPDEN_DEEDS_UNIVERSE.ndjson"
+                                                              ],
+                                       "optional_artifacts":  [
+                                                                  "publicData/registry/mortgages/CURRENT/CURRENT_MORTGAGES_UNIVERSE.ndjson",
+                                                                  "publicData/registry/assignments/CURRENT/CURRENT_ASSIGNMENTS_UNIVERSE.ndjson",
+                                                                  "publicData/registry/releases/CURRENT/CURRENT_RELEASES_UNIVERSE.ndjson",
+                                                                  "publicData/registry/liens/CURRENT/CURRENT_LIENS_UNIVERSE.ndjson",
+                                                                  "publicData/registry/lis_pendens/CURRENT/CURRENT_LIS_PENDENS_UNIVERSE.ndjson",
+                                                                  "publicData/permits/CURRENT/CURRENT_PERMITS_UNIVERSE.ndjson"
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+                                                       "gate.core.current_pointer_required",
+                                                       "gate.attach.deterministic_only"
+                                                   ],
+                                      "optional":  [
+                                                       "gate.qa.coverage_target_warn_only"
+                                                   ]
+                                  },
+                        "outputs":  [
+                                        {
+                                            "artifact_key":  "off_market_hits_current",
+                                            "current_pointer":  "publicData/deals/offMarket/CURRENT/CURRENT_OFFMARKET_HITS.ndjson",
+                                            "requires_manifest":  true
+                                        }
+                                    ],
+                        "acceptance_tests":  [
+
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "deal.on_market_v1",
+                        "name":  "Deal Engine — On-Market (MLS Inefficiencies) v1",
+                        "status":  "planned",
+                        "owner":  "pro",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/mls/CURRENT/CURRENT_MLS_EVENTS.ndjson",
+                                                                  "publicData/marketRadar/indicators/CURRENT/CURRENT_MARKET_RADAR_INDICATORS_P01_MASS.ndjson"
+                                                              ],
+                                       "optional_artifacts":  [
+                                                                  "publicData/marketRadar/CURRENT/CURRENT_MARKET_RADAR_EXPLAINABILITY_ZIP.ndjson"
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+                                                       "gate.policy.radar_tracks_separate"
+                                                   ],
+                                      "optional":  [
+                                                       "gate.qa.coverage_target_warn_only"
+                                                   ]
+                                  },
+                        "outputs":  [
+                                        {
+                                            "artifact_key":  "on_market_hits_current",
+                                            "current_pointer":  "publicData/deals/onMarket/CURRENT/CURRENT_ONMARKET_HITS.ndjson",
+                                            "requires_manifest":  true
+                                        }
+                                    ],
+                        "acceptance_tests":  [
+
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "deal.deal_finder_v1",
+                        "name":  "Deal Engine — Deal Finder (aggregates Off + On, role lenses)",
+                        "status":  "planned",
+                        "owner":  "founder",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/deals/offMarket/CURRENT/CURRENT_OFFMARKET_HITS.ndjson",
+                                                                  "publicData/deals/onMarket/CURRENT/CURRENT_ONMARKET_HITS.ndjson"
+                                                              ],
+                                       "optional_artifacts":  [
+                                                                  "publicData/founderAlpha/CURRENT/CURRENT_FOUNDER_POWERSIGNAL.ndjson"
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+
+                                                   ],
+                                      "optional":  [
+                                                       "gate.qa.coverage_target_warn_only"
+                                                   ]
+                                  },
+                        "outputs":  [
+                                        {
+                                            "artifact_key":  "deal_finder_current",
+                                            "current_pointer":  "publicData/deals/dealFinder/CURRENT/CURRENT_DEAL_FINDER.ndjson",
+                                            "requires_manifest":  true
+                                        }
+                                    ],
+                        "acceptance_tests":  [
+
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "capital.follower_v1",
+                        "name":  "Capital Follower Engine v1 (mortgages + assignments + releases)",
+                        "status":  "planned",
+                        "owner":  "founder",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/registry/mortgages/CURRENT/CURRENT_MORTGAGES_UNIVERSE.ndjson"
+                                                              ],
+                                       "optional_artifacts":  [
+                                                                  "publicData/registry/assignments/CURRENT/CURRENT_ASSIGNMENTS_UNIVERSE.ndjson",
+                                                                  "publicData/registry/releases/CURRENT/CURRENT_RELEASES_UNIVERSE.ndjson"
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+                                                       "gate.attach.deterministic_only"
+                                                   ],
+                                      "optional":  [
+
+                                                   ]
+                                  },
+                        "outputs":  [
+                                        {
+                                            "artifact_key":  "capital_follower_current",
+                                            "current_pointer":  "publicData/capital/CURRENT/CURRENT_CAPITAL_FOLLOWER.ndjson",
+                                            "requires_manifest":  true
+                                        }
+                                    ],
+                        "acceptance_tests":  [
+
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "underwriting.intelligence_v1",
+                        "name":  "Underwriting Intelligence Engine v1",
+                        "status":  "planned",
+                        "owner":  "founder",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/marketRadar/indicators/CURRENT/CURRENT_MARKET_RADAR_INDICATORS_P01_MASS.ndjson"
+                                                              ],
+                                       "optional_artifacts":  [
+                                                                  "publicData/capital/CURRENT/CURRENT_CAPITAL_FOLLOWER.ndjson",
+                                                                  "publicData/deals/offMarket/CURRENT/CURRENT_OFFMARKET_HITS.ndjson",
+                                                                  "publicData/deals/onMarket/CURRENT/CURRENT_ONMARKET_HITS.ndjson"
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+
+                                                   ],
+                                      "optional":  [
+                                                       "gate.qa.coverage_target_warn_only"
+                                                   ]
+                                  },
+                        "outputs":  [
+                                        {
+                                            "artifact_key":  "underwriting_scores_current",
+                                            "current_pointer":  "publicData/underwriting/CURRENT/CURRENT_UNDERWRITING_SCORES.ndjson",
+                                            "requires_manifest":  true
+                                        }
+                                    ],
+                        "acceptance_tests":  [
+
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "permits.ingest_normalize_v1",
+                        "name":  "Permits — Ingest/Normalize v1",
+                        "status":  "planned",
+                        "owner":  "founder",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/permits/_raw/CURRENT/CURRENT_PERMITS_RAW.ndjson"
+                                                              ],
+                                       "optional_artifacts":  [
+
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+                                                       "gate.events.schema_valid"
+                                                   ],
+                                      "optional":  [
+
+                                                   ]
+                                  },
+                        "outputs":  [
+                                        {
+                                            "artifact_key":  "permits_universe_current",
+                                            "current_pointer":  "publicData/permits/CURRENT/CURRENT_PERMITS_UNIVERSE.ndjson",
+                                            "requires_manifest":  true
+                                        }
+                                    ],
+                        "acceptance_tests":  [
+
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "development.timeline_v1",
+                        "name":  "Development Timeline Engine v1 (buy → permit → build → exit)",
+                        "status":  "planned",
+                        "owner":  "founder",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/permits/CURRENT/CURRENT_PERMITS_UNIVERSE.ndjson",
+                                                                  "publicData/registry/hampden/CURRENT/CURRENT_HAMPDEN_DEEDS_UNIVERSE.ndjson"
+                                                              ],
+                                       "optional_artifacts":  [
+
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+
+                                                   ],
+                                      "optional":  [
+
+                                                   ]
+                                  },
+                        "outputs":  [
+                                        {
+                                            "artifact_key":  "development_timeline_current",
+                                            "current_pointer":  "publicData/development/CURRENT/CURRENT_DEVELOPMENT_TIMELINES.ndjson",
+                                            "requires_manifest":  true
+                                        }
+                                    ],
+                        "acceptance_tests":  [
+
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "development.assemblage_arbitrage_v1",
+                        "name":  "Assemblage / Land Arbitrage Engine v1",
+                        "status":  "planned",
+                        "owner":  "founder",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/properties/_attached/CURRENT/CURRENT_PROPERTIES_PHASE4_ASSESSOR_CANONICAL_V2.json"
+                                                              ],
+                                       "optional_artifacts":  [
+                                                                  "publicData/zoning/CURRENT/CURRENT_ZONING_ATTACH_BASE.ndjson",
+                                                                  "publicData/permits/CURRENT/CURRENT_PERMITS_UNIVERSE.ndjson"
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+                                                       "gate.zoning.geometry_rules_separated"
+                                                   ],
+                                      "optional":  [
+
+                                                   ]
+                                  },
+                        "outputs":  [
+                                        {
+                                            "artifact_key":  "assemblage_hits_current",
+                                            "current_pointer":  "publicData/development/CURRENT/CURRENT_ASSEMBLAGE_HITS.ndjson",
+                                            "requires_manifest":  true
+                                        }
+                                    ],
+                        "acceptance_tests":  [
+
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "competition.broker_tracker_v1",
+                        "name":  "Competitor Tracker — Brokers v1",
+                        "status":  "planned",
+                        "owner":  "pro",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/mls/CURRENT/CURRENT_MLS_EVENTS.ndjson"
+                                                              ],
+                                       "optional_artifacts":  [
+                                                                  "publicData/marketRadar/indicators/CURRENT/CURRENT_MARKET_RADAR_INDICATORS_P01_MASS.ndjson"
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+
+                                                   ],
+                                      "optional":  [
+
+                                                   ]
+                                  },
+                        "outputs":  [
+                                        {
+                                            "artifact_key":  "broker_competition_current",
+                                            "current_pointer":  "publicData/competition/CURRENT/CURRENT_BROKER_TRACKER.ndjson",
+                                            "requires_manifest":  true
+                                        }
+                                    ],
+                        "acceptance_tests":  [
+
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "graph.professional_party_graph_v1",
+                        "name":  "Professional / Party Graph v1 (who funds/who builds/relationships)",
+                        "status":  "planned",
+                        "owner":  "founder",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/entityResolution/CURRENT/CURRENT_PARTIES.ndjson"
+                                                              ],
+                                       "optional_artifacts":  [
+                                                                  "publicData/capital/CURRENT/CURRENT_CAPITAL_FOLLOWER.ndjson",
+                                                                  "publicData/permits/CURRENT/CURRENT_PERMITS_UNIVERSE.ndjson"
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+
+                                                   ],
+                                      "optional":  [
+
+                                                   ]
+                                  },
+                        "outputs":  [
+                                        {
+                                            "artifact_key":  "party_graph_current",
+                                            "current_pointer":  "publicData/graph/CURRENT/CURRENT_PARTY_GRAPH.ndjson",
+                                            "requires_manifest":  true
+                                        }
+                                    ],
+                        "acceptance_tests":  [
+
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "policy.watchlist_ingest_v1",
+                        "name":  "Policy Watchlist — Bills/Rules Ingest v1 (structured triggers)",
+                        "status":  "planned",
+                        "owner":  "founder",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/policy/_raw/CURRENT/CURRENT_POLICY_RAW.ndjson"
+                                                              ],
+                                       "optional_artifacts":  [
+
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+                                                       "gate.events.schema_valid"
+                                                   ],
+                                      "optional":  [
+
+                                                   ]
+                                  },
+                        "outputs":  [
+                                        {
+                                            "artifact_key":  "policy_watchlist_current",
+                                            "current_pointer":  "publicData/policy/CURRENT/CURRENT_POLICY_WATCHLIST.ndjson",
+                                            "requires_manifest":  true
+                                        }
+                                    ],
+                        "acceptance_tests":  [
+
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "rent.fmr_ingest_v1",
+                        "name":  "Rent — HUD Fair Market Rent Ingest v1",
+                        "status":  "planned",
+                        "owner":  "pro",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/rent/_raw/CURRENT/CURRENT_RENT_FMR_RAW.ndjson"
+                                                              ],
+                                       "optional_artifacts":  [
+
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+                                                       "gate.events.schema_valid"
+                                                   ],
+                                      "optional":  [
+
+                                                   ]
+                                  },
+                        "outputs":  [
+                                        {
+                                            "artifact_key":  "rent_fmr_current",
+                                            "current_pointer":  "publicData/rent/CURRENT/CURRENT_RENT_FMR.ndjson",
+                                            "requires_manifest":  true
+                                        }
+                                    ],
+                        "acceptance_tests":  [
+
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "founder.powersignal_fas_v1",
+                        "name":  "Founder PowerSignal — Founder Alpha Score (FAS v1)",
+                        "status":  "planned",
+                        "owner":  "founder",
+                        "inputs":  {
+                                       "required_artifacts":  [
+                                                                  "publicData/policy/CURRENT/CURRENT_POLICY_WATCHLIST.ndjson",
+                                                                  "publicData/properties/_attached/CURRENT/CURRENT_PROPERTIES_PHASE4_ASSESSOR_CANONICAL_V2.json"
+                                                              ],
+                                       "optional_artifacts":  [
+                                                                  "publicData/permits/CURRENT/CURRENT_PERMITS_UNIVERSE.ndjson",
+                                                                  "publicData/registry/hampden/CURRENT/CURRENT_HAMPDEN_DEEDS_UNIVERSE.ndjson",
+                                                                  "publicData/capital/CURRENT/CURRENT_CAPITAL_FOLLOWER.ndjson",
+                                                                  "publicData/marketRadar/indicators/CURRENT/CURRENT_MARKET_RADAR_INDICATORS_P01_MASS.ndjson",
+                                                                  "publicData/zoning/CURRENT/CURRENT_ZONING_ATTACH_BASE.ndjson"
+                                                              ]
+                                   },
+                        "gates":  {
+                                      "required":  [
+                                                       "gate.policy.radar_tracks_separate",
+                                                       "gate.zoning.geometry_rules_separated"
+                                                   ],
+                                      "optional":  [
+                                                       "gate.qa.coverage_target_warn_only"
+                                                   ]
+                                  },
+                        "outputs":  [
+                                        {
+                                            "artifact_key":  "founder_powersignal_current",
+                                            "current_pointer":  "publicData/founderAlpha/CURRENT/CURRENT_FOUNDER_POWERSIGNAL.ndjson",
+                                            "requires_manifest":  true
+                                        }
+                                    ],
+                        "acceptance_tests":  [
+                                                 "test.founder.powersignal.schema_valid",
+                                                 "test.founder.powersignal.only_in_policy_geos"
+                                             ],
+                        "promotion_policy":  {
+                                                 "allow_candidate_outputs":  true,
+                                                 "promote_only_if_tests_pass":  true
+                                             },
+                        "runner":  {
+                                       "cmd":  "",
+                                       "args_template":  "",
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "script_relpath":  "",
+                                       "script_relpath_aliases":  null,
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  null
+                                   }
+                    },
+                    {
+                        "engine_id":  "events.suffolk_index_csv_ingest_normalize_v1",
+                        "title":  "Suffolk INDEX_CSV_MIXED ingest + normalize v1",
+                        "category":  "registry",
+                        "runner":  {
+                                       "cmd":  "python",
+                                       "script_relpath":  "scripts/registry/suffolk/events_suffolk_index_csv_ingest_normalize_v1.py",
+                                       "args_template":  ".\\scripts/registry/suffolk/events_suffolk_index_csv_ingest_normalize_v1.py --infile {infile} --outdir {outdir} --county {county}"
+                                   },
+                        "promotes":  [
+
+                                     ],
+                        "gates":  {
+                                      "required":  [
+
+                                                   ],
+                                      "optional":  [
+
+                                                   ]
+                                  },
+                        "notes":  "Governed normalize for consultant Suffolk CSV. Provisional lane allowed."
+                    },
+                    {
+                        "engine_id":  "events.registry_attach_unknown_via_arcgis_parcel_id_v1_1_cache",
+                        "version":  "v1_1_CACHE",
+                        "stage":  "ATTACH",
+                        "family":  "registry_events",
+                        "description":  "Attach UNKNOWN registry events to property spine via ArcGIS MAP_PAR_ID lookup (cached), deterministic by parcel id.",
+                        "runner":  {
+                                       "cmd":  "python",
+                                       "args_template":  ".\\scripts\\_registry\\attach\\events_attach_unknown_via_arcgis_parcel_id_v1_1_CACHE.py --events {events} --spine_index {spine_index} --town {town} --out {out} --audit {audit} --limit_unknown {limit_unknown} --sleep {sleep}",
+                                       "script_relpath":  "scripts\\_registry\\attach\\events_attach_unknown_via_arcgis_parcel_id_v1_1_CACHE.py",
+                                       "script_relpath_aliases":  [
+                                                                      ".\\scripts\\_registry\\attach\\events_attach_unknown_via_arcgis_parcel_id_v1_1_CACHE.py"
+                                                                  ],
+                                       "promote_targets":  [
+
+                                                           ],
+                                       "contract_status":  "MISSING_RUNNER_CONTRACT",
+                                       "notes":  "Governance: deterministic attach via ArcGIS parcel id; wrapper can later supply {events}/{spine_index}/{out}/{audit} paths from CURRENT pointers."
+                                   },
+                        "inputs":  [
+                                       {
+                                           "key":  "events",
+                                           "required":  true,
+                                           "kind":  "ndjson",
+                                           "note":  "Registry events NDJSON"
+                                       },
+                                       {
+                                           "key":  "spine_index",
+                                           "required":  true,
+                                           "kind":  "ndjson",
+                                           "note":  "spine_map_par_id__to_property_id index NDJSON"
+                                       }
+                                   ],
+                        "outputs":  [
+                                        {
+                                            "key":  "out",
+                                            "kind":  "ndjson",
+                                            "note":  "Events NDJSON with attach upgraded via parcel-id evidence"
+                                        },
+                                        {
+                                            "key":  "audit",
+                                            "kind":  "json",
+                                            "note":  "Counts + run metadata"
+                                        }
+                                    ],
+                        "params":  {
+                                       "town":  {
+                                                    "type":  "string",
+                                                    "required":  true
+                                                },
+                                       "limit_unknown":  {
+                                                             "type":  "int",
+                                                             "default":  20000
+                                                         },
+                                       "sleep":  {
+                                                     "type":  "float",
+                                                     "default":  0.02
+                                                 }
+                                   },
+                        "journaling":  {
+                                           "emit_counts":  [
+                                                               "unknown_seen_in_town",
+                                                               "cache_hit",
+                                                               "cache_miss",
+                                                               "arc_queries",
+                                                               "arc_hit",
+                                                               "arc_no_hit",
+                                                               "attached_via_arcgis",
+                                                               "arc_hit_no_spine_match",
+                                                               "no_num_or_core"
+                                                           ]
+                                       },
+                        "gates":  [
+                                      {
+                                          "gate_id":  "SCOPE_ONLY_UNKNOWN",
+                                          "rule":  "Only mutate events where attach.status == UNKNOWN and town matches param.town"
+                                      },
+                                      {
+                                          "gate_id":  "ARC_HIT_NO_SPINE_MATCH_LOW",
+                                          "rule":  "If arc_hit_no_spine_match spikes, block promotion"
+                                      },
+                                      {
+                                          "gate_id":  "EVIDENCE_REQUIRED",
+                                          "rule":  "If attached_via_arcgis \u003e 0 then evidence.arcgis.MAP_PAR_ID must exist"
+                                      }
+                                  ]
+                    }
+                ]
+}

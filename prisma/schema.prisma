@@ -1,0 +1,214 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/**
+ * ────────────────────────────────────────────────
+ * WAVE 1 — Core Identity Models
+ * Users + Roles + Profiles
+ * ────────────────────────────────────────────────
+ */
+
+enum Role {
+  HOMEOWNER
+  AGENT
+  CONTRACTOR
+  SUBCONTRACTOR
+  ADMIN
+}
+
+model User {
+  id       Int     @id @default(autoincrement())
+  email    String  @unique
+  password String
+  name     String
+  phone    String?
+  role     Role    @default(HOMEOWNER)
+
+  homeownerProfile     HomeownerProfile?
+  agentProfile         AgentProfile?
+  contractorProfile    ContractorProfile?
+  subcontractorProfile SubcontractorProfile?
+
+  properties    Property[]
+  estimates     HomeValueEstimate[]
+  renoEstimates RenovationEstimate[]
+  cmaReports    CMAReport[]
+
+  savedProperties SavedProperty[]
+  savedSearches   SavedSearch[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+/**
+ * ────────────────────────────────────────────────
+ * PROFILES
+ * ────────────────────────────────────────────────
+ */
+
+model HomeownerProfile {
+  id      Int     @id @default(autoincrement())
+  userId  Int     @unique
+  address String?
+  city    String?
+  state   String?
+  zip     String?
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+model AgentProfile {
+  id        Int     @id @default(autoincrement())
+  userId    Int     @unique
+  licenseId String?
+  brokerage String?
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+model ContractorProfile {
+  id            Int     @id @default(autoincrement())
+  userId        Int     @unique
+  companyName   String?
+  trade         String?
+  serviceRadius Int?
+  licenseNumber String?
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+model SubcontractorProfile {
+  id     Int     @id @default(autoincrement())
+  userId Int     @unique
+  trade  String?
+  skills String?
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+/**
+ * ────────────────────────────────────────────────
+ * WAVE 2 — Real Estate Models
+ * Properties, Estimates, CMA Reports
+ * ────────────────────────────────────────────────
+ */
+
+// Property type for valuation engine
+enum PropertyType {
+  SINGLE_FAMILY
+  MULTI_FAMILY
+  CONDO
+}
+
+model Property {
+  id           Int          @id @default(autoincrement())
+  ownerId      Int
+  address      String
+  city         String
+  state        String
+  zip          String
+  propertyType PropertyType
+  beds         Int
+  baths        Float
+  sqft         Int
+  yearBuilt    Int?
+  lotSize      Int?
+  style        String?
+  garage       String?
+
+  owner User @relation(fields: [ownerId], references: [id])
+
+  valuations   HomeValueEstimate[]
+  reno         RenovationEstimate[]
+  cmaReports   CMAReport[] // <-- ADD MISSING BACK-RELATION
+  savedByUsers SavedProperty[] // <-- ADD MISSING BACK-RELATION
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model HomeValueEstimate {
+  id         Int @id @default(autoincrement())
+  propertyId Int
+  userId     Int
+
+  estimatedValue Int
+  lowEstimate    Int
+  highEstimate   Int
+  confidence     Int
+
+  rawJson Json
+
+  property Property @relation(fields: [propertyId], references: [id])
+  user     User     @relation(fields: [userId], references: [id])
+
+  createdAt DateTime @default(now())
+}
+
+model RenovationEstimate {
+  id         Int @id @default(autoincrement())
+  propertyId Int
+  userId     Int
+
+  renovationType String
+  estimatedCost  Int
+  contractorBid  Int?
+  notes          String?
+
+  property Property @relation(fields: [propertyId], references: [id])
+  user     User     @relation(fields: [userId], references: [id])
+
+  createdAt DateTime @default(now())
+}
+
+model CMAReport {
+  id         Int @id @default(autoincrement())
+  userId     Int
+  propertyId Int
+
+  compsJson   Json
+  summaryJson Json
+
+  pdfUrl String?
+
+  user     User     @relation(fields: [userId], references: [id])
+  property Property @relation(fields: [propertyId], references: [id])
+
+  createdAt DateTime @default(now())
+}
+
+/**
+ * ────────────────────────────────────────────────
+ * SAVED SEARCHES & FAVORITES
+ * ────────────────────────────────────────────────
+ */
+
+model SavedProperty {
+  id         Int @id @default(autoincrement())
+  userId     Int
+  propertyId Int
+
+  user     User     @relation(fields: [userId], references: [id])
+  property Property @relation(fields: [propertyId], references: [id])
+
+  createdAt DateTime @default(now())
+}
+
+model SavedSearch {
+  id     Int  @id @default(autoincrement())
+  userId Int
+  query  Json
+
+  user User @relation(fields: [userId], references: [id])
+
+  createdAt DateTime @default(now())
+}

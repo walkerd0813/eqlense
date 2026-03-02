@@ -1,0 +1,327 @@
+#!/usr/bin/env python3
+"""
+Market Radar Layer B (DEEDS) ZIP rollup v0_1
+- Streams NDJSON
+- County-generic
+- Two-pass join: collects property_ids from deeds, then scans property spine to fetch (zip, asset_bucket)
+- Outputs Market Radar Core Metrics envelope rows for: geo(zip) x asset_bucket x window(7/30/90/365)
+
+Inputs:
+  --deeds   : CURRENT_*_DEEDS_ARMSLEN.ndjson (events, attached to property_id)
+  --spine   : properties spine NDJSON that contains zip + asset_bucket (your v1_3_FALLBACKS output is fine)
+Outputs:
+  --out     : NDJSON rollup
+  --audit   : JSON audit summary
+"""
+
+import argparse
+import datetime as dt
+import json
+import math
+from collections import defaultdict
+
+WINDOWS = [7, 30, 90, 365]
+
+def parse_date_iso(d):
+    if not d:
+        return None
+    # accept "YYYY-MM-DD" or full ISO
+    try:
+        if len(d) >= 10 and d[4] == "-" and d[7] == "-":
+            return dt.date.fromisoformat(d[:10])
+    except Exception:
+        return None
+    return None
+
+def ndjson_iter(path):
+    with open(path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            yield json.loads(line)
+
+def safe_int(x):
+    try:
+        if x is None:
+            return None
+        if isinstance(x, bool):
+            return None
+        if isinstance(x, (int,)):
+            return int(x)
+        if isinstance(x, float):
+            if math.isnan(x):
+                return None
+            return int(x)
+        s = str(x).strip().replace(",", "")
+        if s == "":
+            return None
+        return int(float(s))
+    except Exception:
+        return None
+
+def median(lst):
+    if not lst:
+        return None
+    s = sorted(lst)
+    n = len(s)
+    mid = n // 2
+    if n % 2 == 1:
+        return float(s[mid])
+    return (float(s[mid - 1]) + float(s[mid])) / 2.0
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--deeds", required=True, help="Deeds NDJSON (armslen enriched), attached to property_id")
+    ap.add_argument("--spine", required=True, help="Property spine NDJSON (must contain property_id, zip, asset_bucket)")
+    ap.add_argument("--out", required=True)
+    ap.add_argument("--audit", required=True)
+    ap.add_argument("--as_of", default=None, help="YYYY-MM-DD; default=today UTC")
+    ap.add_argument("--state", default="MA")
+    ap.add_argument("--county", default=None, help="Optional label override (e.g. hampden)")
+    args = ap.parse_args()
+
+    as_of = dt.date.today() if not args.as_of else dt.date.fromisoformat(args.as_of)
+
+    # Pass 1: collect property_ids present in deeds (attached only)
+    prop_ids = set()
+    deeds_rows = 0
+    deeds_attached = 0
+    deeds_missing_property_id = 0
+
+    for ev in ndjson_iter(args.deeds):
+        deeds_rows += 1
+        pid = ev.get("property_id") or (ev.get("attach") or {}).get("property_id")
+        attach_status = ev.get("attach_status") or (ev.get("attach") or {}).get("status") or (ev.get("attach") or {}).get("attach_status")
+        if not pid:
+            deeds_missing_property_id += 1
+            continue
+        # Only keep those actually attached to a property_id (A/B/PARTIAL_MULTI still has pid sometimes)
+        if attach_status in ("ATTACHED_A", "ATTACHED_B"):
+            deeds_attached += 1
+            prop_ids.add(pid)
+
+    # Pass 2: scan spine and build small lookup only for these pids
+    # lookup: property_id -> (zip, asset_bucket)
+    lookup = {}
+    spine_rows = 0
+    spine_hits = 0
+    spine_missing_zip = 0
+    spine_missing_bucket = 0
+
+    for row in ndjson_iter(args.spine):
+        spine_rows += 1
+        pid = row.get("property_id")
+        if not pid or pid not in prop_ids:
+            continue
+
+        z = row.get("zip") or (row.get("address") or {}).get("zip") or (row.get("property_ref") or {}).get("zip")
+        b = row.get("asset_bucket") or row.get("assetBucket") or (row.get("asset") or {}).get("bucket")
+
+        if not z:
+            spine_missing_zip += 1
+            continue
+        if not b:
+            spine_missing_bucket += 1
+            # still keep, but UNKNOWN bucket
+            b = "UNKNOWN"
+
+        lookup[pid] = (str(z).zfill(5), str(b))
+        spine_hits += 1
+
+        if spine_hits >= len(prop_ids):
+            # we found all pids
+            break
+
+    # Pass 3: roll up deeds by zip x bucket x window
+    # key: (zip, bucket, window_days) -> counters and consideration lists
+    counts = defaultdict(lambda: {
+        "transfers_total": 0,
+        "transfers_arms_length": 0,
+        "transfers_non_arms_length": 0,
+        "transfers_unknown": 0,
+        "sum_consideration_arms_length": 0,
+        "cons_list_arms": []
+    })
+
+    considered_events = 0
+    skipped_no_lookup = 0
+    skipped_no_date = 0
+
+    for ev in ndjson_iter(args.deeds):
+        pid = ev.get("property_id") or (ev.get("attach") or {}).get("property_id")
+        if not pid:
+            continue
+        attach_status = ev.get("attach_status") or (ev.get("attach") or {}).get("status") or (ev.get("attach") or {}).get("attach_status")
+        if attach_status not in ("ATTACHED_A", "ATTACHED_B"):
+            continue
+
+        pair = lookup.get(pid)
+        if not pair:
+            skipped_no_lookup += 1
+            continue
+        zip5, bucket = pair
+
+        rec = ev.get("recording") or {}
+        rec_date = parse_date_iso(rec.get("recording_date") or rec.get("recordingDate") or rec.get("date"))
+        if not rec_date:
+            skipped_no_date += 1
+            continue
+
+        # arms length class (your classifier writes arms_length)
+        al = ev.get("arms_length") or {}
+        al_class = al.get("class") or al.get("arms_length_class")
+        if not al_class:
+            al_class = "UNKNOWN"
+
+        # consideration amount (already normalized in your headers pack)
+        cons = ev.get("consideration") or {}
+        cons_amt = cons.get("amount")
+        cons_amt = safe_int(cons_amt)
+
+        # For each time window this event falls into
+        age_days = (as_of - rec_date).days
+        if age_days < 0:
+            continue
+
+        for w in WINDOWS:
+            if age_days <= w:
+                key = (zip5, bucket, w)
+                counts[key]["transfers_total"] += 1
+                if al_class == "ARMS_LENGTH":
+                    counts[key]["transfers_arms_length"] += 1
+                    if cons_amt is not None and cons_amt >= 0:
+                        counts[key]["sum_consideration_arms_length"] += cons_amt
+                        # store for median on small counties; safe for Hampden
+                        counts[key]["cons_list_arms"].append(cons_amt)
+                elif al_class == "NON_ARMS_LENGTH":
+                    counts[key]["transfers_non_arms_length"] += 1
+                else:
+                    counts[key]["transfers_unknown"] += 1
+
+                considered_events += 1
+
+    # Emit output rows
+    wrote = 0
+    distinct_keys = 0
+
+    # universe size for turnover rate: we can only do 12m turnover if we have property stock by (zip,bucket)
+    # v0_1: we use lookup sample counts as observed universe (conservative) and leave turnover_rate_12m null.
+    # We'll upgrade later to a true parcel universe rollup using the full property spine.
+    now_utc = dt.datetime.now(dt.timezone.utc).isoformat().replace("+00:00", "Z")
+
+    with open(args.out, "w", encoding="utf-8") as out:
+        for (zip5, bucket, w), c in counts.items():
+            distinct_keys += 1
+
+            cons_list = c["cons_list_arms"]
+            med_cons = median(cons_list)
+
+            arms = c["transfers_arms_length"]
+            total = c["transfers_total"]
+            arms_share = (arms / total) if total else None
+
+            row = {
+                "schema": {"name": "market_radar_core_metrics", "version": "v1_0"},
+                "geo": {
+                    "level": "zip",
+                    "id": zip5,
+                    "state": args.state,
+                    "county": args.county,
+                    "city": None,
+                    "zip": zip5
+                },
+                "asset": {
+                    "bucket": bucket,
+                    "source": "assessor",
+                    "confidence": "B"
+                },
+                "window": {
+                    "as_of_date": as_of.isoformat(),
+                    "window_days": w,
+                    "start_date": (as_of - dt.timedelta(days=w)).isoformat(),
+                    "end_date": as_of.isoformat()
+                },
+                "provenance": {
+                    "layer": "DEEDS",
+                    "inputs": [
+                        {"name": "registry_deeds_armslen", "as_of_date": as_of.isoformat()}
+                    ]
+                },
+                "coverage": {
+                    "expected_universe": {"properties_total": None},
+                    "observed": {"deed_rows": total, "arms_length_rows": arms},
+                    "notes": [],
+                    "confidence_score": None
+                },
+                "metrics": {
+                    "mls": {},
+                    "deeds": {
+                        "counts": {
+                            "transfers_total": total,
+                            "transfers_arms_length": arms,
+                            "transfers_non_arms_length": c["transfers_non_arms_length"],
+                            "transfers_unknown": c["transfers_unknown"]
+                        },
+                        "pricing": {
+                            "median_consideration_arms_length": med_cons,
+                            "sum_consideration_arms_length": c["sum_consideration_arms_length"],
+                            "p25_consideration_arms_length": None,
+                            "p75_consideration_arms_length": None
+                        },
+                        "rates": {
+                            "turnover_rate_12m": None,
+                            "arms_length_share": arms_share
+                        }
+                    },
+                    "unified": {}
+                },
+                "flags": [],
+                "created_at_utc": now_utc
+            }
+
+            out.write(json.dumps(row, ensure_ascii=False) + "\n")
+            wrote += 1
+
+    audit = {
+        "created_at_utc": now_utc,
+        "as_of_date": as_of.isoformat(),
+        "windows": WINDOWS,
+        "inputs": {
+            "deeds": args.deeds,
+            "spine": args.spine
+        },
+        "pass1": {
+            "deeds_rows": deeds_rows,
+            "deeds_attached_AorB": deeds_attached,
+            "deeds_missing_property_id": deeds_missing_property_id,
+            "unique_property_ids": len(prop_ids)
+        },
+        "pass2": {
+            "spine_rows_scanned": spine_rows,
+            "lookup_hits": spine_hits,
+            "lookup_size": len(lookup),
+            "spine_missing_zip": spine_missing_zip,
+            "spine_missing_bucket": spine_missing_bucket
+        },
+        "pass3": {
+            "events_counted_into_windows": considered_events,
+            "skipped_no_lookup": skipped_no_lookup,
+            "skipped_no_recording_date": skipped_no_date
+        },
+        "output": {
+            "out": args.out,
+            "rows_written": wrote,
+            "distinct_zip_bucket_window": distinct_keys
+        }
+    }
+
+    with open(args.audit, "w", encoding="utf-8") as f:
+        json.dump(audit, f, indent=2)
+
+    print("[done] wrote:", args.out)
+    print("[done] audit:", args.audit)
+    print("rows_written:", wrote, "distinct_keys:", distinct_keys)
+
+if __name__ == "__main__":
+    main()

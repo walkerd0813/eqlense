@@ -1,0 +1,20 @@
+{
+  "condos.json": {
+    "total": 9997,
+    "withLatLng": 0,
+    "missingLatLng": 9997,
+    "percentGood": "0.00%"
+  },
+  "multiFamily.json": {
+    "total": 5432,
+    "withLatLng": 4934,
+    "missingLatLng": 498,
+    "percentGood": "90.83%"
+  },
+  "singleFamily.json": {
+    "total": 9977,
+    "withLatLng": 9193,
+    "missingLatLng": 784,
+    "percentGood": "92.14%"
+  }
+}

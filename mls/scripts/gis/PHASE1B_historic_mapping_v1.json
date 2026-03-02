@@ -1,0 +1,55 @@
+{
+  "version": "v1",
+  "conservative": true,
+  "enforceable": {
+    "match_any": [
+      "blc_historic_districts",
+      "blc_historic_districts_and_protection_areas",
+      "local_historic_districts",
+      "historical_districts",
+      "neighborhood_conservation_districts",
+      "historic_preservation_overlay"
+    ],
+    "designation_type": "local",
+    "default_regulatory_body": "local commission",
+    "city_regulatory_body": {
+      "boston": "BLC"
+    },
+    "default_review_required_flag": true,
+    "default_exterior_change_review_flag": null,
+    "default_demolition_restricted_flag": null,
+    "name_fields": [
+      "district_name",
+      "DISTRICT",
+      "DISTRICT_N",
+      "HD_NAME",
+      "HISTDIST",
+      "NAME",
+      "Name",
+      "name",
+      "TITLE",
+      "Title"
+    ]
+  },
+  "inventory": {
+    "match_any": [
+      "historic_property_significance",
+      "historic_property_status"
+    ],
+    "default_inventory_source": "city_gis",
+    "significance_fields": [
+      "historic_significance_level",
+      "significance_level",
+      "SIGNIFICANCE",
+      "LEVEL",
+      "STATUS",
+      "CLASS",
+      "RATING"
+    ],
+    "source_fields": [
+      "inventory_source",
+      "SOURCE",
+      "source"
+    ]
+  }
+}

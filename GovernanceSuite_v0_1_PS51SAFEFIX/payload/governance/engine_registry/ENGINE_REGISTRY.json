@@ -1,0 +1,41 @@
+{
+  "schema": "equity_lens.engine_registry.v0_1",
+  "generated_at": "2026-01-11T16:28:20Z",
+  "engines": [
+    {
+      "engine_id": "market_radar.res_1_4_v1",
+      "name": "Market Radar \u2014 Residential (1\u20134)",
+      "status": "active",
+      "owner": "pro",
+      "inputs": {
+        "required_artifacts": [
+          "publicData/marketRadar/CURRENT/CURRENT_MARKET_RADAR_POINTERS_RES_1_4.json"
+        ],
+        "optional_artifacts": []
+      },
+      "gates": {
+        "required": [
+          "gate.core.current_pointer_required",
+          "gate.policy.radar_tracks_separate"
+        ],
+        "optional": [
+          "gate.qa.asof_date_present"
+        ]
+      },
+      "outputs": [
+        {
+          "artifact_key": "market_radar_res_1_4_pointers",
+          "current_pointer": "publicData/marketRadar/CURRENT/CURRENT_MARKET_RADAR_POINTERS_RES_1_4.json",
+          "requires_manifest": false
+        }
+      ],
+      "acceptance_tests": [
+        "test.registry.pointer_json_valid"
+      ],
+      "promotion_policy": {
+        "allow_candidate_outputs": true,
+        "promote_only_if_tests_pass": true
+      }
+    }
+  ]
+}

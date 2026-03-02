@@ -1,0 +1,530 @@
+﻿#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Phase 5 (Hampden) - AXIS2 reattach for candidates >=10k
+v1_22: structured keying by (town + street_no + street_name + unit_norm),
+      with deterministic normalization and strict uniqueness gating.
+
+Rules:
+- NO fuzzy / nearest / best-guess.
+- Attach only if key resolves to exactly 1 property_id.
+- Collisions remain UNKNOWN unless unit-specific key becomes unique.
+- NO_NUM remains UNKNOWN unless street_no can be deterministically recovered from
+  property_ref.address_norm.street_no_fix.before (clear integer).
+
+Inputs:
+- axis2 candidates NDJSON (events)
+- statewide property spine NDJSON (Phase4 canonical + unknown classification)
+
+Outputs:
+- NDJSON with updated attach block (does not rewrite event schema)
+- Audit JSON with bucket counts + small samples
+
+"""
+
+import argparse
+import json
+import os
+import re
+import hashlib
+from collections import defaultdict, Counter
+from datetime import datetime
+
+# -------------------------
+# Normalization helpers
+# -------------------------
+
+SUFFIX_MAP = {
+    "TERR": "TERR", "TER": "TERR", "TERRACE": "TERR",
+    "CIR": "CIR", "CIRCLE": "CIR",
+    "CT": "CT", "COURT": "CT",
+    "AVE": "AVE", "AVENUE": "AVE",
+    "ST": "ST", "STREET": "ST",
+    "RD": "RD", "ROAD": "RD",
+    "DR": "DR", "DRIVE": "DR",
+    "LN": "LN", "LANE": "LN",
+    "LA": "LN",
+    "BLVD": "BLVD", "BOULEVARD": "BLVD",
+    "PL": "PL", "PLACE": "PL",
+}
+
+DIR_MAP = {"NORTH":"N","SOUTH":"S","EAST":"E","WEST":"W","N":"N","S":"S","E":"E","W":"W"}
+
+UNIT_PAT = re.compile(r"\b(?:UNIT|APT|APARTMENT|#)\s*([A-Z0-9\-]+)\b", re.I)
+
+# Keep this conservative: only fix obvious punctuation/spacing, not fuzzy spelling.
+def norm_tokens(s: str) -> str:
+    if not s:
+        return ""
+    s = s.upper().strip()
+    s = re.sub(r"[.,;:]", " ", s)
+    s = re.sub(r"\s+", " ", s).strip()
+    return s
+
+def norm_unit(u: str) -> str:
+    u = norm_tokens(u)
+    u = u.replace(" ", "")
+    return u
+
+def norm_street_name(raw_street: str) -> str:
+    """
+    Deterministic street normalization:
+    - uppercase
+    - collapse whitespace/punct
+    - directional tokens canonicalized (only if tokenized)
+    - suffix canonicalization (last token only)
+    """
+    s = norm_tokens(raw_street)
+    if not s:
+        return ""
+
+    toks = s.split(" ")
+
+    # canonicalize any standalone directional token(s)
+    toks2 = []
+    for t in toks:
+        if t in DIR_MAP:
+            toks2.append(DIR_MAP[t])
+        else:
+            toks2.append(t)
+    toks = toks2
+
+    # suffix canonicalization (last token only)
+    if toks:
+        last = toks[-1]
+        if last in SUFFIX_MAP:
+            toks[-1] = SUFFIX_MAP[last]
+
+    return " ".join(toks).strip()
+
+def parse_event_address(addr_raw: str):
+    """
+    Parse event address into:
+      street_no (int or None),
+      street_name_norm (str),
+      unit_norm (str or "")
+    Deterministic parsing only.
+    """
+    s = norm_tokens(addr_raw)
+
+    unit = ""
+    m = UNIT_PAT.search(s)
+    if m:
+        unit = norm_unit(m.group(1))
+        # remove the unit expression from street string to avoid contaminating tokens
+        s = UNIT_PAT.sub(" ", s)
+        s = re.sub(r"\s+", " ", s).strip()
+
+    # street number: first integer token
+    street_no = None
+    m2 = re.match(r"^\s*(\d+)\s+(.*)$", s)
+    if m2:
+        try:
+            n = int(m2.group(1))
+            if n > 0:
+                street_no = n
+        except Exception:
+            street_no = None
+        street_part = m2.group(2).strip()
+    else:
+        street_part = s
+
+    street_name_norm = norm_street_name(street_part)
+
+    return street_no, street_name_norm, unit
+
+def recover_street_no_from_street_no_fix(evt: dict):
+    """
+    Only allow recovery if property_ref.address_norm.street_no_fix.before
+    yields a clear integer (no ranges, no letters, no ambiguity).
+
+    NOTE: Some events may store property_ref.address_norm as a string.
+    This function is strict: if types don't match expected dicts, it returns None.
+    """
+    pr = evt.get("property_ref") or {}
+    an = pr.get("address_norm")
+
+    # address_norm must be a dict to look inside it
+    if not isinstance(an, dict):
+        return None
+
+    snf = an.get("street_no_fix")
+
+    # street_no_fix must be a dict
+    if not isinstance(snf, dict):
+        return None
+
+    before = snf.get("before")
+    if before is None:
+        return None
+
+    # accept int-like strings only
+    if isinstance(before, int):
+        return before if before > 0 else None
+    if isinstance(before, str):
+        b = before.strip()
+        if re.fullmatch(r"\d+", b):
+            n = int(b)
+            return n if n > 0 else None
+    return None# accept int-like strings only
+    if isinstance(before, int):
+        return before if before > 0 else None
+    if isinstance(before, str):
+        b = before.strip()
+        if re.fullmatch(r"\d+", b):
+            n = int(b)
+            return n if n > 0 else None
+    return None
+
+# -------------------------
+# Index building (town-filtered streaming)
+# -------------------------
+
+def keyA(town, no, street, unit):
+    return f"{town}|{no}|{street}|{unit}"
+
+def keyB(town, no, street):
+    return f"{town}|{no}|{street}"
+
+def keyC(town, street):
+    return f"{town}|{street}"
+
+def add_unique_index(idx: dict, k: str, pid: str):
+    """
+    Store either:
+      - a single property_id string
+      - or a special sentinel "__COLLISION__" if multiple
+    """
+    if not k:
+        return
+    cur = idx.get(k)
+    if cur is None:
+        idx[k] = pid
+    else:
+        if cur == pid:
+            return
+        idx[k] = "__COLLISION__"
+
+def build_indexes(spine_path: str, towns_needed: set):
+    idxA = {}
+    idxB = {}
+    idxC = {}
+
+    kept_rows = 0
+    keysA = keysB = keysC = 0
+
+    with open(spine_path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            r = json.loads(line)
+
+            town = norm_tokens(str(r.get("town") or ""))
+            if not town or town not in towns_needed:
+                continue
+
+            pid = r.get("property_id") or r.get("id") or ""
+            if not pid:
+                continue
+
+            # spine fields are flat (per your discovery)
+            street_no = r.get("street_no")
+            street_name = r.get("street_name") or ""
+            unit = r.get("unit") or ""
+
+            # only accept int street numbers
+            if isinstance(street_no, str) and re.fullmatch(r"\d+", street_no.strip()):
+                street_no = int(street_no.strip())
+            if not isinstance(street_no, int) or street_no <= 0:
+                # can't use A/B
+                street_no = None
+
+            street_norm = norm_street_name(str(street_name))
+            unit_norm = norm_unit(str(unit)) if unit else ""
+
+            kept_rows += 1
+
+            # Index A requires unit + street_no + street_name
+            if street_no is not None and street_norm and unit_norm:
+                add_unique_index(idxA, keyA(town, street_no, street_norm, unit_norm), pid)
+
+            # Index B requires street_no + street_name (unique only)
+            if street_no is not None and street_norm:
+                add_unique_index(idxB, keyB(town, street_no, street_norm), pid)
+
+            # Index C is street_name only (unique only; rarely used)
+            if street_norm:
+                add_unique_index(idxC, keyC(town, street_norm), pid)
+
+    # count unique keys (not collisions)
+    keysA = sum(1 for v in idxA.values() if v != "__COLLISION__")
+    keysB = sum(1 for v in idxB.values() if v != "__COLLISION__")
+    keysC = sum(1 for v in idxC.values() if v != "__COLLISION__")
+
+    return (idxA, idxB, idxC, {
+        "kept_rows": kept_rows,
+        "keysA_unique": keysA,
+        "keysB_unique": keysB,
+        "keysC_unique": keysC,
+        "keysA_total": len(idxA),
+        "keysB_total": len(idxB),
+        "keysC_total": len(idxC),
+    })
+
+# -------------------------
+# Attach logic
+# -------------------------
+
+def resolve(idx, k):
+    v = idx.get(k)
+    if v is None:
+        return (None, "NO_MATCH")
+    if v == "__COLLISION__":
+        return (None, "COLLISION")
+    return (v, "UNIQUE")
+
+def bucket_key(scope: str, status: str, reason: str, subreason: str):
+    return f"{scope}|{status}|{reason}|{subreason}"
+
+def sha256_file(path: str) -> str:
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1024*1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--events", required=True, help="axis2 candidates ndjson")
+    ap.add_argument("--spine", required=True, help="statewide spine ndjson")
+    ap.add_argument("--out", required=True, help="output ndjson")
+    ap.add_argument("--audit", required=True, help="audit json")
+    ap.add_argument("--max_samples", type=int, default=30)
+    args = ap.parse_args()
+
+    # 1) Load events (small enough) to collect towns_needed
+    events = []
+    towns_needed = set()
+
+    with open(args.events, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            e = json.loads(line)
+            events.append(e)
+
+            t = (e.get("town") or (e.get("property_ref") or {}).get("town") or "")
+            t = norm_tokens(str(t))
+            if t:
+                towns_needed.add(t)
+
+    # 2) Stream spine once, build structured indexes (town-filtered)
+    idxA, idxB, idxC, spine_stats = build_indexes(args.spine, towns_needed)
+
+    # 3) Attach
+    buckets = Counter()
+    samples = defaultdict(list)
+    attach_counts = Counter()
+
+    out_dir = os.path.dirname(os.path.abspath(args.out))
+    if out_dir and not os.path.exists(out_dir):
+        os.makedirs(out_dir, exist_ok=True)
+
+    with open(args.out, "w", encoding="utf-8") as w:
+        for e in events:
+            evt_id = e.get("event_id") or ""
+            town = norm_tokens(str(e.get("town") or (e.get("property_ref") or {}).get("town") or ""))
+
+            addr = (e.get("addr") or (e.get("property_ref") or {}).get("address_raw") or (e.get("property_ref") or {}).get("address") or "")
+            addr = str(addr)
+
+            street_no, street_norm, unit = parse_event_address(addr)
+
+            recovered = False
+            if street_no is None:
+                rec = recover_street_no_from_street_no_fix(e)
+                if isinstance(rec, int) and rec > 0:
+                    street_no = rec
+                    recovered = True
+
+            attach = {
+                "attach_scope": "AXIS2_GE10K_V1_22",
+                "attach_status": "UNKNOWN",
+                "attach_grade": None,
+                "attach_reason": None,
+                "attach_subreason": None,
+                "property_id": None,
+                "match_key": None,
+                "match_axis": None,
+                "parsed": {
+                    "town": town,
+                    "street_no": street_no,
+                    "street_name_norm": street_norm,
+                    "unit_norm": unit,
+                    "street_no_recovered": recovered,
+                },
+                "method": None,
+            }
+
+            # Missing essentials
+            if not town or not street_norm:
+                b = bucket_key("SINGLE", "UNKNOWN", "NO_MATCH", "MISSING_TOWN_OR_STREET")
+                buckets[b] += 1
+                attach["attach_reason"] = "NO_MATCH"
+                attach["attach_subreason"] = "MISSING_TOWN_OR_STREET"
+                e["attach"] = attach
+                w.write(json.dumps(e, ensure_ascii=False) + "\n")
+                continue
+
+            if street_no is None:
+                b = bucket_key("SINGLE", "UNKNOWN", "NO_NUM", "NO_NUM_RECOVERED" if recovered else "NO_NUM")
+                buckets[b] += 1
+                attach["attach_reason"] = "NO_NUM"
+                attach["attach_subreason"] = "NO_NUM_RECOVERED" if recovered else "NO_NUM"
+                e["attach"] = attach
+                w.write(json.dumps(e, ensure_ascii=False) + "\n")
+                continue
+
+            # Order:
+            # A if unit exists
+            if unit:
+                kA = keyA(town, street_no, street_norm, unit)
+                pid, why = resolve(idxA, kA)
+                if pid:
+                    attach["attach_status"] = "ATTACHED_A"
+                    attach["attach_grade"] = "A"
+                    attach["property_id"] = pid
+                    attach["match_key"] = kA
+                    attach["match_axis"] = "A"
+                    attach["method"] = "town|street_no|street_name|unit_norm"
+                    b = bucket_key("SINGLE", "ATTACHED", "A", "UNIT_KEY")
+                    buckets[b] += 1
+                    attach_counts["attached_a"] += 1
+                    e["attach"] = attach
+                    w.write(json.dumps(e, ensure_ascii=False) + "\n")
+                    continue
+                else:
+                    # collision or no match at A; continue to B
+                    if why == "COLLISION":
+                        buckets[bucket_key("SINGLE","UNKNOWN","COLLISION","A_COLLISION")] += 1
+                    else:
+                        buckets[bucket_key("SINGLE","UNKNOWN","NO_MATCH","A_NO_MATCH")] += 1
+
+            # B (no unit)
+            kB = keyB(town, street_no, street_norm)
+            pid, why = resolve(idxB, kB)
+            if pid:
+                attach["attach_status"] = "ATTACHED_A"
+                attach["attach_grade"] = "A"
+                attach["property_id"] = pid
+                attach["match_key"] = kB
+                attach["match_axis"] = "B"
+                attach["method"] = "town|street_no|street_name (unique)"
+                b = bucket_key("SINGLE", "ATTACHED", "A", "NO_UNIT_KEY")
+                buckets[b] += 1
+                attach_counts["attached_a"] += 1
+                e["attach"] = attach
+                w.write(json.dumps(e, ensure_ascii=False) + "\n")
+                continue
+            else:
+                if why == "COLLISION":
+                    # Only resolvable if unit was present and A succeeded (it didn't),
+                    # so remain UNKNOWN per rules.
+                    b = bucket_key("SINGLE","UNKNOWN","COLLISION","B_COLLISION")
+                    buckets[b] += 1
+                    attach["attach_reason"] = "COLLISION"
+                    attach["attach_subreason"] = "B_COLLISION"
+                else:
+                    b = bucket_key("SINGLE","UNKNOWN","NO_MATCH","B_NO_MATCH")
+                    buckets[b] += 1
+                    attach["attach_reason"] = "NO_MATCH"
+                    attach["attach_subreason"] = "B_NO_MATCH"
+
+            # C (street-only) — only if unique
+            kC = keyC(town, street_norm)
+            pid, why = resolve(idxC, kC)
+            if pid:
+                attach["attach_status"] = "ATTACHED_B"
+                attach["attach_grade"] = "B"
+                attach["property_id"] = pid
+                attach["match_key"] = kC
+                attach["match_axis"] = "C"
+                attach["method"] = "town|street_name (unique-only, rare)"
+                b = bucket_key("SINGLE", "ATTACHED", "B", "STREET_ONLY_UNIQUE")
+                buckets[b] += 1
+                attach_counts["attached_b"] += 1
+            else:
+                if why == "COLLISION":
+                    b = bucket_key("SINGLE","UNKNOWN","COLLISION","C_COLLISION")
+                    buckets[b] += 1
+                    attach["attach_reason"] = "COLLISION"
+                    attach["attach_subreason"] = "C_COLLISION"
+                else:
+                    b = bucket_key("SINGLE","UNKNOWN","NO_MATCH","C_NO_MATCH")
+                    buckets[b] += 1
+                    attach["attach_reason"] = attach.get("attach_reason") or "NO_MATCH"
+                    attach["attach_subreason"] = attach.get("attach_subreason") or "C_NO_MATCH"
+
+            # sample capture for unknowns
+            if attach["attach_status"].startswith("UNKNOWN"):
+                bkey = bucket_key("SINGLE","UNKNOWN", attach["attach_reason"] or "UNKNOWN", attach["attach_subreason"] or "UNKNOWN")
+                if len(samples[bkey]) < args.max_samples:
+                    samples[bkey].append({
+                        "event_id": evt_id,
+                        "town": town,
+                        "addr": addr,
+                        "parsed": attach["parsed"],
+                        "reason": attach["attach_reason"],
+                        "subreason": attach["attach_subreason"],
+                    })
+
+            e["attach"] = attach
+            w.write(json.dumps(e, ensure_ascii=False) + "\n")
+
+    # 4) Audit
+    audit = {
+        "run": {
+            "script": "hampden_axis2_reattach_axis2_ge10k_v1_22.py",
+            "version": "v1_22",
+            "ran_at": datetime.utcnow().isoformat() + "Z",
+        },
+        "inputs": {
+            "events_path": args.events,
+            "spine_path": args.spine,
+            "events_sha256": sha256_file(args.events) if os.path.exists(args.events) else None,
+            "spine_sha256": sha256_file(args.spine) if os.path.exists(args.spine) else None,
+        },
+        "stats": {
+            "events": len(events),
+            "attached_a": int(attach_counts["attached_a"]),
+            "attached_b": int(attach_counts["attached_b"]),
+            "unknown": int(len(events) - attach_counts["attached_a"] - attach_counts["attached_b"]),
+        },
+        "spine_index": spine_stats,
+        "buckets": dict(buckets.most_common()),
+        "samples": dict(samples),
+    }
+
+    audit_dir = os.path.dirname(os.path.abspath(args.audit))
+    if audit_dir and not os.path.exists(audit_dir):
+        os.makedirs(audit_dir, exist_ok=True)
+
+    with open(args.audit, "w", encoding="utf-8") as f:
+        json.dump(audit, f, ensure_ascii=False, indent=2)
+
+    print("[done] v1_22")
+    print("  events:", len(events))
+    print("  attached_a:", attach_counts["attached_a"])
+    print("  attached_b:", attach_counts["attached_b"])
+    print("  unknown:", len(events) - attach_counts["attached_a"] - attach_counts["attached_b"])
+    print("  spine kept_rows:", spine_stats["kept_rows"])
+    print("  keysA unique:", spine_stats["keysA_unique"], "total:", spine_stats["keysA_total"])
+    print("  keysB unique:", spine_stats["keysB_unique"], "total:", spine_stats["keysB_total"])
+    print("  keysC unique:", spine_stats["keysC_unique"], "total:", spine_stats["keysC_total"])
+
+if __name__ == "__main__":
+    main()
+
+

@@ -1,0 +1,15 @@
+{
+  "root": ".",
+  "properties_in_ndjson": null,
+  "properties_current_ptr": "publicData/properties/_attached/phase4_assessor_global/CURRENT_PROPERTIES_WITH_ASSESSOR_GLOBAL_BEST.json",
+  "output": {
+    "out_dir": "publicData/properties/_attached/phase4_assessor_global_best_taxfy",
+    "current_ptr": "publicData/properties/_attached/phase4_assessor_global_best_taxfy/CURRENT_PROPERTIES_WITH_ASSESSOR_BEST_TAXFY_PROVENANCE.json",
+    "audit_dir": "publicData/_audit/phase4_assessor"
+  },
+  "options": {
+    "rename_assessment_year_to_tax_fy": true,
+    "keep_assessment_year_copy": true,
+    "add_semantics_note": true
+  }
+}

@@ -1,0 +1,229 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "equity_lens.schemas.system.global_diagnostic_event.v0_1",
+  "title": "Equity Lens Global Diagnostic Event",
+  "description": "Universal, engine-agnostic diagnostic contract emitted for failures/warnings/degradations across ingestion, attachment, engines, gates, UI, and self-healing.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "diagnostic_id",
+    "timestamp",
+    "severity",
+    "layer",
+    "engine",
+    "stage",
+    "failure_class",
+    "entity_type",
+    "entity_id",
+    "symptom"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "equity_lens.global_diagnostic_event.v0_1"
+    },
+    "diagnostic_id": {
+      "type": "string",
+      "minLength": 8
+    },
+    "timestamp": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "INFO",
+        "WARN",
+        "SOFT_FAIL",
+        "HARD_FAIL"
+      ]
+    },
+    "layer": {
+      "type": "string",
+      "enum": [
+        "INGESTION",
+        "ATTACHMENT",
+        "ENGINE",
+        "GATE",
+        "UI",
+        "SELF_HEAL",
+        "RECONCILIATION"
+      ]
+    },
+    "engine": {
+      "type": "string"
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "parse",
+        "normalize",
+        "attach",
+        "reconcile",
+        "aggregate",
+        "score",
+        "emit",
+        "promote",
+        "gate_check",
+        "ui_render",
+        "heal_attempt"
+      ]
+    },
+    "failure_class": {
+      "type": "string",
+      "enum": [
+        "MISSING_DATA",
+        "LOW_CONFIDENCE",
+        "CONFLICT",
+        "SCHEMA_MISMATCH",
+        "STALE_GATE",
+        "SOURCE_UNAVAILABLE",
+        "TIMEOUT",
+        "PERMISSION",
+        "UNSUPPORTED_BUCKET",
+        "INTEGRITY_VIOLATION",
+        "UNKNOWN_ERROR"
+      ]
+    },
+    "entity_type": {
+      "type": "string",
+      "enum": [
+        "parcel",
+        "property",
+        "deed",
+        "mortgage",
+        "permit",
+        "listing",
+        "document",
+        "zoning_district",
+        "overlay",
+        "zip",
+        "engine_run",
+        "artifact"
+      ]
+    },
+    "entity_id": {
+      "type": "string"
+    },
+    "symptom": {
+      "type": "string",
+      "minLength": 1
+    },
+    "root_causes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "cause_type",
+          "description"
+        ],
+        "properties": {
+          "cause_type": {
+            "type": "string",
+            "enum": [
+              "DATA",
+              "LOGIC",
+              "TIMING",
+              "SOURCE",
+              "CONFIG",
+              "ENVIRONMENT"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      },
+      "default": []
+    },
+    "attempted_fixes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "strategy",
+          "result"
+        ],
+        "properties": {
+          "strategy": {
+            "type": "string"
+          },
+          "result": {
+            "type": "string",
+            "enum": [
+              "SUCCESS",
+              "FAILED",
+              "SKIPPED"
+            ]
+          },
+          "confidence_change": {
+            "type": "number"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      },
+      "default": []
+    },
+    "recommended_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "block_status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "is_blocking"
+      ],
+      "properties": {
+        "is_blocking": {
+          "type": "boolean"
+        },
+        "gate_id": {
+          "type": "string"
+        },
+        "override_allowed": {
+          "type": "boolean",
+          "default": false
+        },
+        "override_reason_required": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "confidence_impact": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "before": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "after": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

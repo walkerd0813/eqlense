@@ -1,0 +1,51 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "build:comps": "node buildComps.js",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.51.1",
+    "@prisma/client": "^6.7.0",
+    "@turf/bbox": "^7.3.1",
+    "@turf/boolean-point-in-polygon": "^7.3.1",
+    "@turf/distance": "^7.3.1",
+    "@turf/helpers": "^7.3.1",
+    "@turf/turf": "^7.3.0",
+    "axios": "^1.13.2",
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.3",
+    "chokidar": "^5.0.0",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.2.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^9.0.1",
+    "multer": "^2.0.2",
+    "node-fetch": "^3.3.2",
+    "playwright": "^1.57.0",
+    "point-in-polygon": "^1.1.0",
+    "prisma": "^6.7.0",
+    "proj4": "^2.20.2",
+    "rbush": "^4.0.1",
+    "robust-point-in-polygon": "^1.0.3",
+    "shapefile": "^0.6.6",
+    "sharp": "^0.34.5",
+    "shpjs": "^6.2.0",
+    "stream-json": "^1.9.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1"
+  }
+}

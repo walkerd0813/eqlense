@@ -1,0 +1,9 @@
+{
+    "created_at_utc":  "2026-01-18T00:30:04Z",
+    "schema":  {
+                   "version":  "v1",
+                   "name":  "equitylens.pointer"
+               },
+    "points_to":  "C:\\seller-app\\backend\\governance\\self_heal_catalog\\KNOWN_FAILURES.CLEAN_20260117_192925.ndjson",
+    "note":  "Canonical self-heal catalog (valid NDJSON only). Original KNOWN_FAILURES.ndjson left untouched."
+}

@@ -1,0 +1,18 @@
+{
+  "schema": "equity_lens.contracts.indicator_founder_guidance.ib1.v0_1",
+  "radar_track": "RES_1_4",
+  "as_of_date": "2026-01-10",
+  "state": "DRAFT",
+  "audience": "internal_founder",
+  "indicator_rules": {
+    "allowed_indicator_states": [
+      "OK",
+      "WATCH",
+      "ALERT",
+      "UNKNOWN"
+    ],
+    "unknown_policy": "UNKNOWN is first-class; never coerce to OK"
+  },
+  "indicator_copy": {},
+  "notes": "Template for indicator hover/help text for RES_1_4."
+}

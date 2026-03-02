@@ -1,0 +1,507 @@
+{
+  "version": "v1",
+  "as_of_default": "RUN_DATE",
+  "statewide": [
+    {
+      "layer_key": "ma_towns",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/_statewide/towns/Massachusetts_Municipalities.geojson",
+      "jurisdiction": "Massachusetts"
+    },
+    {
+      "layer_key": "ma_zipcodes",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/_statewide/zipcodes/zipcodes/ZIP_Codes.geojson",
+      "jurisdiction": "Massachusetts"
+    },
+    {
+      "layer_key": "ma_mbta_rapid",
+      "kind": "mixed",
+      "source_type": "file",
+      "path": "publicData/boundaries/_statewide/mbta/mbta/MBTA_Rapid_Transit_(Feature_Service).geojson",
+      "jurisdiction": "Massachusetts"
+    },
+    {
+      "layer_key": "ma_school_districts",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/schoolData/ccuv_districts.geojson",
+      "jurisdiction": "Massachusetts"
+    },
+    {
+      "layer_key": "ma_block_groups",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/blockGroupBoundaries.geojson",
+      "jurisdiction": "Massachusetts"
+    }
+  ],
+  "cities": [
+    {
+      "city": "Boston",
+      "layer_key": "boston_neighborhoods_admin",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/neighborhoodBoundaries.geojson"
+    },
+    {
+      "city": "Boston",
+      "layer_key": "boston_precincts",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/boston/neighborhoods/neighborhoods__precincts__7.geojson"
+    },
+    {
+      "city": "Boston",
+      "layer_key": "boston_wards",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/boston/neighborhoods/neighborhoods__wards__8.geojson"
+    },
+    {
+      "city": "Boston",
+      "layer_key": "boston_urban_renewal",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/zoning/boston/overlays/urban_renewal.geojson"
+    },
+    {
+      "city": "Boston",
+      "layer_key": "boston_trash_collection_days",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/boston/trash/trash_recycling__trash_collection_days__10.geojson"
+    },
+    {
+      "city": "Boston",
+      "layer_key": "boston_snow_emergency_routes",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/boston/snow/trash_recycling__snow_emergency_routes__7.geojson"
+    },
+    {
+      "city": "Boston",
+      "layer_key": "boston_fire_districts",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/boston/fire/Fire_Districts.geojson"
+    },
+    {
+      "city": "Boston",
+      "layer_key": "boston_police_districts",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/boston/police/Police_Districts.geojson"
+    },
+    {
+      "city": "Boston",
+      "layer_key": "boston_snow_emergency_parking",
+      "kind": "polygon",
+      "source_type": "shp",
+      "path": "publicData/boundaries/boston/snow/Snow_Emergency_Parking.shp",
+      "shp_hint_out": "publicData/boundaries/boston/snow/Snow_Emergency_Parking.geojson"
+    },
+    {
+      "city": "Boston",
+      "layer_key": "boston_main_street_districts",
+      "kind": "polygon",
+      "source_type": "shp",
+      "path": "publicData/boundaries/boston/transportation/Main_Street_Districts.shp",
+      "shp_hint_out": "publicData/boundaries/boston/transportation/Main_Street_Districts.geojson"
+    },
+    {
+      "city": "Boston",
+      "layer_key": "boston_street_sweeping_schedule",
+      "kind": "table",
+      "source_type": "file",
+      "path": "publicData/boundaries/boston/trash/Streetsweeping sch.csv",
+      "attach": false
+    },
+    {
+      "city": "Cambridge",
+      "layer_key": "cambridge_neighborhoods_cdd",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/cambridge/neighborhoods/BOUNDARY_CDDNeighborhoods.geojson"
+    },
+    {
+      "city": "Cambridge",
+      "layer_key": "cambridge_wards_precincts",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/cambridge/neighborhoods/neighborhoods__wards_precincts__7.geojson"
+    },
+    {
+      "city": "Cambridge",
+      "layer_key": "cambridge_snow_emergency_parking",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/cambridge/transportation/conservation__snow_emergency_off_street_parking__4.geojson"
+    },
+    {
+      "city": "Cambridge",
+      "layer_key": "cambridge_street_sweeping",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/cambridge/transportation/DPW_StreetSweepingDistricts.geojson"
+    },
+    {
+      "city": "Cambridge",
+      "layer_key": "cambridge_fire_stations",
+      "kind": "point",
+      "source_type": "file",
+      "path": "publicData/boundaries/cambridge/fire/PUBLICSAFETY_FireStations.geojson"
+    },
+    {
+      "city": "Cambridge",
+      "layer_key": "cambridge_health_clinics",
+      "kind": "point",
+      "source_type": "file",
+      "path": "publicData/boundaries/cambridge/health/HEALTH_HealthClinics.geojson"
+    },
+    {
+      "city": "Cambridge",
+      "layer_key": "cambridge_hospitals",
+      "kind": "point",
+      "source_type": "file",
+      "path": "publicData/boundaries/cambridge/health/HEALTH_Hospitals.geojson"
+    },
+    {
+      "city": "Cambridge",
+      "layer_key": "cambridge_spot_elevations",
+      "kind": "point",
+      "source_type": "file",
+      "path": "publicData/boundaries/cambridge/elevation/ELEVATION_SpotElevations.geojson",
+      "attach": false
+    },
+    {
+      "city": "Somerville",
+      "layer_key": "somerville_neighborhoods",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/somerville/neighborhoods/neighborhoods__neighborhoods__8.geojson"
+    },
+    {
+      "city": "Somerville",
+      "layer_key": "somerville_neighborhood_plan",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/somerville/neighborhoods/neighborhoods__neighborhood_plan_boundaries__9.geojson"
+    },
+    {
+      "city": "Somerville",
+      "layer_key": "somerville_precincts",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/somerville/neighborhoods/neighborhoods__precincts__4.geojson"
+    },
+    {
+      "city": "Somerville",
+      "layer_key": "somerville_wards",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/somerville/neighborhoods/neighborhoods__wards__3.geojson"
+    },
+    {
+      "city": "Somerville",
+      "layer_key": "somerville_neighboring_cities",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/somerville/neighborhoods/conservation__neighboring_cities__24.geojson",
+      "attach": false
+    },
+    {
+      "city": "Somerville",
+      "layer_key": "somerville_streets_lines",
+      "kind": "line",
+      "source_type": "file",
+      "path": "publicData/boundaries/somerville/transportation/Streets.geojson",
+      "attach": false
+    },
+    {
+      "city": "Somerville",
+      "layer_key": "somerville_trash_receptacles",
+      "kind": "point",
+      "source_type": "file",
+      "path": "publicData/boundaries/somerville/trash/TrashReceptacles.geojson"
+    },
+    {
+      "city": "Springfield",
+      "layer_key": "springfield_neighborhoods_1",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/springfield/neighborhoods/neighborhoods__springfield_gis_neighborhoods__1.geojson"
+    },
+    {
+      "city": "Springfield",
+      "layer_key": "springfield_neighborhoods_web",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/springfield/neighborhoods/neighborhoods__springfield__webgisdynamicmap__1.geojson"
+    },
+    {
+      "city": "Springfield",
+      "layer_key": "springfield_major_streets",
+      "kind": "line",
+      "source_type": "file",
+      "path": "publicData/boundaries/springfield/transportation/major_streets__springfield__webgisdynamicmap__28.geojson",
+      "attach": false
+    },
+    {
+      "city": "Springfield",
+      "layer_key": "springfield_urban_renewal_plans",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/zoning/springfield/overlays/urban_renewal_plans__springfield__webgisdynamicmap__36.geojson"
+    },
+    {
+      "city": "Waltham",
+      "layer_key": "waltham_neighborhoods",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/waltham/civic/neighborhoods.geojson"
+    },
+    {
+      "city": "Waltham",
+      "layer_key": "waltham_buildings",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/waltham/civic/buildings.geojson",
+      "attach": false
+    },
+    {
+      "city": "Quincy",
+      "layer_key": "quincy_neighborhoods",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/quincy/neighborhoods/neighborhoods__quincy__gdb__Neighborhoods.geojson"
+    },
+    {
+      "city": "Newton",
+      "layer_key": "newton_precincts",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/newton/neighborhoods/neighborhoods__precincts__16.geojson"
+    },
+    {
+      "city": "Newton",
+      "layer_key": "newton_villages",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/newton/civic/Villages.geojson"
+    },
+    {
+      "city": "Newton",
+      "layer_key": "newton_snow_plowing_routes",
+      "kind": "line",
+      "source_type": "file",
+      "path": "publicData/boundaries/newton/snow/Snow_Plowing_Routes.geojson",
+      "attach": false
+    },
+    {
+      "city": "Newton",
+      "layer_key": "newton_fire_stations",
+      "kind": "point",
+      "source_type": "file",
+      "path": "publicData/boundaries/newton/fire/Fire_Stations.geojson",
+      "attach": false
+    },
+    {
+      "city": "Newton",
+      "layer_key": "newton_conservation_restrictions",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/newton/conservation/Conservation_Restrictions.geojson"
+    },
+    {
+      "city": "Newton",
+      "layer_key": "newton_major_buildings",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/zoning/newton/overlays/conservation__major_buildings__16.geojson",
+      "attach": false
+    },
+    {
+      "city": "Newton",
+      "layer_key": "newton_blue_heron_trail",
+      "kind": "line",
+      "source_type": "file",
+      "path": "publicData/zoning/newton/overlays/conservation__blue_heron_trail__63.geojson",
+      "attach": false
+    },
+    {
+      "city": "Newton",
+      "layer_key": "newton_aqueduct_trails",
+      "kind": "line",
+      "source_type": "file",
+      "path": "publicData/zoning/newton/overlays/conservation__aqueduct_trails__73.geojson",
+      "attach": false
+    },
+    {
+      "city": "Newton",
+      "layer_key": "newton_accessible_trails",
+      "kind": "line",
+      "source_type": "file",
+      "path": "publicData/zoning/newton/overlays/conservation__accessible_trails__43.geojson",
+      "attach": false
+    },
+    {
+      "city": "Brookline",
+      "layer_key": "brookline_precincts_6",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/brookline/neighborhoods/neighborhoods__precincts__6.geojson"
+    },
+    {
+      "city": "Brookline",
+      "layer_key": "brookline_voting_precincts_15",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/brookline/neighborhoods/neighborhoods__voting_precincts__15.geojson"
+    },
+    {
+      "city": "Brookline",
+      "layer_key": "brookline_tmm_precincts",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/brookline/wards/TMM_Precincts.geojson"
+    },
+    {
+      "city": "Brookline",
+      "layer_key": "brookline_building_footprints_local",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/brookline/Building_Footprints.geojson",
+      "attach": false
+    },
+    {
+      "city": "Brookline",
+      "layer_key": "brookline_municipal_boundary_arcgis",
+      "kind": "polygon",
+      "source_type": "arcgis",
+      "url": "https://gisweb.brooklinema.gov/arcgis/rest/services/MyGov/GeneralPurpose/MapServer/21",
+      "out_path": "publicData/boundaries/brookline/civic/municipal_boundary__brookline__mygov__21.geojson"
+    },
+    {
+      "city": "Brookline",
+      "layer_key": "brookline_encumbrance_arcgis",
+      "kind": "polygon",
+      "source_type": "arcgis",
+      "url": "https://gisweb.brooklinema.gov/arcgis/rest/services/MyGov/GeneralPurpose/MapServer/15",
+      "out_path": "publicData/boundaries/brookline/civic/encumbrance__brookline__mygov__15.geojson",
+      "attach": false
+    },
+    {
+      "city": "Brookline",
+      "layer_key": "brookline_building_footprints_arcgis",
+      "kind": "polygon",
+      "source_type": "arcgis",
+      "url": "https://gisweb.brooklinema.gov/arcgis/rest/services/MyGov/GeneralPurpose/MapServer/9",
+      "out_path": "publicData/boundaries/brookline/civic/building_footprints__brookline__mygov__9.geojson",
+      "attach": false
+    },
+    {
+      "city": "CapeCod",
+      "layer_key": "capecod_chapter_h_boundaries",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/zoning/capecod/overlays/Cape_Cod_Chapter_H_Boundaries.geojson",
+      "is_regional": true
+    },
+    {
+      "city": "CapeCod",
+      "layer_key": "capecod_growth_incentive_zones",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/capecod/Cape_Cod_Growth_Incentive_Zones.geojson",
+      "is_regional": true
+    },
+    {
+      "city": "CapeCod",
+      "layer_key": "capecod_restoration_projects",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/capecod/Cape_Cod_Restoration_Projects.geojson",
+      "is_regional": true,
+      "attach": false
+    },
+    {
+      "city": "CapeCod",
+      "layer_key": "capecod_omp_prohibited_areas",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/capecod/OMP_Prohibited_Areas.geojson",
+      "is_regional": true
+    },
+    {
+      "city": "CapeCod",
+      "layer_key": "capecod_village_centers",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/capecod/Village_Centers.geojson",
+      "is_regional": true
+    },
+    {
+      "city": "Chelsea",
+      "layer_key": "chelsea_structures_view",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/chelsea/Chelsea_Structures_view.geojson",
+      "attach": false
+    },
+    {
+      "city": "Revere",
+      "layer_key": "revere_streets_lines",
+      "kind": "line",
+      "source_type": "file",
+      "path": "publicData/zoning/revere/overlays/conservation__revere_streets__0.geojson",
+      "attach": false
+    },
+    {
+      "city": "Dedham",
+      "layer_key": "dedham_municipal_boundaries",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/dedham/civic/Municipal_Boundaries.geojson"
+    },
+    {
+      "city": "Malden",
+      "layer_key": "malden_subprecincts",
+      "kind": "polygon",
+      "source_type": "file",
+      "path": "publicData/boundaries/malden/neighborhoods/neighborhoods__official_city_2020_subprecincts_v2e__2.geojson"
+    },
+    {
+      "city": "Worcester",
+      "layer_key": "worcester_street_name_table",
+      "kind": "mixed",
+      "source_type": "file",
+      "path": "publicData/boundaries/worcester/transportation/Street_Name_Table.geojson",
+      "attach": false
+    }
+  ],
+  "attach_defaults": {
+    "polygon": {
+      "method": "pip",
+      "confidence": "B"
+    },
+    "point": {
+      "method": "nearest_point",
+      "max_distance_m": 75,
+      "confidence": "C"
+    },
+    "line": {
+      "method": "nearest_line",
+      "max_distance_m": 25,
+      "confidence": "C"
+    }
+  },
+  "ma_bbox_sanity": {
+    "min_lat": 41.0,
+    "max_lat": 43.6,
+    "min_lon": -73.6,
+    "max_lon": -69.5
+  }
+}
