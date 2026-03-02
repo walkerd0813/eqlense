@@ -68,3 +68,52 @@ phase4_*.json
 testValuation.js
 zoningDebugger.js
 zoningTest.js
+
+# =========================
+# TEMP CLEANUP SHIELD (so we can debug Hampden without noise)
+# =========================
+
+# Ignore all these historical packs / fix bundles / installers
+*_PS51SAFEFIX/
+*_PS51SAFE/
+*ExtractorPack*/
+*HarvesterPack*/
+*PatchPack*/
+*AttachPack*/
+*Hotfix*/
+*BULLETPROOF*/
+*NORMFIX*/
+
+# Ignore “runbook / patch” scripts at repo root (we can unignore later)
+Run-*.ps1
+INSTALL_*.ps1
+PATCH_*.ps1
+Patch-*.ps1
+Peek-*.ps1
+
+# Ignore old readmes + loose logs at root
+README*.txt
+*_log.txt
+backend_tree.txt
+
+# Ignore loose ndjson sitting at repo root
+*.ndjson
+
+# Ignore these one-off root folders that are not in the current Hampden focus
+payload/
+phase1a_contract_pack/
+eqLense/
+avm/
+mls/
+models/
+governance/
+controllers/
+services/
+routes/
+schemas/
+config/
+prisma/
+tools/
+uploads/
+rawData/
+publicData/
