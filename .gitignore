@@ -1,29 +1,30 @@
-# Ignore EVERYTHING by default
-*
+# =========================
+# Equity Lens — Hampden scope
+# =========================
 
-# Allow git to see these meta files
-!.gitignore
-!README.md
-!LICENSE
+# Never commit work roots / outputs
+publicData/registry/hampden/_work/
+publicData/registry/hampden/incoming/
+publicData/registry/hampden/**/_work/
+publicData/registry/hampden/**/incoming/
 
-# Allow top-level server/app code if you want to keep it
-!server.js
-!package.json
-!package-lock.json
+# Never commit PDFs / big artifacts
+**/*.pdf
+**/*.zip
 
-# Allow ingestion scripts (whitelist)
-!scripts/
-!scripts/**
+# Never commit env/secrets
+.env
+.env.*
+**/.env
+**/.env.*
+mls/.env.mls
 
-# If you only want registry ingestion and not all scripts, use this instead:
-# !scripts/_registry/
-# !scripts/_registry/**
-# !scripts/registry/
-# !scripts/registry/**
-
-# Allow minimal config you actually need (optional)
-!ENGINE_REGISTRY.json
-!services/
-!services/**
-!utils/
-!utils/**
+# Standard noise
+node_modules/
+__pycache__/
+*.pyc
+.vscode/
+_tmp/
+**/_tmp/
+logs/
+**/logs/
