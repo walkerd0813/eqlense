@@ -786,7 +786,40 @@ def main():
 
             evts = extract_events_from_lines(lines, run_id=run_id, page_index=pno)
 
-            for ridx, e in enumerate(evts, start=1):  # or start=0, but be consistent with rowctx
+            # Enforce consistent physical ordering: top->bottom.
+            # Prefer sorting by captured left-column recorded_at timestamp when available.
+            def _parse_recorded_at(s: Optional[str]):
+                if not s:
+                    return None
+                try:
+                    s2 = str(s).strip().upper()
+                    # normalize trailing single-letter am/pm markers (e.g. '11:11:56A' -> '11:11:56AM')
+                    s2 = re.sub(r"\s*([AP])$", r"\1M", s2)
+                    # try common format with AM/PM
+                    return datetime.strptime(s2, "%m-%d-%Y %I:%M:%S%p")
+                except Exception:
+                    try:
+                        return datetime.strptime(s2, "%m-%d-%Y %H:%M:%S")
+                    except Exception:
+                        return None
+
+            # preserve original ordering index
+            indexed = list(enumerate(evts))
+
+            def _sort_key(item):
+                idx, ev = item
+                rec_raw = (ev.get("recording") or {}).get("recorded_at_raw")
+                dt = _parse_recorded_at(rec_raw)
+                if dt is not None:
+                    # newer (later) timestamps should come first (top-of-page)
+                    return (0, -dt.timestamp())
+                # fall back to original order after timestamped items
+                return (1, idx)
+
+            indexed_sorted = sorted(indexed, key=_sort_key)
+            evts = [ev for _, ev in indexed_sorted]
+
+            for ridx, e in enumerate(evts, start=1):  # assign deterministic record_index (top->bottom)
                 e.setdefault("meta", {})
                 e["meta"]["record_index"] = ridx
                 write_ndjson_line(out_f, e)
