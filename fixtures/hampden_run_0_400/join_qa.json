@@ -1,0 +1,36 @@
+{
+  "engine": "join_rowctx_txcol_with_townblocks_v1_1",
+  "inputs": {
+    "townblocks": "c:\\seller-app\\backend\\fixtures\\hampden_run_0_400\\stitched.ndjson",
+    "rowctx": "c:\\seller-app\\backend\\fixtures\\hampden_run_0_400\\rowctx.ndjson"
+  },
+  "options": {
+    "flip_record_index": false,
+    "prefer_overwrite": false
+  },
+  "counts": {
+    "townblocks_seen": 1927,
+    "rowctx_seen": 2106,
+    "matched_by_recorded_at": 0,
+    "matched_by_record_index": 1866,
+    "matched_by_ordinal": 58,
+    "unmatched": 3
+  },
+  "unmatched_samples": [
+    {
+      "page_index": 30,
+      "recorded_at_raw": null,
+      "addr": "186 DAVIS ST"
+    },
+    {
+      "page_index": 179,
+      "recorded_at_raw": null,
+      "addr": "40 CHALFONTE DR"
+    },
+    {
+      "page_index": 227,
+      "recorded_at_raw": null,
+      "addr": "ANTHONY"
+    }
+  ]
+}

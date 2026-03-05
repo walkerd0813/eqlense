@@ -1,0 +1,169 @@
+{
+  "inst": "8664",
+  "count": 2,
+  "sample_size": 2,
+  "events": [
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "02-05-2021 3:38:45p",
+        "book_page_raw": "23695-469",
+        "book_page_norm": null,
+        "inst_raw": "8664",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "99,800.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "SPRINGFIELD",
+          "address_raw": "73 CANTON ST",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "WELZ ANNE &E&"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "SOTO RHONDA M"
+          }
+        ]
+      },
+      "descr_loc_raw": null,
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 104,
+        "record_index": 1
+      },
+      "evidence": {
+        "lines_clean": [
+          "Town: SPRINGFIELD Addr:73 CANTON ST",
+          "1 P WELZ ANNE &E&",
+          "2 P SOTO RHONDA M"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 104,
+        "record_index": 1,
+        "x_center": 444.77
+      }
+    },
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "02-05-2021 3:38:45p",
+        "book_page_raw": "23695-469",
+        "book_page_norm": null,
+        "inst_raw": "8664",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "99,800.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "SPRINGFIELD",
+          "address_raw": "47 WILCOX ST",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "RUBINACCIO VALENTINO"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "RUBINACCIO ROSALBA"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "MANZI ROSALBA"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "RUBINACCIO LEOPOLDO"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "RUBINACCIO FILOMENA"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "RUSSO FILOMENA"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "ALJANABI AHMED"
+          }
+        ]
+      },
+      "descr_loc_raw": "WILCOX ST",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 104,
+        "record_index": 2
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 WILCOX ST DEE 99,800.00",
+          "Town: SPRINGFIELD Addr:47 WILCOX ST",
+          "1 P RUBINACCIO VALENTINO",
+          "1 P RUBINACCIO ROSALBA",
+          "1 P MANZI ROSALBA",
+          "1 P RUBINACCIO LEOPOLDO",
+          "1 P RUBINACCIO FILOMENA",
+          "1 P RUSSO FILOMENA",
+          "2 P ALJANABI AHMED"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 104,
+        "record_index": 1,
+        "x_center": 444.77
+      }
+    }
+  ]
+}

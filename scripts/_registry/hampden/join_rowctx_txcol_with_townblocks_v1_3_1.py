@@ -1,5 +1,5 @@
 import json, argparse, os, re
-from collections import defaultdict
+from collections import defaultdict, deque
 
 RE_STRAY_INT = re.compile(r"^\d{1,4}$")
 
@@ -79,31 +79,97 @@ def tb_time(ev):
     return rec.get('recorded_at_raw') or ev.get('recorded_at_raw')
 
 def build_indexes(rowctx_rows):
-    by_page_inst = defaultdict(dict)
-    by_page_timebook = defaultdict(dict)
-    by_page_recidx = defaultdict(dict)
+    # allow multiple RowCtx per key (e.g., duplicate record_index or inst)
+    by_page_inst = defaultdict(lambda: defaultdict(list))
+    by_page_timebook = defaultdict(lambda: defaultdict(list))
+    by_page_recidx = defaultdict(lambda: defaultdict(list))
     max_idx_by_page = defaultdict(int)
 
+    # collect per-page lists first
+    page_to_rcs = defaultdict(list)
     for rc in rowctx_rows:
         p = rc.get('page_index')
         i = rc.get('record_index')
-        if p is None or i is None:
+        if p is None:
             continue
-        if i > max_idx_by_page[p]:
-            max_idx_by_page[p] = i
+        page_to_rcs[p].append(rc)
 
-        by_page_recidx[p][i] = rc
+    # normalize ordering: map rowctx on each page to a 1-based normalized record index
+    for p, rcs in page_to_rcs.items():
+        # sort by numeric record_index when available to get top->bottom order
+        try:
+            sorted_rcs = sorted(rcs, key=lambda r: (int(r.get('record_index')) if r.get('record_index') is not None else 0))
+        except Exception:
+            sorted_rcs = list(rcs)
 
-        inst = rc.get('inst_raw')
-        if inst:
-            by_page_inst[p][inst] = rc
+        for norm_idx, rc in enumerate(sorted_rcs, start=1):
+            # annotate normalized index for downstream matching
+            rc['_norm_record_index'] = norm_idx
+            by_page_recidx[p][norm_idx].append(rc)
+            # update max
+            if norm_idx > max_idx_by_page[p]:
+                max_idx_by_page[p] = norm_idx
 
-        t = rc.get('recorded_at_raw')
-        b = rc.get('book_page_raw')
-        if t and b:
-            by_page_timebook[p][(t, b)] = rc
+            inst = rc.get('inst_raw')
+            if inst:
+                by_page_inst[p][inst].append(rc)
+
+            t = rc.get('recorded_at_raw')
+            b = rc.get('book_page_raw')
+            if t and b:
+                by_page_timebook[p][(t, b)].append(rc)
 
     return by_page_inst, by_page_timebook, by_page_recidx, max_idx_by_page
+
+def detect_page_flip(tb_by_page, by_page_recidx, by_page_inst):
+    """
+    Heuristic: for each page, compare the ordering of instrument numbers between
+    townblocks and rowctx. If the majority of matched instrument pairs are in
+    reversed order, mark the page as flipped.
+    Returns: dict page -> bool (True if flipped)
+    """
+    flip_by_page = {}
+    for p, tbs in tb_by_page.items():
+        # tb inst order
+        tb_inst_order = []
+        for tb in sorted(tbs, key=lambda t: int((t.get('meta') or {}).get('record_index') or 0)):
+            inst = tb_inst(tb)
+            if inst:
+                tb_inst_order.append(str(inst))
+
+        # rc inst order by normalized index
+        rc_inst_order = []
+        page_map = by_page_recidx.get(p, {})
+        if not page_map:
+            flip_by_page[p] = False
+            continue
+        for idx in sorted(page_map.keys()):
+            for rc in page_map.get(idx, []):
+                ri = rc.get('inst_raw') or rc.get('inst')
+                if ri:
+                    rc_inst_order.append(str(ri))
+
+        # build list of matched insts present in both sequences
+        matched = [i for i in tb_inst_order if i in set(rc_inst_order)]
+        if len(matched) < 3:
+            flip_by_page[p] = False
+            continue
+
+        # positions of matched insts in rc order according to tb order
+        pos = [rc_inst_order.index(i) for i in matched]
+
+        # inversion count
+        inv = 0
+        n = len(pos)
+        for i in range(n):
+            for j in range(i+1, n):
+                if pos[i] > pos[j]:
+                    inv += 1
+        total_pairs = n * (n - 1) / 2
+        # if more than half pairs are inverted, treat as reversed
+        flip_by_page[p] = (inv > (total_pairs / 2))
+
+    return flip_by_page
 
 def _ref_page_part(refbp):
     if not isinstance(refbp, str) or '-' not in refbp:
@@ -176,6 +242,7 @@ def attach_rowctx(ev, rc, prefer_overwrite, matched_by):
         'source': 'ROWCTX_JOIN_V1_3',
         'page_index': rc.get('page_index'),
         'record_index': rc.get('record_index'),
+        'record_index_norm': rc.get('_norm_record_index'),
         'matched_by': matched_by
     }
 
@@ -205,6 +272,58 @@ def main():
 
     by_page_inst, by_page_timebook, by_page_recidx, max_idx_by_page = build_indexes(rowctx)
 
+    # precompute expected x_center per normalized record index on each page
+    page_expected_x = {}
+    for p, page_map in by_page_recidx.items():
+        page_expected_x[p] = {}
+        for idx, rcs in page_map.items():
+            xs = []
+            for rc in rcs:
+                try:
+                    qa = rc.get('qa') if isinstance(rc, dict) else None
+                    xc = None
+                    if isinstance(qa, dict):
+                        xc = qa.get('x_center')
+                    if xc is None:
+                        xc = rc.get('x_center')
+                    if xc is not None:
+                        xs.append(float(xc))
+                except Exception:
+                    continue
+            if xs:
+                xs_sorted = sorted(xs)
+                mid = len(xs_sorted) // 2
+                # median
+                if len(xs_sorted) % 2 == 1:
+                    med = xs_sorted[mid]
+                else:
+                    med = (xs_sorted[mid-1] + xs_sorted[mid]) / 2.0
+                page_expected_x[p][idx] = med
+
+    # Normalize townblocks per-page to produce normalized record indices
+    tb_by_page = defaultdict(list)
+    for tb in townblocks:
+        p = (tb.get('meta') or {}).get('page_index')
+        ridx = (tb.get('meta') or {}).get('record_index')
+        if p is None or ridx is None:
+            continue
+        tb_by_page[p].append(tb)
+
+    tb_ridx_to_norms = defaultdict(lambda: defaultdict(deque))
+    for p, tbs in tb_by_page.items():
+        try:
+            sorted_tbs = sorted(tbs, key=lambda t: int((t.get('meta') or {}).get('record_index') or 0))
+        except Exception:
+            sorted_tbs = list(tbs)
+
+        for norm_idx, tb in enumerate(sorted_tbs, start=1):
+            orig = (tb.get('meta') or {}).get('record_index')
+            tb_ridx_to_norms[p][orig].append(norm_idx)
+
+    # Detect per-page index ordering inversion (rowctx vs townblocks)
+    # Disabled: enforce single top->bottom ordering only.
+    flip_by_page = {}  # disabled: enforce single top->bottom ordering
+
     counts = {
         'townblocks_seen': len(townblocks),
         'rowctx_seen': len(rowctx),
@@ -212,11 +331,56 @@ def main():
         'matched_by_time_book': 0,
         'matched_by_record_index': 0,
         'matched_by_record_index_flipped': 0,
+        'deduped_inst': 0,
         'unmatched': 0,
     }
 
     out_rows = []
     unmatched_samples = []
+    deduped_samples = []
+    seen_insts = set()
+    used_rcs = set()
+
+    def _pick_unused(candidates, preferred_x=None):
+        """Pick an unused candidate. If `preferred_x` is provided and
+        candidates contain numeric `x_center`, choose the candidate whose
+        `x_center` is closest to `preferred_x`.
+        """
+        if not candidates:
+            return None
+        # filter unused
+        unused = [c for c in candidates if id(c) not in used_rcs]
+        if not unused:
+            return None
+        if preferred_x is None:
+            c = unused[0]
+            used_rcs.add(id(c))
+            return c
+
+        # choose candidate with minimal abs(x_center - preferred_x)
+        best = None
+        best_d = None
+        for c in unused:
+            try:
+                xc = None
+                qa = c.get('qa') if isinstance(c, dict) else None
+                if isinstance(qa, dict):
+                    xc = qa.get('x_center')
+                if xc is None:
+                    xc = c.get('x_center')
+                if xc is None:
+                    d = float('inf')
+                else:
+                    d = abs(float(xc) - float(preferred_x))
+            except Exception:
+                d = float('inf')
+            if best is None or d < best_d:
+                best = c
+                best_d = d
+        if best is None:
+            best = unused[0]
+        used_rcs.add(id(best))
+        return best
 
     for ev in townblocks:
         p, ridx = tb_meta(ev)
@@ -232,52 +396,54 @@ def main():
 
         inst = tb_inst(ev)
 
-        # 1) inst match (best)
+        # 1) inst match (best) - choose first unused RowCtx for this inst
         if inst and inst in by_page_inst.get(p, {}):
-            rc = by_page_inst[p][inst]
-            matched_by = 'inst'
-            counts['matched_by_inst'] += 1
+            rc = _pick_unused(by_page_inst[p][inst])
+            if rc is not None:
+                matched_by = 'inst'
+                counts['matched_by_inst'] += 1
 
         # 2) time+book match (second best)
         if rc is None:
             t = tb_time(ev)
             b = tb_book(ev)
             if t and b and (t, b) in by_page_timebook.get(p, {}):
-                rc = by_page_timebook[p][(t, b)]
-                matched_by = 'time_book'
-                counts['matched_by_time_book'] += 1
+                rc = _pick_unused(by_page_timebook[p][(t, b)])
+                if rc is not None:
+                    matched_by = 'time_book'
+                    counts['matched_by_time_book'] += 1
 
-        # 3/4) record_index fallbacks
+        # 3/4) record_index fallbacks (use normalized tb index when possible)
         if rc is None:
-            mx = max_idx_by_page.get(p, 0)
-            flip = (mx + 1 - ridx) if mx else None
+            # map townblock original record_index to normalized index (if available)
+            tb_norm = None
+            try:
+                if p in tb_ridx_to_norms and ridx in tb_ridx_to_norms[p] and len(tb_ridx_to_norms[p][ridx]) > 0:
+                    tb_norm = tb_ridx_to_norms[p][ridx].popleft()
+            except Exception:
+                tb_norm = None
 
-            # Key change vs v1_2: when we must fall back to record_index,
-            # default to flipped mapping (townblocks top-down vs rowctx bottom-up)
-            # unless user turns it off.
+            # fall back to the original if normalization unavailable
+            use_idx = tb_norm if tb_norm is not None else ridx
 
+            # Enforce a single ordering: top->bottom direct normalized index only.
             cand = []
-
-            # prefer flipped mapping first (tb top-down vs rowctx bottom-up)
-            if flip is not None:
-                cand.append(('record_index_flipped', flip))
-
-            # then try direct record_index
-            if ridx is not None:
-                cand.append(('record_index', ridx))
+            if use_idx is not None:
+                cand.append(('record_index', use_idx))
 
             page_map = by_page_recidx.get(p, {})
-
             for mode, idx in cand:
-                base = page_map.get(idx)
-                if base is not None:
-                    rc = base
-                    matched_by = mode
-                    if mode == 'record_index':
-                        counts['matched_by_record_index'] += 1
-                    else:
-                        counts['matched_by_record_index_flipped'] += 1
-                    break
+                bases = page_map.get(idx)
+                if bases:
+                    preferred_x = page_expected_x.get(p, {}).get(idx)
+                    rc = _pick_unused(bases, preferred_x=preferred_x)
+                    if rc is not None:
+                        matched_by = mode
+                        if mode == 'record_index':
+                            counts['matched_by_record_index'] += 1
+                        else:
+                            counts['matched_by_record_index_flipped'] += 1
+                        break
 
 
         if rc is None:
@@ -287,7 +453,27 @@ def main():
             out_rows.append(ev)
             continue
 
+        # deduplicate by instrument id when available: prefer first-seen
+        rc_inst = None
+        try:
+            rc_inst = (rc.get('inst_raw') or rc.get('inst'))
+            if rc_inst is not None:
+                rc_inst = str(rc_inst).strip()
+        except Exception:
+            rc_inst = None
+
+        if rc_inst and rc_inst in seen_insts:
+            counts['deduped_inst'] += 1
+            if len(deduped_samples) < 50:
+                deduped_samples.append({'inst': rc_inst, 'page_index': p, 'record_index': ridx, 'matched_by': matched_by})
+            # skip attaching duplicate rowctx to avoid appending duplicate joined events
+            out_rows.append(ev)
+            continue
+
+        # attach and mark instrument as seen
         attach_rowctx(ev, rc, prefer_overwrite=args.prefer_overwrite, matched_by=matched_by)
+        if rc_inst:
+            seen_insts.add(rc_inst)
         out_rows.append(ev)
 
     os.makedirs(os.path.dirname(args.qa), exist_ok=True)
@@ -297,7 +483,7 @@ def main():
             'inputs': {'townblocks': args.townblocks, 'rowctx': args.rowctx},
             'counts': counts,
             'unmatched_samples': unmatched_samples,
-            'note': 'v1_3 keeps v1_2 overwrite/stray-int logic and changes record_index fallback to prefer flipped index by default (to reconcile tb top-down vs rowctx bottom-up).'
+            'note': 'v1_3 normalizes per-page RowCtx and TownBlock record ordering (top->bottom) and uses normalized indices for deterministic matching; keeps overwrite/stray-int logic and prefers flipped mapping when falling back.'
         }, f, indent=2)
 
     write_ndjson(args.out, out_rows)

@@ -1,0 +1,155 @@
+{
+  "inst": "5403",
+  "count": 2,
+  "sample_size": 2,
+  "events": [
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "01-25-2021 2:49:26p",
+        "book_page_raw": "23669-450",
+        "book_page_norm": null,
+        "inst_raw": "5403",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "150,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "SPRINGFIELD",
+          "address_raw": "34 LORIMER ST",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "SIERRA XAVER A"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "FIGUEROA EMELY"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "AQUINO CARLOS A"
+          }
+        ]
+      },
+      "descr_loc_raw": "LORIMER ST",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 36,
+        "record_index": 5
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 LORIMER ST DEED 29",
+          "Town: SPRINGFIELD Addr:34 LORIMER ST",
+          "1 P SIERRA XAVER A",
+          "2 P FIGUEROA EMELY",
+          "2 P AQUINO CARLOS A"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 36,
+        "record_index": 5,
+        "x_center": 435.77
+      }
+    },
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "01-25-2021 2:49:26p",
+        "book_page_raw": "23669-450",
+        "book_page_norm": null,
+        "inst_raw": "5403",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "150,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "MONSON",
+          "address_raw": "6 CROW HILL RD",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "HOWARD JAMES B (dR)"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "HOWARD JAMES B"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "HOWARD JAMES B (SR)"
+          }
+        ]
+      },
+      "descr_loc_raw": "CROW HILL RD",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 36,
+        "record_index": 6
+      },
+      "evidence": {
+        "lines_clean": [
+          "ENV ATTY FRED MCCOY",
+          "6 BURT LANE",
+          "WILBRAHAM MA 01095",
+          "1 CROW HILL RD DEED",
+          "Town: MONSON Addr:6 CROW HILL RD",
+          "1 P HOWARD JAMES B (dR)",
+          "2 P HOWARD JAMES B",
+          "2 P HOWARD JAMES B (SR)"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 36,
+        "record_index": 5,
+        "x_center": 435.77
+      }
+    }
+  ]
+}

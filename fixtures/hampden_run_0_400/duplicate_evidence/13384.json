@@ -1,0 +1,154 @@
+{
+  "inst": "13384",
+  "count": 2,
+  "sample_size": 2,
+  "events": [
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "02-26-2021 1:33:15p",
+        "book_page_raw": "23731-460",
+        "book_page_norm": null,
+        "inst_raw": "13384",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "599,900.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "BAST LONGMEADOW",
+          "address_raw": "14 BELLA VISTA DR",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "SZAWLOWSKI ALEXANDRA"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "SZAWLOWSKI MICHAEL"
+          }
+        ]
+      },
+      "descr_loc_raw": "BELLA VISTA DR",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 203,
+        "record_index": 5
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 BELLA VISTA DR DEED 599,900.00",
+          "Town: BAST LONGMEADOW Addr:14 BELLA VISTA DR",
+          "1 ¢ AC HOMEBUILDING LLC",
+          "2 P SZAWLOWSKI ALEXANDRA",
+          "2 P SZAWLOWSKI MICHAEL"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 203,
+        "record_index": 5,
+        "x_center": 363.77
+      }
+    },
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "02-26-2021 1:33:15p",
+        "book_page_raw": "23731-460",
+        "book_page_norm": null,
+        "inst_raw": "13384",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "1.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "LONGMEADOW",
+          "address_raw": "810 FRANK SMITH RD",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          "1 P MUDDASANI SANDEEP R",
+          "2 P MUDDASANI SANDEEP R",
+          "2 P MUDDASANI SHILPA G"
+        ]
+      },
+      "descr_loc_raw": "FRANK SMITH RD",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 203,
+        "record_index": 7,
+        "stitch": {
+          "did_stitch": true,
+          "continuation_type": "PAGEBREAK",
+          "from_page": 203,
+          "into_page": 204,
+          "captured_top_lines": [
+            "RECORDED LAND BY RECORDING DATE Cheryl A. Coakley-Rivera",
+            "Me",
+            "INQUIRY PRINT REQUEST PAGE 205",
+            "PRINTED 1/18/26 23:55:46 RG370RP",
+            "TOWN: *ALL",
+            "CONSIDERATION: OQ THROUGH 9, 999,999,999",
+            "yh 01-16-2026 TRANSACTION #:",
+            "DOC REFERENCE VEY",
+            "SEQ DESCR/LOC/ DELIVERED TYPE BOOK- PAGE CONSIDERATION sts",
+            "Town: LONGMEADOW Addr:810 FRANK SMITH RD Y",
+            "1 P MUDDASANI SANDEEP R Y",
+            "2 P MUDDASANI SANDEEP R Y",
+            "2 P MUDDASANI SHILPA G Y"
+          ],
+          "first_boundary_detected": "FILE SIMPLIFILE E-RECORDING Y"
+        }
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 FRANK SMITH RD DEED"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 203,
+        "record_index": 5,
+        "x_center": 363.77
+      }
+    }
+  ]
+}

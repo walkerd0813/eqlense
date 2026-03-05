@@ -144,6 +144,8 @@ def main() -> int:
     ap.add_argument("--prefer_overwrite", action="store_true")
     ap.add_argument("--flip_record_index", action="store_true",
                     help="Flip townblocks record_index per page: (N - rec + 1). Use when townblocks counts top-down and rowctx counts bottom-up.")
+    ap.add_argument("--auto_flip", action="store_true",
+                    help="Auto-detect per-page flipped rowctx record_index and attempt flipped match if plain match fails.")
     args = ap.parse_args()
 
     # Load rowctx into indexes
@@ -231,6 +233,19 @@ def main() -> int:
             matched_row = idx_by_page_recindex.get((page_i, rec_i))
             if matched_row:
                 matched_how = "record_index"
+            else:
+                # If auto_flip enabled, and we know the number of townblocks rows on this page,
+                # try the flipped record index (rowctx may count bottom->top).
+                if args.auto_flip:
+                    n = tb_count_by_page.get(page_i) or 0
+                    try:
+                        if n > 0:
+                            flipped = (n - int(rec_i) + 1)
+                            matched_row = idx_by_page_recindex.get((page_i, flipped))
+                            if matched_row:
+                                matched_how = "record_index_flipped"
+                    except Exception:
+                        pass
 
         if matched_row is None and page_i is not None:
             ord_i = ordinal_counter[page_i]

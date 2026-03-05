@@ -1,0 +1,8 @@
+{
+  "summary": {
+    "expected_rows": 18,
+    "actual_indexed": 18,
+    "mismatch_count": 0
+  },
+  "mismatches": []
+}

@@ -1,0 +1,21 @@
+{
+  "engine": "stitch_townblocks_pagebreak_continuations_v1_5_8",
+  "inputs": {
+    "in": "c:\\seller-app\\backend\\fixtures\\pagebreak\\deed_pagebreak_case_02\\mini_slice_0_100\\events.ndjson",
+    "raw_lines_ndjson": "c:\\seller-app\\backend\\fixtures\\pagebreak\\deed_pagebreak_case_02\\mini_slice_0_100\\quarantine\\raw_ocr_lines__ALLPAGES.ndjson",
+    "same_page_lookahead": 0,
+    "same_page_min_overlap": 0.6,
+    "max_scan": 80
+  },
+  "counts": {
+    "pages_seen": 2,
+    "candidate_pagebreaks": 0,
+    "stitched": 0,
+    "stitched_parties_only": 0,
+    "same_page_repair": 0,
+    "no_continuation_found": 0,
+    "missing_raw_lines_for_next_page": 0,
+    "notes": "v1_5_7: PAGEBREAK stitch uses raw page lines; SAME_PAGE_REPAIR is record-scoped via structured TB lookahead (party overlap / parties-missing continuation heuristic). No raw-page scanning for same-page repair."
+  },
+  "samples": []
+}

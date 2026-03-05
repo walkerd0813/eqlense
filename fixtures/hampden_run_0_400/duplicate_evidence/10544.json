@@ -1,0 +1,175 @@
+{
+  "inst": "10544",
+  "count": 2,
+  "sample_size": 2,
+  "events": [
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "02-16-2021 12:12:17p",
+        "book_page_raw": "23710-142",
+        "book_page_norm": null,
+        "inst_raw": "10544",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "1,162,050.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "CHICOPEE",
+          "address_raw": "64 SHAWINIGAN DR",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "C",
+            "name_raw": "SHAWINIGAN DRIVE LLC"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "C",
+            "name_raw": "WESTERN MASSACHUSETTS EMERGENCY COMMUNICATIONS DISTRICT"
+          }
+        ]
+      },
+      "descr_loc_raw": "SHAWINIGAN DR",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 138,
+        "record_index": 6
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 SHAWINIGAN DR DEED 1,162,050.00",
+          "Town: CHICOPEE Addr:64 SHAWINIGAN DR",
+          "1 C SHAWINIGAN DRIVE LLC",
+          "2 C WESTERN MASSACHUSETTS EMERGENCY COMMUNICATIONS DISTRICT"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 138,
+        "record_index": 6,
+        "x_center": 426.77
+      }
+    },
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "02-16-2021 12:12:17p",
+        "book_page_raw": "23710-142",
+        "book_page_norm": null,
+        "inst_raw": "10544",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "140,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": null,
+          "address_raw": "560 MORGAN RD",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          "1 P NAULT GLEN J",
+          "1 P NAULT KATHLEEN K",
+          "2 P NAULT CHRISTOPHER R"
+        ]
+      },
+      "descr_loc_raw": "MORGAN RD",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 138,
+        "record_index": 7,
+        "stitch": {
+          "did_stitch": true,
+          "continuation_type": "PAGEBREAK",
+          "from_page": 138,
+          "into_page": 139,
+          "captured_top_lines": [
+            "RECORD",
+            "Me",
+            "sh 01-16-2026",
+            "SEQ",
+            "Town:",
+            "Town:",
+            "Town:",
+            "ED LAND BY RECORDING DATE",
+            "DOC REFERENCE",
+            "Cheryl A.",
+            "INQUIRY P",
+            "PRINTED",
+            "TOWN: *ALL",
+            "CONSIDERA",
+            "TRANSACTI",
+            "BOOK- PAGE",
+            "Coakley-Rivera",
+            "RINT REQUEST",
+            "1/18/26 23:55:46",
+            "PAGE 140",
+            "RG370RP",
+            "TION: 0 THROUGH 9,999,999,999",
+            "ON #:",
+            "CONSIDERATION",
+            "110,000.00",
+            "Town:",
+            "92,500.00",
+            "Town:",
+            "Town:",
+            "Town:",
+            "263,000.00",
+            "WEST SPRINGFIELD Addr:560 MORGAN RD",
+            "1 P NAULT GLEN J",
+            "1 P NAULT KATHLEEN K",
+            "2 P NAULT CHRISTOPHER R"
+          ],
+          "first_boundary_detected": "FILE SIMPLIFILE E-RECORDING"
+        }
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 MORGAN RD DEED"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 138,
+        "record_index": 6,
+        "x_center": 426.77
+      }
+    }
+  ]
+}

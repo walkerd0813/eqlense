@@ -1,0 +1,57 @@
+{
+  "engine": "stitch_townblocks_pagebreak_continuations_v1_5_8",
+  "inputs": {
+    "in": "c:\\seller-app\\backend\\fixtures\\pagebreak\\deed_pagebreak_case_01\\events.ndjson",
+    "raw_lines_ndjson": "c:\\seller-app\\backend\\fixtures\\pagebreak\\deed_pagebreak_case_01\\quarantine\\raw_ocr_lines__ALLPAGES.ndjson",
+    "same_page_lookahead": 0,
+    "same_page_min_overlap": 0.6,
+    "max_scan": 80
+  },
+  "counts": {
+    "pages_seen": 3,
+    "candidate_pagebreaks": 1,
+    "stitched": 1,
+    "stitched_parties_only": 0,
+    "same_page_repair": 0,
+    "no_continuation_found": 0,
+    "missing_raw_lines_for_next_page": 0,
+    "notes": "v1_5_7: PAGEBREAK stitch uses raw page lines; SAME_PAGE_REPAIR is record-scoped via structured TB lookahead (party overlap / parties-missing continuation heuristic). No raw-page scanning for same-page repair."
+  },
+  "samples": [
+    {
+      "candidate_page": 1,
+      "page_index": 1,
+      "record_index": 6,
+      "ctype": "PAGEBREAK",
+      "into_page": 2,
+      "first_boundary_detected": "30 FILE SIMPLIFILE BR-RECORDING Y",
+      "lines_scanned": 20,
+      "refs_extracted": 1,
+      "parties_extracted": 4,
+      "refs_after": 1,
+      "parties_after": 4,
+      "captured": [
+        "RECORDED LAND BY RECORDING DATE",
+        "te.ma.us",
+        "Che",
+        "INQ",
+        "PRI",
+        "TOW",
+        "CON",
+        "ryl A. Coakley-Rivera",
+        "UIRY PRINT REQUEST PAGE 101",
+        "TED 1/18/26 23:55:46 RG370RP",
+        ":*ALL",
+        "SIDERATION: 0 THROUGH 9,999,999,999",
+        "1 through 01-16-2026 TRANSACTION #:",
+        "ST DOC REFERENCE VEY",
+        "GRP-SEQ DESCR/LOC/DELIVERED TYPE BOOK-PAGE CONSTDERATION STS",
+        "Town: CHICOPEE Addr:67 MANDALAY RD Y",
+        "1 P MURDOCK ELIZABETH Y",
+        "1 P PYCKO ELIZABETH A Y",
+        "2 P MURDOCK CRAIG Y",
+        "2 P MURDOCK ELIZABETH Y"
+      ]
+    }
+  ]
+}

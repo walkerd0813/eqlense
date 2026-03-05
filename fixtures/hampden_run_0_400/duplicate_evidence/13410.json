@@ -1,0 +1,159 @@
+{
+  "inst": "13410",
+  "count": 2,
+  "sample_size": 2,
+  "events": [
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "02-26-2021 1:42:39p",
+        "book_page_raw": "23731-581",
+        "book_page_norm": null,
+        "inst_raw": "13410",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "575,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "LONGMEADOW",
+          "address_raw": "130 ARLINGTON RD",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "ZAYAC ALEXANDER J"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "ZAYAC TARA L"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "OBERG TARA L"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "DUBRINSKY-CLAYTO ISABEL"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "CLAYTON WILLIAM J"
+          }
+        ]
+      },
+      "descr_loc_raw": "ARLINGTON RD",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 204,
+        "record_index": 5
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 ARLINGTON RD DEED 575,000.00",
+          "Town: LONGMEADOW Addr:130 ARLINGTON RD",
+          "1 P ZAYAC ALEXANDER J",
+          "1 P ZAYAC TARA L",
+          "1 P OBERG TARA L",
+          "2 P DUBRINSKY-CLAYTO ISABEL",
+          "2 P CLAYTON WILLIAM J"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 204,
+        "record_index": 5,
+        "x_center": 435.77
+      }
+    },
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "02-26-2021 1:42:39p",
+        "book_page_raw": "23731-581",
+        "book_page_norm": null,
+        "inst_raw": "13410",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "299,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "LONGMEADOW",
+          "address_raw": "535 CONVERSE ST",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "BONAVITA PETER A"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "BERTOLOTTI DONNA A"
+          }
+        ]
+      },
+      "descr_loc_raw": "CONVERSE ST",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 204,
+        "record_index": 6
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 CONVERSE ST DEED 299,000.00",
+          "Town: LONGMEADOW Addr:535 CONVERSE ST",
+          "1 P BONAVITA PETER A",
+          "2 P BERTOLOTTI DONNA A"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 204,
+        "record_index": 5,
+        "x_center": 435.77
+      }
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "inst": "12951",
+  "count": 2,
+  "sample_size": 2,
+  "events": [
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "02-25-2021 2:55:28p",
+        "book_page_raw": "23728-175",
+        "book_page_norm": null,
+        "inst_raw": "12951",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "325,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "SPRINGFIELD",
+          "address_raw": "45-47 LOS ANGELES ST",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "SOUSA FRED D"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "RODRIGUEZ KATHYRIA B"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "LOPEZ RICHARD C"
+          }
+        ]
+      },
+      "descr_loc_raw": "LOS ANGELES ST",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 191,
+        "record_index": 4
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 LOS ANGELES ST DEE 325,000.00",
+          "Town: SPRINGFIELD Addr:45-47 LOS ANGELES ST",
+          "1 P SOUSA FRED D",
+          "2 P RODRIGUEZ KATHYRIA B",
+          "2 P LOPEZ RICHARD C"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 191,
+        "record_index": 4,
+        "x_center": 426.77
+      }
+    },
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "02-25-2021 2:55:28p",
+        "book_page_raw": "23728-175",
+        "book_page_norm": null,
+        "inst_raw": "12951",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "159,700.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "AGAWAM",
+          "address_raw": "125 COREY COLONIAL",
+          "unit_hint": "125",
+          "ref_role": "PRIMARY"
+        },
+        {
+          "ref_index": 1,
+          "town": "AGAWAM",
+          "address_raw": "125 COREY COLONIAL UNIT 125",
+          "unit_hint": "125",
+          "ref_role": "ADDITIONAL"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "DONAH STEVEN"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "DONAH DIANE"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "BERGER VIRGINIA M"
+          }
+        ]
+      },
+      "descr_loc_raw": "UNIT 125",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 191,
+        "record_index": 5
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 UNIT 125 DEED 159,700.00",
+          "Town: AGAWAM Addr:125 COREY COLONIAL",
+          "Town: AGAWAM Addr:125 COREY COLONIAL UNIT 125",
+          "1 P DONAH STEVEN",
+          "1 P DONAH DIANE",
+          "2 P BERGER VIRGINIA M"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 191,
+        "record_index": 4,
+        "x_center": 426.77
+      }
+    }
+  ]
+}

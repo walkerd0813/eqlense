@@ -1,0 +1,682 @@
+{
+  "fixture": {
+    "name": "deed_pagebreak_case_01",
+    "purpose": "Golden truth for pagebreak continuation test (populated from pipeline actual)",
+    "note": "This expected.json was populated with the pipeline's actual output after the stitcher patch. Review and adjust if a human-verified gold truth differs."
+  },
+  "golden": {
+    "events": [
+      {
+        "page_index": 0,
+        "record_index": 1,
+        "inst_raw": null,
+        "book_page_raw": null,
+        "property_refs": [
+          {
+            "ref_index": 0,
+            "town": "SPRINGFIELD",
+            "address_raw": "138 GROVELAND ST",
+            "unit_hint": null,
+            "ref_role": "PRIMARY"
+          }
+        ],
+        "parties": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "MAURICE CHRISTOPHER G"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "MAURICE CHRISTOPHER G"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "MAURICE KAREN E"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "COLON YADIRA FONSECA"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "MORALES ORLANDO LOZADA"
+          }
+        ],
+        "descr_loc_raw": "1 GROVELAND ST",
+        "consideration_raw": null,
+        "stitch": null
+      },
+      {
+        "page_index": 0,
+        "record_index": 2,
+        "inst_raw": null,
+        "book_page_raw": null,
+        "property_refs": [
+          {
+            "ref_index": 0,
+            "town": "TOLLAND",
+            "address_raw": "101 EAST OTIS RD",
+            "unit_hint": null,
+            "ref_role": "PRIMARY"
+          }
+        ],
+        "parties": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "DEMING JAMES L"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "DEMING MARYANN"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "BREDENFOERDER RYAN"
+          }
+        ],
+        "descr_loc_raw": "1 EAST OTIS RD",
+        "consideration_raw": null,
+        "stitch": null
+      },
+      {
+        "page_index": 0,
+        "record_index": 3,
+        "inst_raw": null,
+        "book_page_raw": null,
+        "property_refs": [
+          {
+            "ref_index": 0,
+            "town": "TOLLAND",
+            "address_raw": "COLEBROOK RIVER RD",
+            "unit_hint": null,
+            "ref_role": "PRIMARY"
+          }
+        ],
+        "parties": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "CAMPBELL ALAIN"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "BURKOTT JEFFREY"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "JOHNSON ERICA"
+          }
+        ],
+        "descr_loc_raw": "1 COLEBROOK RIVER RD",
+        "consideration_raw": "20,000.00",
+        "stitch": null
+      },
+      {
+        "page_index": 0,
+        "record_index": 4,
+        "inst_raw": null,
+        "book_page_raw": null,
+        "property_refs": [
+          {
+            "ref_index": 0,
+            "town": "WESTFIELD",
+            "address_raw": "50 SACKETT RD",
+            "unit_hint": null,
+            "ref_role": "PRIMARY"
+          }
+        ],
+        "parties": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "FREGEAU MICHAEL E"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "FREGEAU MARIE"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "HARLAND STEPHEN"
+          }
+        ],
+        "descr_loc_raw": "1 SACKETT RD",
+        "consideration_raw": "260,000.00",
+        "stitch": null
+      },
+      {
+        "page_index": 0,
+        "record_index": 5,
+        "inst_raw": null,
+        "book_page_raw": null,
+        "property_refs": [
+          {
+            "ref_index": 0,
+            "town": "SPRINGFIELD",
+            "address_raw": "72-74 FOREST PARK AVE",
+            "unit_hint": null,
+            "ref_role": "PRIMARY"
+          }
+        ],
+        "parties": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "REYES CARMEN"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "PATTERSON REGINALD"
+          }
+        ],
+        "descr_loc_raw": "1 FOREST PARK AVE",
+        "consideration_raw": "228,000.00",
+        "stitch": null
+      },
+      {
+        "page_index": 0,
+        "record_index": 6,
+        "inst_raw": null,
+        "book_page_raw": null,
+        "property_refs": [
+          {
+            "ref_index": 0,
+            "town": "WILBRAHAI",
+            "address_raw": "1 PEARL DR",
+            "unit_hint": null,
+            "ref_role": "PRIMARY"
+          }
+        ],
+        "parties": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "LABRODE"
+          }
+        ],
+        "descr_loc_raw": "1 PEARL DR",
+        "consideration_raw": null,
+        "stitch": null
+      },
+      {
+        "page_index": 1,
+        "record_index": 1,
+        "inst_raw": null,
+        "book_page_raw": null,
+        "property_refs": [
+          {
+            "ref_index": 0,
+            "town": "WILBRAHAM",
+            "address_raw": "4 OAK RIDGE DR",
+            "unit_hint": null,
+            "ref_role": "PRIMARY"
+          }
+        ],
+        "parties": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "OCONNELL MARGARET"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "OCONNELL JOSEPH"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "OCONNELL MARGARET"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "DANIO IARY M"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "RICE KARA IL"
+          }
+        ],
+        "descr_loc_raw": "1 OAK RIDGE DR",
+        "consideration_raw": "330,000.00",
+        "stitch": null
+      },
+      {
+        "page_index": 1,
+        "record_index": 2,
+        "inst_raw": null,
+        "book_page_raw": null,
+        "property_refs": [
+          {
+            "ref_index": 0,
+            "town": "LONGMEADOW",
+            "address_raw": "1023 CONVERSE ST",
+            "unit_hint": null,
+            "ref_role": "PRIMARY"
+          }
+        ],
+        "parties": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "POLEP ORI SUE"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "SAFFER LORI POLEP"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "POLEP HORI SUE (TR)"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "C",
+            "name_raw": "LORI SUE POLEP TRUST (TR OF)"
+          }
+        ],
+        "descr_loc_raw": "1 CONVERSE ST",
+        "consideration_raw": null,
+        "stitch": null
+      },
+      {
+        "page_index": 1,
+        "record_index": 3,
+        "inst_raw": null,
+        "book_page_raw": null,
+        "property_refs": [
+          {
+            "ref_index": 0,
+            "town": "PALMER",
+            "address_raw": "MAIN ST",
+            "unit_hint": null,
+            "ref_role": "PRIMARY"
+          },
+          {
+            "ref_index": 1,
+            "town": "PALMER",
+            "address_raw": "2187-2189 MAIN ST",
+            "unit_hint": null,
+            "ref_role": "ADDITIONAL"
+          }
+        ],
+        "parties": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "AHMAD WASEEM"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "AHMAD ZAHRAH"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "CAMACHO ANDRES (JR)"
+          }
+        ],
+        "descr_loc_raw": "1 MAIN ST",
+        "consideration_raw": "260,000.00",
+        "stitch": null
+      },
+      {
+        "page_index": 1,
+        "record_index": 4,
+        "inst_raw": null,
+        "book_page_raw": null,
+        "property_refs": [
+          {
+            "ref_index": 0,
+            "town": "CHICOPEE",
+            "address_raw": "48 RIMMON AVE",
+            "unit_hint": null,
+            "ref_role": "PRIMARY"
+          }
+        ],
+        "parties": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "CONROY THOMAS A"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "CONROY LINDA"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "BREWSTER JANET T"
+          }
+        ],
+        "descr_loc_raw": "1 RIMMON AVE",
+        "consideration_raw": "255,000.00",
+        "stitch": null
+      },
+      {
+        "page_index": 1,
+        "record_index": 5,
+        "inst_raw": null,
+        "book_page_raw": null,
+        "property_refs": [
+          {
+            "ref_index": 0,
+            "town": "WILBRAHAM",
+            "address_raw": "555V RIDGE RD",
+            "unit_hint": null,
+            "ref_role": "PRIMARY"
+          }
+        ],
+        "parties": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "BATES MARK"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "PATEL RAKESHKUMAR"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "PATEL FALGUNIBEN J"
+          }
+        ],
+        "descr_loc_raw": "1 RIDGE RD",
+        "consideration_raw": "276,000.00",
+        "stitch": null
+      },
+      {
+        "page_index": 1,
+        "record_index": 6,
+        "inst_raw": null,
+        "book_page_raw": null,
+        "property_refs": [
+          {
+            "ref_index": 0,
+            "town": "CHICOPEE",
+            "address_raw": "67 MANDALAY RD",
+            "unit_hint": null,
+            "ref_role": "PRIMARY"
+          }
+        ],
+        "parties": [
+          "1 P MURDOCK ELIZABETH",
+          "1 P PYCKO ELIZABETH A",
+          "2 P MURDOCK CRAIG",
+          "2 P MURDOCK ELIZABETH"
+        ],
+        "descr_loc_raw": "1 MANDALAY RD",
+        "consideration_raw": "1.00",
+        "stitch": {
+          "did_stitch": true,
+          "continuation_type": "PAGEBREAK",
+          "from_page": 1,
+          "into_page": 2,
+          "captured_top_lines": [
+            "RECORDED LAND BY RECORDING DATE",
+            "te.ma.us",
+            "Che",
+            "INQ",
+            "PRI",
+            "TOW",
+            "CON",
+            "ryl A. Coakley-Rivera",
+            "UIRY PRINT REQUEST PAGE 101",
+            "TED 1/18/26 23:55:46 RG370RP",
+            ":*ALL",
+            "SIDERATION: 0 THROUGH 9,999,999,999",
+            "1 through 01-16-2026 TRANSACTION #:",
+            "ST DOC REFERENCE VEY",
+            "GRP-SEQ DESCR/LOC/DELIVERED TYPE BOOK-PAGE CONSTDERATION STS",
+            "Town: CHICOPEE Addr:67 MANDALAY RD Y",
+            "1 P MURDOCK ELIZABETH Y",
+            "1 P PYCKO ELIZABETH A Y",
+            "2 P MURDOCK CRAIG Y",
+            "2 P MURDOCK ELIZABETH Y"
+          ],
+          "first_boundary_detected": "30 FILE SIMPLIFILE BR-RECORDING Y"
+        }
+      },
+      {
+        "page_index": 2,
+        "record_index": 1,
+        "inst_raw": null,
+        "book_page_raw": null,
+        "property_refs": [
+          {
+            "ref_index": 0,
+            "town": "CHICOPEE",
+            "address_raw": "67 MANDALAY RD",
+            "unit_hint": null,
+            "ref_role": "PRIMARY"
+          }
+        ],
+        "parties": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "MURDOCK ELIZABETH"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "PYCKO ELIZABETH A"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "MURDOCK CRAIG"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "MURDOCK ELIZABETH"
+          }
+        ],
+        "descr_loc_raw": null,
+        "consideration_raw": null,
+        "stitch": null
+      },
+      {
+        "page_index": 2,
+        "record_index": 2,
+        "inst_raw": null,
+        "book_page_raw": null,
+        "property_refs": [
+          {
+            "ref_index": 0,
+            "town": "LONGMEADOW",
+            "address_raw": "24 ROSELAND TERR",
+            "unit_hint": null,
+            "ref_role": "PRIMARY"
+          }
+        ],
+        "parties": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "SCHEIDECKER ANNETTE"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "EVANS DAVID FREEMAN"
+          }
+        ],
+        "descr_loc_raw": "1 ROSELAND TERR",
+        "consideration_raw": "308,111.00",
+        "stitch": null
+      },
+      {
+        "page_index": 2,
+        "record_index": 3,
+        "inst_raw": null,
+        "book_page_raw": null,
+        "property_refs": [
+          {
+            "ref_index": 0,
+            "town": "AGAWAM",
+            "address_raw": "17 DUCLOS DR",
+            "unit_hint": null,
+            "ref_role": "PRIMARY"
+          }
+        ],
+        "parties": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "CURRAN DIAN D"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "CRABTREE-KELLIHER LISA"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "KELLIHER DAVID T"
+          }
+        ],
+        "descr_loc_raw": "1 DUCLOS DR",
+        "consideration_raw": "322,000.00",
+        "stitch": null
+      },
+      {
+        "page_index": 2,
+        "record_index": 4,
+        "inst_raw": null,
+        "book_page_raw": null,
+        "property_refs": [
+          {
+            "ref_index": 0,
+            "town": "AGAWAM",
+            "address_raw": "41 MONROE ST",
+            "unit_hint": null,
+            "ref_role": "PRIMARY"
+          }
+        ],
+        "parties": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "GINGRAS RICHARD C"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "HILL KEVIN R"
+          }
+        ],
+        "descr_loc_raw": "1 ONROE ST",
+        "consideration_raw": "300,000.00",
+        "stitch": null
+      },
+      {
+        "page_index": 2,
+        "record_index": 5,
+        "inst_raw": null,
+        "book_page_raw": null,
+        "property_refs": [
+          {
+            "ref_index": 0,
+            "town": "AGAWAM",
+            "address_raw": "28 DOANE AVE",
+            "unit_hint": null,
+            "ref_role": "PRIMARY"
+          }
+        ],
+        "parties": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "LARSEN CLIFFORD M"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "WU ING ZING"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "EFANTIS ANDREA"
+          }
+        ],
+        "descr_loc_raw": "1 DOANE AVE",
+        "consideration_raw": "216,000.00",
+        "stitch": null
+      },
+      {
+        "page_index": 2,
+        "record_index": 6,
+        "inst_raw": null,
+        "book_page_raw": null,
+        "property_refs": [
+          {
+            "ref_index": 0,
+            "town": "AGAWAM",
+            "address_raw": "28-30 ORLANDO ST",
+            "unit_hint": null,
+            "ref_role": "PRIMARY"
+          }
+        ],
+        "parties": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "KITCHELL ALI B"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "KITCHELL HELEN S"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "TAN ZHI Q"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "TAN JIA"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "LIE SHU"
+          }
+        ],
+        "descr_loc_raw": "1 ORLANDO ST",
+        "consideration_raw": "220,000.00",
+        "stitch": null
+      }
+    ]
+  },
+  "source": "POPULATED_FROM_ACTUAL",
+  "hint": "Run generate_fixture_actual_from_join_v1.py to regenerate actual.json for diffs."
+}

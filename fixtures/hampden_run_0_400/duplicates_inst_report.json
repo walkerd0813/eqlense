@@ -1,0 +1,2927 @@
+{
+  "source": "fixtures/hampden_run_0_400/joined.ndjson",
+  "total_records": 1927,
+  "parse_errors": 0,
+  "unique_inst_values": 1866,
+  "duplicated_inst_count": 58,
+  "duplicates": [
+    {
+      "inst": "4595",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 77,
+          "page_index": 17,
+          "record_index": 3,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "CHICOPEE",
+              "address_raw": "190 NEWBURY ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 NEWBURY ST DEED",
+            "Town: CHICOPEE Addr:190 NEWBURY ST",
+            "1 P CULLEN CHRISTINE A",
+            "1 P BERARD DIANE B",
+            "1 P ZASKEY MICHAEL W",
+            "1 P ZASKEY WILLIAM M",
+            "1 P ZASKEY JOANNE B",
+            "2 P ZASKEY JOANNE B (LIFE EST)",
+            "2 P ZASKEY WILLIAM M (LIFE EST)",
+            "2 P CULLEN CHRISTINE A",
+            "2 P BERARD DIANE B",
+            "2 P ZASKEY MICHAEL W"
+          ]
+        },
+        {
+          "line": 79,
+          "page_index": 17,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "LONGMEADOW",
+              "address_raw": "69 DRURY LA",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 DRURY LA DEED 215,000.00",
+            "Town: LONGMEADOW Addr:69 DRURY LA",
+            "1 P STEVENS FLEANORE C"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "4997",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 130,
+          "page_index": 27,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "WEST SPRINGFIELD",
+              "address_raw": "62 SOUTHWORTH ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 SOUTHWORTH ST DEED 247,500.00",
+            "Town: WEST SPRINGFIELD Addr:62 SOUTHWORTH ST",
+            "1 P PRENOSIL JOHN E",
+            "2 P RUFFULE ANTHONY JAMELL"
+          ]
+        },
+        {
+          "line": 131,
+          "page_index": 27,
+          "record_index": 7,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "CHICOPEE",
+              "address_raw": "61 CHESTER ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 CHESTER ST DEED 195,000.00"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "5033",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 136,
+          "page_index": 28,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SOUTHWICK",
+              "address_raw": "3 MOCKINGBIRD LA",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 MOCKINGBIRD LA DEED 1.00",
+            "Town: SOUTHWICK Addr:3 MOCKINGBIRD LA",
+            "1 P GRASSO MICHAEL A",
+            "1 P GRASSO VICKI A",
+            "2 P GRASSO VICKI A"
+          ]
+        },
+        {
+          "line": 137,
+          "page_index": 28,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "39 HERBERT AVE",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 HERBERT AVE DEED 350,000.00",
+            "Town: SPRINGFIELD Addr:39 HERBERT AVE"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "5325",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 163,
+          "page_index": 34,
+          "record_index": 4,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SOUTHWICK",
+              "address_raw": "38 MORT VINING RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 MORT VINING RD DEED 369,900.00",
+            "Town: SOUTHWICK Addr:38 MORT VINING RD",
+            "1 C RM BLERMAN LLC",
+            "2 P MAXTO RACHEL MARIE",
+            "2 P JAREST THOMAS L"
+          ]
+        },
+        {
+          "line": 164,
+          "page_index": 34,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "GRANVILLE",
+              "address_raw": "75 OLD WESTFIELD RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 OLD WESTFIELD RD DEE 155,000.00",
+            "Town: GRANVILLE Addr:75 OLD WESTFIELD RD",
+            "1 P LAPTEW THOMAS A",
+            "1 P COWLES CYNTHIA C",
+            "1 P COWELS CYNTHIA C",
+            "2 P MACHYKA JEFFREY C",
+            "2 P MACHYKA ANNMARIE"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "5403",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 175,
+          "page_index": 36,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "34 LORIMER ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 LORIMER ST DEED 29",
+            "Town: SPRINGFIELD Addr:34 LORIMER ST",
+            "1 P SIERRA XAVER A",
+            "2 P FIGUEROA EMELY",
+            "2 P AQUINO CARLOS A"
+          ]
+        },
+        {
+          "line": 176,
+          "page_index": 36,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "MONSON",
+              "address_raw": "6 CROW HILL RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "ENV ATTY FRED MCCOY",
+            "6 BURT LANE",
+            "WILBRAHAM MA 01095",
+            "1 CROW HILL RD DEED",
+            "Town: MONSON Addr:6 CROW HILL RD",
+            "1 P HOWARD JAMES B (dR)",
+            "2 P HOWARD JAMES B",
+            "2 P HOWARD JAMES B (SR)"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "6006",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 226,
+          "page_index": 46,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "AGAWAM",
+              "address_raw": "35 FARMINGTON CIR",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 FARMINGTON CIR DEED",
+            "Town: AGAWAM Addr:35 FARMINGTON CIR",
+            "1 P KANTOR KAREN C",
+            "2 P KANTOR KAREN C",
+            "2 P KANTOR SIMON W"
+          ]
+        },
+        {
+          "line": 228,
+          "page_index": 46,
+          "record_index": 7,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "LUDLOW",
+              "address_raw": "33 MORSE ST UNIT 3",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 UNIT 3 DEED 102,000.00"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "6033",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 233,
+          "page_index": 47,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "MONSON",
+              "address_raw": "18 CARRIAGE HOUSE LA",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 CARRIAGE HOUSE LA DEED",
+            "Town: MONSON Addr:18 CARRIAGE HOUSE LA",
+            "1 P FIJOL JOHN R",
+            "2 P FIJOL JOHN R",
+            "2 P FIJOL CARRIE PLANTE"
+          ]
+        },
+        {
+          "line": 234,
+          "page_index": 47,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "50 GLENCOE ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "1 GLENCOE ST DEE 210,000.00 Yy",
+            "Town: SPRINGFIELD Addr:50 GLENCOE ST",
+            "1 P HASTINGS THERESE S$"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "6820",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 320,
+          "page_index": 66,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "AGAWAM",
+              "address_raw": "39 ROBIN RIDGE DR",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 ROBIN RIDGE DR DEED 33",
+            "Town: AGAWAM Addr:39 ROBIN RIDGE DR",
+            "1 P BRANTLEY KIMBERLY",
+            "1 P MASO JENNIFER",
+            "1 P DAVIS WENDY",
+            "2 P BURNHAM TYLER"
+          ]
+        },
+        {
+          "line": 321,
+          "page_index": 66,
+          "record_index": 7,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SOUTHWICK",
+              "address_raw": "145 SOUTH LONGYARD RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 SOUTH LONGYARD RD DEED 2",
+            "0,000.00"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "6865",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 326,
+          "page_index": 67,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "LUDLOW",
+              "address_raw": "614 MOORE ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 MOORE ST DEED 259,000.00",
+            "Town: LUDLOW Addr:614 MOORE ST",
+            "1 P COTTO MARKEZ BE",
+            "1 P COLLINS EMMA",
+            "2 P JIMENEZ JORGE (JR)"
+          ]
+        },
+        {
+          "line": 327,
+          "page_index": 67,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "CHICOPEE",
+              "address_raw": "77 MEADOW ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 MEADOW ST DEED 195,000.00",
+            "Town: CHICOPEE Addr:77 MEADOW ST",
+            "1 P TOKAREV VICTORIA",
+            "2 P TIFOUR NAWAR",
+            "2 P AL SEKRAFI AYMAN"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "7076",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 363,
+          "page_index": 73,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "CHICOPEE",
+              "address_raw": "32 DAWN ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 DAWN ST DEED",
+            "Town: CHICOPEE Addr:32 DAWN ST",
+            "1 P GREGOIRE THOMAS J",
+            "1 P GREGOIRE KAREN M",
+            "2 P GREGOIRE THOMAS J (TRS)",
+            "2 P GREGOIRE KAREN M (TRS)",
+            "2 C GREGOIRE FAMILY TRUST (TRS OF)"
+          ]
+        },
+        {
+          "line": 364,
+          "page_index": 73,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "CHICOPEE",
+              "address_raw": "213 COLLEGE ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 COLLEGE ST DEED",
+            "Town: CHICOPEE Addr:213 COLLEGE ST",
+            "1 P GREGOIRE THOMAS J",
+            "1 P GREGOIRE KAREN M",
+            "2 P GREGOIRE THOMAS J (TRS)",
+            "2 P GREGOIRE KAREN M (TRS)",
+            "2 C GREGOIRE FAMILY TRUST (TRS OF)"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "8296",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 459,
+          "page_index": 93,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "WEST SPRINGFIELD",
+              "address_raw": "112 WOLCOTT AVE",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "1 WOLCOTT AVE DEED",
+            "Town: WEST SPRINGFIELD Addr:112 WOLCOTT AVE",
+            "1 P PAVALYUK PETER",
+            "2 P PAVALYUK PETER",
+            "2 P PAVALYUK NATALYA"
+          ]
+        },
+        {
+          "line": 460,
+          "page_index": 93,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "WEST SPRINGFIELD",
+              "address_raw": "668-670 MAIN ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "1 MAIN ST DEED 217,000.00",
+            "Town: WEST SPRINGFIELD Addr:668-670 MAIN ST",
+            "1 ¢C TM PROPERTIES INC",
+            "2 P WISE REBECCA ANN",
+            "2 P WISE KE ETH"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "8556",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 484,
+          "page_index": 100,
+          "record_index": 1,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "CHICOPEE",
+              "address_raw": "67 MANDALAY RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "Town: CHICOPEE Addr:67 MANDALAY RD",
+            "1 P MURDOCK ELIZABETH",
+            "1 P PYCKO ELIZABETH A",
+            "2 P MURDOCK CRAIG",
+            "2 P MURDOCK ELIZABETH"
+          ]
+        },
+        {
+          "line": 489,
+          "page_index": 100,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "AGAWAM",
+              "address_raw": "28-30 ORLANDO ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 ORLANDO ST DEE 220,000.00",
+            "Town: AGAWAM Addr:28-30 ORLANDO ST",
+            "1 P KITCHELL ALI B",
+            "1 P KITCHELL HELEN §$",
+            "2 P TAN ZHI QO",
+            "2 P TAN JIA",
+            "2 P LIE SHU"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "8664",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 508,
+          "page_index": 104,
+          "record_index": 1,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "73 CANTON ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "Town: SPRINGFIELD Addr:73 CANTON ST",
+            "1 P WELZ ANNE &E&",
+            "2 P SOTO RHONDA M"
+          ]
+        },
+        {
+          "line": 509,
+          "page_index": 104,
+          "record_index": 2,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "47 WILCOX ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 WILCOX ST DEE 99,800.00",
+            "Town: SPRINGFIELD Addr:47 WILCOX ST",
+            "1 P RUBINACCIO VALENTINO",
+            "1 P RUBINACCIO ROSALBA",
+            "1 P MANZI ROSALBA",
+            "1 P RUBINACCIO LEOPOLDO",
+            "1 P RUBINACCIO FILOMENA",
+            "1 P RUSSO FILOMENA",
+            "2 P ALJANABI AHMED"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "9803",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 596,
+          "page_index": 121,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "AGAWAM",
+              "address_raw": "9 WAGON WHEEL DR",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 WAGON WHEEL DR DEED 1.00",
+            "Town: AGAWAM Addr:9 WAGON WHEEL DR",
+            "1 P DANIE ROBERT J",
+            "1 P DANIE PAMELA M",
+            "2 P BEGLANE BRIAN M",
+            "2 P DANIE KEVI P",
+            "2 P DANIE ROBERT J (LIFE EST)",
+            "2 P DANIE PAMELA M (LIFE EST)"
+          ]
+        },
+        {
+          "line": 597,
+          "page_index": 121,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "WESTFIELD",
+              "address_raw": "107 TANNERY RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 TANNERY RD DEED 226,000.00",
+            "Town: WESTFIELD Addr:107 TANNERY RD",
+            "1 P CRAWFORD CARL J (JR REP)",
+            "1 P CRAWFORD CARL J (EST)",
+            "1 P CRAWFORD CARL J (SR EST)"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "10061",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 624,
+          "page_index": 126,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "282 GILBERT AVE",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 GILBERT AVE DEED 418,000.00",
+            "Town: SPRINGFIELD Addr:282 GILBERT AVE",
+            "1 C BRETTA CONSTRUCTION LLC",
+            "2 P MARTINEZ LUG",
+            "2 P MACVARISH JIMMY"
+          ]
+        },
+        {
+          "line": 625,
+          "page_index": 126,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "68 CHEYENNE RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 CHEYENNE RD DEED 230,000.00",
+            "Town: SPRINGFIELD Addr:68 CHEYENNE RD",
+            "1 P BACIS JASON",
+            "2 P DELNEGRO ICHOLAS DANIEL"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "10500",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 666,
+          "page_index": 136,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "19 BERKELEY ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "1 BERKELEY ST DEED 100.00",
+            "Town: SPRINGFIELD Addr:19 BERKELEY ST",
+            "1 P BROW UULA",
+            "2 P BROW EVI C",
+            "2 P BROW RICHARD E",
+            "2 P PAULK AGNES L",
+            "2 P SELLERS SHIRLEY A",
+            "2 P YOUNG PATRICIA L",
+            "2 P BROW ULA (LIFE EST)"
+          ]
+        },
+        {
+          "line": 667,
+          "page_index": 136,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "206 WHITE ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "1 WHITE ST DEE",
+            "Town: SPRINGFIELD Addr:206 WHITE ST",
+            "1 P LE AEB L",
+            "1 P LE HUONG T",
+            "1 P PHAN SANG VAN",
+            "1g"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "10544",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 678,
+          "page_index": 138,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "CHICOPEE",
+              "address_raw": "64 SHAWINIGAN DR",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 SHAWINIGAN DR DEED 1,162,050.00",
+            "Town: CHICOPEE Addr:64 SHAWINIGAN DR",
+            "1 C SHAWINIGAN DRIVE LLC",
+            "2 C WESTERN MASSACHUSETTS EMERGENCY COMMUNICATIONS DISTRICT"
+          ]
+        },
+        {
+          "line": 679,
+          "page_index": 138,
+          "record_index": 7,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": null,
+              "address_raw": "560 MORGAN RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 MORGAN RD DEED"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "10920",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 697,
+          "page_index": 145,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "PALMER",
+              "address_raw": "NORTH ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "1 NORTH ST DEE 1.00",
+            "Town: PALMER Addr:NORTH ST",
+            "1 P TULLY DENNIS E",
+            "2 P FRYDRYK ANN C (LIFE EST)",
+            "2 P FRYDRYK DONALD J",
+            "2 P FRYDRYK ROBERT P",
+            "2 P FRYDRYK THOMAS W"
+          ]
+        },
+        {
+          "line": 698,
+          "page_index": 145,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "LUDLOW",
+              "address_raw": "22 GAUDREAU AVE",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "1 GAUDREAU AVE DEED 1.00",
+            "Y",
+            "Town: LUDLOW Addr:22 GAUDREAU AVE"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "11293",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 741,
+          "page_index": 154,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "AGAWAM",
+              "address_raw": "107 REED ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 REED ST DEED 1.00",
+            "Town: AGAWAM Addr:107 REED ST",
+            "1 P TIKHOMIROVA VIKTORIYA",
+            "2 P TIKHOMIROVA VIKTORIYA",
+            "2 P GHRASIMCHUK VYACHESLAV"
+          ]
+        },
+        {
+          "line": 742,
+          "page_index": 154,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "HANCOCK ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 HANCOCK ST DEED 23,000.00",
+            "Town: SPRINGFIELD Addr:HANCOCK ST",
+            "1 P JONES ROBIN L",
+            "2 P GARCIA JOSEPH"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "11619",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 775,
+          "page_index": 160,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "80-82 LHEYFRED TERR",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 EYFRED TERR DEE 286,000.00",
+            "Town: SPRINGFIELD Addr:80-82 LHEYFRED TERR",
+            "1 C MADISON PROPERTY INVESTORS LLC",
+            "2 P KENNEDY CALISA"
+          ]
+        },
+        {
+          "line": 776,
+          "page_index": 160,
+          "record_index": 7,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "901 WILBRAHAM RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 WILBRAHAM RD DEED 175,000.00"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "11651",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 781,
+          "page_index": 161,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "WEST SPRINGFIELD",
+              "address_raw": "19 ROCHELLE ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 ROCHELLE ST DEED 295,500.00",
+            "Town: WEST SPRINGFIELD Addr:19 ROCHELLE ST",
+            "1 P BOYLE KEVIN",
+            "1 P CASIELLO LANA",
+            "1 P CASIELLO-BOYLE LANA",
+            "2 P TRUONG KEVIN"
+          ]
+        },
+        {
+          "line": 782,
+          "page_index": 161,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "BLANDFORD",
+              "address_raw": "28 BLAIR RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 BLAIR RD DEED 215,000.00",
+            "Town: BLANDFORD Addr:28 BLAIR RD",
+            "1 C EMERALD CITY RENTALS LLC",
+            "2 P HANLON MIA"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "11915",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 811,
+          "page_index": 168,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "PALMER",
+              "address_raw": "2191 MAIN ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 MAIN ST DEED 65,000.00",
+            "Town: PALMER Addr:2191 MAIN ST",
+            "1 P MASTON GEORGE E",
+            "1 P MASTON MELISSA M",
+            "2 P MASTON WILLIAM B",
+            "2 P ZURON AMBER"
+          ]
+        },
+        {
+          "line": 812,
+          "page_index": 168,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "88 ARDMORE ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 ARDMORE ST DEED 1.00",
+            "Town: SPRINGFIELD Addr:88 ARDMORE ST",
+            "1 P MORIARTY GERALDINE D",
+            "2 P MORIARTY DANIEL M"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "12196",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 846,
+          "page_index": 175,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "CHICOPEE",
+              "address_raw": "29 MEADE AVE",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE INGEO",
+            "1 MEADE AVE DEED",
+            "Town: CHICOPEE Addr:29 MEADE AVE",
+            "1 P HAWK THERESA J",
+            "2 C HAWK FAMILY IRREVOCABLE TRUST (TRS OF)",
+            "2 P HAWK DAWN N (TRS)",
+            "2 P HAWK DAVID D (TRS)"
+          ]
+        },
+        {
+          "line": 847,
+          "page_index": 175,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "CHICOPEE",
+              "address_raw": "144 HORSESHOE DR UNIT 144",
+              "unit_hint": "6160B",
+              "ref_role": "PRIMARY"
+            },
+            {
+              "ref_index": 1,
+              "town": "CHICOPEE",
+              "address_raw": "144 HORSESHOE DR UNIT 6160B",
+              "unit_hint": "6160B",
+              "ref_role": "ADDITIONAL"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 UNIT 6160B,UNIT 144 DEED",
+            "Town: CHICOPEE Addr:144 HORSESHOE DR UNIT 144",
+            "Town: CHICOPEE Addr:144 HORSESHOE DR UNIT 6160B",
+            "6 23:55:46 RG370RP",
+            "Q THROUGH 9, 999,999,999",
+            "VFY",
+            "DERATION STS",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "1.00",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "1.00",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "1.00",
+            "Y",
+            "Y"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "12557",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 875,
+          "page_index": 181,
+          "record_index": 3,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "CHICOPEE",
+              "address_raw": "61 SHEPHERD ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 SHEPHERD ST DEE 22",
+            "Town: CHICOPEE Addr:61 SHEPHERD ST",
+            "1 P RIVARD JOHN J",
+            "1 P RIVARD SUSAN M",
+            "2 P MOQUI SHERRI"
+          ]
+        },
+        {
+          "line": 878,
+          "page_index": 181,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "HOLYOKE",
+              "address_raw": "31 SUNSET RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 SUNSET RD DEED 27",
+            "Town: HOLYOKE Addr:31 SUNSET RD",
+            "1 P LUNARDINI BRETT J (REP)",
+            "1 P LUNARDINI ADAM J (EST)",
+            "2 P KRAUSE-ELY LILLIAN K",
+            "2 P ELY JOSEPH H (IX)"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "12714",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 900,
+          "page_index": 185,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "AGAWAM",
+              "address_raw": "1090 RIVER RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 RIVER RD DEED 1.00",
+            "Town: AGAWAM Addr:1090 RIVER RD",
+            "1 P BALLARD PHILIP R",
+            "1 P BALLARD DEBORAH A",
+            "2 P BALLARD PHILIP R (TR)",
+            "2 C PHILIP R BALLARD REVOCABLE TRUST (TR OF)"
+          ]
+        },
+        {
+          "line": 901,
+          "page_index": 185,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "HOLYOKE",
+              "address_raw": "1035 HAMPDEN ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 HAMPDEN ST DEED 253,750.00"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "12738",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 907,
+          "page_index": 186,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "WILBRAHAM",
+              "address_raw": "96 STONY HILL RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 STONY HILL RD DEED 240,000.00",
+            "Town: WILBRAHAM Addr:96 STONY HILL RD",
+            "1 P BUTTS JOSEPH",
+            "1 P MECHE DAGMAR",
+            "2 P KOTFILA COURTNEY"
+          ]
+        },
+        {
+          "line": 908,
+          "page_index": 186,
+          "record_index": 7,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "41 GARCIA ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 GARCIA ST DEED 150,000.00"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "12828",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 920,
+          "page_index": 188,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "9-11 BLOOMFIELD ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 BLOOMFIELD ST DEED 186,000.00",
+            "Town: SPRINGFIELD Addr:9-11 BLOOMFIELD ST",
+            "1 C LACHENAUER LLC",
+            "2 P CORTEZ JUAN CARLOS GARCIA"
+          ]
+        },
+        {
+          "line": 921,
+          "page_index": 188,
+          "record_index": 7,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "WEST SPRINGFIELD",
+              "address_raw": "10 SHADOW LA",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "Town: WEST SPRINGFIELD Addr:10 SHADOW LA"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "12951",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 935,
+          "page_index": 191,
+          "record_index": 4,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "45-47 LOS ANGELES ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 LOS ANGELES ST DEE 325,000.00",
+            "Town: SPRINGFIELD Addr:45-47 LOS ANGELES ST",
+            "1 P SOUSA FRED D",
+            "2 P RODRIGUEZ KATHYRIA B",
+            "2 P LOPEZ RICHARD C"
+          ]
+        },
+        {
+          "line": 936,
+          "page_index": 191,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "AGAWAM",
+              "address_raw": "125 COREY COLONIAL",
+              "unit_hint": "125",
+              "ref_role": "PRIMARY"
+            },
+            {
+              "ref_index": 1,
+              "town": "AGAWAM",
+              "address_raw": "125 COREY COLONIAL UNIT 125",
+              "unit_hint": "125",
+              "ref_role": "ADDITIONAL"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 UNIT 125 DEED 159,700.00",
+            "Town: AGAWAM Addr:125 COREY COLONIAL",
+            "Town: AGAWAM Addr:125 COREY COLONIAL UNIT 125",
+            "1 P DONAH STEVEN",
+            "1 P DONAH DIANE",
+            "2 P BERGER VIRGINIA M"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "13163",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 958,
+          "page_index": 196,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "PALMER",
+              "address_raw": "21 MEADOWBROOK LA UNIT 21",
+              "unit_hint": "21",
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "1 UNIT 21 DEED 111,500.00 Yy",
+            "Town: PALMER Addr:21 MEADOWBROOK LA UNIT 21",
+            "1 P MCNEILL DEBRA",
+            "2 P REUTER CAROLE A"
+          ]
+        },
+        {
+          "line": 959,
+          "page_index": 196,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "MONSO",
+              "address_raw": "239 HOVEY RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "1 HOVEY RD DEED 478,000.00 Yy",
+            "Town: MONSO Addr:239 HOVEY RD",
+            "1 P BENIAMINO JAMES S$",
+            "1 P BENIAMINO BARBARA K",
+            "2 P DORE TYMMOTHY",
+            "2 P DORE EMILY"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "13384",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 998,
+          "page_index": 203,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "BAST LONGMEADOW",
+              "address_raw": "14 BELLA VISTA DR",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 BELLA VISTA DR DEED 599,900.00",
+            "Town: BAST LONGMEADOW Addr:14 BELLA VISTA DR",
+            "1 ¢ AC HOMEBUILDING LLC",
+            "2 P SZAWLOWSKI ALEXANDRA",
+            "2 P SZAWLOWSKI MICHAEL"
+          ]
+        },
+        {
+          "line": 1000,
+          "page_index": 203,
+          "record_index": 7,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "LONGMEADOW",
+              "address_raw": "810 FRANK SMITH RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 FRANK SMITH RD DEED"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "13410",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1005,
+          "page_index": 204,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "LONGMEADOW",
+              "address_raw": "130 ARLINGTON RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 ARLINGTON RD DEED 575,000.00",
+            "Town: LONGMEADOW Addr:130 ARLINGTON RD",
+            "1 P ZAYAC ALEXANDER J",
+            "1 P ZAYAC TARA L",
+            "1 P OBERG TARA L",
+            "2 P DUBRINSKY-CLAYTO ISABEL",
+            "2 P CLAYTON WILLIAM J"
+          ]
+        },
+        {
+          "line": 1006,
+          "page_index": 204,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "LONGMEADOW",
+              "address_raw": "535 CONVERSE ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 CONVERSE ST DEED 299,000.00",
+            "Town: LONGMEADOW Addr:535 CONVERSE ST",
+            "1 P BONAVITA PETER A",
+            "2 P BERTOLOTTI DONNA A"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "13926",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1060,
+          "page_index": 216,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "BRIMFIELD",
+              "address_raw": "12 THIRD ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            },
+            {
+              "ref_index": 1,
+              "town": "BRIMFIELD",
+              "address_raw": "96 3RD ST",
+              "unit_hint": null,
+              "ref_role": "ADDITIONAL"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 THIRD ST,3RD ST DEE 150,000.00",
+            "Town: BRIMFIELD Addr:12 THIRD ST",
+            "Town: BRIMFIELD Addr:96 3RD ST",
+            "1 P RYA REGINA L",
+            "1 P RYA DAVID M",
+            "2 C ROCHA RE I & HOME IMPROVEMENT LLC"
+          ]
+        },
+        {
+          "line": 1061,
+          "page_index": 216,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "260 PHELAND AVE",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 PHELAND AVE DEED 145,377.00",
+            "Town: SPRINGFIELD Addr:260 PHELAND AVE",
+            "1 P SANSALONE MARIA"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "14134",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1083,
+          "page_index": 221,
+          "record_index": 4,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "BAST LONGMEADOW",
+              "address_raw": "18 FOREST HILLS RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 FOREST HILLS RD DEED 1.00",
+            "Town: BAST LONGMEADOW Addr:18 FOREST HILLS RD",
+            "1 P STANLEY SADIE R",
+            "1 P STANLEY SADIE H",
+            "2 P STANLEY JULIAN C",
+            "2 P STANLEY SADIE R (LIFE EST)"
+          ]
+        },
+        {
+          "line": 1084,
+          "page_index": 221,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "HOLYOKE",
+              "address_raw": "34 MOSS AVE",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 MOSS AVE DEED",
+            "Town: HOLYOKE Addr:34 MOSS AVE",
+            "1 P MACIEROWSKI LINDA (EST)",
+            "1 P DRISCOLL LINDA (EST)",
+            "1 P MACIEROWSKI MICHAEL (REP)",
+            "2 P MACIEBROWSKI MICHAEL"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "14260",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1101,
+          "page_index": 225,
+          "record_index": 1,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "56-60 FORT PLEASANT AVE",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "Town: SPRINGFIELD Addr:56-60 FORT PLEASANT AVE",
+            "1 C 56-60 FIT PLEASANT LLC",
+            "2 C SPRINGFIELD GARDENS 56-60 LP"
+          ]
+        },
+        {
+          "line": 1105,
+          "page_index": 225,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "70-78 1/2 BELMONT AVE",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "ENV-FEDEX LAMB & ASSOCIATES P C",
+            "C/O CHRIS REESOR",
+            "6 WEYBOSSETT AVE",
+            "FRAMINGHAM MA 01702",
+            "1 BELMONT AVE DEED",
+            "Town: SPRINGFIELD Addr:70-78 1/2 BELMONT AVE",
+            "1 C BELMONT AVE HOLDINGS LLC",
+            "2 C SPRINGFIELD GARDENS 70-78 LP"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "15074",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1155,
+          "page_index": 240,
+          "record_index": 3,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "LUDLOW",
+              "address_raw": "30 OAKRIDGE ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 OAKRIDGE ST DEED 225,000.00",
+            "Town: LUDLOW Addr:30 OAKRIDGE ST",
+            "1 P SIMAO JOAN M",
+            "2 P PEREIRA NATHAN J"
+          ]
+        },
+        {
+          "line": 1159,
+          "page_index": 240,
+          "record_index": 7,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "AGAWAM",
+              "address_raw": "18 VILLA DR UNIT 1",
+              "unit_hint": "1",
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE INGEO",
+            "1 UNIT 1 DEED 1.00",
+            "Town: AGAWAM Addr:18 VILLA DR UNIT 1"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "15931",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1251,
+          "page_index": 260,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "36 KENT RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 KENT RD DEED 22",
+            "Town: SPRINGFIELD Addr:36 KENT RD",
+            "1 P SANTANA JUAN ANGEL",
+            "2 P MARRERO MICHELLE E RODRIGUEZ",
+            "2 P QUINTANA NOEL MERCADO"
+          ]
+        },
+        {
+          "line": 1252,
+          "page_index": 260,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "40 WARRINER AVE",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 DEED 7641 172",
+            "Town: SPRINGFIELD Addr:40 WARRINER AVE"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "16078",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1264,
+          "page_index": 263,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "47-49 DICKINSON ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 DICKINSON ST DEED 300,000.00",
+            "Town: SPRINGFIELD Addr:47-49 DICKINSON ST",
+            "1 ¢ JJS CAPITAL INVESTMENT LLC",
+            "2 P FELICIANO JUNIOR SANTOS"
+          ]
+        },
+        {
+          "line": 1265,
+          "page_index": 263,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "1585 CAREW ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 CAREW ST DEE",
+            "Town: SPRINGFIELD Addr:1585 CAREW ST",
+            "1 P RODRIGUEZ ARTURO",
+            "2 P RODRIGUEZ ARTURO",
+            "2 P RODRIGUEZ ANA"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "16502",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1304,
+          "page_index": 272,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "PALMER",
+              "address_raw": "10 COUNTRY LA",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 COUNTRY LA DEED 24,000.00",
+            "Town: PALMER Addr:10 COUNTRY LA",
+            "1 P PETRISIS JAMES J",
+            "1 P PETRISIS LINDA A",
+            "2 P KIRCHNER DOMINIC (II TR)",
+            "2 C ANOUK REALTY TRUST (TR OF)"
+          ]
+        },
+        {
+          "line": 1305,
+          "page_index": 272,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "LUDLOW",
+              "address_raw": "195 CADY ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 CADY ST DEED 235,000.00",
+            "Town: LUDLOW Addr:195 CADY ST",
+            "1 P VIEIRA CHRYSTAL J"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "17092",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1370,
+          "page_index": 286,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "CHICOPEE",
+              "address_raw": "308 EAST ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE INGEO",
+            "1 EAST ST DEED 235,000.00",
+            "Town: CHICOPEE Addr:308 EAST ST",
+            "1 P FERREIRA KARE",
+            "1 P WOLCHECK KAREN AMY",
+            "2 P REIDY ASHLEY E"
+          ]
+        },
+        {
+          "line": 1371,
+          "page_index": 286,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "LUDLOW",
+              "address_raw": "45 DUKE ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 DUKE ST DEE 214,000.00",
+            "Town: LUDLOW Addr:45 DUKE ST",
+            "1 P CORREIA RACHEL",
+            "1 P CORREIA RACHEL L",
+            "1 P CORREIA CELSO",
+            "2 P JORGE ANTHONY"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "17144",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1381,
+          "page_index": 288,
+          "record_index": 4,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "773-775 ARMORY ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "1 ARMORY ST DEED 227,000.00",
+            "Town: SPRINGFIELD Addr:773-775 ARMORY ST",
+            "1 P WALKER BYRON",
+            "1 P WALKER BYRON L",
+            "2 P SANCHEZ ABIGAIL"
+          ]
+        },
+        {
+          "line": 1382,
+          "page_index": 288,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "AGAWAM",
+              "address_raw": "106 PLANTATION DR",
+              "unit_hint": "106",
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "1 UNIT 106 DEED 155,000.00",
+            "Town: AGAWAM Addr:106 PLANTATION DR",
+            "1 P DUBUC-KING KATHLEEN (REP)",
+            "1 P DUBUC JOSEPH L (EST)",
+            "2 P MAHER ELIZABETH A"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "18169",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1487,
+          "page_index": 309,
+          "record_index": 4,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "WESTFIELD",
+              "address_raw": "1 YEOMAN AVE",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 YEOMAN AVE DEED 260,000.00",
+            "Town: WESTFIELD Addr:1 YEOMAN AVE",
+            "1 P BOBE LORRIE J",
+            "1 P ROSARIO LORRIE B",
+            "2 P ARKOBTTE ROXANNE A",
+            "2 P ARKOBTTE CHAD R"
+          ]
+        },
+        {
+          "line": 1489,
+          "page_index": 309,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "CHICOPEE",
+              "address_raw": "21 CONNELL ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 CONNELL ST DEED 1.00"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "18188",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1494,
+          "page_index": 310,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "AGAWAM",
+              "address_raw": "205 SOUTHWICK ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 SOUTHWICK ST DEED 1.00",
+            "Town: AGAWAM Addr:205 SOUTHWICK ST",
+            "1 P REMY MICHAEL A",
+            "2 P REMY MICHAEL A",
+            "2 P REMY SHANNON L"
+          ]
+        },
+        {
+          "line": 1495,
+          "page_index": 310,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "CHICOPEE",
+              "address_raw": "70 NARRAGANSETT BLVD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 DEED 23745 555 248,000.00",
+            "Town: CHICOPEE Addr:70 NARRAGANSETT BLVD"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "18447",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1514,
+          "page_index": 314,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "WESTFIELD",
+              "address_raw": "243 WEST RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 WEST RD DEED",
+            "Town: WESTFIELD Addr:243 WEST RD",
+            "1 P REED JAMES S$",
+            "2 P REED JAMES § (LIFE EST)",
+            "2 P REED JACOB P"
+          ]
+        },
+        {
+          "line": 1515,
+          "page_index": 314,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "WESTFIELD",
+              "address_raw": "WEST RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 WEST RD DEED",
+            "Town: WESTFIELD Addr:WEST RD"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "18531",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1525,
+          "page_index": 317,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "3 SUMNER AVE",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE INGE",
+            "1 SUMNER AVE DEED 249,900.00",
+            "Town: SPRINGFIELD Addr:3 SUMNER AVE",
+            "1 CU S BANK (TR)",
+            "1 C VELOCITY COMMERCIAL CAPITAL LOAN TRUST 2014-1 (TR OF)",
+            "2 P ARNOLD BRUCE A (SR TR)",
+            "2 C 3 SUMNER AVENUE REALTY TRUST (TR OF)"
+          ]
+        },
+        {
+          "line": 1526,
+          "page_index": 317,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "CHICOPEE",
+              "address_raw": "113 WHEATLAND AVE",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 WHEATLAND AVE DEED 95,000.00",
+            "Town: CHICOPEE Addr:113 WHEATLAND AVE",
+            "1 P SHEVCHUK ANDREY",
+            "2 P BALUT JASON"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "18890",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1569,
+          "page_index": 326,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "WEST SPRINGFIELD",
+              "address_raw": "63 BRIDLE PATH RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 BRIDLE PATH RD DEED 195,000.00",
+            "Town: WEST SPRINGFIELD Addr:63 BRIDLE PATH RD",
+            "1 P FLOUTON TIMOTHY",
+            "2 P DEA JEFFREY W"
+          ]
+        },
+        {
+          "line": 1570,
+          "page_index": 326,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "BAST LONGMEADOW",
+              "address_raw": "21 SUTTON PL",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 SUTTON PL DEE 435,000.00",
+            "Town: BAST LONGMEADOW Addr:21 SUTTON PL",
+            "1 P URSINO RICHARD",
+            "1 P URSINO JANET"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "18964",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1581,
+          "page_index": 328,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "RUSSELL",
+              "address_raw": "31 LINCOLN AVE",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 LINCOLN AVE DEE",
+            "Town: RUSSELL Addr:31 LINCOLN AVE",
+            "1 P MIEZEJEWSKI SYBIL K",
+            "2 P MIEZEJEWSKI SHEILA ANN",
+            "2 P MIEZEJEWSKI SYBIL K (LIFE EST)"
+          ]
+        },
+        {
+          "line": 1582,
+          "page_index": 328,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "HOLYOKE",
+              "address_raw": "127 VERMONT ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 VERMONT ST DEED 135,000.00",
+            "Town: HOLYOKE Addr:127 VERMONT ST",
+            "1 P DUNLAP MARK STEVEN",
+            "1 P DUNLAP MARK",
+            "1 P DUNLAP SCOTT EVA",
+            "1 P DUNLAP ScoTT",
+            "2 P DUNLAP MARK STEVEN",
+            "KH Hg"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "19243",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1611,
+          "page_index": 334,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "WEST SPRINGFIELD",
+              "address_raw": "28 WARREN ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 WARREN ST DEED 280,000.00",
+            "Town: WEST SPRINGFIELD Addr:28 WARREN ST",
+            "1 P HOGAN PATRICK MICHAEL",
+            "2 P CHE ZHONG",
+            "2 P LI YUN"
+          ]
+        },
+        {
+          "line": 1612,
+          "page_index": 334,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "WESTFIELD",
+              "address_raw": "78 WESTERN CIR",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 WESTERN CIR DEED 1.00",
+            "Town: WESTFIELD Addr:78 WESTERN CIR",
+            "1 P THOMAS AUREN E",
+            "1 P CARRINGTON AUREN E",
+            "2 P MCCARTHY MARION E"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "19410",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1629,
+          "page_index": 337,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "18 NORFOLK ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 NORFOLK ST DEED 180,000.00",
+            "Town: SPRINGFIELD Addr:18 NORFOLK ST",
+            "1 P IRIZARRY NAIDA",
+            "2 P BARQUIN OSCAR"
+          ]
+        },
+        {
+          "line": 1630,
+          "page_index": 337,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "WESTFIELD",
+              "address_raw": "10 NICHOLAS LA",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 DEED 23571 535",
+            "Town: WESTFIELD Addr:10 NICHOLAS LA",
+            "1 P LOBODA MAKSIM I",
+            "1 P LOBODA MAXSIM I",
+            "1 P LOBODA YEKATERINA P",
+            "2 P LOBODA MAKSIM I",
+            "2 P LOBODA YEKATERINA P"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "19670",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1632,
+          "page_index": 340,
+          "record_index": 2,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "CHICOPEE",
+              "address_raw": "585 SHERIDAN ST #38",
+              "unit_hint": "38",
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 UNIT 38 DEED",
+            "Town: CHICOPEE Addr:585 SHERIDAN ST #38",
+            "1 P DAVIGNO UUCILLE A",
+            "2 P DAVIGNO JUCILLE A (LIFE EST)",
+            "2 P DAVIGNO SUSAN M",
+            "2 P DAVIGNO PAUL L"
+          ]
+        },
+        {
+          "line": 1637,
+          "page_index": 340,
+          "record_index": 7,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "HAST LONGMEADOW",
+              "address_raw": "188 ELM ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 ELM ST DEED 65,000.00"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "19685",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1642,
+          "page_index": 341,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "CHICOPEE",
+              "address_raw": "126 AMHERST ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 AMHERST ST DEED 25,000.00",
+            "Town: CHICOPEE Addr:126 AMHERST ST",
+            "1 P MAHDY TAMER",
+            "2 P ALY ENAM"
+          ]
+        },
+        {
+          "line": 1643,
+          "page_index": 341,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "45 GREANEY ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 GREANEY ST DEE 180,700.00",
+            "Town: SPRINGFIELD Addr:45 GREANEY ST",
+            "1 P PICARD DENIS R",
+            "1 P PEKTIT LISE M",
+            "1 P PEKTIT LISA M",
+            "2 P VILLALOBOS ADRIAN MORALES"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "20406",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1720,
+          "page_index": 358,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "131 NASSAU DR UNIT 131",
+              "unit_hint": "131",
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 UNIT 131 DEED 129,900.00",
+            "Town: SPRINGFIELD Addr:131 NASSAU DR UNIT 131",
+            "1 P SPECHT ANNE M I",
+            "2 P TOMS ALICE P I"
+          ]
+        },
+        {
+          "line": 1721,
+          "page_index": 358,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "CHICOPEE",
+              "address_raw": "59 WATSON ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE INGE",
+            "1 WATSON ST DEED 150,000.00",
+            "Town: CHICOPEE Addr:59 WATSON ST"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "20588",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1748,
+          "page_index": 363,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "CHESTER",
+              "address_raw": "128 PROSPECT ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 PROSPECT ST DEED",
+            "Town: CHESTER Addr:128 PROSPECT ST",
+            "1 P SALVINI STEPHEN A (JR) I",
+            "1 P SHEA MAUREEN I",
+            "1 P SALVINI MAUREEN I",
+            "2 P SALVINI STEPHEN A (JR) I"
+          ]
+        },
+        {
+          "line": 1749,
+          "page_index": 363,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "192 MAYNARD ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 MAYNARD ST DEED 170,000.00",
+            "Town: SPRINGFIELD Addr:192 MAYNARD ST",
+            "1 P MARTINEZ VICTOR I",
+            "1 P RIVERA JUANA I",
+            "2 P DORSEY ROSA I"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "21000",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1792,
+          "page_index": 373,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "AGAWAM",
+              "address_raw": "1094 SUFFIELD ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 SUFFIELD ST DEE 1,150,000.00",
+            "Town: AGAWAM Addr:1094 SUFFIELD ST",
+            "1 C WORK OPPORTUNITY CENTER INC",
+            "2 C TIERNANOGE PROPERTIES LLC"
+          ]
+        },
+        {
+          "line": 1793,
+          "page_index": 373,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "15 EDDY ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 EDDY ST DEE 1.00",
+            "Town: SPRINGFIELD Addr:15 EDDY ST",
+            "1 P SALAME FRANK E",
+            "2 P DECARO RACHEL E"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "21276",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1826,
+          "page_index": 380,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "17 FOX HILL RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 FOX HILL RD DEED",
+            "Town: SPRINGFIELD Addr:17 FOX HILL RD",
+            "1 P DURRELL STEVEN L",
+            "2 P DURRELL STEVEN L",
+            "2 P LANGLEY DEBBI",
+            "2 P JURKOWSKI MICHAEL"
+          ]
+        },
+        {
+          "line": 1827,
+          "page_index": 380,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "WESTFIELD",
+              "address_raw": "44 TANNERY RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 TANNERY RD DEED",
+            "Town: WESTFIELD Addr:44 TANNERY RD",
+            "1 P BARD FRANCIS L (REP)",
+            "1 P LANCIE BEATRICE (EST)"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "21337",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1838,
+          "page_index": 382,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "1154 WORTHINGTON ST",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 WORTHINGTON ST DEED 1.00",
+            "Town: SPRINGFIELD Addr:1154 WORTHINGTON ST",
+            "1 P BROADNAX ANTHONY B",
+            "2 P BROADNAX ANTHONY B",
+            "2 P SMITH MAISHA E"
+          ]
+        },
+        {
+          "line": 1839,
+          "page_index": 382,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "BLANDFORD",
+              "address_raw": "30 GORE RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 GORE RD DEED 1.00",
+            "Town: BLANDFORD Addr:30 GORE RD",
+            "1 P DAGENAIS KENNETH",
+            "1 P DAGENAIS EMILY"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "21610",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1871,
+          "page_index": 388,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "WEST SPRINGFIELD",
+              "address_raw": "52 MEADOWBROOK AVE",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 MEADOWBROOK AVE DEED 135,000.00",
+            "Town: WEST SPRINGFIELD Addr:52 MEADOWBROOK AVE",
+            "1 P GIANNETTI MARIAN L",
+            "2 C CUSTOM HOMES DEVELOPMENT GROUP LLC"
+          ]
+        },
+        {
+          "line": 1872,
+          "page_index": 388,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "MONTGOMERY",
+              "address_raw": "66 LAMBSON RD",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 LAMBSON RD DEED 1.00",
+            "Town: MONTGOMERY Addr:66 LAMBSON RD",
+            "1 P SECTOR SARAH",
+            "1 P FITZGERALD SARAH J",
+            "1 P FITZGERALD SARAH",
+            "2 P SECTOR ANDREW G"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "21710",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1887,
+          "page_index": 391,
+          "record_index": 4,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "WEST SPRINGFIELD",
+              "address_raw": "125 CRAIWELL AVE",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 CRAIWELL AVE DEED 341,000.00",
+            "Town: WEST SPRINGFIELD Addr:125 CRAIWELL AVE",
+            "1 P PERRY REGINA R",
+            "1 P RANSTROM REGINA ROSE",
+            "1 P RANSTORM REGINA ROSE",
+            "1 P PERRY DEVIN M",
+            "2 P RIVEST MATTHEW D",
+            "2 P RIVEST ADAIR"
+          ]
+        },
+        {
+          "line": 1889,
+          "page_index": 391,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "SPRINGFIELD",
+              "address_raw": "45 WILBRAHAM AVE",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 WILBRAHAM AVE DEE 1.00",
+            "Town: SPRINGFIELD Addr:45 WILBRAHAM AVE",
+            "1 P MORRIS PERNESE",
+            "1 P SMITH JENAQUAY TASHAWNA"
+          ]
+        }
+      ]
+    },
+    {
+      "inst": "21832",
+      "count": 2,
+      "occurrences": [
+        {
+          "line": 1911,
+          "page_index": 396,
+          "record_index": 5,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "BAST LONGMEADOW",
+              "address_raw": "29 WELLINGTON DR",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 WELLINGTON DR DEED 719,000.00",
+            "Town: BAST LONGMEADOW Addr:29 WELLINGTON DR",
+            "1 P ALIENGENA KEVI J",
+            "1 P ALIENGENA LISA M",
+            "2 P SHER ROBERT JOSHPH",
+            "2 P SHER SUZANNE"
+          ]
+        },
+        {
+          "line": 1912,
+          "page_index": 396,
+          "record_index": 6,
+          "property_refs": [
+            {
+              "ref_index": 0,
+              "town": "CHICOPEE",
+              "address_raw": "245 ROLF AVE",
+              "unit_hint": null,
+              "ref_role": "PRIMARY"
+            }
+          ],
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "1 ROLF AVE DEED 287,000.00",
+            "Town: CHICOPEE Addr:245 ROLF AVE"
+          ]
+        }
+      ]
+    }
+  ]
+}

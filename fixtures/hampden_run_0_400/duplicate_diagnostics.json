@@ -1,0 +1,5483 @@
+{
+  "summary": {
+    "total_joined_rows": 1927,
+    "duplicated_inst_count": 59
+  },
+  "duplicates": [
+    {
+      "inst_raw": "(NONE)",
+      "count": 3,
+      "occurrences": [
+        {
+          "joined_index": 142,
+          "joined_line": 143,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 30,
+            "record_index": 1
+          },
+          "evidence_lines": [
+            "Town: SPRINGFIELD Addr:186 DAVIS ST",
+            "1 P GILLORY LUCILE M (REPS)",
+            "1 P GARETE DONNA M (REPS)",
+            "1 P FETTES JAMES WILLIAM (EST)",
+            "1 P FETTES JAMES W (EST)",
+            "2 C EQUITY TRUST CO (CUSTN)",
+            "2 P IGREAU ROBERT",
+            "2C",
+            "ROBERT IGR",
+            "BAU IRA"
+          ],
+          "rowctx_ref": {},
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 30,
+              "record_index": 1
+            }
+          ],
+          "rowctx_matches_count": 0,
+          "rowctx_matches_sample": []
+        },
+        {
+          "joined_index": 865,
+          "joined_line": 866,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 179,
+            "record_index": 1
+          },
+          "evidence_lines": [
+            "Town: SPRI ELD Addr:40 CHALFONTE DR",
+            "1 P MARTINEZ CARLOS E",
+            "1 P DELGADO LUZ",
+            "2 P DESROSIERS PAUL JOSEPH (JR)",
+            "2 P GONZALEZ DIALIZ"
+          ],
+          "rowctx_ref": {},
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 179,
+              "record_index": 1
+            }
+          ],
+          "rowctx_matches_count": 0,
+          "rowctx_matches_sample": []
+        },
+        {
+          "joined_index": 1105,
+          "joined_line": 1106,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 227,
+            "record_index": 1
+          },
+          "evidence_lines": [
+            "Town: LONGMEADOW Addr: ANTHONY",
+            "Town: SPRINGFIELD Addr:71 YORK",
+            "1 P SHERMAN",
+            "1 P SHERMAN",
+            "1 P SHERMAN",
+            "2 P SHERMAN",
+            "2 P SHERMAN",
+            "2 C MARK M SHERMAN TRUST (TRS OF)",
+            "REFERENCE",
+            "BOOK-PAGE",
+            "RD",
+            "TOWN DR",
+            "MARK M",
+            "MARK",
+            "JANE L",
+            "MARK M (TRS)",
+            "JANE L (TRS)",
+            "1/18/26 23:55:46",
+            "PAGE 228",
+            "RG370RP",
+            "TION: 0 THROUGH 9,999,999,999",
+            "CONSIDERATION",
+            "KEK"
+          ],
+          "rowctx_ref": {},
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 227,
+              "record_index": 1
+            }
+          ],
+          "rowctx_matches_count": 0,
+          "rowctx_matches_sample": []
+        }
+      ]
+    },
+    {
+      "inst_raw": "10061",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 623,
+          "joined_line": 624,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 126,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 GILBERT AVE DEED 418,000.00",
+            "Town: SPRINGFIELD Addr:282 GILBERT AVE",
+            "1 C BRETTA CONSTRUCTION LLC",
+            "2 P MARTINEZ LUG",
+            "2 P MACVARISH JIMMY"
+          ],
+          "rowctx_ref": {
+            "source": "OK_NO_CONS_V1_19_8",
+            "page_index": 126,
+            "record_index": 5,
+            "x_center": 417.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 126,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 126,
+              "record_index": 5,
+              "_line_no": 666
+            }
+          ]
+        },
+        {
+          "joined_index": 624,
+          "joined_line": 625,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 126,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 CHEYENNE RD DEED 230,000.00",
+            "Town: SPRINGFIELD Addr:68 CHEYENNE RD",
+            "1 P BACIS JASON",
+            "2 P DELNEGRO ICHOLAS DANIEL"
+          ],
+          "rowctx_ref": {
+            "source": "OK_NO_CONS_V1_19_8",
+            "page_index": 126,
+            "record_index": 5,
+            "x_center": 417.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 126,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 126,
+              "record_index": 5,
+              "_line_no": 666
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "10500",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 665,
+          "joined_line": 666,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 136,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "1 BERKELEY ST DEED 100.00",
+            "Town: SPRINGFIELD Addr:19 BERKELEY ST",
+            "1 P BROW UULA",
+            "2 P BROW EVI C",
+            "2 P BROW RICHARD E",
+            "2 P PAULK AGNES L",
+            "2 P SELLERS SHIRLEY A",
+            "2 P YOUNG PATRICIA L",
+            "2 P BROW ULA (LIFE EST)"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 136,
+            "record_index": 5,
+            "x_center": 444.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 136,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 136,
+              "record_index": 5,
+              "_line_no": 719
+            }
+          ]
+        },
+        {
+          "joined_index": 666,
+          "joined_line": 667,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 136,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "1 WHITE ST DEE",
+            "Town: SPRINGFIELD Addr:206 WHITE ST",
+            "1 P LE AEB L",
+            "1 P LE HUONG T",
+            "1 P PHAN SANG VAN",
+            "1g"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 136,
+            "record_index": 5,
+            "x_center": 444.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 136,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 136,
+              "record_index": 5,
+              "_line_no": 719
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "10544",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 677,
+          "joined_line": 678,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 138,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 SHAWINIGAN DR DEED 1,162,050.00",
+            "Town: CHICOPEE Addr:64 SHAWINIGAN DR",
+            "1 C SHAWINIGAN DRIVE LLC",
+            "2 C WESTERN MASSACHUSETTS EMERGENCY COMMUNICATIONS DISTRICT"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 138,
+            "record_index": 6,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 138,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 138,
+              "record_index": 6,
+              "_line_no": 731
+            }
+          ]
+        },
+        {
+          "joined_index": 678,
+          "joined_line": 679,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 138,
+            "record_index": 7,
+            "stitch": {
+              "did_stitch": true,
+              "continuation_type": "PAGEBREAK",
+              "from_page": 138,
+              "into_page": 139,
+              "captured_top_lines": [
+                "RECORD",
+                "Me",
+                "sh 01-16-2026",
+                "SEQ",
+                "Town:",
+                "Town:",
+                "Town:",
+                "ED LAND BY RECORDING DATE",
+                "DOC REFERENCE",
+                "Cheryl A.",
+                "INQUIRY P",
+                "PRINTED",
+                "TOWN: *ALL",
+                "CONSIDERA",
+                "TRANSACTI",
+                "BOOK- PAGE",
+                "Coakley-Rivera",
+                "RINT REQUEST",
+                "1/18/26 23:55:46",
+                "PAGE 140",
+                "RG370RP",
+                "TION: 0 THROUGH 9,999,999,999",
+                "ON #:",
+                "CONSIDERATION",
+                "110,000.00",
+                "Town:",
+                "92,500.00",
+                "Town:",
+                "Town:",
+                "Town:",
+                "263,000.00",
+                "WEST SPRINGFIELD Addr:560 MORGAN RD",
+                "1 P NAULT GLEN J",
+                "1 P NAULT KATHLEEN K",
+                "2 P NAULT CHRISTOPHER R"
+              ],
+              "first_boundary_detected": "FILE SIMPLIFILE E-RECORDING"
+            }
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 MORGAN RD DEED"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 138,
+            "record_index": 6,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 138,
+              "record_index": 7,
+              "stitch": {
+                "did_stitch": true,
+                "continuation_type": "PAGEBREAK",
+                "from_page": 138,
+                "into_page": 139,
+                "captured_top_lines": [
+                  "RECORD",
+                  "Me",
+                  "sh 01-16-2026",
+                  "SEQ",
+                  "Town:",
+                  "Town:",
+                  "Town:",
+                  "ED LAND BY RECORDING DATE",
+                  "DOC REFERENCE",
+                  "Cheryl A.",
+                  "INQUIRY P",
+                  "PRINTED",
+                  "TOWN: *ALL",
+                  "CONSIDERA",
+                  "TRANSACTI",
+                  "BOOK- PAGE",
+                  "Coakley-Rivera",
+                  "RINT REQUEST",
+                  "1/18/26 23:55:46",
+                  "PAGE 140",
+                  "RG370RP",
+                  "TION: 0 THROUGH 9,999,999,999",
+                  "ON #:",
+                  "CONSIDERATION",
+                  "110,000.00",
+                  "Town:",
+                  "92,500.00",
+                  "Town:",
+                  "Town:",
+                  "Town:",
+                  "263,000.00",
+                  "WEST SPRINGFIELD Addr:560 MORGAN RD",
+                  "1 P NAULT GLEN J",
+                  "1 P NAULT KATHLEEN K",
+                  "2 P NAULT CHRISTOPHER R"
+                ],
+                "first_boundary_detected": "FILE SIMPLIFILE E-RECORDING"
+              }
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 138,
+              "record_index": 6,
+              "_line_no": 731
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "10920",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 696,
+          "joined_line": 697,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 145,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "1 NORTH ST DEE 1.00",
+            "Town: PALMER Addr:NORTH ST",
+            "1 P TULLY DENNIS E",
+            "2 P FRYDRYK ANN C (LIFE EST)",
+            "2 P FRYDRYK DONALD J",
+            "2 P FRYDRYK ROBERT P",
+            "2 P FRYDRYK THOMAS W"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 145,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 145,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 145,
+              "record_index": 5,
+              "_line_no": 766
+            }
+          ]
+        },
+        {
+          "joined_index": 697,
+          "joined_line": 698,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 145,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "1 GAUDREAU AVE DEED 1.00",
+            "Y",
+            "Town: LUDLOW Addr:22 GAUDREAU AVE"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 145,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 145,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 145,
+              "record_index": 5,
+              "_line_no": 766
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "11293",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 740,
+          "joined_line": 741,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 154,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 REED ST DEED 1.00",
+            "Town: AGAWAM Addr:107 REED ST",
+            "1 P TIKHOMIROVA VIKTORIYA",
+            "2 P TIKHOMIROVA VIKTORIYA",
+            "2 P GHRASIMCHUK VYACHESLAV"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 154,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 154,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 154,
+              "record_index": 5,
+              "_line_no": 811
+            }
+          ]
+        },
+        {
+          "joined_index": 741,
+          "joined_line": 742,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 154,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 HANCOCK ST DEED 23,000.00",
+            "Town: SPRINGFIELD Addr:HANCOCK ST",
+            "1 P JONES ROBIN L",
+            "2 P GARCIA JOSEPH"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 154,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 154,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 154,
+              "record_index": 5,
+              "_line_no": 811
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "11619",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 774,
+          "joined_line": 775,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 160,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 EYFRED TERR DEE 286,000.00",
+            "Town: SPRINGFIELD Addr:80-82 LHEYFRED TERR",
+            "1 C MADISON PROPERTY INVESTORS LLC",
+            "2 P KENNEDY CALISA"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 160,
+            "record_index": 6,
+            "x_center": 444.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 160,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 160,
+              "record_index": 6,
+              "_line_no": 844
+            }
+          ]
+        },
+        {
+          "joined_index": 775,
+          "joined_line": 776,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 160,
+            "record_index": 7,
+            "stitch": {
+              "did_stitch": true,
+              "continuation_type": "PAGEBREAK",
+              "from_page": 160,
+              "into_page": 161,
+              "captured_top_lines": [
+                "RECORDED LAND BY RECORDING DATE Cheryl A. Coakley-Rivera",
+                "Me",
+                "INQUIRY PRINT REQUEST PAGE 162",
+                "PRINTED 1/18/26 23:55:46 RG370RP",
+                "TOWN: *ALL",
+                "CONSIDERATION: Q THROUGH 9, 999,999,999",
+                "jh 01-16-2026 TRANSACTION #:",
+                "DOC REFERENCE VEY",
+                "SEQ DESCR/LOC/ DELIVERED TYPE BOOK- PAGE CONSIDERATION STS",
+                "Town: SPRINGFIELD Addr:901 WILBRAHAM RD Y",
+                "1 P GIGUERE WAYNE G Y",
+                "1 P GIGUERE PATRICIA A Y",
+                "2 P GIGUERE MICHELLE L Y"
+              ],
+              "first_boundary_detected": "FILE SIMPLIFILE E-RECORDING Y"
+            }
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 WILBRAHAM RD DEED 175,000.00"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 160,
+            "record_index": 6,
+            "x_center": 444.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 160,
+              "record_index": 7,
+              "stitch": {
+                "did_stitch": true,
+                "continuation_type": "PAGEBREAK",
+                "from_page": 160,
+                "into_page": 161,
+                "captured_top_lines": [
+                  "RECORDED LAND BY RECORDING DATE Cheryl A. Coakley-Rivera",
+                  "Me",
+                  "INQUIRY PRINT REQUEST PAGE 162",
+                  "PRINTED 1/18/26 23:55:46 RG370RP",
+                  "TOWN: *ALL",
+                  "CONSIDERATION: Q THROUGH 9, 999,999,999",
+                  "jh 01-16-2026 TRANSACTION #:",
+                  "DOC REFERENCE VEY",
+                  "SEQ DESCR/LOC/ DELIVERED TYPE BOOK- PAGE CONSIDERATION STS",
+                  "Town: SPRINGFIELD Addr:901 WILBRAHAM RD Y",
+                  "1 P GIGUERE WAYNE G Y",
+                  "1 P GIGUERE PATRICIA A Y",
+                  "2 P GIGUERE MICHELLE L Y"
+                ],
+                "first_boundary_detected": "FILE SIMPLIFILE E-RECORDING Y"
+              }
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 160,
+              "record_index": 6,
+              "_line_no": 844
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "11651",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 780,
+          "joined_line": 781,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 161,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 ROCHELLE ST DEED 295,500.00",
+            "Town: WEST SPRINGFIELD Addr:19 ROCHELLE ST",
+            "1 P BOYLE KEVIN",
+            "1 P CASIELLO LANA",
+            "1 P CASIELLO-BOYLE LANA",
+            "2 P TRUONG KEVIN"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 161,
+            "record_index": 5,
+            "x_center": 435.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 161,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 161,
+              "record_index": 5,
+              "_line_no": 849
+            }
+          ]
+        },
+        {
+          "joined_index": 781,
+          "joined_line": 782,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 161,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 BLAIR RD DEED 215,000.00",
+            "Town: BLANDFORD Addr:28 BLAIR RD",
+            "1 C EMERALD CITY RENTALS LLC",
+            "2 P HANLON MIA"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 161,
+            "record_index": 5,
+            "x_center": 435.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 161,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 161,
+              "record_index": 5,
+              "_line_no": 849
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "11915",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 810,
+          "joined_line": 811,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 168,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 MAIN ST DEED 65,000.00",
+            "Town: PALMER Addr:2191 MAIN ST",
+            "1 P MASTON GEORGE E",
+            "1 P MASTON MELISSA M",
+            "2 P MASTON WILLIAM B",
+            "2 P ZURON AMBER"
+          ],
+          "rowctx_ref": {
+            "source": "OK_NO_CONS_V1_19_8",
+            "page_index": 168,
+            "record_index": 5,
+            "x_center": 417.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 168,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 168,
+              "record_index": 5,
+              "_line_no": 882
+            }
+          ]
+        },
+        {
+          "joined_index": 811,
+          "joined_line": 812,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 168,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 ARDMORE ST DEED 1.00",
+            "Town: SPRINGFIELD Addr:88 ARDMORE ST",
+            "1 P MORIARTY GERALDINE D",
+            "2 P MORIARTY DANIEL M"
+          ],
+          "rowctx_ref": {
+            "source": "OK_NO_CONS_V1_19_8",
+            "page_index": 168,
+            "record_index": 5,
+            "x_center": 417.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 168,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 168,
+              "record_index": 5,
+              "_line_no": 882
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "12196",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 845,
+          "joined_line": 846,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 175,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE INGEO",
+            "1 MEADE AVE DEED",
+            "Town: CHICOPEE Addr:29 MEADE AVE",
+            "1 P HAWK THERESA J",
+            "2 C HAWK FAMILY IRREVOCABLE TRUST (TRS OF)",
+            "2 P HAWK DAWN N (TRS)",
+            "2 P HAWK DAVID D (TRS)"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 175,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 175,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 175,
+              "record_index": 5,
+              "_line_no": 921
+            }
+          ]
+        },
+        {
+          "joined_index": 846,
+          "joined_line": 847,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 175,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 UNIT 6160B,UNIT 144 DEED",
+            "Town: CHICOPEE Addr:144 HORSESHOE DR UNIT 144",
+            "Town: CHICOPEE Addr:144 HORSESHOE DR UNIT 6160B",
+            "6 23:55:46 RG370RP",
+            "Q THROUGH 9, 999,999,999",
+            "VFY",
+            "DERATION STS",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "1.00",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "1.00",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "Y",
+            "1.00",
+            "Y",
+            "Y"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 175,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 175,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 175,
+              "record_index": 5,
+              "_line_no": 921
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "12557",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 874,
+          "joined_line": 875,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 181,
+            "record_index": 3
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 SHEPHERD ST DEE 22",
+            "Town: CHICOPEE Addr:61 SHEPHERD ST",
+            "1 P RIVARD JOHN J",
+            "1 P RIVARD SUSAN M",
+            "2 P MOQUI SHERRI"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 181,
+            "record_index": 3,
+            "x_center": 282.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 181,
+              "record_index": 3
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 181,
+              "record_index": 3,
+              "_line_no": 949
+            }
+          ]
+        },
+        {
+          "joined_index": 877,
+          "joined_line": 878,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 181,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 SUNSET RD DEED 27",
+            "Town: HOLYOKE Addr:31 SUNSET RD",
+            "1 P LUNARDINI BRETT J (REP)",
+            "1 P LUNARDINI ADAM J (EST)",
+            "2 P KRAUSE-ELY LILLIAN K",
+            "2 P ELY JOSEPH H (IX)"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 181,
+            "record_index": 3,
+            "x_center": 282.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 181,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 181,
+              "record_index": 3,
+              "_line_no": 949
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "12714",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 899,
+          "joined_line": 900,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 185,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 RIVER RD DEED 1.00",
+            "Town: AGAWAM Addr:1090 RIVER RD",
+            "1 P BALLARD PHILIP R",
+            "1 P BALLARD DEBORAH A",
+            "2 P BALLARD PHILIP R (TR)",
+            "2 C PHILIP R BALLARD REVOCABLE TRUST (TR OF)"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 185,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 185,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 185,
+              "record_index": 5,
+              "_line_no": 974
+            }
+          ]
+        },
+        {
+          "joined_index": 900,
+          "joined_line": 901,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 185,
+            "record_index": 6,
+            "stitch": {
+              "did_stitch": true,
+              "continuation_type": "PAGEBREAK",
+              "from_page": 185,
+              "into_page": 186,
+              "captured_top_lines": [
+                "RECORDED LAND BY RECORDING DATE Cheryl A. Coakley-Rivera",
+                "Me",
+                "INQUIRY PRINT REQUEST PAGE 187",
+                "PRINTED 1/18/26 23:55:46 RG370RP",
+                "TOWN: *ALL",
+                "CONSIDERATION: OQ THROUGH 9, 999,999,999",
+                "yh 01-16-2026 TRANSACTION #:",
+                "DOC REFERENCE VEY",
+                "SEQ DESCR/LOC/ DELIVERED TYPE BOOK- PAGE CONSIDERATION sts",
+                "Town: HOLYOKE Addr:1035 HAMPDEN ST Y",
+                "1 C MARVEN REALTY CORP Y",
+                "2 P BUTLER CHRISTOPHER W Y"
+              ],
+              "first_boundary_detected": "FILE SIMPLIFILE E-RECORDING Y"
+            }
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 HAMPDEN ST DEED 253,750.00"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 185,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 185,
+              "record_index": 6,
+              "stitch": {
+                "did_stitch": true,
+                "continuation_type": "PAGEBREAK",
+                "from_page": 185,
+                "into_page": 186,
+                "captured_top_lines": [
+                  "RECORDED LAND BY RECORDING DATE Cheryl A. Coakley-Rivera",
+                  "Me",
+                  "INQUIRY PRINT REQUEST PAGE 187",
+                  "PRINTED 1/18/26 23:55:46 RG370RP",
+                  "TOWN: *ALL",
+                  "CONSIDERATION: OQ THROUGH 9, 999,999,999",
+                  "yh 01-16-2026 TRANSACTION #:",
+                  "DOC REFERENCE VEY",
+                  "SEQ DESCR/LOC/ DELIVERED TYPE BOOK- PAGE CONSIDERATION sts",
+                  "Town: HOLYOKE Addr:1035 HAMPDEN ST Y",
+                  "1 C MARVEN REALTY CORP Y",
+                  "2 P BUTLER CHRISTOPHER W Y"
+                ],
+                "first_boundary_detected": "FILE SIMPLIFILE E-RECORDING Y"
+              }
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 185,
+              "record_index": 5,
+              "_line_no": 974
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "12738",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 906,
+          "joined_line": 907,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 186,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 STONY HILL RD DEED 240,000.00",
+            "Town: WILBRAHAM Addr:96 STONY HILL RD",
+            "1 P BUTTS JOSEPH",
+            "1 P MECHE DAGMAR",
+            "2 P KOTFILA COURTNEY"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 186,
+            "record_index": 6,
+            "x_center": 444.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 186,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 186,
+              "record_index": 6,
+              "_line_no": 980
+            }
+          ]
+        },
+        {
+          "joined_index": 907,
+          "joined_line": 908,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 186,
+            "record_index": 7,
+            "stitch": {
+              "did_stitch": true,
+              "continuation_type": "PAGEBREAK",
+              "from_page": 186,
+              "into_page": 187,
+              "captured_top_lines": [
+                "RECORDED LAND BY RECORDING DATE Cheryl A. Coakley-Rivera",
+                "Me",
+                "INQUIRY PRINT REQUEST PAGE 188",
+                "PRINTED 1/18/26 23:55:46 RG370RP",
+                "TOWN: *ALL",
+                "CONSIDERATION: Q THROUGH 9, 999,999,999",
+                "jh 01-16-2026 TRANSACTION #:",
+                "DOC REFERENCE VEY",
+                "SEQ DESCR/LOC/ DELIVERED TYPE BOOK- PAGE CONSIDERATION STS",
+                "Town: SPRINGFIELD Addr:41 GARCIA ST Y",
+                "1 P PROULX GARY W Y",
+                "2 P PROULX CASSANDRA Y"
+              ],
+              "first_boundary_detected": "FILE SIMPLIFILE E-RECORDING Y"
+            }
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 GARCIA ST DEED 150,000.00"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 186,
+            "record_index": 6,
+            "x_center": 444.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 186,
+              "record_index": 7,
+              "stitch": {
+                "did_stitch": true,
+                "continuation_type": "PAGEBREAK",
+                "from_page": 186,
+                "into_page": 187,
+                "captured_top_lines": [
+                  "RECORDED LAND BY RECORDING DATE Cheryl A. Coakley-Rivera",
+                  "Me",
+                  "INQUIRY PRINT REQUEST PAGE 188",
+                  "PRINTED 1/18/26 23:55:46 RG370RP",
+                  "TOWN: *ALL",
+                  "CONSIDERATION: Q THROUGH 9, 999,999,999",
+                  "jh 01-16-2026 TRANSACTION #:",
+                  "DOC REFERENCE VEY",
+                  "SEQ DESCR/LOC/ DELIVERED TYPE BOOK- PAGE CONSIDERATION STS",
+                  "Town: SPRINGFIELD Addr:41 GARCIA ST Y",
+                  "1 P PROULX GARY W Y",
+                  "2 P PROULX CASSANDRA Y"
+                ],
+                "first_boundary_detected": "FILE SIMPLIFILE E-RECORDING Y"
+              }
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 186,
+              "record_index": 6,
+              "_line_no": 980
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "12828",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 919,
+          "joined_line": 920,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 188,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 BLOOMFIELD ST DEED 186,000.00",
+            "Town: SPRINGFIELD Addr:9-11 BLOOMFIELD ST",
+            "1 C LACHENAUER LLC",
+            "2 P CORTEZ JUAN CARLOS GARCIA"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 188,
+            "record_index": 6,
+            "x_center": 435.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 188,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 188,
+              "record_index": 6,
+              "_line_no": 992
+            }
+          ]
+        },
+        {
+          "joined_index": 920,
+          "joined_line": 921,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 188,
+            "record_index": 7
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "Town: WEST SPRINGFIELD Addr:10 SHADOW LA"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 188,
+            "record_index": 6,
+            "x_center": 435.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 188,
+              "record_index": 7
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 188,
+              "record_index": 6,
+              "_line_no": 992
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "12951",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 934,
+          "joined_line": 935,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 191,
+            "record_index": 4
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 LOS ANGELES ST DEE 325,000.00",
+            "Town: SPRINGFIELD Addr:45-47 LOS ANGELES ST",
+            "1 P SOUSA FRED D",
+            "2 P RODRIGUEZ KATHYRIA B",
+            "2 P LOPEZ RICHARD C"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 191,
+            "record_index": 4,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 191,
+              "record_index": 4
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 191,
+              "record_index": 4,
+              "_line_no": 1007
+            }
+          ]
+        },
+        {
+          "joined_index": 935,
+          "joined_line": 936,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 191,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 UNIT 125 DEED 159,700.00",
+            "Town: AGAWAM Addr:125 COREY COLONIAL",
+            "Town: AGAWAM Addr:125 COREY COLONIAL UNIT 125",
+            "1 P DONAH STEVEN",
+            "1 P DONAH DIANE",
+            "2 P BERGER VIRGINIA M"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 191,
+            "record_index": 4,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 191,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 191,
+              "record_index": 4,
+              "_line_no": 1007
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "13163",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 957,
+          "joined_line": 958,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 196,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "1 UNIT 21 DEED 111,500.00 Yy",
+            "Town: PALMER Addr:21 MEADOWBROOK LA UNIT 21",
+            "1 P MCNEILL DEBRA",
+            "2 P REUTER CAROLE A"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 196,
+            "record_index": 5,
+            "x_center": 417.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 196,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 196,
+              "record_index": 5,
+              "_line_no": 1035
+            }
+          ]
+        },
+        {
+          "joined_index": 958,
+          "joined_line": 959,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 196,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "1 HOVEY RD DEED 478,000.00 Yy",
+            "Town: MONSO Addr:239 HOVEY RD",
+            "1 P BENIAMINO JAMES S$",
+            "1 P BENIAMINO BARBARA K",
+            "2 P DORE TYMMOTHY",
+            "2 P DORE EMILY"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 196,
+            "record_index": 5,
+            "x_center": 417.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 196,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 196,
+              "record_index": 5,
+              "_line_no": 1035
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "13384",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 997,
+          "joined_line": 998,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 203,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 BELLA VISTA DR DEED 599,900.00",
+            "Town: BAST LONGMEADOW Addr:14 BELLA VISTA DR",
+            "1 \u00a2 AC HOMEBUILDING LLC",
+            "2 P SZAWLOWSKI ALEXANDRA",
+            "2 P SZAWLOWSKI MICHAEL"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 203,
+            "record_index": 5,
+            "x_center": 363.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 203,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 203,
+              "record_index": 5,
+              "_line_no": 1075
+            }
+          ]
+        },
+        {
+          "joined_index": 999,
+          "joined_line": 1000,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 203,
+            "record_index": 7,
+            "stitch": {
+              "did_stitch": true,
+              "continuation_type": "PAGEBREAK",
+              "from_page": 203,
+              "into_page": 204,
+              "captured_top_lines": [
+                "RECORDED LAND BY RECORDING DATE Cheryl A. Coakley-Rivera",
+                "Me",
+                "INQUIRY PRINT REQUEST PAGE 205",
+                "PRINTED 1/18/26 23:55:46 RG370RP",
+                "TOWN: *ALL",
+                "CONSIDERATION: OQ THROUGH 9, 999,999,999",
+                "yh 01-16-2026 TRANSACTION #:",
+                "DOC REFERENCE VEY",
+                "SEQ DESCR/LOC/ DELIVERED TYPE BOOK- PAGE CONSIDERATION sts",
+                "Town: LONGMEADOW Addr:810 FRANK SMITH RD Y",
+                "1 P MUDDASANI SANDEEP R Y",
+                "2 P MUDDASANI SANDEEP R Y",
+                "2 P MUDDASANI SHILPA G Y"
+              ],
+              "first_boundary_detected": "FILE SIMPLIFILE E-RECORDING Y"
+            }
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 FRANK SMITH RD DEED"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 203,
+            "record_index": 5,
+            "x_center": 363.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 203,
+              "record_index": 7,
+              "stitch": {
+                "did_stitch": true,
+                "continuation_type": "PAGEBREAK",
+                "from_page": 203,
+                "into_page": 204,
+                "captured_top_lines": [
+                  "RECORDED LAND BY RECORDING DATE Cheryl A. Coakley-Rivera",
+                  "Me",
+                  "INQUIRY PRINT REQUEST PAGE 205",
+                  "PRINTED 1/18/26 23:55:46 RG370RP",
+                  "TOWN: *ALL",
+                  "CONSIDERATION: OQ THROUGH 9, 999,999,999",
+                  "yh 01-16-2026 TRANSACTION #:",
+                  "DOC REFERENCE VEY",
+                  "SEQ DESCR/LOC/ DELIVERED TYPE BOOK- PAGE CONSIDERATION sts",
+                  "Town: LONGMEADOW Addr:810 FRANK SMITH RD Y",
+                  "1 P MUDDASANI SANDEEP R Y",
+                  "2 P MUDDASANI SANDEEP R Y",
+                  "2 P MUDDASANI SHILPA G Y"
+                ],
+                "first_boundary_detected": "FILE SIMPLIFILE E-RECORDING Y"
+              }
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 203,
+              "record_index": 5,
+              "_line_no": 1075
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "13410",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1004,
+          "joined_line": 1005,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 204,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 ARLINGTON RD DEED 575,000.00",
+            "Town: LONGMEADOW Addr:130 ARLINGTON RD",
+            "1 P ZAYAC ALEXANDER J",
+            "1 P ZAYAC TARA L",
+            "1 P OBERG TARA L",
+            "2 P DUBRINSKY-CLAYTO ISABEL",
+            "2 P CLAYTON WILLIAM J"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 204,
+            "record_index": 5,
+            "x_center": 435.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 204,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 204,
+              "record_index": 5,
+              "_line_no": 1081
+            }
+          ]
+        },
+        {
+          "joined_index": 1005,
+          "joined_line": 1006,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 204,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 CONVERSE ST DEED 299,000.00",
+            "Town: LONGMEADOW Addr:535 CONVERSE ST",
+            "1 P BONAVITA PETER A",
+            "2 P BERTOLOTTI DONNA A"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 204,
+            "record_index": 5,
+            "x_center": 435.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 204,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 204,
+              "record_index": 5,
+              "_line_no": 1081
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "13926",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1059,
+          "joined_line": 1060,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 216,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 THIRD ST,3RD ST DEE 150,000.00",
+            "Town: BRIMFIELD Addr:12 THIRD ST",
+            "Town: BRIMFIELD Addr:96 3RD ST",
+            "1 P RYA REGINA L",
+            "1 P RYA DAVID M",
+            "2 C ROCHA RE I & HOME IMPROVEMENT LLC"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 216,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 216,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 216,
+              "record_index": 5,
+              "_line_no": 1146
+            }
+          ]
+        },
+        {
+          "joined_index": 1060,
+          "joined_line": 1061,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 216,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 PHELAND AVE DEED 145,377.00",
+            "Town: SPRINGFIELD Addr:260 PHELAND AVE",
+            "1 P SANSALONE MARIA"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 216,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 216,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 216,
+              "record_index": 5,
+              "_line_no": 1146
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "14134",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1082,
+          "joined_line": 1083,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 221,
+            "record_index": 4
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 FOREST HILLS RD DEED 1.00",
+            "Town: BAST LONGMEADOW Addr:18 FOREST HILLS RD",
+            "1 P STANLEY SADIE R",
+            "1 P STANLEY SADIE H",
+            "2 P STANLEY JULIAN C",
+            "2 P STANLEY SADIE R (LIFE EST)"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 221,
+            "record_index": 4,
+            "x_center": 390.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 221,
+              "record_index": 4
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 221,
+              "record_index": 4,
+              "_line_no": 1169
+            }
+          ]
+        },
+        {
+          "joined_index": 1083,
+          "joined_line": 1084,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 221,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 MOSS AVE DEED",
+            "Town: HOLYOKE Addr:34 MOSS AVE",
+            "1 P MACIEROWSKI LINDA (EST)",
+            "1 P DRISCOLL LINDA (EST)",
+            "1 P MACIEROWSKI MICHAEL (REP)",
+            "2 P MACIEBROWSKI MICHAEL"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 221,
+            "record_index": 4,
+            "x_center": 390.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 221,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 221,
+              "record_index": 4,
+              "_line_no": 1169
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "14260",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1100,
+          "joined_line": 1101,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 225,
+            "record_index": 1
+          },
+          "evidence_lines": [
+            "Town: SPRINGFIELD Addr:56-60 FORT PLEASANT AVE",
+            "1 C 56-60 FIT PLEASANT LLC",
+            "2 C SPRINGFIELD GARDENS 56-60 LP"
+          ],
+          "rowctx_ref": {
+            "source": "OK_NO_CONS_V1_19_8",
+            "page_index": 225,
+            "record_index": 1,
+            "x_center": 147.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 225,
+              "record_index": 1
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 225,
+              "record_index": 1,
+              "_line_no": 1187
+            }
+          ]
+        },
+        {
+          "joined_index": 1104,
+          "joined_line": 1105,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 225,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "ENV-FEDEX LAMB & ASSOCIATES P C",
+            "C/O CHRIS REESOR",
+            "6 WEYBOSSETT AVE",
+            "FRAMINGHAM MA 01702",
+            "1 BELMONT AVE DEED",
+            "Town: SPRINGFIELD Addr:70-78 1/2 BELMONT AVE",
+            "1 C BELMONT AVE HOLDINGS LLC",
+            "2 C SPRINGFIELD GARDENS 70-78 LP"
+          ],
+          "rowctx_ref": {
+            "source": "OK_NO_CONS_V1_19_8",
+            "page_index": 225,
+            "record_index": 1,
+            "x_center": 147.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 225,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 225,
+              "record_index": 1,
+              "_line_no": 1187
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "15074",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1154,
+          "joined_line": 1155,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 240,
+            "record_index": 3
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 OAKRIDGE ST DEED 225,000.00",
+            "Town: LUDLOW Addr:30 OAKRIDGE ST",
+            "1 P SIMAO JOAN M",
+            "2 P PEREIRA NATHAN J"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 240,
+            "record_index": 3,
+            "x_center": 228.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 240,
+              "record_index": 3
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 240,
+              "record_index": 3,
+              "_line_no": 1266
+            }
+          ]
+        },
+        {
+          "joined_index": 1158,
+          "joined_line": 1159,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 240,
+            "record_index": 7
+          },
+          "evidence_lines": [
+            "FILE INGEO",
+            "1 UNIT 1 DEED 1.00",
+            "Town: AGAWAM Addr:18 VILLA DR UNIT 1"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 240,
+            "record_index": 3,
+            "x_center": 228.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 240,
+              "record_index": 7
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 240,
+              "record_index": 3,
+              "_line_no": 1266
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "15931",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1250,
+          "joined_line": 1251,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 260,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 KENT RD DEED 22",
+            "Town: SPRINGFIELD Addr:36 KENT RD",
+            "1 P SANTANA JUAN ANGEL",
+            "2 P MARRERO MICHELLE E RODRIGUEZ",
+            "2 P QUINTANA NOEL MERCADO"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 260,
+            "record_index": 5,
+            "x_center": 417.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 260,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 260,
+              "record_index": 5,
+              "_line_no": 1377
+            }
+          ]
+        },
+        {
+          "joined_index": 1251,
+          "joined_line": 1252,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 260,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 DEED 7641 172",
+            "Town: SPRINGFIELD Addr:40 WARRINER AVE"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 260,
+            "record_index": 5,
+            "x_center": 417.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 260,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 260,
+              "record_index": 5,
+              "_line_no": 1377
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "16078",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1263,
+          "joined_line": 1264,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 263,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 DICKINSON ST DEED 300,000.00",
+            "Town: SPRINGFIELD Addr:47-49 DICKINSON ST",
+            "1 \u00a2 JJS CAPITAL INVESTMENT LLC",
+            "2 P FELICIANO JUNIOR SANTOS"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 263,
+            "record_index": 5,
+            "x_center": 399.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 263,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 263,
+              "record_index": 5,
+              "_line_no": 1390
+            }
+          ]
+        },
+        {
+          "joined_index": 1264,
+          "joined_line": 1265,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 263,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 CAREW ST DEE",
+            "Town: SPRINGFIELD Addr:1585 CAREW ST",
+            "1 P RODRIGUEZ ARTURO",
+            "2 P RODRIGUEZ ARTURO",
+            "2 P RODRIGUEZ ANA"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 263,
+            "record_index": 5,
+            "x_center": 399.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 263,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 263,
+              "record_index": 5,
+              "_line_no": 1390
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "16502",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1303,
+          "joined_line": 1304,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 272,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 COUNTRY LA DEED 24,000.00",
+            "Town: PALMER Addr:10 COUNTRY LA",
+            "1 P PETRISIS JAMES J",
+            "1 P PETRISIS LINDA A",
+            "2 P KIRCHNER DOMINIC (II TR)",
+            "2 C ANOUK REALTY TRUST (TR OF)"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 272,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 272,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 272,
+              "record_index": 5,
+              "_line_no": 1439
+            }
+          ]
+        },
+        {
+          "joined_index": 1304,
+          "joined_line": 1305,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 272,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 CADY ST DEED 235,000.00",
+            "Town: LUDLOW Addr:195 CADY ST",
+            "1 P VIEIRA CHRYSTAL J"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 272,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 272,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 272,
+              "record_index": 5,
+              "_line_no": 1439
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "17092",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1369,
+          "joined_line": 1370,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 286,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE INGEO",
+            "1 EAST ST DEED 235,000.00",
+            "Town: CHICOPEE Addr:308 EAST ST",
+            "1 P FERREIRA KARE",
+            "1 P WOLCHECK KAREN AMY",
+            "2 P REIDY ASHLEY E"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 286,
+            "record_index": 5,
+            "x_center": 435.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 286,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 286,
+              "record_index": 5,
+              "_line_no": 1513
+            }
+          ]
+        },
+        {
+          "joined_index": 1370,
+          "joined_line": 1371,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 286,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 DUKE ST DEE 214,000.00",
+            "Town: LUDLOW Addr:45 DUKE ST",
+            "1 P CORREIA RACHEL",
+            "1 P CORREIA RACHEL L",
+            "1 P CORREIA CELSO",
+            "2 P JORGE ANTHONY"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 286,
+            "record_index": 5,
+            "x_center": 435.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 286,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 286,
+              "record_index": 5,
+              "_line_no": 1513
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "17144",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1380,
+          "joined_line": 1381,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 288,
+            "record_index": 4
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "1 ARMORY ST DEED 227,000.00",
+            "Town: SPRINGFIELD Addr:773-775 ARMORY ST",
+            "1 P WALKER BYRON",
+            "1 P WALKER BYRON L",
+            "2 P SANCHEZ ABIGAIL"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 288,
+            "record_index": 4,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 288,
+              "record_index": 4
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 288,
+              "record_index": 4,
+              "_line_no": 1524
+            }
+          ]
+        },
+        {
+          "joined_index": 1381,
+          "joined_line": 1382,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 288,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "1 UNIT 106 DEED 155,000.00",
+            "Town: AGAWAM Addr:106 PLANTATION DR",
+            "1 P DUBUC-KING KATHLEEN (REP)",
+            "1 P DUBUC JOSEPH L (EST)",
+            "2 P MAHER ELIZABETH A"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 288,
+            "record_index": 4,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 288,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 288,
+              "record_index": 4,
+              "_line_no": 1524
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "18169",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1486,
+          "joined_line": 1487,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 309,
+            "record_index": 4
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 YEOMAN AVE DEED 260,000.00",
+            "Town: WESTFIELD Addr:1 YEOMAN AVE",
+            "1 P BOBE LORRIE J",
+            "1 P ROSARIO LORRIE B",
+            "2 P ARKOBTTE ROXANNE A",
+            "2 P ARKOBTTE CHAD R"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 309,
+            "record_index": 4,
+            "x_center": 318.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 309,
+              "record_index": 4
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 309,
+              "record_index": 4,
+              "_line_no": 1634
+            }
+          ]
+        },
+        {
+          "joined_index": 1488,
+          "joined_line": 1489,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 309,
+            "record_index": 6,
+            "stitch": {
+              "did_stitch": true,
+              "continuation_type": "PAGEBREAK",
+              "from_page": 309,
+              "into_page": 310,
+              "captured_top_lines": [
+                "RECORDED LAND BY RECORDING DATE Cheryl A. Coakley-Rivera",
+                "Me",
+                "INQUIRY PRINT REQUEST PAGE 311",
+                "PRINTED 1/18/26 23:55:46 RG370RP",
+                "TOWN: *ALL",
+                "CONSIDERATION: 0 THROUGH 9, 999,999,999",
+                "jh 01-16-2026 TRANSACTION #:",
+                "DOC REFERENCE VEY",
+                "SEQ DESCR/LOC/ DELIVERED TYPE BOOK- PAGE CONSIDERATION STS",
+                "Town: CHICOPEE Addr:21 CONNELL ST Y",
+                "1 P PICARD JAMES J Y",
+                "1 P PICARD BONNIE A Y",
+                "2 P PICARD JAMES J (LIFE EST) Y",
+                "2 P PICARD BONNIE A (LIFE EST) Y",
+                "2 P PICARD JEFFREY J Y",
+                "2 P CAMERON ANDREA A Y"
+              ],
+              "first_boundary_detected": "FILE SIMPLIFILE E-RKECORDING Y"
+            }
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 CONNELL ST DEED 1.00"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 309,
+            "record_index": 4,
+            "x_center": 318.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 309,
+              "record_index": 6,
+              "stitch": {
+                "did_stitch": true,
+                "continuation_type": "PAGEBREAK",
+                "from_page": 309,
+                "into_page": 310,
+                "captured_top_lines": [
+                  "RECORDED LAND BY RECORDING DATE Cheryl A. Coakley-Rivera",
+                  "Me",
+                  "INQUIRY PRINT REQUEST PAGE 311",
+                  "PRINTED 1/18/26 23:55:46 RG370RP",
+                  "TOWN: *ALL",
+                  "CONSIDERATION: 0 THROUGH 9, 999,999,999",
+                  "jh 01-16-2026 TRANSACTION #:",
+                  "DOC REFERENCE VEY",
+                  "SEQ DESCR/LOC/ DELIVERED TYPE BOOK- PAGE CONSIDERATION STS",
+                  "Town: CHICOPEE Addr:21 CONNELL ST Y",
+                  "1 P PICARD JAMES J Y",
+                  "1 P PICARD BONNIE A Y",
+                  "2 P PICARD JAMES J (LIFE EST) Y",
+                  "2 P PICARD BONNIE A (LIFE EST) Y",
+                  "2 P PICARD JEFFREY J Y",
+                  "2 P CAMERON ANDREA A Y"
+                ],
+                "first_boundary_detected": "FILE SIMPLIFILE E-RKECORDING Y"
+              }
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 309,
+              "record_index": 4,
+              "_line_no": 1634
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "18188",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1493,
+          "joined_line": 1494,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 310,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 SOUTHWICK ST DEED 1.00",
+            "Town: AGAWAM Addr:205 SOUTHWICK ST",
+            "1 P REMY MICHAEL A",
+            "2 P REMY MICHAEL A",
+            "2 P REMY SHANNON L"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 310,
+            "record_index": 5,
+            "x_center": 408.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 310,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 310,
+              "record_index": 5,
+              "_line_no": 1640
+            }
+          ]
+        },
+        {
+          "joined_index": 1494,
+          "joined_line": 1495,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 310,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 DEED 23745 555 248,000.00",
+            "Town: CHICOPEE Addr:70 NARRAGANSETT BLVD"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 310,
+            "record_index": 5,
+            "x_center": 408.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 310,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 310,
+              "record_index": 5,
+              "_line_no": 1640
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "18447",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1513,
+          "joined_line": 1514,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 314,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 WEST RD DEED",
+            "Town: WESTFIELD Addr:243 WEST RD",
+            "1 P REED JAMES S$",
+            "2 P REED JAMES \u00a7 (LIFE EST)",
+            "2 P REED JACOB P"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 314,
+            "record_index": 5,
+            "x_center": 390.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 314,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 314,
+              "record_index": 5,
+              "_line_no": 1660
+            }
+          ]
+        },
+        {
+          "joined_index": 1514,
+          "joined_line": 1515,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 314,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 WEST RD DEED",
+            "Town: WESTFIELD Addr:WEST RD"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 314,
+            "record_index": 5,
+            "x_center": 390.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 314,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 314,
+              "record_index": 5,
+              "_line_no": 1660
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "18531",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1524,
+          "joined_line": 1525,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 317,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE INGE",
+            "1 SUMNER AVE DEED 249,900.00",
+            "Town: SPRINGFIELD Addr:3 SUMNER AVE",
+            "1 CU S BANK (TR)",
+            "1 C VELOCITY COMMERCIAL CAPITAL LOAN TRUST 2014-1 (TR OF)",
+            "2 P ARNOLD BRUCE A (SR TR)",
+            "2 C 3 SUMNER AVENUE REALTY TRUST (TR OF)"
+          ],
+          "rowctx_ref": {
+            "source": "OK_NO_CONS_V1_19_8",
+            "page_index": 317,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 317,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 317,
+              "record_index": 5,
+              "_line_no": 1677
+            }
+          ]
+        },
+        {
+          "joined_index": 1525,
+          "joined_line": 1526,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 317,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 WHEATLAND AVE DEED 95,000.00",
+            "Town: CHICOPEE Addr:113 WHEATLAND AVE",
+            "1 P SHEVCHUK ANDREY",
+            "2 P BALUT JASON"
+          ],
+          "rowctx_ref": {
+            "source": "OK_NO_CONS_V1_19_8",
+            "page_index": 317,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 317,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 317,
+              "record_index": 5,
+              "_line_no": 1677
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "18890",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1568,
+          "joined_line": 1569,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 326,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 BRIDLE PATH RD DEED 195,000.00",
+            "Town: WEST SPRINGFIELD Addr:63 BRIDLE PATH RD",
+            "1 P FLOUTON TIMOTHY",
+            "2 P DEA JEFFREY W"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 326,
+            "record_index": 5,
+            "x_center": 435.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 326,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 326,
+              "record_index": 5,
+              "_line_no": 1726
+            }
+          ]
+        },
+        {
+          "joined_index": 1569,
+          "joined_line": 1570,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 326,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 SUTTON PL DEE 435,000.00",
+            "Town: BAST LONGMEADOW Addr:21 SUTTON PL",
+            "1 P URSINO RICHARD",
+            "1 P URSINO JANET"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 326,
+            "record_index": 5,
+            "x_center": 435.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 326,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 326,
+              "record_index": 5,
+              "_line_no": 1726
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "18964",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1580,
+          "joined_line": 1581,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 328,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 LINCOLN AVE DEE",
+            "Town: RUSSELL Addr:31 LINCOLN AVE",
+            "1 P MIEZEJEWSKI SYBIL K",
+            "2 P MIEZEJEWSKI SHEILA ANN",
+            "2 P MIEZEJEWSKI SYBIL K (LIFE EST)"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 328,
+            "record_index": 5,
+            "x_center": 444.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 328,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 328,
+              "record_index": 5,
+              "_line_no": 1737
+            }
+          ]
+        },
+        {
+          "joined_index": 1581,
+          "joined_line": 1582,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 328,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 VERMONT ST DEED 135,000.00",
+            "Town: HOLYOKE Addr:127 VERMONT ST",
+            "1 P DUNLAP MARK STEVEN",
+            "1 P DUNLAP MARK",
+            "1 P DUNLAP SCOTT EVA",
+            "1 P DUNLAP ScoTT",
+            "2 P DUNLAP MARK STEVEN",
+            "KH Hg"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 328,
+            "record_index": 5,
+            "x_center": 444.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 328,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 328,
+              "record_index": 5,
+              "_line_no": 1737
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "19243",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1610,
+          "joined_line": 1611,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 334,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 WARREN ST DEED 280,000.00",
+            "Town: WEST SPRINGFIELD Addr:28 WARREN ST",
+            "1 P HOGAN PATRICK MICHAEL",
+            "2 P CHE ZHONG",
+            "2 P LI YUN"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 334,
+            "record_index": 5,
+            "x_center": 435.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 334,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 334,
+              "record_index": 5,
+              "_line_no": 1767
+            }
+          ]
+        },
+        {
+          "joined_index": 1611,
+          "joined_line": 1612,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 334,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 WESTERN CIR DEED 1.00",
+            "Town: WESTFIELD Addr:78 WESTERN CIR",
+            "1 P THOMAS AUREN E",
+            "1 P CARRINGTON AUREN E",
+            "2 P MCCARTHY MARION E"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 334,
+            "record_index": 5,
+            "x_center": 435.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 334,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 334,
+              "record_index": 5,
+              "_line_no": 1767
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "19410",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1628,
+          "joined_line": 1629,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 337,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 NORFOLK ST DEED 180,000.00",
+            "Town: SPRINGFIELD Addr:18 NORFOLK ST",
+            "1 P IRIZARRY NAIDA",
+            "2 P BARQUIN OSCAR"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 337,
+            "record_index": 5,
+            "x_center": 435.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 337,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 337,
+              "record_index": 5,
+              "_line_no": 1785
+            }
+          ]
+        },
+        {
+          "joined_index": 1629,
+          "joined_line": 1630,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 337,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 DEED 23571 535",
+            "Town: WESTFIELD Addr:10 NICHOLAS LA",
+            "1 P LOBODA MAKSIM I",
+            "1 P LOBODA MAXSIM I",
+            "1 P LOBODA YEKATERINA P",
+            "2 P LOBODA MAKSIM I",
+            "2 P LOBODA YEKATERINA P"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 337,
+            "record_index": 5,
+            "x_center": 435.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 337,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 337,
+              "record_index": 5,
+              "_line_no": 1785
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "19670",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1631,
+          "joined_line": 1632,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 340,
+            "record_index": 2
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 UNIT 38 DEED",
+            "Town: CHICOPEE Addr:585 SHERIDAN ST #38",
+            "1 P DAVIGNO UUCILLE A",
+            "2 P DAVIGNO JUCILLE A (LIFE EST)",
+            "2 P DAVIGNO SUSAN M",
+            "2 P DAVIGNO PAUL L"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 340,
+            "record_index": 2,
+            "x_center": 156.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 340,
+              "record_index": 2
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 340,
+              "record_index": 2,
+              "_line_no": 1799
+            }
+          ]
+        },
+        {
+          "joined_index": 1636,
+          "joined_line": 1637,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 340,
+            "record_index": 7,
+            "stitch": {
+              "did_stitch": true,
+              "continuation_type": "PAGEBREAK",
+              "from_page": 340,
+              "into_page": 341,
+              "captured_top_lines": [
+                "RECORDED LAND BY RECORDING DATE Cheryl A. Coakley-Rivera",
+                "Me",
+                "INQUIRY PRINT REQUEST PAGE 342",
+                "PRINTED 1/18/26 23:55:46 RG370RP",
+                "TOWN: *ALL",
+                "CONSIDERATION: Q THROUGH 9, 999,999,999",
+                "jh 01-16-2026 TRANSACTION #:",
+                "DOC REFERENCE VEY",
+                "SEQ DESCR/LOC/ DELIVERED TYPE BOOK- PAGE CONSIDERATION STS",
+                "Town: HAST LONGMEADOW Addr:188 ELM ST Y",
+                "1 P MRAZ JEFFREY J Y",
+                "2 P MRAZ STACY R Y"
+              ],
+              "first_boundary_detected": "FILE SIMPLIFILE E-RECORDING Y"
+            }
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 ELM ST DEED 65,000.00"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 340,
+            "record_index": 2,
+            "x_center": 156.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 340,
+              "record_index": 7,
+              "stitch": {
+                "did_stitch": true,
+                "continuation_type": "PAGEBREAK",
+                "from_page": 340,
+                "into_page": 341,
+                "captured_top_lines": [
+                  "RECORDED LAND BY RECORDING DATE Cheryl A. Coakley-Rivera",
+                  "Me",
+                  "INQUIRY PRINT REQUEST PAGE 342",
+                  "PRINTED 1/18/26 23:55:46 RG370RP",
+                  "TOWN: *ALL",
+                  "CONSIDERATION: Q THROUGH 9, 999,999,999",
+                  "jh 01-16-2026 TRANSACTION #:",
+                  "DOC REFERENCE VEY",
+                  "SEQ DESCR/LOC/ DELIVERED TYPE BOOK- PAGE CONSIDERATION STS",
+                  "Town: HAST LONGMEADOW Addr:188 ELM ST Y",
+                  "1 P MRAZ JEFFREY J Y",
+                  "2 P MRAZ STACY R Y"
+                ],
+                "first_boundary_detected": "FILE SIMPLIFILE E-RECORDING Y"
+              }
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 340,
+              "record_index": 2,
+              "_line_no": 1799
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "19685",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1641,
+          "joined_line": 1642,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 341,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 AMHERST ST DEED 25,000.00",
+            "Town: CHICOPEE Addr:126 AMHERST ST",
+            "1 P MAHDY TAMER",
+            "2 P ALY ENAM"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 341,
+            "record_index": 5,
+            "x_center": 444.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 341,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 341,
+              "record_index": 5,
+              "_line_no": 1808
+            }
+          ]
+        },
+        {
+          "joined_index": 1642,
+          "joined_line": 1643,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 341,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 GREANEY ST DEE 180,700.00",
+            "Town: SPRINGFIELD Addr:45 GREANEY ST",
+            "1 P PICARD DENIS R",
+            "1 P PEKTIT LISE M",
+            "1 P PEKTIT LISA M",
+            "2 P VILLALOBOS ADRIAN MORALES"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 341,
+            "record_index": 5,
+            "x_center": 444.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 341,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 341,
+              "record_index": 5,
+              "_line_no": 1808
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "20406",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1719,
+          "joined_line": 1720,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 358,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 UNIT 131 DEED 129,900.00",
+            "Town: SPRINGFIELD Addr:131 NASSAU DR UNIT 131",
+            "1 P SPECHT ANNE M I",
+            "2 P TOMS ALICE P I"
+          ],
+          "rowctx_ref": {
+            "source": "OK_NO_CONS_V1_19_8",
+            "page_index": 358,
+            "record_index": 5,
+            "x_center": 417.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 358,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 358,
+              "record_index": 5,
+              "_line_no": 1888
+            }
+          ]
+        },
+        {
+          "joined_index": 1720,
+          "joined_line": 1721,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 358,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE INGE",
+            "1 WATSON ST DEED 150,000.00",
+            "Town: CHICOPEE Addr:59 WATSON ST"
+          ],
+          "rowctx_ref": {
+            "source": "OK_NO_CONS_V1_19_8",
+            "page_index": 358,
+            "record_index": 5,
+            "x_center": 417.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 358,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 358,
+              "record_index": 5,
+              "_line_no": 1888
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "20588",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1747,
+          "joined_line": 1748,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 363,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 PROSPECT ST DEED",
+            "Town: CHESTER Addr:128 PROSPECT ST",
+            "1 P SALVINI STEPHEN A (JR) I",
+            "1 P SHEA MAUREEN I",
+            "1 P SALVINI MAUREEN I",
+            "2 P SALVINI STEPHEN A (JR) I"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 363,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 363,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 363,
+              "record_index": 5,
+              "_line_no": 1915
+            }
+          ]
+        },
+        {
+          "joined_index": 1748,
+          "joined_line": 1749,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 363,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 MAYNARD ST DEED 170,000.00",
+            "Town: SPRINGFIELD Addr:192 MAYNARD ST",
+            "1 P MARTINEZ VICTOR I",
+            "1 P RIVERA JUANA I",
+            "2 P DORSEY ROSA I"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 363,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 363,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 363,
+              "record_index": 5,
+              "_line_no": 1915
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "21000",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1791,
+          "joined_line": 1792,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 373,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 SUFFIELD ST DEE 1,150,000.00",
+            "Town: AGAWAM Addr:1094 SUFFIELD ST",
+            "1 C WORK OPPORTUNITY CENTER INC",
+            "2 C TIERNANOGE PROPERTIES LLC"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 373,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 373,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 373,
+              "record_index": 5,
+              "_line_no": 1968
+            }
+          ]
+        },
+        {
+          "joined_index": 1792,
+          "joined_line": 1793,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 373,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 EDDY ST DEE 1.00",
+            "Town: SPRINGFIELD Addr:15 EDDY ST",
+            "1 P SALAME FRANK E",
+            "2 P DECARO RACHEL E"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 373,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 373,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 373,
+              "record_index": 5,
+              "_line_no": 1968
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "21276",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1825,
+          "joined_line": 1826,
+          "meta": {
+            "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 380,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 FOX HILL RD DEED",
+            "Town: SPRINGFIELD Addr:17 FOX HILL RD",
+            "1 P DURRELL STEVEN L",
+            "2 P DURRELL STEVEN L",
+            "2 P LANGLEY DEBBI",
+            "2 P JURKOWSKI MICHAEL"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 380,
+            "record_index": 5,
+            "x_center": 435.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 380,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 380,
+              "record_index": 5,
+              "_line_no": 2001
+            }
+          ]
+        },
+        {
+          "joined_index": 1826,
+          "joined_line": 1827,
+          "meta": {
+            "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 380,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 TANNERY RD DEED",
+            "Town: WESTFIELD Addr:44 TANNERY RD",
+            "1 P BARD FRANCIS L (REP)",
+            "1 P LANCIE BEATRICE (EST)"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 380,
+            "record_index": 5,
+            "x_center": 435.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 380,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 380,
+              "record_index": 5,
+              "_line_no": 2001
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "21337",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1837,
+          "joined_line": 1838,
+          "meta": {
+            "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 382,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 WORTHINGTON ST DEED 1.00",
+            "Town: SPRINGFIELD Addr:1154 WORTHINGTON ST",
+            "1 P BROADNAX ANTHONY B",
+            "2 P BROADNAX ANTHONY B",
+            "2 P SMITH MAISHA E"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 382,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 382,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 382,
+              "record_index": 5,
+              "_line_no": 2012
+            }
+          ]
+        },
+        {
+          "joined_index": 1838,
+          "joined_line": 1839,
+          "meta": {
+            "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 382,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 GORE RD DEED 1.00",
+            "Town: BLANDFORD Addr:30 GORE RD",
+            "1 P DAGENAIS KENNETH",
+            "1 P DAGENAIS EMILY"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 382,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 382,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 382,
+              "record_index": 5,
+              "_line_no": 2012
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "21610",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1870,
+          "joined_line": 1871,
+          "meta": {
+            "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 388,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 MEADOWBROOK AVE DEED 135,000.00",
+            "Town: WEST SPRINGFIELD Addr:52 MEADOWBROOK AVE",
+            "1 P GIANNETTI MARIAN L",
+            "2 C CUSTOM HOMES DEVELOPMENT GROUP LLC"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 388,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 388,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 388,
+              "record_index": 5,
+              "_line_no": 2046
+            }
+          ]
+        },
+        {
+          "joined_index": 1871,
+          "joined_line": 1872,
+          "meta": {
+            "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 388,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 LAMBSON RD DEED 1.00",
+            "Town: MONTGOMERY Addr:66 LAMBSON RD",
+            "1 P SECTOR SARAH",
+            "1 P FITZGERALD SARAH J",
+            "1 P FITZGERALD SARAH",
+            "2 P SECTOR ANDREW G"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 388,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 388,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 388,
+              "record_index": 5,
+              "_line_no": 2046
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "21710",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1886,
+          "joined_line": 1887,
+          "meta": {
+            "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 391,
+            "record_index": 4
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 CRAIWELL AVE DEED 341,000.00",
+            "Town: WEST SPRINGFIELD Addr:125 CRAIWELL AVE",
+            "1 P PERRY REGINA R",
+            "1 P RANSTROM REGINA ROSE",
+            "1 P RANSTORM REGINA ROSE",
+            "1 P PERRY DEVIN M",
+            "2 P RIVEST MATTHEW D",
+            "2 P RIVEST ADAIR"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 391,
+            "record_index": 4,
+            "x_center": 363.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 391,
+              "record_index": 4
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 391,
+              "record_index": 4,
+              "_line_no": 2062
+            }
+          ]
+        },
+        {
+          "joined_index": 1888,
+          "joined_line": 1889,
+          "meta": {
+            "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 391,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 WILBRAHAM AVE DEE 1.00",
+            "Town: SPRINGFIELD Addr:45 WILBRAHAM AVE",
+            "1 P MORRIS PERNESE",
+            "1 P SMITH JENAQUAY TASHAWNA"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 391,
+            "record_index": 4,
+            "x_center": 363.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 391,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 391,
+              "record_index": 4,
+              "_line_no": 2062
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "21832",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 1910,
+          "joined_line": 1911,
+          "meta": {
+            "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 396,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 WELLINGTON DR DEED 719,000.00",
+            "Town: BAST LONGMEADOW Addr:29 WELLINGTON DR",
+            "1 P ALIENGENA KEVI J",
+            "1 P ALIENGENA LISA M",
+            "2 P SHER ROBERT JOSHPH",
+            "2 P SHER SUZANNE"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 396,
+            "record_index": 5,
+            "x_center": 417.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 396,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 396,
+              "record_index": 5,
+              "_line_no": 2091
+            }
+          ]
+        },
+        {
+          "joined_index": 1911,
+          "joined_line": 1912,
+          "meta": {
+            "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 396,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "1 ROLF AVE DEED 287,000.00",
+            "Town: CHICOPEE Addr:245 ROLF AVE"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 396,
+            "record_index": 5,
+            "x_center": 417.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 396,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 396,
+              "record_index": 5,
+              "_line_no": 2091
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "4595",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 76,
+          "joined_line": 77,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 17,
+            "record_index": 3
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 NEWBURY ST DEED",
+            "Town: CHICOPEE Addr:190 NEWBURY ST",
+            "1 P CULLEN CHRISTINE A",
+            "1 P BERARD DIANE B",
+            "1 P ZASKEY MICHAEL W",
+            "1 P ZASKEY WILLIAM M",
+            "1 P ZASKEY JOANNE B",
+            "2 P ZASKEY JOANNE B (LIFE EST)",
+            "2 P ZASKEY WILLIAM M (LIFE EST)",
+            "2 P CULLEN CHRISTINE A",
+            "2 P BERARD DIANE B",
+            "2 P ZASKEY MICHAEL W"
+          ],
+          "rowctx_ref": {
+            "source": "OK_NO_CONS_V1_19_8",
+            "page_index": 17,
+            "record_index": 3,
+            "x_center": 309.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 17,
+              "record_index": 3
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 17,
+              "record_index": 3,
+              "_line_no": 89
+            }
+          ]
+        },
+        {
+          "joined_index": 78,
+          "joined_line": 79,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 17,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 DRURY LA DEED 215,000.00",
+            "Town: LONGMEADOW Addr:69 DRURY LA",
+            "1 P STEVENS FLEANORE C"
+          ],
+          "rowctx_ref": {
+            "source": "OK_NO_CONS_V1_19_8",
+            "page_index": 17,
+            "record_index": 3,
+            "x_center": 309.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 17,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 17,
+              "record_index": 3,
+              "_line_no": 89
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "4997",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 129,
+          "joined_line": 130,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 27,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 SOUTHWORTH ST DEED 247,500.00",
+            "Town: WEST SPRINGFIELD Addr:62 SOUTHWORTH ST",
+            "1 P PRENOSIL JOHN E",
+            "2 P RUFFULE ANTHONY JAMELL"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 27,
+            "record_index": 6,
+            "x_center": 417.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 27,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 27,
+              "record_index": 6,
+              "_line_no": 147
+            }
+          ]
+        },
+        {
+          "joined_index": 130,
+          "joined_line": 131,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 27,
+            "record_index": 7,
+            "stitch": {
+              "did_stitch": true,
+              "continuation_type": "PAGEBREAK",
+              "from_page": 27,
+              "into_page": 28,
+              "captured_top_lines": [
+                "RECORDED LAND BY RECORDING DATE",
+                "Me",
+                "Che",
+                "ryl A. Coakley-Rivera",
+                "PAGE",
+                "RG370RP",
+                "29",
+                "III KEK HS EG",
+                "INQUIRY PRINT REQUEST",
+                "PRINTED 1/18/26 23:55:46",
+                "TOWN: *ALL",
+                "CONSIDERATION: Q THROUGH 9, 999,999,999",
+                "jh 01-16-2026 TRANSACTION #:",
+                "DOC REFERENCE",
+                "SEQ DESCR/LOC/ DELIVERED TYPE BOOK- PAGE CONSIDERATION",
+                "Town: CHICOPEE Addr:61 CHESTER ST",
+                "1 P LAMICA MARY M",
+                "2 P GRAY STEVEN P",
+                "2 P BYCENSKI HEATHER J"
+              ],
+              "first_boundary_detected": "FILE SIMPLIFILE E-RECORDING"
+            }
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 CHESTER ST DEED 195,000.00"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 27,
+            "record_index": 6,
+            "x_center": 417.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 27,
+              "record_index": 7,
+              "stitch": {
+                "did_stitch": true,
+                "continuation_type": "PAGEBREAK",
+                "from_page": 27,
+                "into_page": 28,
+                "captured_top_lines": [
+                  "RECORDED LAND BY RECORDING DATE",
+                  "Me",
+                  "Che",
+                  "ryl A. Coakley-Rivera",
+                  "PAGE",
+                  "RG370RP",
+                  "29",
+                  "III KEK HS EG",
+                  "INQUIRY PRINT REQUEST",
+                  "PRINTED 1/18/26 23:55:46",
+                  "TOWN: *ALL",
+                  "CONSIDERATION: Q THROUGH 9, 999,999,999",
+                  "jh 01-16-2026 TRANSACTION #:",
+                  "DOC REFERENCE",
+                  "SEQ DESCR/LOC/ DELIVERED TYPE BOOK- PAGE CONSIDERATION",
+                  "Town: CHICOPEE Addr:61 CHESTER ST",
+                  "1 P LAMICA MARY M",
+                  "2 P GRAY STEVEN P",
+                  "2 P BYCENSKI HEATHER J"
+                ],
+                "first_boundary_detected": "FILE SIMPLIFILE E-RECORDING"
+              }
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 27,
+              "record_index": 6,
+              "_line_no": 147
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "5033",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 135,
+          "joined_line": 136,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 28,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 MOCKINGBIRD LA DEED 1.00",
+            "Town: SOUTHWICK Addr:3 MOCKINGBIRD LA",
+            "1 P GRASSO MICHAEL A",
+            "1 P GRASSO VICKI A",
+            "2 P GRASSO VICKI A"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 28,
+            "record_index": 5,
+            "x_center": 435.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 28,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 28,
+              "record_index": 5,
+              "_line_no": 152
+            }
+          ]
+        },
+        {
+          "joined_index": 136,
+          "joined_line": 137,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 28,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 HERBERT AVE DEED 350,000.00",
+            "Town: SPRINGFIELD Addr:39 HERBERT AVE"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 28,
+            "record_index": 5,
+            "x_center": 435.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 28,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 28,
+              "record_index": 5,
+              "_line_no": 152
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "5325",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 162,
+          "joined_line": 163,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 34,
+            "record_index": 4
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 MORT VINING RD DEED 369,900.00",
+            "Town: SOUTHWICK Addr:38 MORT VINING RD",
+            "1 C RM BLERMAN LLC",
+            "2 P MAXTO RACHEL MARIE",
+            "2 P JAREST THOMAS L"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 34,
+            "record_index": 4,
+            "x_center": 381.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 34,
+              "record_index": 4
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 34,
+              "record_index": 4,
+              "_line_no": 179
+            }
+          ]
+        },
+        {
+          "joined_index": 163,
+          "joined_line": 164,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 34,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 OLD WESTFIELD RD DEE 155,000.00",
+            "Town: GRANVILLE Addr:75 OLD WESTFIELD RD",
+            "1 P LAPTEW THOMAS A",
+            "1 P COWLES CYNTHIA C",
+            "1 P COWELS CYNTHIA C",
+            "2 P MACHYKA JEFFREY C",
+            "2 P MACHYKA ANNMARIE"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 34,
+            "record_index": 4,
+            "x_center": 381.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 34,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 34,
+              "record_index": 4,
+              "_line_no": 179
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "5403",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 174,
+          "joined_line": 175,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 36,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 LORIMER ST DEED 29",
+            "Town: SPRINGFIELD Addr:34 LORIMER ST",
+            "1 P SIERRA XAVER A",
+            "2 P FIGUEROA EMELY",
+            "2 P AQUINO CARLOS A"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 36,
+            "record_index": 5,
+            "x_center": 435.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 36,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 36,
+              "record_index": 5,
+              "_line_no": 190
+            }
+          ]
+        },
+        {
+          "joined_index": 175,
+          "joined_line": 176,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 36,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "ENV ATTY FRED MCCOY",
+            "6 BURT LANE",
+            "WILBRAHAM MA 01095",
+            "1 CROW HILL RD DEED",
+            "Town: MONSON Addr:6 CROW HILL RD",
+            "1 P HOWARD JAMES B (dR)",
+            "2 P HOWARD JAMES B",
+            "2 P HOWARD JAMES B (SR)"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 36,
+            "record_index": 5,
+            "x_center": 435.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 36,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 36,
+              "record_index": 5,
+              "_line_no": 190
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "6006",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 225,
+          "joined_line": 226,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 46,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 FARMINGTON CIR DEED",
+            "Town: AGAWAM Addr:35 FARMINGTON CIR",
+            "1 P KANTOR KAREN C",
+            "2 P KANTOR KAREN C",
+            "2 P KANTOR SIMON W"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 46,
+            "record_index": 5,
+            "x_center": 363.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 46,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 46,
+              "record_index": 5,
+              "_line_no": 241
+            }
+          ]
+        },
+        {
+          "joined_index": 227,
+          "joined_line": 228,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 46,
+            "record_index": 7,
+            "stitch": {
+              "did_stitch": true,
+              "continuation_type": "PAGEBREAK",
+              "from_page": 46,
+              "into_page": 47,
+              "captured_top_lines": [
+                "RECORDED LAND BY RECORDING DATE Cheryl A. Coakley-Rivera",
+                "Me",
+                "INQUIRY PRINT REQUEST PAGE 48",
+                "PRINTED 1/18/26 23:55:46 RG370RP",
+                "TOWN: *ALL",
+                "CONSIDERATION: OQ THROUGH 9, 999,999,999",
+                "yh 01-16-2026 TRANSACTION #:",
+                "DOC REFERENCE VEY",
+                "SEQ DESCR/LOC/ DELIVERED TYPE BOOK- PAGE CONSIDERATION sts",
+                "Town: LUDLOW Addr:33 MORSE ST UNIT 3 Y",
+                "1 P STONER WILLIAM N (& REP) Y",
+                "1 P STONER JANICE H (EST) Y",
+                "1 P STONER KAREN L Y",
+                "2 P MAJANE JORDAN A Y"
+              ],
+              "first_boundary_detected": "FILE SIMPLIFILE E-RECORDING Y"
+            }
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 UNIT 3 DEED 102,000.00"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 46,
+            "record_index": 5,
+            "x_center": 363.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 46,
+              "record_index": 7,
+              "stitch": {
+                "did_stitch": true,
+                "continuation_type": "PAGEBREAK",
+                "from_page": 46,
+                "into_page": 47,
+                "captured_top_lines": [
+                  "RECORDED LAND BY RECORDING DATE Cheryl A. Coakley-Rivera",
+                  "Me",
+                  "INQUIRY PRINT REQUEST PAGE 48",
+                  "PRINTED 1/18/26 23:55:46 RG370RP",
+                  "TOWN: *ALL",
+                  "CONSIDERATION: OQ THROUGH 9, 999,999,999",
+                  "yh 01-16-2026 TRANSACTION #:",
+                  "DOC REFERENCE VEY",
+                  "SEQ DESCR/LOC/ DELIVERED TYPE BOOK- PAGE CONSIDERATION sts",
+                  "Town: LUDLOW Addr:33 MORSE ST UNIT 3 Y",
+                  "1 P STONER WILLIAM N (& REP) Y",
+                  "1 P STONER JANICE H (EST) Y",
+                  "1 P STONER KAREN L Y",
+                  "2 P MAJANE JORDAN A Y"
+                ],
+                "first_boundary_detected": "FILE SIMPLIFILE E-RECORDING Y"
+              }
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 46,
+              "record_index": 5,
+              "_line_no": 241
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "6033",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 232,
+          "joined_line": 233,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 47,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 CARRIAGE HOUSE LA DEED",
+            "Town: MONSON Addr:18 CARRIAGE HOUSE LA",
+            "1 P FIJOL JOHN R",
+            "2 P FIJOL JOHN R",
+            "2 P FIJOL CARRIE PLANTE"
+          ],
+          "rowctx_ref": {
+            "source": "OK_NO_CONS_V1_19_8",
+            "page_index": 47,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 47,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 47,
+              "record_index": 5,
+              "_line_no": 247
+            }
+          ]
+        },
+        {
+          "joined_index": 233,
+          "joined_line": 234,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 47,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "1 GLENCOE ST DEE 210,000.00 Yy",
+            "Town: SPRINGFIELD Addr:50 GLENCOE ST",
+            "1 P HASTINGS THERESE S$"
+          ],
+          "rowctx_ref": {
+            "source": "OK_NO_CONS_V1_19_8",
+            "page_index": 47,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 47,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 47,
+              "record_index": 5,
+              "_line_no": 247
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "6820",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 319,
+          "joined_line": 320,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 66,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 ROBIN RIDGE DR DEED 33",
+            "Town: AGAWAM Addr:39 ROBIN RIDGE DR",
+            "1 P BRANTLEY KIMBERLY",
+            "1 P MASO JENNIFER",
+            "1 P DAVIS WENDY",
+            "2 P BURNHAM TYLER"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 66,
+            "record_index": 6,
+            "x_center": 435.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 66,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 66,
+              "record_index": 6,
+              "_line_no": 350
+            }
+          ]
+        },
+        {
+          "joined_index": 320,
+          "joined_line": 321,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 66,
+            "record_index": 7,
+            "stitch": {
+              "did_stitch": true,
+              "continuation_type": "PAGEBREAK",
+              "from_page": 66,
+              "into_page": 67,
+              "captured_top_lines": [
+                "RECORDED LAND BY RECORDING DATE Cheryl A. Coakley-Rivera",
+                "3",
+                "INQUIRY PRINT REQUEST PAGE 68",
+                "PRINTED 1/18/26 23:55:46 RG370RP",
+                "TOWN: *ALL",
+                "CONSIDERATION: Q THROUGH 9, 999,999,999",
+                "jh 01-16-2026 TRANSACTION #:",
+                "DOC REFERENCE VEY",
+                "SEQ DESCR/LOC/ DELIVERED TYPE BOOK- PAGE CONSIDERATION STS",
+                "Town: SOUTHWICK Addr:145 SOUTH LONGYARD RD Y",
+                "1 P RACINE MARILYN A Y",
+                "2 P BABBIN ANDREA J Y"
+              ],
+              "first_boundary_detected": "FILE SIMPLIFILE E-RECORDING Y"
+            }
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 SOUTH LONGYARD RD DEED 2",
+            "0,000.00"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 66,
+            "record_index": 6,
+            "x_center": 435.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 66,
+              "record_index": 7,
+              "stitch": {
+                "did_stitch": true,
+                "continuation_type": "PAGEBREAK",
+                "from_page": 66,
+                "into_page": 67,
+                "captured_top_lines": [
+                  "RECORDED LAND BY RECORDING DATE Cheryl A. Coakley-Rivera",
+                  "3",
+                  "INQUIRY PRINT REQUEST PAGE 68",
+                  "PRINTED 1/18/26 23:55:46 RG370RP",
+                  "TOWN: *ALL",
+                  "CONSIDERATION: Q THROUGH 9, 999,999,999",
+                  "jh 01-16-2026 TRANSACTION #:",
+                  "DOC REFERENCE VEY",
+                  "SEQ DESCR/LOC/ DELIVERED TYPE BOOK- PAGE CONSIDERATION STS",
+                  "Town: SOUTHWICK Addr:145 SOUTH LONGYARD RD Y",
+                  "1 P RACINE MARILYN A Y",
+                  "2 P BABBIN ANDREA J Y"
+                ],
+                "first_boundary_detected": "FILE SIMPLIFILE E-RECORDING Y"
+              }
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 66,
+              "record_index": 6,
+              "_line_no": 350
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "6865",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 325,
+          "joined_line": 326,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 67,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 MOORE ST DEED 259,000.00",
+            "Town: LUDLOW Addr:614 MOORE ST",
+            "1 P COTTO MARKEZ BE",
+            "1 P COLLINS EMMA",
+            "2 P JIMENEZ JORGE (JR)"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 67,
+            "record_index": 5,
+            "x_center": 444.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 67,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 67,
+              "record_index": 5,
+              "_line_no": 355
+            }
+          ]
+        },
+        {
+          "joined_index": 326,
+          "joined_line": 327,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 67,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 MEADOW ST DEED 195,000.00",
+            "Town: CHICOPEE Addr:77 MEADOW ST",
+            "1 P TOKAREV VICTORIA",
+            "2 P TIFOUR NAWAR",
+            "2 P AL SEKRAFI AYMAN"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 67,
+            "record_index": 5,
+            "x_center": 444.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 67,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 67,
+              "record_index": 5,
+              "_line_no": 355
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "7076",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 362,
+          "joined_line": 363,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 73,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 DAWN ST DEED",
+            "Town: CHICOPEE Addr:32 DAWN ST",
+            "1 P GREGOIRE THOMAS J",
+            "1 P GREGOIRE KAREN M",
+            "2 P GREGOIRE THOMAS J (TRS)",
+            "2 P GREGOIRE KAREN M (TRS)",
+            "2 C GREGOIRE FAMILY TRUST (TRS OF)"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 73,
+            "record_index": 5,
+            "x_center": 444.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 73,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 73,
+              "record_index": 5,
+              "_line_no": 391
+            }
+          ]
+        },
+        {
+          "joined_index": 363,
+          "joined_line": 364,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 73,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 COLLEGE ST DEED",
+            "Town: CHICOPEE Addr:213 COLLEGE ST",
+            "1 P GREGOIRE THOMAS J",
+            "1 P GREGOIRE KAREN M",
+            "2 P GREGOIRE THOMAS J (TRS)",
+            "2 P GREGOIRE KAREN M (TRS)",
+            "2 C GREGOIRE FAMILY TRUST (TRS OF)"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 73,
+            "record_index": 5,
+            "x_center": 444.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 73,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 73,
+              "record_index": 5,
+              "_line_no": 391
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "8296",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 458,
+          "joined_line": 459,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 93,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "1 WOLCOTT AVE DEED",
+            "Town: WEST SPRINGFIELD Addr:112 WOLCOTT AVE",
+            "1 P PAVALYUK PETER",
+            "2 P PAVALYUK PETER",
+            "2 P PAVALYUK NATALYA"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 93,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 93,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 93,
+              "record_index": 5,
+              "_line_no": 494
+            }
+          ]
+        },
+        {
+          "joined_index": 459,
+          "joined_line": 460,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 93,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RKECORDING",
+            "1 MAIN ST DEED 217,000.00",
+            "Town: WEST SPRINGFIELD Addr:668-670 MAIN ST",
+            "1 \u00a2C TM PROPERTIES INC",
+            "2 P WISE REBECCA ANN",
+            "2 P WISE KE ETH"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 93,
+            "record_index": 5,
+            "x_center": 426.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 93,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 93,
+              "record_index": 5,
+              "_line_no": 494
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "8556",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 483,
+          "joined_line": 484,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 100,
+            "record_index": 1
+          },
+          "evidence_lines": [
+            "Town: CHICOPEE Addr:67 MANDALAY RD",
+            "1 P MURDOCK ELIZABETH",
+            "1 P PYCKO ELIZABETH A",
+            "2 P MURDOCK CRAIG",
+            "2 P MURDOCK ELIZABETH"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 100,
+            "record_index": 1,
+            "x_center": 156.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 100,
+              "record_index": 1
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 100,
+              "record_index": 1,
+              "_line_no": 524
+            }
+          ]
+        },
+        {
+          "joined_index": 488,
+          "joined_line": 489,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 100,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 ORLANDO ST DEE 220,000.00",
+            "Town: AGAWAM Addr:28-30 ORLANDO ST",
+            "1 P KITCHELL ALI B",
+            "1 P KITCHELL HELEN \u00a7$",
+            "2 P TAN ZHI QO",
+            "2 P TAN JIA",
+            "2 P LIE SHU"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 100,
+            "record_index": 1,
+            "x_center": 156.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 100,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 100,
+              "record_index": 1,
+              "_line_no": 524
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "8664",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 507,
+          "joined_line": 508,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 104,
+            "record_index": 1
+          },
+          "evidence_lines": [
+            "Town: SPRINGFIELD Addr:73 CANTON ST",
+            "1 P WELZ ANNE &E&",
+            "2 P SOTO RHONDA M"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 104,
+            "record_index": 1,
+            "x_center": 444.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 104,
+              "record_index": 1
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 104,
+              "record_index": 1,
+              "_line_no": 547
+            }
+          ]
+        },
+        {
+          "joined_index": 508,
+          "joined_line": 509,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 104,
+            "record_index": 2
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 WILCOX ST DEE 99,800.00",
+            "Town: SPRINGFIELD Addr:47 WILCOX ST",
+            "1 P RUBINACCIO VALENTINO",
+            "1 P RUBINACCIO ROSALBA",
+            "1 P MANZI ROSALBA",
+            "1 P RUBINACCIO LEOPOLDO",
+            "1 P RUBINACCIO FILOMENA",
+            "1 P RUSSO FILOMENA",
+            "2 P ALJANABI AHMED"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 104,
+            "record_index": 1,
+            "x_center": 444.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 104,
+              "record_index": 2
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 104,
+              "record_index": 1,
+              "_line_no": 547
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "inst_raw": "9803",
+      "count": 2,
+      "occurrences": [
+        {
+          "joined_index": 595,
+          "joined_line": 596,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 121,
+            "record_index": 5
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 WAGON WHEEL DR DEED 1.00",
+            "Town: AGAWAM Addr:9 WAGON WHEEL DR",
+            "1 P DANIE ROBERT J",
+            "1 P DANIE PAMELA M",
+            "2 P BEGLANE BRIAN M",
+            "2 P DANIE KEVI P",
+            "2 P DANIE ROBERT J (LIFE EST)",
+            "2 P DANIE PAMELA M (LIFE EST)"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 121,
+            "record_index": 5,
+            "x_center": 435.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 121,
+              "record_index": 5
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 121,
+              "record_index": 5,
+              "_line_no": 637
+            }
+          ]
+        },
+        {
+          "joined_index": 596,
+          "joined_line": 597,
+          "meta": {
+            "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+            "page_index": 121,
+            "record_index": 6
+          },
+          "evidence_lines": [
+            "FILE SIMPLIFILE E-RECORDING",
+            "1 TANNERY RD DEED 226,000.00",
+            "Town: WESTFIELD Addr:107 TANNERY RD",
+            "1 P CRAWFORD CARL J (JR REP)",
+            "1 P CRAWFORD CARL J (EST)",
+            "1 P CRAWFORD CARL J (SR EST)"
+          ],
+          "rowctx_ref": {
+            "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+            "page_index": 121,
+            "record_index": 5,
+            "x_center": 435.77
+          },
+          "stitched_matches_count": 1,
+          "stitched_matches_sample_meta": [
+            {
+              "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+              "page_index": 121,
+              "record_index": 6
+            }
+          ],
+          "rowctx_matches_count": 1,
+          "rowctx_matches_sample": [
+            {
+              "page_index": 121,
+              "record_index": 5,
+              "_line_no": 637
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

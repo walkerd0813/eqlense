@@ -1,0 +1,650 @@
+[
+  {
+    "stitched_page": 336,
+    "stitched_record": 1,
+    "stitched_refs": [
+      [
+        "SPRINGFIELD",
+        "575-577 ARMORY ST"
+      ]
+    ],
+    "candidates": [
+      {
+        "inst": "19407",
+        "page_index": 336,
+        "record_index": 1,
+        "refs": [
+          [
+            "SPRINGFIELD",
+            "575-577 ARMORY ST"
+          ]
+        ],
+        "overlap": 1
+      },
+      {
+        "inst": "19401",
+        "page_index": 336,
+        "record_index": 2,
+        "refs": [
+          [
+            "WEST SPRINGFIELD",
+            "AGAWAM AVE"
+          ]
+        ],
+        "overlap": 0
+      },
+      {
+        "inst": "19396",
+        "page_index": 336,
+        "record_index": 3,
+        "refs": [
+          [
+            "WEST SPRINGFIELD",
+            "88 PARTRIDGE LA"
+          ]
+        ],
+        "overlap": 0
+      }
+    ]
+  },
+  {
+    "stitched_page": 336,
+    "stitched_record": 2,
+    "stitched_refs": [
+      [
+        "WEST SPRINGFIELD",
+        "AGAWAM AVE"
+      ]
+    ],
+    "candidates": [
+      {
+        "inst": "19407",
+        "page_index": 336,
+        "record_index": 1,
+        "refs": [
+          [
+            "SPRINGFIELD",
+            "575-577 ARMORY ST"
+          ]
+        ],
+        "overlap": 0
+      },
+      {
+        "inst": "19401",
+        "page_index": 336,
+        "record_index": 2,
+        "refs": [
+          [
+            "WEST SPRINGFIELD",
+            "AGAWAM AVE"
+          ]
+        ],
+        "overlap": 1
+      },
+      {
+        "inst": "19396",
+        "page_index": 336,
+        "record_index": 3,
+        "refs": [
+          [
+            "WEST SPRINGFIELD",
+            "88 PARTRIDGE LA"
+          ]
+        ],
+        "overlap": 0
+      },
+      {
+        "inst": "19387",
+        "page_index": 336,
+        "record_index": 4,
+        "refs": [
+          [
+            "SPRINGFIELD",
+            "73 CAREW TERR"
+          ]
+        ],
+        "overlap": 0
+      }
+    ]
+  },
+  {
+    "stitched_page": 336,
+    "stitched_record": 3,
+    "stitched_refs": [
+      [
+        "WEST SPRINGFIELD",
+        "88 PARTRIDGE LA"
+      ]
+    ],
+    "candidates": [
+      {
+        "inst": "19407",
+        "page_index": 336,
+        "record_index": 1,
+        "refs": [
+          [
+            "SPRINGFIELD",
+            "575-577 ARMORY ST"
+          ]
+        ],
+        "overlap": 0
+      },
+      {
+        "inst": "19401",
+        "page_index": 336,
+        "record_index": 2,
+        "refs": [
+          [
+            "WEST SPRINGFIELD",
+            "AGAWAM AVE"
+          ]
+        ],
+        "overlap": 0
+      },
+      {
+        "inst": "19396",
+        "page_index": 336,
+        "record_index": 3,
+        "refs": [
+          [
+            "WEST SPRINGFIELD",
+            "88 PARTRIDGE LA"
+          ]
+        ],
+        "overlap": 1
+      },
+      {
+        "inst": "19387",
+        "page_index": 336,
+        "record_index": 4,
+        "refs": [
+          [
+            "SPRINGFIELD",
+            "73 CAREW TERR"
+          ]
+        ],
+        "overlap": 0
+      },
+      {
+        "inst": "19384",
+        "page_index": 336,
+        "record_index": 5,
+        "refs": [
+          [
+            "HOLYOKE",
+            "197 LOCUST ST"
+          ]
+        ],
+        "overlap": 0
+      }
+    ]
+  },
+  {
+    "stitched_page": 336,
+    "stitched_record": 4,
+    "stitched_refs": [
+      [
+        "SPRINGFIELD",
+        "73 CAREW TERR"
+      ]
+    ],
+    "candidates": [
+      {
+        "inst": "19401",
+        "page_index": 336,
+        "record_index": 2,
+        "refs": [
+          [
+            "WEST SPRINGFIELD",
+            "AGAWAM AVE"
+          ]
+        ],
+        "overlap": 0
+      },
+      {
+        "inst": "19396",
+        "page_index": 336,
+        "record_index": 3,
+        "refs": [
+          [
+            "WEST SPRINGFIELD",
+            "88 PARTRIDGE LA"
+          ]
+        ],
+        "overlap": 0
+      },
+      {
+        "inst": "19387",
+        "page_index": 336,
+        "record_index": 4,
+        "refs": [
+          [
+            "SPRINGFIELD",
+            "73 CAREW TERR"
+          ]
+        ],
+        "overlap": 1
+      },
+      {
+        "inst": "19384",
+        "page_index": 336,
+        "record_index": 5,
+        "refs": [
+          [
+            "HOLYOKE",
+            "197 LOCUST ST"
+          ]
+        ],
+        "overlap": 0
+      }
+    ]
+  },
+  {
+    "stitched_page": 336,
+    "stitched_record": 5,
+    "stitched_refs": [
+      [
+        "HOLYOKE",
+        "197 LOCUST ST"
+      ]
+    ],
+    "candidates": [
+      {
+        "inst": "19396",
+        "page_index": 336,
+        "record_index": 3,
+        "refs": [
+          [
+            "WEST SPRINGFIELD",
+            "88 PARTRIDGE LA"
+          ]
+        ],
+        "overlap": 0
+      },
+      {
+        "inst": "19387",
+        "page_index": 336,
+        "record_index": 4,
+        "refs": [
+          [
+            "SPRINGFIELD",
+            "73 CAREW TERR"
+          ]
+        ],
+        "overlap": 0
+      },
+      {
+        "inst": "19384",
+        "page_index": 336,
+        "record_index": 5,
+        "refs": [
+          [
+            "HOLYOKE",
+            "197 LOCUST ST"
+          ]
+        ],
+        "overlap": 1
+      }
+    ]
+  },
+  {
+    "stitched_page": 337,
+    "stitched_record": 1,
+    "stitched_refs": [
+      [
+        "SPRINGFIELD",
+        "86-88 CLIFTON AVE"
+      ]
+    ],
+    "candidates": [
+      {
+        "inst": "19437",
+        "page_index": 337,
+        "record_index": 1,
+        "refs": [
+          [
+            "SPRINGFIELD",
+            "86-88 CLIFTON AVE"
+          ]
+        ],
+        "overlap": 1
+      },
+      {
+        "inst": "19431",
+        "page_index": 337,
+        "record_index": 2,
+        "refs": [
+          [
+            "SPRINGFIELD",
+            "124 WAIT ST"
+          ]
+        ],
+        "overlap": 0
+      },
+      {
+        "inst": "19426",
+        "page_index": 337,
+        "record_index": 3,
+        "refs": [
+          [
+            "WESTFIELD",
+            "338 LOOMIS ST"
+          ]
+        ],
+        "overlap": 0
+      }
+    ]
+  },
+  {
+    "stitched_page": 337,
+    "stitched_record": 2,
+    "stitched_refs": [
+      [
+        "SPRINGFIELD",
+        "124 WAIT ST"
+      ]
+    ],
+    "candidates": [
+      {
+        "inst": "19437",
+        "page_index": 337,
+        "record_index": 1,
+        "refs": [
+          [
+            "SPRINGFIELD",
+            "86-88 CLIFTON AVE"
+          ]
+        ],
+        "overlap": 0
+      },
+      {
+        "inst": "19431",
+        "page_index": 337,
+        "record_index": 2,
+        "refs": [
+          [
+            "SPRINGFIELD",
+            "124 WAIT ST"
+          ]
+        ],
+        "overlap": 1
+      },
+      {
+        "inst": "19426",
+        "page_index": 337,
+        "record_index": 3,
+        "refs": [
+          [
+            "WESTFIELD",
+            "338 LOOMIS ST"
+          ]
+        ],
+        "overlap": 0
+      },
+      {
+        "inst": "19413",
+        "page_index": 337,
+        "record_index": 4,
+        "refs": [
+          [
+            "WESTFIELD",
+            "14 CLARK ST"
+          ]
+        ],
+        "overlap": 0
+      }
+    ]
+  },
+  {
+    "stitched_page": 337,
+    "stitched_record": 3,
+    "stitched_refs": [
+      [
+        "WESTFIELD",
+        "338 LOOMIS ST"
+      ]
+    ],
+    "candidates": [
+      {
+        "inst": "19437",
+        "page_index": 337,
+        "record_index": 1,
+        "refs": [
+          [
+            "SPRINGFIELD",
+            "86-88 CLIFTON AVE"
+          ]
+        ],
+        "overlap": 0
+      },
+      {
+        "inst": "19431",
+        "page_index": 337,
+        "record_index": 2,
+        "refs": [
+          [
+            "SPRINGFIELD",
+            "124 WAIT ST"
+          ]
+        ],
+        "overlap": 0
+      },
+      {
+        "inst": "19426",
+        "page_index": 337,
+        "record_index": 3,
+        "refs": [
+          [
+            "WESTFIELD",
+            "338 LOOMIS ST"
+          ]
+        ],
+        "overlap": 1
+      },
+      {
+        "inst": "19413",
+        "page_index": 337,
+        "record_index": 4,
+        "refs": [
+          [
+            "WESTFIELD",
+            "14 CLARK ST"
+          ]
+        ],
+        "overlap": 0
+      },
+      {
+        "inst": "19410",
+        "page_index": 337,
+        "record_index": 5,
+        "refs": [
+          [
+            "SPRINGFIELD",
+            "18 NORFOLK ST"
+          ]
+        ],
+        "overlap": 0
+      }
+    ]
+  },
+  {
+    "stitched_page": 337,
+    "stitched_record": 4,
+    "stitched_refs": [
+      [
+        "WESTFIELD",
+        "14 CLARK ST"
+      ]
+    ],
+    "candidates": [
+      {
+        "inst": "19431",
+        "page_index": 337,
+        "record_index": 2,
+        "refs": [
+          [
+            "SPRINGFIELD",
+            "124 WAIT ST"
+          ]
+        ],
+        "overlap": 0
+      },
+      {
+        "inst": "19426",
+        "page_index": 337,
+        "record_index": 3,
+        "refs": [
+          [
+            "WESTFIELD",
+            "338 LOOMIS ST"
+          ]
+        ],
+        "overlap": 0
+      },
+      {
+        "inst": "19413",
+        "page_index": 337,
+        "record_index": 4,
+        "refs": [
+          [
+            "WESTFIELD",
+            "14 CLARK ST"
+          ]
+        ],
+        "overlap": 1
+      },
+      {
+        "inst": "19410",
+        "page_index": 337,
+        "record_index": 5,
+        "refs": [
+          [
+            "SPRINGFIELD",
+            "18 NORFOLK ST"
+          ]
+        ],
+        "overlap": 0
+      },
+      {
+        "inst": null,
+        "page_index": 337,
+        "record_index": 6,
+        "refs": [
+          [
+            "WESTFIELD",
+            "10 NICHOLAS LA"
+          ]
+        ],
+        "overlap": 0
+      }
+    ]
+  },
+  {
+    "stitched_page": 337,
+    "stitched_record": 5,
+    "stitched_refs": [
+      [
+        "SPRINGFIELD",
+        "18 NORFOLK ST"
+      ]
+    ],
+    "candidates": [
+      {
+        "inst": "19426",
+        "page_index": 337,
+        "record_index": 3,
+        "refs": [
+          [
+            "WESTFIELD",
+            "338 LOOMIS ST"
+          ]
+        ],
+        "overlap": 0
+      },
+      {
+        "inst": "19413",
+        "page_index": 337,
+        "record_index": 4,
+        "refs": [
+          [
+            "WESTFIELD",
+            "14 CLARK ST"
+          ]
+        ],
+        "overlap": 0
+      },
+      {
+        "inst": "19410",
+        "page_index": 337,
+        "record_index": 5,
+        "refs": [
+          [
+            "SPRINGFIELD",
+            "18 NORFOLK ST"
+          ]
+        ],
+        "overlap": 1
+      },
+      {
+        "inst": null,
+        "page_index": 337,
+        "record_index": 6,
+        "refs": [
+          [
+            "WESTFIELD",
+            "10 NICHOLAS LA"
+          ]
+        ],
+        "overlap": 0
+      }
+    ]
+  },
+  {
+    "stitched_page": 337,
+    "stitched_record": 6,
+    "stitched_refs": [
+      [
+        "WESTFIELD",
+        "10 NICHOLAS LA"
+      ]
+    ],
+    "candidates": [
+      {
+        "inst": "19413",
+        "page_index": 337,
+        "record_index": 4,
+        "refs": [
+          [
+            "WESTFIELD",
+            "14 CLARK ST"
+          ]
+        ],
+        "overlap": 0
+      },
+      {
+        "inst": "19410",
+        "page_index": 337,
+        "record_index": 5,
+        "refs": [
+          [
+            "SPRINGFIELD",
+            "18 NORFOLK ST"
+          ]
+        ],
+        "overlap": 0
+      },
+      {
+        "inst": null,
+        "page_index": 337,
+        "record_index": 6,
+        "refs": [
+          [
+            "WESTFIELD",
+            "10 NICHOLAS LA"
+          ]
+        ],
+        "overlap": 1
+      }
+    ]
+  }
+]

@@ -1,0 +1,120 @@
+{
+  "engine": "join_rowctx_txcol_with_townblocks_v1_3",
+  "inputs": {
+    "townblocks": "fixtures/hampden_run_0_400/stitched.ndjson",
+    "rowctx": "fixtures/hampden_run_0_400/rowctx.ndjson"
+  },
+  "counts": {
+    "townblocks_seen": 1927,
+    "rowctx_seen": 2106,
+    "matched_by_inst": 0,
+    "matched_by_time_book": 0,
+    "matched_by_record_index": 1866,
+    "matched_by_record_index_flipped": 0,
+    "deduped_inst": 0,
+    "unmatched": 61
+  },
+  "unmatched_samples": [
+    {
+      "page_index": 17,
+      "record_index": 5,
+      "inst": null
+    },
+    {
+      "page_index": 27,
+      "record_index": 7,
+      "inst": null
+    },
+    {
+      "page_index": 28,
+      "record_index": 6,
+      "inst": null
+    },
+    {
+      "page_index": 30,
+      "record_index": 1,
+      "inst": null
+    },
+    {
+      "page_index": 34,
+      "record_index": 5,
+      "inst": null
+    },
+    {
+      "page_index": 36,
+      "record_index": 6,
+      "inst": null
+    },
+    {
+      "page_index": 46,
+      "record_index": 7,
+      "inst": null
+    },
+    {
+      "page_index": 47,
+      "record_index": 6,
+      "inst": null
+    },
+    {
+      "page_index": 66,
+      "record_index": 7,
+      "inst": null
+    },
+    {
+      "page_index": 67,
+      "record_index": 6,
+      "inst": null
+    },
+    {
+      "page_index": 73,
+      "record_index": 6,
+      "inst": null
+    },
+    {
+      "page_index": 93,
+      "record_index": 6,
+      "inst": null
+    },
+    {
+      "page_index": 100,
+      "record_index": 6,
+      "inst": null
+    },
+    {
+      "page_index": 104,
+      "record_index": 2,
+      "inst": null
+    },
+    {
+      "page_index": 121,
+      "record_index": 6,
+      "inst": null
+    },
+    {
+      "page_index": 126,
+      "record_index": 6,
+      "inst": null
+    },
+    {
+      "page_index": 136,
+      "record_index": 6,
+      "inst": null
+    },
+    {
+      "page_index": 138,
+      "record_index": 7,
+      "inst": null
+    },
+    {
+      "page_index": 145,
+      "record_index": 6,
+      "inst": null
+    },
+    {
+      "page_index": 154,
+      "record_index": 6,
+      "inst": null
+    }
+  ],
+  "note": "v1_3 normalizes per-page RowCtx and TownBlock record ordering (top->bottom) and uses normalized indices for deterministic matching; keeps overwrite/stray-int logic and prefers flipped mapping when falling back."
+}

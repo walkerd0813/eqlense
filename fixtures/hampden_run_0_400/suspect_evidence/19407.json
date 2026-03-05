@@ -1,0 +1,88 @@
+[
+  {
+    "event_type": "DEED",
+    "document": {
+      "doc_type_code_raw": "DEED",
+      "doc_type_code": "DEED",
+      "registry_office": "Hampden Registry of Deeds",
+      "land_type": "RECORDED_LAND"
+    },
+    "recording": {
+      "recording_date_raw": "01-16-2026",
+      "recording_date": null,
+      "recorded_at_raw": "03-22-2021 3:23:01p",
+      "book_page_raw": "23778-146",
+      "book_page_norm": null,
+      "inst_raw": "19407",
+      "grp_seq_raw": null,
+      "ref_book_page_raw": null
+    },
+    "consideration": {
+      "amount_raw": "230,000.00",
+      "amount": null
+    },
+    "property_refs": [
+      {
+        "ref_index": 0,
+        "town": "SPRINGFIELD",
+        "address_raw": "575-577 ARMORY ST",
+        "unit_hint": null,
+        "ref_role": "PRIMARY"
+      }
+    ],
+    "parties": {
+      "parties_raw": [
+        {
+          "side_code_raw": "1",
+          "entity_type_raw": "P",
+          "name_raw": "TIPPETT ANNE MARIE (EST)"
+        },
+        {
+          "side_code_raw": "1",
+          "entity_type_raw": "P",
+          "name_raw": "ZELAZO BETH (REP)"
+        },
+        {
+          "side_code_raw": "2",
+          "entity_type_raw": "P",
+          "name_raw": "GROSS WENDI"
+        },
+        {
+          "side_code_raw": "2",
+          "entity_type_raw": "P",
+          "name_raw": "MORSE ALDEN"
+        },
+        {
+          "side_code_raw": "2",
+          "entity_type_raw": "P",
+          "name_raw": "VALASQUEZ-HERNANDEZ HERIBERTO E"
+        }
+      ]
+    },
+    "descr_loc_raw": "ARMORY ST",
+    "meta": {
+      "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+      "page_index": 336,
+      "record_index": 1
+    },
+    "evidence": {
+      "lines_clean": [
+        "1 P TIPPETT ANNE MARIE (EST)",
+        "1 P ZELAZO BETH (REP)",
+        "2 P GROSS WENDI",
+        "2 P MORSE ALDEN",
+        "FILE SIMPLIFILE E-RECORDING",
+        "1 ARMORY ST DEED 230,000.00",
+        "Town: SPRINGFIELD Addr:575-577 ARMORY ST",
+        "1 CR L THOMAS LLC",
+        "2 P VALASQUEZ-HERNANDEZ HERIBERTO E"
+      ]
+    },
+    "rowctx": {
+      "source": "OK_NO_CONS_V1_19_8",
+      "page_index": 336,
+      "record_index": 1,
+      "x_center": 75.77
+    }
+  }
+]

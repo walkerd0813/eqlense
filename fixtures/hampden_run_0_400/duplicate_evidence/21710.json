@@ -1,0 +1,165 @@
+{
+  "inst": "21710",
+  "count": 2,
+  "sample_size": 2,
+  "events": [
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "03-31-2021 1:54:00p",
+        "book_page_raw": "23796-480",
+        "book_page_norm": null,
+        "inst_raw": "21710",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "341,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "WEST SPRINGFIELD",
+          "address_raw": "125 CRAIWELL AVE",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "PERRY REGINA R"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "RANSTROM REGINA ROSE"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "RANSTORM REGINA ROSE"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "PERRY DEVIN M"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "RIVEST MATTHEW D"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "RIVEST ADAIR"
+          }
+        ]
+      },
+      "descr_loc_raw": "CRAIWELL AVE",
+      "meta": {
+        "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 391,
+        "record_index": 4
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 CRAIWELL AVE DEED 341,000.00",
+          "Town: WEST SPRINGFIELD Addr:125 CRAIWELL AVE",
+          "1 P PERRY REGINA R",
+          "1 P RANSTROM REGINA ROSE",
+          "1 P RANSTORM REGINA ROSE",
+          "1 P PERRY DEVIN M",
+          "2 P RIVEST MATTHEW D",
+          "2 P RIVEST ADAIR"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 391,
+        "record_index": 4,
+        "x_center": 363.77
+      }
+    },
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "03-31-2021 1:54:00p",
+        "book_page_raw": "23796-480",
+        "book_page_norm": null,
+        "inst_raw": "21710",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "1.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "SPRINGFIELD",
+          "address_raw": "45 WILBRAHAM AVE",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "MORRIS PERNESE"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "SMITH JENAQUAY TASHAWNA"
+          }
+        ]
+      },
+      "descr_loc_raw": "WILBRAHAM AVE",
+      "meta": {
+        "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 391,
+        "record_index": 6
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 WILBRAHAM AVE DEE 1.00",
+          "Town: SPRINGFIELD Addr:45 WILBRAHAM AVE",
+          "1 P MORRIS PERNESE",
+          "1 P SMITH JENAQUAY TASHAWNA"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 391,
+        "record_index": 4,
+        "x_center": 363.77
+      }
+    }
+  ]
+}

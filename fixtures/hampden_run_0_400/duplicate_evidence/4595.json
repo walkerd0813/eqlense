@@ -1,0 +1,183 @@
+{
+  "inst": "4595",
+  "count": 2,
+  "sample_size": 2,
+  "events": [
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "01-21-2021 1:02:23p",
+        "book_page_raw": "23663-116",
+        "book_page_norm": null,
+        "inst_raw": "4595",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": null,
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "CHICOPEE",
+          "address_raw": "190 NEWBURY ST",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "CULLEN CHRISTINE A"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "BERARD DIANE B"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "ZASKEY MICHAEL W"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "ZASKEY WILLIAM M"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "ZASKEY JOANNE B"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "ZASKEY JOANNE B (LIFE EST)"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "ZASKEY WILLIAM M (LIFE EST)"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "CULLEN CHRISTINE A"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "BERARD DIANE B"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "ZASKEY MICHAEL W"
+          }
+        ]
+      },
+      "descr_loc_raw": "NEWBURY ST",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 17,
+        "record_index": 3
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 NEWBURY ST DEED",
+          "Town: CHICOPEE Addr:190 NEWBURY ST",
+          "1 P CULLEN CHRISTINE A",
+          "1 P BERARD DIANE B",
+          "1 P ZASKEY MICHAEL W",
+          "1 P ZASKEY WILLIAM M",
+          "1 P ZASKEY JOANNE B",
+          "2 P ZASKEY JOANNE B (LIFE EST)",
+          "2 P ZASKEY WILLIAM M (LIFE EST)",
+          "2 P CULLEN CHRISTINE A",
+          "2 P BERARD DIANE B",
+          "2 P ZASKEY MICHAEL W"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_NO_CONS_V1_19_8",
+        "page_index": 17,
+        "record_index": 3,
+        "x_center": 309.77
+      }
+    },
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "01-21-2021 1:02:23p",
+        "book_page_raw": "23663-116",
+        "book_page_norm": null,
+        "inst_raw": "4595",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "215,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "LONGMEADOW",
+          "address_raw": "69 DRURY LA",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "STEVENS FLEANORE C"
+          }
+        ]
+      },
+      "descr_loc_raw": "DRURY LA",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 17,
+        "record_index": 5
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 DRURY LA DEED 215,000.00",
+          "Town: LONGMEADOW Addr:69 DRURY LA",
+          "1 P STEVENS FLEANORE C"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_NO_CONS_V1_19_8",
+        "page_index": 17,
+        "record_index": 3,
+        "x_center": 309.77
+      }
+    }
+  ]
+}

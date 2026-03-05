@@ -1,0 +1,147 @@
+{
+  "inst": "10061",
+  "count": 2,
+  "sample_size": 2,
+  "events": [
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "02-12-2021 11:21:49a",
+        "book_page_raw": "23706-266",
+        "book_page_norm": null,
+        "inst_raw": "10061",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "418,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "SPRINGFIELD",
+          "address_raw": "282 GILBERT AVE",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "C",
+            "name_raw": "BRETTA CONSTRUCTION LLC"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "MARTINEZ LUG"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "MACVARISH JIMMY"
+          }
+        ]
+      },
+      "descr_loc_raw": "GILBERT AVE",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 126,
+        "record_index": 5
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 GILBERT AVE DEED 418,000.00",
+          "Town: SPRINGFIELD Addr:282 GILBERT AVE",
+          "1 C BRETTA CONSTRUCTION LLC",
+          "2 P MARTINEZ LUG",
+          "2 P MACVARISH JIMMY"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_NO_CONS_V1_19_8",
+        "page_index": 126,
+        "record_index": 5,
+        "x_center": 417.77
+      }
+    },
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "02-12-2021 11:21:49a",
+        "book_page_raw": "23706-266",
+        "book_page_norm": null,
+        "inst_raw": "10061",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "230,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "SPRINGFIELD",
+          "address_raw": "68 CHEYENNE RD",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "BACIS JASON"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "DELNEGRO ICHOLAS DANIEL"
+          }
+        ]
+      },
+      "descr_loc_raw": "CHEYENNE RD",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 126,
+        "record_index": 6
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 CHEYENNE RD DEED 230,000.00",
+          "Town: SPRINGFIELD Addr:68 CHEYENNE RD",
+          "1 P BACIS JASON",
+          "2 P DELNEGRO ICHOLAS DANIEL"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_NO_CONS_V1_19_8",
+        "page_index": 126,
+        "record_index": 5,
+        "x_center": 417.77
+      }
+    }
+  ]
+}

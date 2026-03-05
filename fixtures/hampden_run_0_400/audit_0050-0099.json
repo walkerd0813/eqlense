@@ -1,0 +1,20 @@
+{
+  "engine": "extract_hampden_indexpdf_recorded_land_deeds_v1_11_ocr_townblocks",
+  "run_id": "20260303T003603Z__hampden__recorded_land__deed_ocr_v1_11_2",
+  "pdf": "C:\\seller-app\\backend\\publicData\\registry\\hampden\\incoming\\OTR\\_RECORDED_LAND\\hamden_deeds_ 01-16-21-01-16-26.pdf",
+  "out": "C:\\seller-app\\backend\\fixtures\\hampden_run_0_400\\events_0050-0099.ndjson",
+  "quarantine_dir": "C:\\seller-app\\backend\\fixtures\\hampden_run_0_400\\quarantine",
+  "start_page": 50,
+  "max_pages": 50,
+  "crop_top": 240.0,
+  "crop_right": 0.0,
+  "dpi": 300,
+  "tess_config": "",
+  "started_at_utc": "2026-03-03T00:36:03Z",
+  "counts": {
+    "pages_seen": 50,
+    "events_out": 244,
+    "quarantined": 0
+  },
+  "finished_at_utc": "2026-03-03T00:50:41Z"
+}

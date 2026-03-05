@@ -1,0 +1,166 @@
+{
+  "inst": "18964",
+  "count": 2,
+  "sample_size": 2,
+  "events": [
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "03-19-2021 2:44:19p",
+        "book_page_raw": "23774-301",
+        "book_page_norm": null,
+        "inst_raw": "18964",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "220,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "RUSSELL",
+          "address_raw": "31 LINCOLN AVE",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "MIEZEJEWSKI SYBIL K"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "MIEZEJEWSKI SHEILA ANN"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "MIEZEJEWSKI SYBIL K (LIFE EST)"
+          }
+        ]
+      },
+      "descr_loc_raw": "LINCOLN AVE",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 328,
+        "record_index": 5
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 LINCOLN AVE DEE",
+          "Town: RUSSELL Addr:31 LINCOLN AVE",
+          "1 P MIEZEJEWSKI SYBIL K",
+          "2 P MIEZEJEWSKI SHEILA ANN",
+          "2 P MIEZEJEWSKI SYBIL K (LIFE EST)"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 328,
+        "record_index": 5,
+        "x_center": 444.77
+      }
+    },
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "03-19-2021 2:44:19p",
+        "book_page_raw": "23774-301",
+        "book_page_norm": null,
+        "inst_raw": "18964",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "135,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "HOLYOKE",
+          "address_raw": "127 VERMONT ST",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "DUNLAP MARK STEVEN"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "DUNLAP MARK"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "DUNLAP SCOTT EVA"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "DUNLAP ScoTT"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "DUNLAP MARK STEVEN"
+          }
+        ]
+      },
+      "descr_loc_raw": "VERMONT ST",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 328,
+        "record_index": 6
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 VERMONT ST DEED 135,000.00",
+          "Town: HOLYOKE Addr:127 VERMONT ST",
+          "1 P DUNLAP MARK STEVEN",
+          "1 P DUNLAP MARK",
+          "1 P DUNLAP SCOTT EVA",
+          "1 P DUNLAP ScoTT",
+          "2 P DUNLAP MARK STEVEN",
+          "KH Hg"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 328,
+        "record_index": 5,
+        "x_center": 444.77
+      }
+    }
+  ]
+}

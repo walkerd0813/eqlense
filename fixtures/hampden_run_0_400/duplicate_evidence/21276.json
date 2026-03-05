@@ -1,0 +1,153 @@
+{
+  "inst": "21276",
+  "count": 2,
+  "sample_size": 2,
+  "events": [
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "03-30-2021 1:13:07p",
+        "book_page_raw": "23793-166",
+        "book_page_norm": null,
+        "inst_raw": "21276",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "1.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "SPRINGFIELD",
+          "address_raw": "17 FOX HILL RD",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "DURRELL STEVEN L"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "DURRELL STEVEN L"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "LANGLEY DEBBI"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "JURKOWSKI MICHAEL"
+          }
+        ]
+      },
+      "descr_loc_raw": "FOX HILL RD",
+      "meta": {
+        "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 380,
+        "record_index": 5
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 FOX HILL RD DEED",
+          "Town: SPRINGFIELD Addr:17 FOX HILL RD",
+          "1 P DURRELL STEVEN L",
+          "2 P DURRELL STEVEN L",
+          "2 P LANGLEY DEBBI",
+          "2 P JURKOWSKI MICHAEL"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 380,
+        "record_index": 5,
+        "x_center": 435.77
+      }
+    },
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "03-30-2021 1:13:07p",
+        "book_page_raw": "23793-166",
+        "book_page_norm": null,
+        "inst_raw": "21276",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "1.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "WESTFIELD",
+          "address_raw": "44 TANNERY RD",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "BARD FRANCIS L (REP)"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "LANCIE BEATRICE (EST)"
+          }
+        ]
+      },
+      "descr_loc_raw": "TANNERY RD",
+      "meta": {
+        "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 380,
+        "record_index": 6
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 TANNERY RD DEED",
+          "Town: WESTFIELD Addr:44 TANNERY RD",
+          "1 P BARD FRANCIS L (REP)",
+          "1 P LANCIE BEATRICE (EST)"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 380,
+        "record_index": 5,
+        "x_center": 435.77
+      }
+    }
+  ]
+}

@@ -213,21 +213,49 @@ def extract(pdf: str, out: str, page_start: int = 0, page_end: int = None, x_clu
     if page_end is None:
         page_end = doc.page_count
     out_rows = 0
+    fallback_deed_pages = 0
     with open(out, "w", encoding="utf-8") as f:
         for page_index in range(page_start, min(page_end, doc.page_count)):
             page = doc[page_index]
             words = words_from_page(page)
             time_ws = [w for w in words if RE_TIME.match(((w[4] or "").strip()))]
+            # Fallback: some PDF prints lack explicit time tokens; use 'DEED' tokens as anchors
+            fallback_used = False
+            if not time_ws:
+                deed_ws = [w for w in words if 'DEED' in ((w[4] or '').upper())]
+                if deed_ws:
+                    time_ws = deed_ws
+                    fallback_used = True
+                    fallback_deed_pages += 1
             if not time_ws:
                 continue
-            xs = sorted([xc(w) for w in time_ws])
+            # Cluster time tokens by x-position to find columns, pick a representative
+            # token per cluster (prefer top-most time token), then sort clusters
+            # by y (top->bottom) to assign record_index in visual order.
+            time_ws_sorted_x = sorted(time_ws, key=lambda w: xc(w))
+            clusters = []
+            cur_cluster = [time_ws_sorted_x[0]]
+            for w in time_ws_sorted_x[1:]:
+                if abs(xc(w) - xc(cur_cluster[-1])) <= x_cluster_tol:
+                    cur_cluster.append(w)
+                else:
+                    clusters.append(cur_cluster)
+                    cur_cluster = [w]
+            if cur_cluster:
+                clusters.append(cur_cluster)
+
             centers = []
-            for x in xs:
-                if (not centers) or abs(x - centers[-1]) > x_cluster_tol:
-                    centers.append(x)
+            for cl in clusters:
+                # pick the top-most token in the cluster (smallest y)
+                rep = min(cl, key=lambda w: yc(w))
+                centers.append((xc(rep), yc(rep)))
+
+            # sort clusters by y (top -> bottom) then by x for deterministic tie-break
+            centers.sort(key=lambda t: (t[1], t[0]))
             record_index = 0
-            for cx0 in centers:
-                tw = min(time_ws, key=lambda w: abs(xc(w) - cx0))
+            for cx0, cy0 in centers:
+                # find the nearest time token to the representative x (and y)
+                tw = min(time_ws, key=lambda w: (abs(xc(w) - cx0), abs(yc(w) - cy0)))
                 cx = xc(tw)
                 row = extract_one_tx(words, page_index, cx, x_band_tol=x_band_tol)
                 record_index += 1
@@ -235,6 +263,8 @@ def extract(pdf: str, out: str, page_start: int = 0, page_end: int = None, x_clu
                 f.write(json.dumps(row, ensure_ascii=False) + "\n")
                 out_rows += 1
     print(f"[done] out_rows={out_rows} out={out}")
+    if fallback_deed_pages:
+        print(f"[note] fallback_deed_pages={fallback_deed_pages} (used 'DEED' anchors where no time tokens found)")
 
 def main():
     ap = argparse.ArgumentParser()

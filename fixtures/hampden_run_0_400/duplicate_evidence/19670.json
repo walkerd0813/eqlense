@@ -1,0 +1,163 @@
+{
+  "inst": "19670",
+  "count": 2,
+  "sample_size": 2,
+  "events": [
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "03-23-2021 1:01:21p",
+        "book_page_raw": "23780-154",
+        "book_page_norm": null,
+        "inst_raw": "19670",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "239,900.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "CHICOPEE",
+          "address_raw": "585 SHERIDAN ST #38",
+          "unit_hint": "38",
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "DAVIGNO UUCILLE A"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "DAVIGNO JUCILLE A (LIFE EST)"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "DAVIGNO SUSAN M"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "DAVIGNO PAUL L"
+          }
+        ]
+      },
+      "descr_loc_raw": "UNIT 38",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 340,
+        "record_index": 2
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 UNIT 38 DEED",
+          "Town: CHICOPEE Addr:585 SHERIDAN ST #38",
+          "1 P DAVIGNO UUCILLE A",
+          "2 P DAVIGNO JUCILLE A (LIFE EST)",
+          "2 P DAVIGNO SUSAN M",
+          "2 P DAVIGNO PAUL L"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 340,
+        "record_index": 2,
+        "x_center": 156.77
+      }
+    },
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "03-23-2021 1:01:21p",
+        "book_page_raw": "23780-154",
+        "book_page_norm": null,
+        "inst_raw": "19670",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "65,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "HAST LONGMEADOW",
+          "address_raw": "188 ELM ST",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          "1 P MRAZ JEFFREY J",
+          "2 P MRAZ STACY R"
+        ]
+      },
+      "descr_loc_raw": "ELM ST",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 340,
+        "record_index": 7,
+        "stitch": {
+          "did_stitch": true,
+          "continuation_type": "PAGEBREAK",
+          "from_page": 340,
+          "into_page": 341,
+          "captured_top_lines": [
+            "RECORDED LAND BY RECORDING DATE Cheryl A. Coakley-Rivera",
+            "Me",
+            "INQUIRY PRINT REQUEST PAGE 342",
+            "PRINTED 1/18/26 23:55:46 RG370RP",
+            "TOWN: *ALL",
+            "CONSIDERATION: Q THROUGH 9, 999,999,999",
+            "jh 01-16-2026 TRANSACTION #:",
+            "DOC REFERENCE VEY",
+            "SEQ DESCR/LOC/ DELIVERED TYPE BOOK- PAGE CONSIDERATION STS",
+            "Town: HAST LONGMEADOW Addr:188 ELM ST Y",
+            "1 P MRAZ JEFFREY J Y",
+            "2 P MRAZ STACY R Y"
+          ],
+          "first_boundary_detected": "FILE SIMPLIFILE E-RECORDING Y"
+        }
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 ELM ST DEED 65,000.00"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 340,
+        "record_index": 2,
+        "x_center": 156.77
+      }
+    }
+  ]
+}

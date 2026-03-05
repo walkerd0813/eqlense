@@ -1,0 +1,23 @@
+{
+  "pages_checked": [
+    0,
+    400
+  ],
+  "total_stitched_rows_considered": 1913,
+  "rows_with_no_joined_candidates_in_+-2": 0,
+  "rows_where_best_overlap_gt0": 1913,
+  "best_at_same_record_index": 1913,
+  "best_at_different_record_index": 0,
+  "overlap_distribution": {
+    "6": 2,
+    "5": 1,
+    "4": 7,
+    "3": 11,
+    "2": 98,
+    "1": 1794
+  },
+  "percent_any_overlap": 100.0,
+  "percent_best_same_index": 100.0,
+  "mismatch_examples_sample": [],
+  "no_candidate_examples_sample": []
+}

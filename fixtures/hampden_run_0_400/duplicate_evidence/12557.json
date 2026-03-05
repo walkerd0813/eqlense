@@ -1,0 +1,159 @@
+{
+  "inst": "12557",
+  "count": 2,
+  "sample_size": 2,
+  "events": [
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "02-24-2021 1:09:20p",
+        "book_page_raw": "23725-384",
+        "book_page_norm": null,
+        "inst_raw": "12557",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "40,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "CHICOPEE",
+          "address_raw": "61 SHEPHERD ST",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "RIVARD JOHN J"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "RIVARD SUSAN M"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "MOQUI SHERRI"
+          }
+        ]
+      },
+      "descr_loc_raw": "SHEPHERD ST",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 181,
+        "record_index": 3
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 SHEPHERD ST DEE 22",
+          "Town: CHICOPEE Addr:61 SHEPHERD ST",
+          "1 P RIVARD JOHN J",
+          "1 P RIVARD SUSAN M",
+          "2 P MOQUI SHERRI"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 181,
+        "record_index": 3,
+        "x_center": 282.77
+      }
+    },
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "02-24-2021 1:09:20p",
+        "book_page_raw": "23725-384",
+        "book_page_norm": null,
+        "inst_raw": "12557",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "40,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "HOLYOKE",
+          "address_raw": "31 SUNSET RD",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "LUNARDINI BRETT J (REP)"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "LUNARDINI ADAM J (EST)"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "KRAUSE-ELY LILLIAN K"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "ELY JOSEPH H (IX)"
+          }
+        ]
+      },
+      "descr_loc_raw": "SUNSET RD",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 181,
+        "record_index": 6
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 SUNSET RD DEED 27",
+          "Town: HOLYOKE Addr:31 SUNSET RD",
+          "1 P LUNARDINI BRETT J (REP)",
+          "1 P LUNARDINI ADAM J (EST)",
+          "2 P KRAUSE-ELY LILLIAN K",
+          "2 P ELY JOSEPH H (IX)"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 181,
+        "record_index": 3,
+        "x_center": 282.77
+      }
+    }
+  ]
+}

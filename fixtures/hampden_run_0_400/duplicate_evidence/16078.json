@@ -1,0 +1,142 @@
+{
+  "inst": "16078",
+  "count": 2,
+  "sample_size": 2,
+  "events": [
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "03-10-2021 10:11:31a",
+        "book_page_raw": "23753-278",
+        "book_page_norm": null,
+        "inst_raw": "16078",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "300,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "SPRINGFIELD",
+          "address_raw": "47-49 DICKINSON ST",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "FELICIANO JUNIOR SANTOS"
+          }
+        ]
+      },
+      "descr_loc_raw": "DICKINSON ST",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 263,
+        "record_index": 5
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 DICKINSON ST DEED 300,000.00",
+          "Town: SPRINGFIELD Addr:47-49 DICKINSON ST",
+          "1 ¢ JJS CAPITAL INVESTMENT LLC",
+          "2 P FELICIANO JUNIOR SANTOS"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 263,
+        "record_index": 5,
+        "x_center": 399.77
+      }
+    },
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "03-10-2021 10:11:31a",
+        "book_page_raw": "23753-278",
+        "book_page_norm": null,
+        "inst_raw": "16078",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "225,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "SPRINGFIELD",
+          "address_raw": "1585 CAREW ST",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "RODRIGUEZ ARTURO"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "RODRIGUEZ ARTURO"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "RODRIGUEZ ANA"
+          }
+        ]
+      },
+      "descr_loc_raw": "CAREW ST",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 263,
+        "record_index": 6
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 CAREW ST DEE",
+          "Town: SPRINGFIELD Addr:1585 CAREW ST",
+          "1 P RODRIGUEZ ARTURO",
+          "2 P RODRIGUEZ ARTURO",
+          "2 P RODRIGUEZ ANA"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 263,
+        "record_index": 5,
+        "x_center": 399.77
+      }
+    }
+  ]
+}

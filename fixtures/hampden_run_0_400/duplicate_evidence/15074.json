@@ -1,0 +1,126 @@
+{
+  "inst": "15074",
+  "count": 2,
+  "sample_size": 2,
+  "events": [
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "03-05-2021 1:08:05p",
+        "book_page_raw": "23744-124",
+        "book_page_norm": null,
+        "inst_raw": "15074",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "225,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "LUDLOW",
+          "address_raw": "30 OAKRIDGE ST",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "SIMAO JOAN M"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "PEREIRA NATHAN J"
+          }
+        ]
+      },
+      "descr_loc_raw": "OAKRIDGE ST",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 240,
+        "record_index": 3
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 OAKRIDGE ST DEED 225,000.00",
+          "Town: LUDLOW Addr:30 OAKRIDGE ST",
+          "1 P SIMAO JOAN M",
+          "2 P PEREIRA NATHAN J"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 240,
+        "record_index": 3,
+        "x_center": 228.77
+      }
+    },
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "03-05-2021 1:08:05p",
+        "book_page_raw": "23744-124",
+        "book_page_norm": null,
+        "inst_raw": "15074",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "1.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "AGAWAM",
+          "address_raw": "18 VILLA DR UNIT 1",
+          "unit_hint": "1",
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": null,
+      "descr_loc_raw": "UNIT 1",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 240,
+        "record_index": 7
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE INGEO",
+          "1 UNIT 1 DEED 1.00",
+          "Town: AGAWAM Addr:18 VILLA DR UNIT 1"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 240,
+        "record_index": 3,
+        "x_center": 228.77
+      }
+    }
+  ]
+}

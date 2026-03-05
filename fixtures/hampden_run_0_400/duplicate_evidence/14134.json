@@ -1,0 +1,165 @@
+{
+  "inst": "14134",
+  "count": 2,
+  "sample_size": 2,
+  "events": [
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "03-02-2021 12:02:26p",
+        "book_page_raw": "23737-100",
+        "book_page_norm": null,
+        "inst_raw": "14134",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "1.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "BAST LONGMEADOW",
+          "address_raw": "18 FOREST HILLS RD",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "STANLEY SADIE R"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "STANLEY SADIE H"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "STANLEY JULIAN C"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "STANLEY SADIE R (LIFE EST)"
+          }
+        ]
+      },
+      "descr_loc_raw": "FOREST HILLS RD",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 221,
+        "record_index": 4
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 FOREST HILLS RD DEED 1.00",
+          "Town: BAST LONGMEADOW Addr:18 FOREST HILLS RD",
+          "1 P STANLEY SADIE R",
+          "1 P STANLEY SADIE H",
+          "2 P STANLEY JULIAN C",
+          "2 P STANLEY SADIE R (LIFE EST)"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 221,
+        "record_index": 4,
+        "x_center": 390.77
+      }
+    },
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "03-02-2021 12:02:26p",
+        "book_page_raw": "23737-100",
+        "book_page_norm": null,
+        "inst_raw": "14134",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "1.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "HOLYOKE",
+          "address_raw": "34 MOSS AVE",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "MACIEROWSKI LINDA (EST)"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "DRISCOLL LINDA (EST)"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "MACIEROWSKI MICHAEL (REP)"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "MACIEBROWSKI MICHAEL"
+          }
+        ]
+      },
+      "descr_loc_raw": "MOSS AVE",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 221,
+        "record_index": 5
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 MOSS AVE DEED",
+          "Town: HOLYOKE Addr:34 MOSS AVE",
+          "1 P MACIEROWSKI LINDA (EST)",
+          "1 P DRISCOLL LINDA (EST)",
+          "1 P MACIEROWSKI MICHAEL (REP)",
+          "2 P MACIEBROWSKI MICHAEL"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 221,
+        "record_index": 4,
+        "x_center": 390.77
+      }
+    }
+  ]
+}

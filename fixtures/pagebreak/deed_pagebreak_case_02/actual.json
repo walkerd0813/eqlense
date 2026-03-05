@@ -1,0 +1,431 @@
+{
+  "events": [
+    {
+      "page_index": 0,
+      "record_index": 1,
+      "inst_raw": "3859",
+      "book_page_raw": "23657-63",
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "WILBRAHAM",
+          "address_raw": "21 RIPLEY ST",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": [
+        {
+          "side_code_raw": "1",
+          "entity_type_raw": "P",
+          "name_raw": "PETTENGILL STEPHEN P"
+        },
+        {
+          "side_code_raw": "2",
+          "entity_type_raw": "P",
+          "name_raw": "PETTENGILL STEPHEN P"
+        },
+        {
+          "side_code_raw": "2",
+          "entity_type_raw": "P",
+          "name_raw": "PETTENGILL PRISCILLA A"
+        }
+      ],
+      "descr_loc_raw": "RIPLEY ST",
+      "consideration_raw": "147,500.00",
+      "stitch": null
+    },
+    {
+      "page_index": 0,
+      "record_index": 2,
+      "inst_raw": "3842",
+      "book_page_raw": "23657-6",
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "WESTFIELD",
+          "address_raw": "3 MICHAEL DR",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": [
+        {
+          "side_code_raw": "1",
+          "entity_type_raw": "P",
+          "name_raw": "KOVAL YURIY"
+        },
+        {
+          "side_code_raw": "2",
+          "entity_type_raw": "P",
+          "name_raw": "KOVAL YURIY"
+        },
+        {
+          "side_code_raw": "2",
+          "entity_type_raw": "P",
+          "name_raw": "KOVAL LILIYA"
+        }
+      ],
+      "descr_loc_raw": "MICHAEL DR",
+      "consideration_raw": null,
+      "stitch": null
+    },
+    {
+      "page_index": 0,
+      "record_index": 3,
+      "inst_raw": "3811",
+      "book_page_raw": "23656-506",
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "LUDLOW",
+          "address_raw": "9 AUTUMN RIDGE RD",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": [
+        {
+          "side_code_raw": "1",
+          "entity_type_raw": "P",
+          "name_raw": "CONTI SHELLEY L"
+        },
+        {
+          "side_code_raw": "1",
+          "entity_type_raw": "P",
+          "name_raw": "BENTO BENJAMIN J"
+        },
+        {
+          "side_code_raw": "2",
+          "entity_type_raw": "P",
+          "name_raw": "CONTI SHELLEY L"
+        }
+      ],
+      "descr_loc_raw": "AUTUMN RIDGE RD",
+      "consideration_raw": null,
+      "stitch": null
+    },
+    {
+      "page_index": 0,
+      "record_index": 4,
+      "inst_raw": "3810",
+      "book_page_raw": "23656-504",
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "LUDLOW",
+          "address_raw": "9 AUTUMN RIDGE RD",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": [
+        {
+          "side_code_raw": "1",
+          "entity_type_raw": "P",
+          "name_raw": "CONTI SHELLEY L"
+        },
+        {
+          "side_code_raw": "2",
+          "entity_type_raw": "P",
+          "name_raw": "CONTI SHELLEY L"
+        },
+        {
+          "side_code_raw": "2",
+          "entity_type_raw": "P",
+          "name_raw": "BENTO BENJAMIN J"
+        }
+      ],
+      "descr_loc_raw": "AUTUMN RIDGE RD",
+      "consideration_raw": null,
+      "stitch": null
+    },
+    {
+      "page_index": 0,
+      "record_index": 5,
+      "inst_raw": "3807",
+      "book_page_raw": "23656-471",
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "SPRINGFIELD",
+          "address_raw": "37 DORSET ST",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": [
+        {
+          "side_code_raw": "1",
+          "entity_type_raw": "P",
+          "name_raw": "NGHIEM VINH C"
+        },
+        {
+          "side_code_raw": "1",
+          "entity_type_raw": "P",
+          "name_raw": "NGHIEM VINH CAM"
+        },
+        {
+          "side_code_raw": "2",
+          "entity_type_raw": "P",
+          "name_raw": "CAI FEN S"
+        }
+      ],
+      "descr_loc_raw": "DORSET ST",
+      "consideration_raw": null,
+      "stitch": null
+    },
+    {
+      "page_index": 0,
+      "record_index": 6,
+      "inst_raw": "3786",
+      "book_page_raw": "23656-355",
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "SPRINGFIELD",
+          "address_raw": "8 PUTNAM ST",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": [
+        {
+          "side_code_raw": "1",
+          "entity_type_raw": "P",
+          "name_raw": "JOHNSON MANYRA A STARR"
+        },
+        {
+          "side_code_raw": "1",
+          "entity_type_raw": "P",
+          "name_raw": "FREEMAN MARLOWE K (SR)"
+        },
+        {
+          "side_code_raw": "2",
+          "entity_type_raw": "C",
+          "name_raw": "PLATA © PLOMO INC"
+        }
+      ],
+      "descr_loc_raw": "PUTNAM ST",
+      "consideration_raw": "147,500.00",
+      "stitch": null
+    },
+    {
+      "page_index": 1,
+      "record_index": 1,
+      "inst_raw": "3936",
+      "book_page_raw": "23657-569",
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "AGAWAM",
+          "address_raw": "SHOEMAKER LA",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        },
+        {
+          "ref_index": 1,
+          "town": "AGAWAM",
+          "address_raw": "32 SHOEMAKER LA",
+          "unit_hint": null,
+          "ref_role": "ADDITIONAL"
+        }
+      ],
+      "parties": [
+        {
+          "side_code_raw": "1",
+          "entity_type_raw": "P",
+          "name_raw": "CROWLEY DENNIS N (& TRS)"
+        },
+        {
+          "side_code_raw": "1",
+          "entity_type_raw": "P",
+          "name_raw": "CROWLEY ALICE (& TRS)"
+        },
+        {
+          "side_code_raw": "1",
+          "entity_type_raw": "C",
+          "name_raw": "IRISH NUGGET REALTY TRUST (TRS OF)"
+        },
+        {
+          "side_code_raw": "2",
+          "entity_type_raw": "C",
+          "name_raw": "BEACH MOUNTAIN LLC"
+        }
+      ],
+      "descr_loc_raw": null,
+      "consideration_raw": "1.00",
+      "stitch": null
+    },
+    {
+      "page_index": 1,
+      "record_index": 2,
+      "inst_raw": "3921",
+      "book_page_raw": "23657-458",
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "SPRINGFIELD",
+          "address_raw": "51 ATWATER RD",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": [
+        {
+          "side_code_raw": "1",
+          "entity_type_raw": "P",
+          "name_raw": "MORALES CARLOS"
+        },
+        {
+          "side_code_raw": "1",
+          "entity_type_raw": "P",
+          "name_raw": "MORALES MADELYN"
+        },
+        {
+          "side_code_raw": "2",
+          "entity_type_raw": "P",
+          "name_raw": "OCONNOR-ST PIERRE DECLAN"
+        }
+      ],
+      "descr_loc_raw": "ATWATER RD",
+      "consideration_raw": "1.00",
+      "stitch": null
+    },
+    {
+      "page_index": 1,
+      "record_index": 3,
+      "inst_raw": "3917",
+      "book_page_raw": "23657-422",
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "SPRINGFIELD",
+          "address_raw": "208-212 PEARL ST",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        },
+        {
+          "ref_index": 1,
+          "town": "SPRINGFIELD",
+          "address_raw": "4-8 LEYFRED TERR",
+          "unit_hint": null,
+          "ref_role": "ADDITIONAL"
+        },
+        {
+          "ref_index": 2,
+          "town": "SPRINGFIELD",
+          "address_raw": "49 BELMONT AVE",
+          "unit_hint": null,
+          "ref_role": "ADDITIONAL"
+        },
+        {
+          "ref_index": 3,
+          "town": "SPRINGFIELD",
+          "address_raw": "683-685 STATE ST",
+          "unit_hint": null,
+          "ref_role": "ADDITIONAL"
+        }
+      ],
+      "parties": [
+        {
+          "side_code_raw": "1",
+          "entity_type_raw": "C",
+          "name_raw": "BELMONT STATE LLC"
+        },
+        {
+          "side_code_raw": "2",
+          "entity_type_raw": "C",
+          "name_raw": "SPRINGFIELD PORTFOLIO HOLDINGS LLC"
+        }
+      ],
+      "descr_loc_raw": "BELMONT AVE, STATE ST &0O",
+      "consideration_raw": "1.00",
+      "stitch": null
+    },
+    {
+      "page_index": 1,
+      "record_index": 4,
+      "inst_raw": "3915",
+      "book_page_raw": "23657-417",
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "MONSO",
+          "address_raw": "21 BUNYAN RD",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": [
+        {
+          "side_code_raw": "1",
+          "entity_type_raw": "P",
+          "name_raw": "LOMBARDO RICHARD A"
+        },
+        {
+          "side_code_raw": "1",
+          "entity_type_raw": "P",
+          "name_raw": "LOMBARDO NICOLE N"
+        },
+        {
+          "side_code_raw": "2",
+          "entity_type_raw": "P",
+          "name_raw": "LOMBARDO NICOLE NATALIE"
+        }
+      ],
+      "descr_loc_raw": "BUNYAN RD",
+      "consideration_raw": "571,161.57",
+      "stitch": null
+    },
+    {
+      "page_index": 1,
+      "record_index": 5,
+      "inst_raw": "3911",
+      "book_page_raw": "23657-411",
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "WESTFIELD",
+          "address_raw": "7 DONALD DR",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": [
+        {
+          "side_code_raw": "1",
+          "entity_type_raw": "P",
+          "name_raw": "DOWNIE MARY K"
+        },
+        {
+          "side_code_raw": "2",
+          "entity_type_raw": "P",
+          "name_raw": "DYKI JOHANNA R"
+        }
+      ],
+      "descr_loc_raw": "DONALD DR",
+      "consideration_raw": "275,000.00",
+      "stitch": null
+    },
+    {
+      "page_index": 1,
+      "record_index": 6,
+      "inst_raw": "3867",
+      "book_page_raw": "23657-108",
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "SPRINGFIELD",
+          "address_raw": "137 FAIR OAK RD",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": [],
+      "descr_loc_raw": "FAIR OAK RD",
+      "consideration_raw": null,
+      "stitch": null
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "inst": "11915",
+  "count": 2,
+  "sample_size": 2,
+  "events": [
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "02-22-2021 11:20:18a",
+        "book_page_raw": "23720-73",
+        "book_page_norm": null,
+        "inst_raw": "11915",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "65,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "PALMER",
+          "address_raw": "2191 MAIN ST",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "MASTON GEORGE E"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "MASTON MELISSA M"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "MASTON WILLIAM B"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "ZURON AMBER"
+          }
+        ]
+      },
+      "descr_loc_raw": "MAIN ST",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 168,
+        "record_index": 5
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 MAIN ST DEED 65,000.00",
+          "Town: PALMER Addr:2191 MAIN ST",
+          "1 P MASTON GEORGE E",
+          "1 P MASTON MELISSA M",
+          "2 P MASTON WILLIAM B",
+          "2 P ZURON AMBER"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_NO_CONS_V1_19_8",
+        "page_index": 168,
+        "record_index": 5,
+        "x_center": 417.77
+      }
+    },
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "02-22-2021 11:20:18a",
+        "book_page_raw": "23720-73",
+        "book_page_norm": null,
+        "inst_raw": "11915",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "1.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "SPRINGFIELD",
+          "address_raw": "88 ARDMORE ST",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "MORIARTY GERALDINE D"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "MORIARTY DANIEL M"
+          }
+        ]
+      },
+      "descr_loc_raw": "ARDMORE ST",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 168,
+        "record_index": 6
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 ARDMORE ST DEED 1.00",
+          "Town: SPRINGFIELD Addr:88 ARDMORE ST",
+          "1 P MORIARTY GERALDINE D",
+          "2 P MORIARTY DANIEL M"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_NO_CONS_V1_19_8",
+        "page_index": 168,
+        "record_index": 5,
+        "x_center": 417.77
+      }
+    }
+  ]
+}

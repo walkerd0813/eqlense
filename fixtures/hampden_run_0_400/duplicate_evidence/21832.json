@@ -1,0 +1,138 @@
+{
+  "inst": "21832",
+  "count": 2,
+  "sample_size": 2,
+  "events": [
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "03-31-2021 3:24:38p",
+        "book_page_raw": "23797-596",
+        "book_page_norm": null,
+        "inst_raw": "21832",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "719,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "BAST LONGMEADOW",
+          "address_raw": "29 WELLINGTON DR",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "ALIENGENA KEVI J"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "ALIENGENA LISA M"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "SHER ROBERT JOSHPH"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "SHER SUZANNE"
+          }
+        ]
+      },
+      "descr_loc_raw": "WELLINGTON DR",
+      "meta": {
+        "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 396,
+        "record_index": 5
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 WELLINGTON DR DEED 719,000.00",
+          "Town: BAST LONGMEADOW Addr:29 WELLINGTON DR",
+          "1 P ALIENGENA KEVI J",
+          "1 P ALIENGENA LISA M",
+          "2 P SHER ROBERT JOSHPH",
+          "2 P SHER SUZANNE"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 396,
+        "record_index": 5,
+        "x_center": 417.77
+      }
+    },
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "03-31-2021 3:24:38p",
+        "book_page_raw": "23797-596",
+        "book_page_norm": null,
+        "inst_raw": "21832",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "287,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "CHICOPEE",
+          "address_raw": "245 ROLF AVE",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": null,
+      "descr_loc_raw": "ROLF AVE",
+      "meta": {
+        "run_id": "20260302T234836Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 396,
+        "record_index": 6
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RKECORDING",
+          "1 ROLF AVE DEED 287,000.00",
+          "Town: CHICOPEE Addr:245 ROLF AVE"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 396,
+        "record_index": 5,
+        "x_center": 417.77
+      }
+    }
+  ]
+}

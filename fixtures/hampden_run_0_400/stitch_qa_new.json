@@ -1,0 +1,21 @@
+{
+  "engine": "stitch_townblocks_pagebreak_continuations_v1_5_8",
+  "inputs": {
+    "in": "C:\\seller-app\\backend\\fixtures\\hampden_run_0_400\\events_0000-0049.ndjson",
+    "raw_lines_ndjson": "C:\\seller-app\\backend\\fixtures\\hampden_run_0_400\\quarantine\\raw_ocr_lines__ALLPAGES.ndjson",
+    "same_page_lookahead": 0,
+    "same_page_min_overlap": 0.6,
+    "max_scan": 80
+  },
+  "counts": {
+    "pages_seen": 46,
+    "candidate_pagebreaks": 13,
+    "stitched": 0,
+    "stitched_parties_only": 0,
+    "same_page_repair": 0,
+    "no_continuation_found": 13,
+    "missing_raw_lines_for_next_page": 0,
+    "notes": "v1_5_7: PAGEBREAK stitch uses raw page lines; SAME_PAGE_REPAIR is record-scoped via structured TB lookahead (party overlap / parties-missing continuation heuristic). No raw-page scanning for same-page repair."
+  },
+  "samples": []
+}

@@ -1,0 +1,153 @@
+{
+  "inst": "11619",
+  "count": 2,
+  "sample_size": 2,
+  "events": [
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "02-19-2021 1:45:36p",
+        "book_page_raw": "23717-574",
+        "book_page_norm": null,
+        "inst_raw": "11619",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "286,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "SPRINGFIELD",
+          "address_raw": "80-82 LHEYFRED TERR",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "C",
+            "name_raw": "MADISON PROPERTY INVESTORS LLC"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "KENNEDY CALISA"
+          }
+        ]
+      },
+      "descr_loc_raw": "EYFRED TERR",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 160,
+        "record_index": 6
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 EYFRED TERR DEE 286,000.00",
+          "Town: SPRINGFIELD Addr:80-82 LHEYFRED TERR",
+          "1 C MADISON PROPERTY INVESTORS LLC",
+          "2 P KENNEDY CALISA"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 160,
+        "record_index": 6,
+        "x_center": 444.77
+      }
+    },
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "02-19-2021 1:45:36p",
+        "book_page_raw": "23717-574",
+        "book_page_norm": null,
+        "inst_raw": "11619",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "175,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "SPRINGFIELD",
+          "address_raw": "901 WILBRAHAM RD",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          "1 P GIGUERE WAYNE G",
+          "1 P GIGUERE PATRICIA A",
+          "2 P GIGUERE MICHELLE L"
+        ]
+      },
+      "descr_loc_raw": "WILBRAHAM RD",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 160,
+        "record_index": 7,
+        "stitch": {
+          "did_stitch": true,
+          "continuation_type": "PAGEBREAK",
+          "from_page": 160,
+          "into_page": 161,
+          "captured_top_lines": [
+            "RECORDED LAND BY RECORDING DATE Cheryl A. Coakley-Rivera",
+            "Me",
+            "INQUIRY PRINT REQUEST PAGE 162",
+            "PRINTED 1/18/26 23:55:46 RG370RP",
+            "TOWN: *ALL",
+            "CONSIDERATION: Q THROUGH 9, 999,999,999",
+            "jh 01-16-2026 TRANSACTION #:",
+            "DOC REFERENCE VEY",
+            "SEQ DESCR/LOC/ DELIVERED TYPE BOOK- PAGE CONSIDERATION STS",
+            "Town: SPRINGFIELD Addr:901 WILBRAHAM RD Y",
+            "1 P GIGUERE WAYNE G Y",
+            "1 P GIGUERE PATRICIA A Y",
+            "2 P GIGUERE MICHELLE L Y"
+          ],
+          "first_boundary_detected": "FILE SIMPLIFILE E-RECORDING Y"
+        }
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 WILBRAHAM RD DEED 175,000.00"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 160,
+        "record_index": 6,
+        "x_center": 444.77
+      }
+    }
+  ]
+}

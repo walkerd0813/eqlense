@@ -1,0 +1,153 @@
+{
+  "inst": "19243",
+  "count": 2,
+  "sample_size": 2,
+  "events": [
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "03-22-2021 11:47:02a",
+        "book_page_raw": "23776-526",
+        "book_page_norm": null,
+        "inst_raw": "19243",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "280,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "WEST SPRINGFIELD",
+          "address_raw": "28 WARREN ST",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "HOGAN PATRICK MICHAEL"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "CHE ZHONG"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "LI YUN"
+          }
+        ]
+      },
+      "descr_loc_raw": "WARREN ST",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 334,
+        "record_index": 5
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 WARREN ST DEED 280,000.00",
+          "Town: WEST SPRINGFIELD Addr:28 WARREN ST",
+          "1 P HOGAN PATRICK MICHAEL",
+          "2 P CHE ZHONG",
+          "2 P LI YUN"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 334,
+        "record_index": 5,
+        "x_center": 435.77
+      }
+    },
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "03-22-2021 11:47:02a",
+        "book_page_raw": "23776-526",
+        "book_page_norm": null,
+        "inst_raw": "19243",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "1.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "WESTFIELD",
+          "address_raw": "78 WESTERN CIR",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "THOMAS AUREN E"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "CARRINGTON AUREN E"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "MCCARTHY MARION E"
+          }
+        ]
+      },
+      "descr_loc_raw": "WESTERN CIR",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 334,
+        "record_index": 6
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 WESTERN CIR DEED 1.00",
+          "Town: WESTFIELD Addr:78 WESTERN CIR",
+          "1 P THOMAS AUREN E",
+          "1 P CARRINGTON AUREN E",
+          "2 P MCCARTHY MARION E"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 334,
+        "record_index": 5,
+        "x_center": 435.77
+      }
+    }
+  ]
+}

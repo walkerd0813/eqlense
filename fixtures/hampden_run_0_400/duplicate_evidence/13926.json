@@ -1,0 +1,149 @@
+{
+  "inst": "13926",
+  "count": 2,
+  "sample_size": 2,
+  "events": [
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "03-01-2021 3:09:59p",
+        "book_page_raw": "23735-494",
+        "book_page_norm": null,
+        "inst_raw": "13926",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "150,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "BRIMFIELD",
+          "address_raw": "12 THIRD ST",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        },
+        {
+          "ref_index": 1,
+          "town": "BRIMFIELD",
+          "address_raw": "96 3RD ST",
+          "unit_hint": null,
+          "ref_role": "ADDITIONAL"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "RYA REGINA L"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "RYA DAVID M"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "C",
+            "name_raw": "ROCHA RE I & HOME IMPROVEMENT LLC"
+          }
+        ]
+      },
+      "descr_loc_raw": "THIRD ST,3RD ST",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 216,
+        "record_index": 5
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 THIRD ST,3RD ST DEE 150,000.00",
+          "Town: BRIMFIELD Addr:12 THIRD ST",
+          "Town: BRIMFIELD Addr:96 3RD ST",
+          "1 P RYA REGINA L",
+          "1 P RYA DAVID M",
+          "2 C ROCHA RE I & HOME IMPROVEMENT LLC"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 216,
+        "record_index": 5,
+        "x_center": 426.77
+      }
+    },
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "03-01-2021 3:09:59p",
+        "book_page_raw": "23735-494",
+        "book_page_norm": null,
+        "inst_raw": "13926",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "145,377.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "SPRINGFIELD",
+          "address_raw": "260 PHELAND AVE",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "SANSALONE MARIA"
+          }
+        ]
+      },
+      "descr_loc_raw": "PHELAND AVE",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 216,
+        "record_index": 6
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 PHELAND AVE DEED 145,377.00",
+          "Town: SPRINGFIELD Addr:260 PHELAND AVE",
+          "1 P SANSALONE MARIA"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 216,
+        "record_index": 5,
+        "x_center": 426.77
+      }
+    }
+  ]
+}

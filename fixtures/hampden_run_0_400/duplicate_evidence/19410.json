@@ -1,0 +1,159 @@
+{
+  "inst": "19410",
+  "count": 2,
+  "sample_size": 2,
+  "events": [
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "03-22-2021 3:36:36p",
+        "book_page_raw": "23778-180",
+        "book_page_norm": null,
+        "inst_raw": "19410",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "180,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "SPRINGFIELD",
+          "address_raw": "18 NORFOLK ST",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "IRIZARRY NAIDA"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "BARQUIN OSCAR"
+          }
+        ]
+      },
+      "descr_loc_raw": "NORFOLK ST",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 337,
+        "record_index": 5
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 NORFOLK ST DEED 180,000.00",
+          "Town: SPRINGFIELD Addr:18 NORFOLK ST",
+          "1 P IRIZARRY NAIDA",
+          "2 P BARQUIN OSCAR"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 337,
+        "record_index": 5,
+        "x_center": 435.77
+      }
+    },
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "03-22-2021 3:36:36p",
+        "book_page_raw": "23778-180",
+        "book_page_norm": null,
+        "inst_raw": "19410",
+        "grp_seq_raw": "1-1",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": "130,000.00",
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "WESTFIELD",
+          "address_raw": "10 NICHOLAS LA",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "LOBODA MAKSIM I"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "LOBODA MAXSIM I"
+          },
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "P",
+            "name_raw": "LOBODA YEKATERINA P"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "LOBODA MAKSIM I"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "P",
+            "name_raw": "LOBODA YEKATERINA P"
+          }
+        ]
+      },
+      "descr_loc_raw": null,
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 337,
+        "record_index": 6
+      },
+      "evidence": {
+        "lines_clean": [
+          "FILE SIMPLIFILE E-RECORDING",
+          "1 DEED 23571 535",
+          "Town: WESTFIELD Addr:10 NICHOLAS LA",
+          "1 P LOBODA MAKSIM I",
+          "1 P LOBODA MAXSIM I",
+          "1 P LOBODA YEKATERINA P",
+          "2 P LOBODA MAKSIM I",
+          "2 P LOBODA YEKATERINA P"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_V1_19_8_TXCOL_CONSCOL_REFBPSTACK",
+        "page_index": 337,
+        "record_index": 5,
+        "x_center": 435.77
+      }
+    }
+  ]
+}

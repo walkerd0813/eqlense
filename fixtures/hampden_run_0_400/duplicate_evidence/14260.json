@@ -1,0 +1,142 @@
+{
+  "inst": "14260",
+  "count": 2,
+  "sample_size": 2,
+  "events": [
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "03-02-2021 2:44:51p",
+        "book_page_raw": "23738-130",
+        "book_page_norm": null,
+        "inst_raw": "14260",
+        "grp_seq_raw": "2-6",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": null,
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "SPRINGFIELD",
+          "address_raw": "56-60 FORT PLEASANT AVE",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "C",
+            "name_raw": "56-60 FIT PLEASANT LLC"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "C",
+            "name_raw": "SPRINGFIELD GARDENS 56-60 LP"
+          }
+        ]
+      },
+      "descr_loc_raw": null,
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 225,
+        "record_index": 1
+      },
+      "evidence": {
+        "lines_clean": [
+          "Town: SPRINGFIELD Addr:56-60 FORT PLEASANT AVE",
+          "1 C 56-60 FIT PLEASANT LLC",
+          "2 C SPRINGFIELD GARDENS 56-60 LP"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_NO_CONS_V1_19_8",
+        "page_index": 225,
+        "record_index": 1,
+        "x_center": 147.77
+      }
+    },
+    {
+      "event_type": "DEED",
+      "document": {
+        "doc_type_code_raw": "DEED",
+        "doc_type_code": "DEED",
+        "registry_office": "Hampden Registry of Deeds",
+        "land_type": "RECORDED_LAND"
+      },
+      "recording": {
+        "recording_date_raw": "01-16-2026",
+        "recording_date": null,
+        "recorded_at_raw": "03-02-2021 2:44:51p",
+        "book_page_raw": "23738-130",
+        "book_page_norm": null,
+        "inst_raw": "14260",
+        "grp_seq_raw": "2-6",
+        "ref_book_page_raw": null
+      },
+      "consideration": {
+        "amount_raw": null,
+        "amount": null
+      },
+      "property_refs": [
+        {
+          "ref_index": 0,
+          "town": "SPRINGFIELD",
+          "address_raw": "70-78 1/2 BELMONT AVE",
+          "unit_hint": null,
+          "ref_role": "PRIMARY"
+        }
+      ],
+      "parties": {
+        "parties_raw": [
+          {
+            "side_code_raw": "1",
+            "entity_type_raw": "C",
+            "name_raw": "BELMONT AVE HOLDINGS LLC"
+          },
+          {
+            "side_code_raw": "2",
+            "entity_type_raw": "C",
+            "name_raw": "SPRINGFIELD GARDENS 70-78 LP"
+          }
+        ]
+      },
+      "descr_loc_raw": "BELMONT AVE",
+      "meta": {
+        "run_id": "20260302T235112Z__hampden__recorded_land__deed_ocr_v1_11_2",
+        "page_index": 225,
+        "record_index": 5
+      },
+      "evidence": {
+        "lines_clean": [
+          "ENV-FEDEX LAMB & ASSOCIATES P C",
+          "C/O CHRIS REESOR",
+          "6 WEYBOSSETT AVE",
+          "FRAMINGHAM MA 01702",
+          "1 BELMONT AVE DEED",
+          "Town: SPRINGFIELD Addr:70-78 1/2 BELMONT AVE",
+          "1 C BELMONT AVE HOLDINGS LLC",
+          "2 C SPRINGFIELD GARDENS 70-78 LP"
+        ]
+      },
+      "rowctx": {
+        "source": "OK_NO_CONS_V1_19_8",
+        "page_index": 225,
+        "record_index": 1,
+        "x_center": 147.77
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "engine": "join_rowctx_txcol_with_townblocks_v1_1",
+  "inputs": {
+    "townblocks": "c:\\seller-app\\backend\\fixtures\\pagebreak\\deed_pagebreak_case_02\\mini_slice_0_100\\stitched.ndjson",
+    "rowctx": "c:\\seller-app\\backend\\fixtures\\pagebreak\\deed_pagebreak_case_02\\mini_slice_0_100\\rowctx.ndjson"
+  },
+  "options": {
+    "flip_record_index": false,
+    "prefer_overwrite": false
+  },
+  "counts": {
+    "townblocks_seen": 12,
+    "rowctx_seen": 12,
+    "matched_by_recorded_at": 0,
+    "matched_by_record_index": 12,
+    "matched_by_ordinal": 0,
+    "unmatched": 0
+  },
+  "unmatched_samples": []
+}
