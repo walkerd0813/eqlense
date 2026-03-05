@@ -116,4 +116,4 @@ prisma/
 tools/
 uploads/
 rawData/
-publicData/
+publicData/tmp/
