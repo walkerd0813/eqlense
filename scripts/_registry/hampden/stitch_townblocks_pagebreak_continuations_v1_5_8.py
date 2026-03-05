@@ -49,6 +49,30 @@ def _strip_trailing_yes(s: str) -> str:
         return s
     return re.sub(r"\s+\bY\b\s*$", "", s, flags=re.IGNORECASE).strip()
 
+
+# --- PAGEBREAK DONOR PREFIX STOPS (HARD) ---
+# Row header line example:
+#   "01-19-2021  2:26:13p  23658  239   3997"
+ROW_HEADER_RE = re.compile(
+    r"^\s*\d{2}-\d{2}-\d{4}\s+\d{1,2}:\d{2}:\d{2}\s*[ap]\s+\d{3,6}\s+\d{1,4}\s+\d{3,7}\b",
+    re.IGNORECASE,
+)
+
+# Big dashed separator lines between records
+DASH_RULE_RE = re.compile(r"^-{20,}\s*$")
+
+# Table header / index header lines
+TABLE_HDR_RE = re.compile(
+    r"\bDATE/TIME\b|\bRECORDED\b|\bBOOK-PAGE\b|\bTRANSACTION\s*#\b|\bCONSIDERATION\b",
+    re.IGNORECASE,
+)
+
+def is_pagebreak_prefix_stop(ln: str) -> bool:
+    s = (ln or "").strip()
+    if not s:
+        return False
+    return bool(ROW_HEADER_RE.match(s) or DASH_RULE_RE.match(s) or TABLE_HDR_RE.search(s))
+
 def _split_lines_into_record_segments(lines_raw: List[str]) -> Dict[int, List[str]]:
     """
     Returns dict {record_index:int -> [lines]} based on FILE  boundaries.
@@ -265,20 +289,9 @@ def event_missing_parties(ev: dict) -> bool:
 RE_TOWN_ADDR = re.compile(r"(?i)\bTown\s*:\s*([A-Z\*\- ]{2,})\s+Addr\s*:\s*(.+?)\s*(?:\bY\b)?\s*$")
 RE_ADDR_ONLY = re.compile(r"(?i)\bAddr\s*:\s*(.+?)\s*$")
 
-def page_prefix_before_first_boundary(lines_raw: List[str], max_scan: int = 120) -> List[str]:
-    """
-    Return the top-of-page prefix block BEFORE the first tx boundary (FILE/ENV/INGEO/...).
-    Hampden continuations typically appear here on the next page.
-    """
-    out: List[str] = []
-    for raw in (lines_raw or [])[:max_scan]:
-        s = str(raw).strip()
-        if not s:
-            continue
-        if RE_TX_BOUNDARY.search(s):
-            break
-        out.append(s)
-    return out
+# NOTE: `page_prefix_before_first_boundary` is defined later in the
+# module (final intended version). The earlier duplicate was removed
+# to avoid confusion during maintenance.
 
 
 def normalize_town(town_raw: str) -> str:
@@ -288,7 +301,7 @@ def normalize_town(town_raw: str) -> str:
     # NOTE: real town normalization belongs upstream; this is just safety.
     return t
 
-def extract_top_continuation(lines_raw: List[str], max_scan: int = 80) -> Tuple[List[Tuple[Optional[str], str]], List[str], List[str]]:
+def extract_top_continuation(lines_raw: List[str], max_scan: int = 80, require_boundary: bool = True) -> Tuple[List[Tuple[Optional[str], str]], List[str], List[str]]:
     """
     Returns:
       refs_found: list of (town, address_raw) where town may be None if only Addr: lines exist
@@ -298,7 +311,12 @@ def extract_top_continuation(lines_raw: List[str], max_scan: int = 80) -> Tuple[
     captured: List[str] = []
     refs_found: List[Tuple[Optional[str], str]] = []
     parties_found: List[str] = []
-    started = False  # only start capturing after first tx boundary (prevents page vacuum contamination)
+    # When scanning a page-prefix (lines before the first strong tx boundary) we
+    # want to allow capturing immediately. The caller controls this via
+    # `require_boundary`. If True we behave conservatively and only start after
+    # seeing a transaction boundary marker; if False we start capturing right
+    # away (safe when the caller already limited the scan to the prefix region).
+    started = False if require_boundary else True
     
     # Scan top of page until we find at least one meaningful signal.
     for i, raw in enumerate(lines_raw[:max_scan]):
@@ -311,12 +329,13 @@ def extract_top_continuation(lines_raw: List[str], max_scan: int = 80) -> Tuple[
             if started:
                 # next transaction begins -> STOP (prevents page vacuum)
                 break
+            # mark as started and capture the boundary line
             started = True
             captured.append(s)
             continue
 
-        # ignore page headers until we hit the first tx boundary
-        if not started:
+        # If a boundary is required but we haven't seen one yet, skip header lines.
+        if require_boundary and not started:
             continue
 
         captured.append(s)
@@ -531,16 +550,12 @@ def page_prefix_before_first_boundary(lines: List[str], max_scan: int = 80) -> L
     This is the safest candidate region for a PAGEBREAK continuation.
     """
     out: List[str] = []
-    n = min(max_scan, len(lines))
-    for i in range(n):
-        s = (lines[i] or "").strip()
+    for ln in (lines or [])[:max_scan]:
+        if is_pagebreak_prefix_stop(ln):
+            break
+        s = (ln or "").strip()
         if not s:
             continue
-
-        # stop at first strong boundary (this is the start of the next transaction)
-        if is_strong_tx_boundary(s):
-            break
-
         out.append(s)
 
     return out
@@ -558,8 +573,14 @@ def pagebreak_stitch(events_by_page: Dict[int, List[dict]],
         next_p = p + 1
         last_ev = events_by_page[p][-1]
 
-        # candidate if last event missing refs
-        if not event_missing_refs(last_ev):
+        # Candidate gating: consider pagebreak when last event is missing
+        # refs OR missing parties. Many real continuations have refs but
+        # lack parties, so treat either as a candidate.
+        cand_missing_refs = event_missing_refs(last_ev)
+        cand_missing_parties = event_missing_parties(last_ev)
+
+        # Candidate if refs OR parties are missing
+        if not cand_missing_refs and not cand_missing_parties:
             continue
 
         counts["candidate_pagebreaks"] += 1
@@ -580,10 +601,21 @@ def pagebreak_stitch(events_by_page: Dict[int, List[dict]],
 
         prefix_lines = page_prefix_before_first_boundary(next_lines_all, max_scan=max_scan)
 
-        # If prefix is empty (rare OCR weirdness), fall back to bounded scan of full page.
-        lines_for_scan = prefix_lines if prefix_lines else next_lines_all[:max_scan]
+        # HARD RULE: never drift into the page. If there is no prefix bleed, do not stitch.
+        if not prefix_lines:
+            counts["no_continuation_found"] += 1
+            continue
 
-        refs_pairs, parties_found, captured = extract_top_continuation(lines_for_scan, max_scan=max_scan)
+        lines_for_scan = prefix_lines
+
+        # If we limited scanning to the prefix (before the first strong tx boundary)
+        # allow extract_top_continuation to begin capturing immediately; otherwise
+        # require an explicit boundary to avoid page-vacuum contamination.
+        refs_pairs, parties_found, captured = extract_top_continuation(
+            lines_for_scan,
+            max_scan=max_scan,
+            require_boundary=(False if prefix_lines else True),
+        )
 
         # Prefer extracting refs directly from the scanned block
         prefix_refs = _extract_property_refs_from_lines(prefix_lines) if prefix_lines else []
@@ -609,7 +641,16 @@ def pagebreak_stitch(events_by_page: Dict[int, List[dict]],
                 last_ev["parties"] = {}
             existing = get_parties_raw_list(last_ev)
             if not existing:
-                last_ev["parties"]["parties_raw"] = parties_found
+                # Clean trailing single-letter 'Y' OCR artifacts and collapse whitespace
+                cleaned = []
+                for party in parties_found:
+                    try:
+                        s = _normalize_ws(str(party))
+                        s = _strip_trailing_yes(s)
+                        cleaned.append(s)
+                    except Exception:
+                        cleaned.append(str(party))
+                last_ev["parties"]["parties_raw"] = cleaned
                 
         # Safety check: if last event has parties, require overlap with prefix parties
         last_parties = get_parties_raw_list(last_ev)
@@ -770,11 +811,19 @@ def extract_top_continuation_for_finalizer(lines_raw: list[str], max_scan: int =
     if "page_prefix_before_first_boundary" in globals():
         prefix_lines = page_prefix_before_first_boundary(all_lines, max_scan=max_scan)
 
-    lines_for_scan = prefix_lines if prefix_lines else all_lines[:max_scan]
+    # HARD RULE: never drift into the page. If there is no top-of-page prefix, do not extract.
+    if not prefix_lines:
+        return [], [], []
+
+    lines_for_scan = prefix_lines
 
     # If the main extractor exists, use it to find refs/parties inside the safe scan block.
     if "extract_top_continuation" in globals():
-        refs_pairs, parties_found, captured = extract_top_continuation(lines_for_scan, max_scan=max_scan)
+        refs_pairs, parties_found, captured = extract_top_continuation(
+            lines_for_scan,
+            max_scan=max_scan,
+            require_boundary=(False if prefix_lines else True),
+        )
     else:
         refs_pairs = []
         parties_found = []
@@ -830,7 +879,15 @@ def stitch_event(
             ev["parties"] = {}
         existing = (ev.get("parties") or {}).get("parties_raw") or []
         if not existing:
-            ev["parties"]["parties_raw"] = parties_found
+            cleaned = []
+            for party in parties_found:
+                try:
+                    s = _normalize_ws(str(party))
+                    s = _strip_trailing_yes(s)
+                    cleaned.append(s)
+                except Exception:
+                    cleaned.append(str(party))
+            ev["parties"]["parties_raw"] = cleaned
 
     stitch = ensure_stitch_meta(ev)
     stitch["did_stitch"] = True

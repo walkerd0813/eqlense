@@ -30,6 +30,7 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import pdfplumber
 import pytesseract
+from pytesseract import Output
 
 
 # Money like 147,500.00
@@ -110,8 +111,45 @@ def ocr_page_lines(
         crop = page.crop((left, top, right, bottom))
         img = crop.to_image(resolution=dpi).original
 
-        txt = pytesseract.image_to_string(img, config=(tesseract_config or "")).strip()
-        lines = [normalize_ws(x) for x in txt.splitlines() if normalize_ws(x)]
+        data = pytesseract.image_to_data(img, config=(tesseract_config or ""), output_type=Output.DICT)
+
+        # Rebuild lines using layout geometry so ordering is deterministic top->bottom
+        # Keys: block_num, par_num, line_num, word_num, left, top, width, height, text
+        n = len(data.get("text", []))
+
+        line_map = {}  # (block, par, line) -> {"top": y, "words": [(left, text), ...]}
+        for i in range(n):
+            txt = (data["text"][i] or "").strip()
+            if not txt:
+                continue
+            b = data.get("block_num", [0]*n)[i]
+            p = data.get("par_num",   [0]*n)[i]
+            l = data.get("line_num",  [0]*n)[i]
+            left = data.get("left",   [0]*n)[i]
+            top  = data.get("top",    [0]*n)[i]
+
+            key = (b, p, l)
+            slot = line_map.get(key)
+            if slot is None:
+                slot = {"top": int(top), "words": []}
+                line_map[key] = slot
+            else:
+                # keep the minimum top y for the line
+                if int(top) < slot["top"]:
+                    slot["top"] = int(top)
+
+            slot["words"].append((int(left), txt))
+
+        # Sort lines by y then by block/par/line; words by x
+        ordered = sorted(line_map.items(), key=lambda kv: (kv[1]["top"], kv[0][0], kv[0][1], kv[0][2]))
+
+        lines = []
+        for _, slot in ordered:
+            words = sorted(slot["words"], key=lambda t: t[0])
+            line = normalize_ws(" ".join(w for _, w in words))
+            if line:
+                lines.append(line)
+
         return lines
 
 def detect_recording_date(lines: List[str]) -> Optional[str]:
