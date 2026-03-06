@@ -25,12 +25,10 @@ import argparse
 import json
 import os
 import re
-from datetime import datetime, timezone
-from typing import Any, Dict, List, Optional, Tuple
-
 import pdfplumber
 import pytesseract
-from pytesseract import Output
+from datetime import datetime, timezone
+from typing import Any, Dict, List, Optional, Tuple
 
 
 # Money like 147,500.00
@@ -111,45 +109,8 @@ def ocr_page_lines(
         crop = page.crop((left, top, right, bottom))
         img = crop.to_image(resolution=dpi).original
 
-        data = pytesseract.image_to_data(img, config=(tesseract_config or ""), output_type=Output.DICT)
-
-        # Rebuild lines using layout geometry so ordering is deterministic top->bottom
-        # Keys: block_num, par_num, line_num, word_num, left, top, width, height, text
-        n = len(data.get("text", []))
-
-        line_map = {}  # (block, par, line) -> {"top": y, "words": [(left, text), ...]}
-        for i in range(n):
-            txt = (data["text"][i] or "").strip()
-            if not txt:
-                continue
-            b = data.get("block_num", [0]*n)[i]
-            p = data.get("par_num",   [0]*n)[i]
-            l = data.get("line_num",  [0]*n)[i]
-            left = data.get("left",   [0]*n)[i]
-            top  = data.get("top",    [0]*n)[i]
-
-            key = (b, p, l)
-            slot = line_map.get(key)
-            if slot is None:
-                slot = {"top": int(top), "words": []}
-                line_map[key] = slot
-            else:
-                # keep the minimum top y for the line
-                if int(top) < slot["top"]:
-                    slot["top"] = int(top)
-
-            slot["words"].append((int(left), txt))
-
-        # Sort lines by y then by block/par/line; words by x
-        ordered = sorted(line_map.items(), key=lambda kv: (kv[1]["top"], kv[0][0], kv[0][1], kv[0][2]))
-
-        lines = []
-        for _, slot in ordered:
-            words = sorted(slot["words"], key=lambda t: t[0])
-            line = normalize_ws(" ".join(w for _, w in words))
-            if line:
-                lines.append(line)
-
+        txt = pytesseract.image_to_string(img, config=(tesseract_config or "")).strip()
+        lines = [normalize_ws(x) for x in txt.splitlines() if normalize_ws(x)]
         return lines
 
 def detect_recording_date(lines: List[str]) -> Optional[str]:
@@ -214,6 +175,8 @@ def parse_party_line(ln: str) -> Optional[Dict[str, Any]]:
     side = m.group(1)              # "1" or "2"
     ent_type = m.group(2).upper()  # "P" or "C"
 
+
+
     # Clean party name once, in the right order
     name = normalize_ws(strip_trailing_yes(m.group(3))).strip()
     name = re.sub(r"\s+Y\s*$", "", name, flags=re.IGNORECASE).strip()
@@ -226,6 +189,49 @@ def parse_party_line(ln: str) -> Optional[Dict[str, Any]]:
         "entity_type_raw": ent_type,
         "name_raw": name,
     }
+
+
+def parse_party_name_tail_only(ln: str) -> Optional[str]:
+    """
+    Capture right-side party-name tails that appear without the left-side
+    '1 P / 2 P' prefix.
+
+    Examples:
+      GALE ALICE (EST)
+      JAMES B (JR REPS)
+      CARL A (JR)
+      TRACY TRANT
+
+    Reject obvious anchors / town / addr / sender / page junk.
+    """
+    s = normalize_ws(ln)
+    if not s:
+        return None
+
+    up = s.upper()
+
+    # reject obvious non-party lines
+    if "TOWN:" in up or "ADDR:" in up:
+        return None
+    if re.search(r"\b(?:DEED|MORTGAGE|ASSIGN(?:MENT)?|RELEASE|DISCHARGE|LIEN|FTL)\b", up):
+        return None
+    if re.match(r"^\d{2}-\d{2}-\d{4}\b", s):
+        return None
+    if re.match(r"^\s*\d+\s+\d+\b", s):
+        return None
+    if re.match(r"^\s*(FILE|ENV|INGEO)\b", s, re.IGNORECASE):
+        return None
+    if re.search(r"\bMA\s+\d{5}\b", up):
+        return None
+    if re.search(r"\b(?:PAGE|RG\d+[A-Z]*RP|INDEX SELECTION|INQUIRY PRINT REQUEST)\b", up):
+        return None
+    if re.fullmatch(r"[A-Z]{1,3}", up):
+        return None
+
+    if re.fullmatch(r"[A-Z0-9\s\(\)\.\-',/&]+", up):
+        return s
+
+    return None
 
 
 def extract_events_from_lines(lines: List[str], run_id: str, page_index: int) -> List[Dict[str, Any]]:
@@ -273,11 +279,21 @@ def extract_events_from_lines(lines: List[str], run_id: str, page_index: int) ->
 
     # Page-prefix orphan parties (often bleed from prior page/record)
     page_prefix_orphan_parties: List[Dict[str, Any]] = []
-
+    # Right-side OCR name fragments that appear before the left-side
+    # "1 P / 2 P" lines on some registry pages.
+    pending_party_name_tails: List[str] = []
+    pending_split_party: Optional[Dict[str, Any]] = None
     # Pending descr/cons that appeared BEFORE we had a record-start anchor.
     pending_descr_loc: Optional[str] = None
     pending_cons_raw: Optional[str] = None
-
+    # Split-anchor fallback state for OCR-broken rows like:
+    #   "1 SILVER ST"
+    #   "Town: MONSON"
+    #   "DEED"
+    #   "Addr:184 SILVER ST"
+    pending_descr_only: Optional[str] = None
+    pending_town_only: Optional[str] = None
+    pending_doc_only: Optional[str] = None
 
     # Pending left-column row context to attach to the NEXT record-start anchor.
     pending_row_ctx: Dict[str, Any] = {
@@ -316,21 +332,122 @@ def extract_events_from_lines(lines: List[str], run_id: str, page_index: int) ->
         re.IGNORECASE,
     )
 
-    # B) SEQ/GRP + DESCR + DEE[D]? line: "1 1 UNIT D DEED" or "1 1 WASHINGTON RD DEED 1.00"
+    # Generic recorded-land doc types (expand as needed)
+    DOC_TYPE_PATTERN = (
+        r"DEE[D]?|"
+        r"MORTGAGE|MTG|"
+        r"ASSIGN(?:MENT)?|ASN|"
+        r"RELEASE|DISCHARGE|DISCH|"
+        r"LIEN|FTL|FEDERAL\s+TAX\s+LIEN|"
+        r"MODIFICATION|AMENDMENT|"
+        r"EASEMENT|ORDER|NOTICE|"
+        r"CERTIFICATE|AFFIDAVIT"
+    )
+
+    # B) SEQ/GRP + DESCR + DOC-TYPE line
+    # Examples:
+    #   "1 1 SILVER ST DEED"
+    #   "1 1 MAIN ST MORTGAGE"
+    #   "1 1 OAK ST ASSIGNMENT"
     seq_grp_doctype_re = re.compile(
-        r"^\s*(\d+)\s+(\d+)\s+(.*?)\s+\bDEE[D]?\b(.*)$",
+        rf"^\s*(\d+)\s+(\d+)\s+(.*?)\s+\b(?:{DOC_TYPE_PATTERN})\b(.*)$",
         re.IGNORECASE,
     )
 
+        # OCR fallback: descr line with no doc-type on same line
+    # Example: "1 SILVER ST"
+    descr_only_re = re.compile(
+        r"^\s*(\d+)\s+([A-Z0-9][A-Z0-9\s\-\#&'/\.]+?)\s*$",
+        re.IGNORECASE,
+    )
+
+    # OCR fallback: standalone document type line
+    # Example: "DEED"
+    standalone_doc_type_re = re.compile(
+        rf"^\s*(?:{DOC_TYPE_PATTERN})\s*$",
+        re.IGNORECASE,
+    )
+
+    # OCR fallback: Town-only or Addr-only split across separate lines
+    town_only_re = re.compile(r"^\s*Town:\s*(.+?)\s*$", re.IGNORECASE)
+    addr_only_re = re.compile(r"^\s*Addr:\s*(.+?)\s*$", re.IGNORECASE)
+
+    # Probable sender/mailer lines (used to split repeated header blocks)
+    sender_line_re = re.compile(
+        r"\b(?:ESQ|PC|LLC|TRUST|LAW|GROUP|ATTORNEY)\b|^[A-Z][A-Z\s\.\-&']{6,}$",
+        re.IGNORECASE,
+    )
+    ma_zip_line_re = re.compile(r"\bMA\s+\d{5}\b", re.IGNORECASE)
+    
+    # OCR fallback: sometimes "1 1 WOODMONT ST DEED" collapses to "1 WOODMONT ST DEED"
+    # or "1 ARCADE ST DEED 178,250.00"
+    docline_fallback_re = re.compile(
+        rf"^\s*(\d+)\s+(.*?)\s+\b(?:{DOC_TYPE_PATTERN})\b(.*)$",
+        re.IGNORECASE,
+    )
+    
+    page_header_noise_re = re.compile(
+        r"""
+        RECORDED\s+LAND\s+BY\s+RECORDING\s+DATE|
+        INQUIRY\s+PRINT\s+REQUEST|
+        INDEX\s+SELECTION|
+        DATE/TIME|
+        BOOK-PAGE|
+        CONSIDERATION|
+        TRANSACTION\s*#|
+        PAGE\s+\d+|
+        RG\d+[A-Z]*RP
+        """,
+        re.IGNORECASE | re.VERBOSE,
+    )
+
+    dashed_rule_re = re.compile(r"^\s*-{10,}\s*$")
+
+    def is_page_header_noise_line(ln: str) -> bool:
+        s = (ln or "").strip()
+        if not s:
+            return False
+        return bool(page_header_noise_re.search(s) or dashed_rule_re.match(s))
+
+    def reset_pending_prefix_state() -> None:
+        nonlocal pending_descr_loc, pending_cons_raw
+        pending_descr_loc = None
+        pending_cons_raw = None
+        page_prefix_orphan_parties.clear()
+        reset_pending_row_ctx()
+        reset_split_anchor_state()
+        
+    def reset_split_anchor_state() -> None:
+        nonlocal pending_descr_only, pending_town_only, pending_doc_only
+        pending_descr_only = None
+        pending_town_only = None
+        pending_doc_only = None
+    
     def is_row_header_line(ln: str):
         return row_header_re.match(ln or "")
 
     def is_seq_grp_doctype_line(ln: str):
         return seq_grp_doctype_re.match(ln or "")
 
-
+    def is_docline_fallback_line(ln: str):
+        return docline_fallback_re.match(ln or "")
+    
     def has_any_record_content(d: Dict[str, Any]) -> bool:
         return bool(d.get("descr_loc") or d.get("property_refs") or d.get("parties_raw"))
+
+    def has_strong_identity_anchor(d: Dict[str, Any]) -> bool:
+        """
+        We only want to promote pending parties when we have a real record identity,
+        not just random page-top carryover text.
+        """
+        return bool(
+            d.get("recorded_at_raw")
+            or d.get("book_page_raw")
+            or d.get("inst_raw")
+            or d.get("grp_seq_raw")
+            or d.get("descr_loc")
+            or d.get("property_refs")
+        )
 
     def reset_pending_row_ctx() -> None:
         pending_row_ctx["recorded_at_raw"] = None
@@ -371,8 +488,9 @@ def extract_events_from_lines(lines: List[str], run_id: str, page_index: int) ->
         pending_cons_raw = None
 
     def flush() -> None:
-        nonlocal cur, in_record, pending_descr_loc, pending_cons_raw
+        nonlocal cur, in_record, pending_descr_loc, pending_cons_raw, pending_split_party, pending_party_name_tails
         if not has_any_record_content(cur):
+            pending_split_party = None
             cur = new_cur()
             in_record = False
             # do NOT nuke pending_* here; they belong to the next anchor if we never started
@@ -405,6 +523,9 @@ def extract_events_from_lines(lines: List[str], run_id: str, page_index: int) ->
         }
 
         events.append(evt)
+        reset_split_anchor_state()
+        # clear any buffered right-side party tails when starting fresh
+        pending_party_name_tails.clear()
         cur = new_cur()
         in_record = False
 
@@ -459,10 +580,10 @@ def extract_events_from_lines(lines: List[str], run_id: str, page_index: int) ->
           - 3+ digits (e.g., 500)
         Reject 1–2 digit integers like "20" that are almost always noise.
         """
-        if not re.search(r"\bDEED\b", line, re.IGNORECASE):
+        if not re.search(rf"\b(?:{DOC_TYPE_PATTERN})\b", line, re.IGNORECASE):
             return None
 
-        parts = re.split(r"\bDEED\b", line, flags=re.IGNORECASE, maxsplit=1)
+        parts = re.split(rf"\b(?:{DOC_TYPE_PATTERN})\b", line, flags=re.IGNORECASE, maxsplit=1)
         if len(parts) < 2:
             return None
 
@@ -502,6 +623,24 @@ def extract_events_from_lines(lines: List[str], run_id: str, page_index: int) ->
             continue
         up = ln.upper()
 
+        # If we already have a real record with parties/refs and we suddenly see
+        # a new sender/mailer block, that usually means a NEW transaction started.
+        # This is critical for cases like 4032 -> 4033 where the next record begins
+        # with another lawyer/address block instead of a clean FILE/ENV anchor.
+        if in_record and has_any_record_content(cur):
+            if cur.get("parties_raw") and (sender_line_re.search(ln) or ma_zip_line_re.search(ln)):
+                flush()
+                start_record(anchor_line=None)
+                cur["evidence_lines_raw"].append(ln)
+                cur["evidence_lines_clean"].append(strip_trailing_yes(ln))
+                continue
+        # Hard guard: page header / report header / dashed separator lines
+        # should NOT carry parties or row context into the next record.
+        if is_page_header_noise_line(ln):
+            if not in_record:
+                reset_pending_prefix_state()
+            continue
+        
         # Harvest left-column row-context lines whenever they appear (even before we start records)
         if maybe_capture_row_context(ln):
             continue
@@ -511,22 +650,45 @@ def extract_events_from_lines(lines: List[str], run_id: str, page_index: int) ->
         # Detect anchors
         m_hdr = is_row_header_line(ln)
         m_seq = is_seq_grp_doctype_line(ln)
+        m_doc = is_docline_fallback_line(ln)
         is_town_addr = ("TOWN:" in up and "ADDR:" in up)
         is_vendor_hdr = is_vendor_header_line(ln)
-
+        m_descr_only = descr_only_re.match(ln)
+        m_doc_only = standalone_doc_type_re.match(ln)
+        m_town_only = town_only_re.match(ln)
+        m_addr_only = addr_only_re.match(ln)
+        
         # Vendor header lines (FILE/ENV/INGEO/ERECORDING PARTNERS...) are reliable
         # transaction boundaries in this PDF family, BUT the vendor name varies.
         #
         # Belt + suspenders:
         #   - Treat vendor header as an anchor (start of a new record)
         #   - Keep it as evidence for the NEW record
-        #
+        #   
         # This protects us when OCR drops the left-column row header and/or the SEQ/GRP line.
+        
         if is_vendor_hdr:
+            # If we're already in a record, vendor header can legitimately mark a new record.
             if in_record and has_any_record_content(cur):
                 flush()
+
+            # If we are NOT in a record yet, do NOT immediately trust vendor headers
+            # if all we have is page-top noise / pending parties with no strong anchor.
             if not in_record:
-                start_record(anchor_line=None)
+                # Only start a record if we already have strong row context captured
+                # OR there is no suspicious pending prefix state.
+                if (
+                    pending_row_ctx["inst_raw"]
+                    or pending_row_ctx["recorded_at_raw"]
+                    or pending_descr_loc
+                    or pending_cons_raw
+                ):
+                    start_record(anchor_line=None)
+                else:
+                    # Treat as neutral evidence, but do not let it pull in page-top orphan parties.
+                    reset_pending_prefix_state()
+                    start_record(anchor_line=None)
+
             cur["evidence_lines_raw"].append(ln)
             cur["evidence_lines_clean"].append(strip_trailing_yes(ln))
             continue
@@ -535,7 +697,7 @@ def extract_events_from_lines(lines: List[str], run_id: str, page_index: int) ->
         #  1) Left-column row header (best)
         #  2) SEQ/GRP + DEE[D]? line (fallback)
         #  3) Town/Addr line only if we are not already inside a record (last-resort)
-        is_anchor = bool(m_hdr or m_seq or (is_town_addr and not in_record))
+        is_anchor = bool(m_hdr or m_seq or m_doc or (is_town_addr and not in_record))
 
         if is_anchor:
             if in_record and has_any_record_content(cur):
@@ -544,16 +706,71 @@ def extract_events_from_lines(lines: List[str], run_id: str, page_index: int) ->
             if not in_record:
                 start_record(anchor_line=ln if m_hdr else None)
 
-            # Keep SEQ/GRP anchor lines as evidence too (helps QA/debug)
-            if m_seq:
+            # Keep anchor lines as evidence too (helps QA/debug)
+            if m_seq or m_doc:
                 cur["evidence_lines_raw"].append(ln)
                 cur["evidence_lines_clean"].append(strip_trailing_yes(ln))
 
             # If this line is a row header, we've already captured the row context in start_record().
             if m_hdr:
                 continue
-            # If this is SEQ/GRP or Town/Addr, let normal parsing below handle it (fall through).
+            
+                # OCR fallback: "1 SILVER ST" with no DEED on same line
+        if m_descr_only and not m_seq:
+            # only treat as pending descr if it doesn't look like a party line
+            if not parse_party_line(ln):
+                pending_descr_only = normalize_ws(m_descr_only.group(2))
+                if in_record:
+                    cur["evidence_lines_raw"].append(ln)
+                    cur["evidence_lines_clean"].append(strip_trailing_yes(ln))
+                continue
 
+        # OCR fallback: standalone doc-type line, e.g. "DEED"
+        if m_doc_only:
+            pending_doc_only = normalize_ws(ln)
+            if in_record:
+                cur["evidence_lines_raw"].append(ln)
+                cur["evidence_lines_clean"].append(strip_trailing_yes(ln))
+            continue
+
+        # OCR fallback: Town-only line
+        if m_town_only and not ("ADDR:" in up):
+            pending_town_only = normalize_town(m_town_only.group(1))
+            if in_record:
+                cur["evidence_lines_raw"].append(ln)
+                cur["evidence_lines_clean"].append(strip_trailing_yes(ln))
+            continue
+
+        # OCR fallback: Addr-only line; if we already saw Town-only, build the ref now
+        if m_addr_only and pending_town_only:
+            if not in_record:
+                start_record()
+
+            addr_only = normalize_ws(m_addr_only.group(1)).strip()
+            addr_only = re.sub(r"\s+Y\s*$", "", addr_only, flags=re.IGNORECASE).strip()
+
+            refs = cur.setdefault("property_refs", [])
+            ref_index = len(refs)
+            refs.append({
+                "ref_index": ref_index,
+                "town": pending_town_only,
+                "address_raw": addr_only,
+                "unit_hint": None,
+                "ref_role": "PRIMARY" if ref_index == 0 else "ADDITIONAL",
+            })
+
+            # If we had a split descr captured earlier, attach it now
+            if pending_descr_only and not cur.get("descr_loc"):
+                cur["descr_loc"] = pending_descr_only
+
+            pending_town_only = None
+            pending_doc_only = None
+            pending_descr_only = None
+
+            cur["evidence_lines_raw"].append(ln)
+            cur["evidence_lines_clean"].append(strip_trailing_yes(ln))
+            continue
+    
         # DESCR line
         descr_loc, cons = parse_descr_line(ln)
         if descr_loc is not None:
@@ -569,8 +786,8 @@ def extract_events_from_lines(lines: List[str], run_id: str, page_index: int) ->
                 if descr_loc and not cur.get("descr_loc"):
                     cur["descr_loc"] = descr_loc
 
-                    # ✅ PROMOTE pending parties NOW that we have an anchor (DESCR)
-                    if cur.get("parties_pending"):
+                    # Promote pending parties only if the record has a strong identity anchor.
+                    if cur.get("parties_pending") and has_strong_identity_anchor(cur):
                         cur["parties_raw"][0:0] = cur["parties_pending"]
                         cur["parties_pending"] = []
 
@@ -580,9 +797,9 @@ def extract_events_from_lines(lines: List[str], run_id: str, page_index: int) ->
             else:
                 # Not yet in a record.
                 # Only stash descr if this line ALSO looks like a SEQ/GRP + DEED anchor.
-                if descr_loc and m_seq:
+                if descr_loc and (m_seq or m_doc):
                     pending_descr_loc = descr_loc
-                if cons and m_seq:
+                if cons and (m_seq or m_doc):
                     pending_cons_raw = cons
 
             # evidence
@@ -653,25 +870,44 @@ def extract_events_from_lines(lines: List[str], run_id: str, page_index: int) ->
             cur["evidence_lines_clean"].append(strip_trailing_yes(ln))
             continue
 
+        # Right-side name fragments sometimes appear BEFORE the left-side
+        # "1 P / 2 P" lines on these registry pages.
+        party_tail_only = parse_party_name_tail_only(ln)
+        if party_tail_only:
+            pending_party_name_tails.append(party_tail_only)
+            if in_record:
+                cur["evidence_lines_raw"].append(ln)
+                cur["evidence_lines_clean"].append(strip_trailing_yes(ln))
+            continue
+
         # Party line
         p = parse_party_line(ln)
         if p:
             if not in_record:
-                start_record()
+                # Do NOT start a record from a naked party line at page-top.
+                # Quarantine it until a real anchor appears.
+                page_prefix_orphan_parties.append(p)
+                continue
 
-            # If we have an identity anchor, accept immediately.
-            if cur.get("descr_loc") or cur.get("property_refs"):
+            # If we buffered right-side name tails earlier, attach the next one FIFO.
+            if pending_party_name_tails:
+                tail = pending_party_name_tails.pop(0)
+                base = normalize_ws(p.get("name_raw") or "")
+                p["name_raw"] = normalize_ws(base + " " + tail)
+
+            if has_strong_identity_anchor(cur):
                 cur["parties_raw"].append(p)
 
-                # Also promote anything pending now that we're anchored.
                 if cur.get("parties_pending"):
                     cur["parties_raw"][0:0] = cur["parties_pending"]
                     cur["parties_pending"] = []
+
+                if page_prefix_orphan_parties:
+                    cur["parties_raw"][0:0] = page_prefix_orphan_parties[:]
+                    page_prefix_orphan_parties.clear()
             else:
-                # Hold until we get a Town/Addr or DESCR anchor in this same record
                 cur.setdefault("parties_pending", []).append(p)
 
-            # evidence always (only for lines that are within a record)
             cur["evidence_lines_raw"].append(ln)
             cur["evidence_lines_clean"].append(strip_trailing_yes(ln))
             continue
@@ -683,6 +919,42 @@ def extract_events_from_lines(lines: List[str], run_id: str, page_index: int) ->
 
 
     flush()
+
+    # --- assign record_index per page so join can align to RowCtx ---
+    def _inst_num(evt: Dict[str, Any]) -> int:
+        try:
+            raw = (((evt.get("recording") or {}).get("inst_raw")) or "")
+            raw = str(raw).strip()
+            return int(re.sub(r"\D+", "", raw) or "0")
+        except Exception:
+            return 0
+
+    def _rec_dt(evt: Dict[str, Any]) -> str:
+        return str((((evt.get("recording") or {}).get("recorded_at_raw")) or "")).strip()
+
+    # Group by page_index, sort within each page, assign 1..N per page
+    by_page: Dict[int, List[Dict[str, Any]]] = {}
+    for evt in events:
+        pi = int((evt.get("meta") or {}).get("page_index", -1))
+        by_page.setdefault(pi, []).append(evt)
+
+    events_out: List[Dict[str, Any]] = []
+    for pi in sorted(by_page.keys()):
+        page_events = by_page[pi]
+
+        page_sorted = sorted(
+            page_events,
+            key=lambda e: (_inst_num(e), _rec_dt(e)),
+            reverse=True
+        )
+
+        for i, evt in enumerate(page_sorted, start=1):
+            evt.setdefault("meta", {})
+            evt["meta"]["record_index"] = i
+
+        events_out.extend(page_sorted)
+
+    events = events_out
     return events
 
 
@@ -786,41 +1058,9 @@ def main():
 
             evts = extract_events_from_lines(lines, run_id=run_id, page_index=pno)
 
-            # Enforce consistent physical ordering: top->bottom.
-            # Prefer sorting by captured left-column recorded_at timestamp when available.
-            def _parse_recorded_at(s: Optional[str]):
-                if not s:
-                    return None
-                try:
-                    s2 = str(s).strip().upper()
-                    # normalize trailing single-letter am/pm markers (e.g. '11:11:56A' -> '11:11:56AM')
-                    s2 = re.sub(r"\s*([AP])$", r"\1M", s2)
-                    # try common format with AM/PM
-                    return datetime.strptime(s2, "%m-%d-%Y %I:%M:%S%p")
-                except Exception:
-                    try:
-                        return datetime.strptime(s2, "%m-%d-%Y %H:%M:%S")
-                    except Exception:
-                        return None
-
-            # preserve original ordering index
-            indexed = list(enumerate(evts))
-
-            def _sort_key(item):
-                idx, ev = item
-                rec_raw = (ev.get("recording") or {}).get("recorded_at_raw")
-                dt = _parse_recorded_at(rec_raw)
-                if dt is not None:
-                    # newer (later) timestamps should come first (top-of-page)
-                    return (0, -dt.timestamp())
-                # fall back to original order after timestamped items
-                return (1, idx)
-
-            indexed_sorted = sorted(indexed, key=_sort_key)
-            evts = [ev for _, ev in indexed_sorted]
-
-            for ridx, e in enumerate(evts, start=1):  # assign deterministic record_index (top->bottom)
+            for ridx, e in enumerate(evts, start=1):  # or start=0, but be consistent with rowctx
                 e.setdefault("meta", {})
+                e["meta"]["page_index"] = pno
                 e["meta"]["record_index"] = ridx
                 write_ndjson_line(out_f, e)
                 counts["events_out"] += 1
